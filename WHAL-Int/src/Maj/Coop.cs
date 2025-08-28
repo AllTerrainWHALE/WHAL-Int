@@ -1,4 +1,5 @@
 using Ei;
+using Majcoops;
 using WHAL_Int.Formatter;
 
 namespace WHAL_Int.Maj;
@@ -10,9 +11,10 @@ public class Coop : IComparable<Coop>
     private double contractFarmMaximumTimeAllowed;
     private double coopAllowableTimeRemaining => coopStatus.SecondsRemaining;
     private double eggGoal => gradeSpec.Goals.MaxBy(g => g.TargetAmount)!.TargetAmount;
-    private double shippedEggs => coopStatus.TotalAmount;
+    public double shippedEggs => coopStatus.TotalAmount;
+    public double totalShippedEggs => shippedEggs + totalOfflineEggs;
 
-    private double totalShippingRate => coopStatus.Contributors.Sum(player => player.ContributionRate);
+    public double totalShippingRate => coopStatus.Contributors.Where(player => player.UserName != "[departed]").Sum(player => player.ContributionRate);
 
     // `FarmInfo.Timestamp` is basically (LastSyncUnix - currentUnix) in seconds, so the negative is required in the maths
     // Credits to WHALE for figuring out the maths for this :happywiggle:
@@ -21,9 +23,18 @@ public class Coop : IComparable<Coop>
         coopStatus.Contributors.Sum(player =>
             player.ContributionRate * (-(player.FarmInfo?.Timestamp) ?? 0));
 
-    private double eggsRemaining => Math.Max(0, eggGoal - shippedEggs - totalOfflineEggs);
-    private long predictedSecondsRemaining => Convert.ToInt64(eggsRemaining / totalShippingRate);
+    private double eggsRemaining => Math.Max(0, eggGoal - totalShippedEggs);
+    private long predictedSecondsRemaining => totalShippingRate != 0 ? Convert.ToInt64(eggsRemaining / totalShippingRate) : 0;
     private readonly long unixNow = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+
+    // Assign CoopFlags
+    public CoopFlags CoopFlags { get; set; } = new CoopFlags
+    {
+        AnyGrade = false,
+        Carry = false,
+        FastRun = false,
+        SpeedRun = false
+    };
 
     public Coop(ContractCoopStatusResponse coopStatus, Contract contract)
     {
@@ -34,7 +45,7 @@ public class Coop : IComparable<Coop>
 
         this.coopStatus = coopStatus;
         gradeSpec = contract.GradeSpecs.SingleOrDefault(g => g.Grade == coopStatus.Grade)!;
-        contractFarmMaximumTimeAllowed = contract.LengthSeconds;
+        contractFarmMaximumTimeAllowed = gradeSpec.LengthSeconds;
         PredictedCompletionTimeUnix =
             new DiscordTimestamp(unixNow + predictedSecondsRemaining - (long)coopStatus.SecondsSinceAllGoalsAchieved);
         PredictedDuration = new Duration(Convert.ToInt64(contractFarmMaximumTimeAllowed -
@@ -56,7 +67,7 @@ public class Coop : IComparable<Coop>
     /// <summary>
     /// Returns the first 6 characters of the Coop Code/ID. For use typically in formatted tables.
     /// </summary>
-    public string StrippedCoopId => CoopId.Substring(0, 6);
+    public string StrippedCoopId => CoopId.Substring(0, Math.Min(CoopId.Length, 6));
 
     /// <summary>
     /// Returns the number of players that has spent more than or equal to 4 tokens.
@@ -77,11 +88,11 @@ public class Coop : IComparable<Coop>
         if (other is null) return 1;
         int result = PredictedDuration.CompareTo(other.PredictedDuration);
         if (result == 0)
+            result = PredictedCompletionTimeUnix.CompareTo(other.PredictedCompletionTimeUnix);
+        if (result == 0)
             result = other.BoostedCount.CompareTo(BoostedCount);
         if (result == 0)
             result = other.TotalTokens.CompareTo(TotalTokens);
-        if (result == 0)
-            result = PredictedCompletionTimeUnix.CompareTo(other.PredictedCompletionTimeUnix);
         return result;
     }
 }

@@ -1,0 +1,66 @@
+﻿syntax = "proto3";
+
+package majcoops;
+
+//option csharp_namespace = "WHAL_Int.EggIncApi";
+
+import "google/protobuf/wrappers.proto";
+
+// Top-level wrapper for an array of groups
+message MajCoopsResponse {
+  repeated MajCoopGroup items = 1 [json_name = "items"];
+}
+
+// Represents one group in the response
+message MajCoopGroup {
+  // Map of tracking post IDs
+  map<string, PostIDList> trackingPostIDs = 1 [json_name = "trackingPostIDs"];
+
+  string id = 2 [json_name = "_id"];
+  string group = 3;
+  string contract = 4;
+  string startTime = 5;
+
+  bool activeCoops = 6 [json_name = "activeCoops"];
+  repeated MajCoop coops = 7;
+  int32 v = 8 [json_name = "__v"];
+}
+
+// Wrapper for lists of post IDs
+message PostIDList {
+  repeated string ids = 1;
+}
+
+// Represents one coop
+message MajCoop {
+  CoopFlags coopFlags = 1 [json_name = "coopFlags"];
+  string code = 2;
+  string grade = 3;
+  int32 timeslot = 4;
+  string threadLink = 5;
+  repeated User users = 6;
+  int64 makeCoopsTimestamp = 7 [json_name = "makeCoopsTimestamp"];
+  string id = 8 [json_name = "_id"];
+}
+
+// Flags for the coop
+message CoopFlags {
+  bool anyGrade = 1;
+  bool carry = 2;
+  bool fastRun = 3;
+  bool speedRun = 4;
+}
+
+// User in a coop
+message User {
+  string ID = 1;
+  string IGN = 2;
+  string UUID = 3;
+  string role = 4;
+  bool metMinimums = 5;
+  bool isExternal = 6;
+  int32 contributionAmount = 7;
+  int32 contributionRate = 8;
+  google.protobuf.Int32Value timeslotOverride = 9;
+  string id = 10 [json_name = "_id"];
+}
