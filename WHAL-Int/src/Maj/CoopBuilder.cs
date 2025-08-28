@@ -17,6 +17,15 @@ public class CoopBuilder
     public async Task<Coop> Build()
     {
         var coopStatus = await Request.GetCoopStatus(contract.Identifier, coopCode);
+
+        if (coopStatus.ResponseStatus != ContractCoopStatusResponse.Types.ResponseStatus.NoError)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Cannot find coop '{coopCode}', ResponseStatus = {coopStatus.ResponseStatus}");
+            Console.ResetColor();
+            return null;
+        }
+
         return new Coop(coopStatus, contract);
     }
 }
