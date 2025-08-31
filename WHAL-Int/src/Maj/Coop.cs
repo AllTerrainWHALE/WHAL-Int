@@ -1,4 +1,5 @@
 using Ei;
+using Google.Protobuf.Collections;
 using Majcoops;
 using WHAL_Int.Formatter;
 
@@ -7,10 +8,14 @@ namespace WHAL_Int.Maj;
 public class Coop : IComparable<Coop>
 {
     private readonly ContractCoopStatusResponse coopStatus;
+    private readonly Contract contract;
     private readonly Contract.Types.GradeSpec gradeSpec;
-    private double contractFarmMaximumTimeAllowed;
-    private double coopAllowableTimeRemaining => coopStatus.SecondsRemaining;
-    private double eggGoal => gradeSpec.Goals.MaxBy(g => g.TargetAmount)!.TargetAmount;
+    public string grade => gradeSpec.Grade.ToString();
+    public double contractFarmMaximumTimeAllowed;
+    public double coopAllowableTimeRemaining => coopStatus.SecondsRemaining;
+    public double eggGoal => gradeSpec.Goals.MaxBy(g => g.TargetAmount)!.TargetAmount;
+    public uint size => contract.MaxCoopSize;
+
     public double shippedEggs => coopStatus.TotalAmount;
     public double totalShippedEggs => shippedEggs + totalOfflineEggs;
 
@@ -23,18 +28,14 @@ public class Coop : IComparable<Coop>
         coopStatus.Contributors.Sum(player =>
             player.ContributionRate * (-(player.FarmInfo?.Timestamp) ?? 0));
 
-    private double eggsRemaining => Math.Max(0, eggGoal - totalShippedEggs);
-    private long predictedSecondsRemaining => totalShippingRate != 0 ? Convert.ToInt64(eggsRemaining / totalShippingRate) : 0;
+    public double eggsRemaining => Math.Max(0, eggGoal - totalShippedEggs);
+    public long predictedSecondsRemaining => totalShippingRate != 0 ? Convert.ToInt64(eggsRemaining / totalShippingRate) : 0;
     private readonly long unixNow = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
+    public List<Player> contributors;
+
     // Assign CoopFlags
-    public CoopFlags CoopFlags { get; set; } = new CoopFlags
-    {
-        AnyGrade = false,
-        Carry = false,
-        FastRun = false,
-        SpeedRun = false
-    };
+    public CoopFlags CoopFlags { get; set; } = new();
 
     public Coop(ContractCoopStatusResponse coopStatus, Contract contract)
     {
@@ -44,6 +45,7 @@ public class Coop : IComparable<Coop>
         }
 
         this.coopStatus = coopStatus;
+        this.contract = contract;
         gradeSpec = contract.GradeSpecs.SingleOrDefault(g => g.Grade == coopStatus.Grade)!;
         contractFarmMaximumTimeAllowed = gradeSpec.LengthSeconds;
         PredictedCompletionTimeUnix =
@@ -52,6 +54,8 @@ public class Coop : IComparable<Coop>
                                                          coopAllowableTimeRemaining +
                                                          predictedSecondsRemaining -
                                                          coopStatus.SecondsSinceAllGoalsAchieved));
+
+        contributors = coopStatus.Contributors.Select(playerInfo => new Player(playerInfo,this)).ToList();
     }
 
     /// <summary>

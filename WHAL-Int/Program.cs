@@ -143,6 +143,13 @@ internal class Program
         Console.WriteLine();
 
 
+        foreach (var player in orderedCoops.First().contributors)
+        {
+            Console.WriteLine($"{player.userName} | {player.contributionRatio}");
+        }
+        throw new NotImplementedException();
+
+
         /* ==========================
            =  Construct !!fuc table  =
            ========================== */
