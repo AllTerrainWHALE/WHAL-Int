@@ -14,7 +14,9 @@ public class Coop : IComparable<Coop>
     public double contractFarmMaximumTimeAllowed;
     public double coopAllowableTimeRemaining => coopStatus.SecondsRemaining;
     public double eggGoal => gradeSpec.Goals.MaxBy(g => g.TargetAmount)!.TargetAmount;
-    public uint size => contract.MaxCoopSize;
+    public uint maxCoopSize => contract.MaxCoopSize;
+    public double secondsSinceAllGoalsAchieved => coopStatus.SecondsSinceAllGoalsAchieved;
+    public double minutesPerToken => contract.MinutesPerToken;
 
     public double shippedEggs => coopStatus.TotalAmount;
     public double totalShippedEggs => shippedEggs + totalOfflineEggs;
@@ -43,7 +45,7 @@ public class Coop : IComparable<Coop>
         {
             throw new InvalidDataException("Cannot find coop, ResponseStatus = " + coopStatus.ResponseStatus);
         }
-
+        
         this.coopStatus = coopStatus;
         this.contract = contract;
         gradeSpec = contract.GradeSpecs.SingleOrDefault(g => g.Grade == coopStatus.Grade)!;
@@ -55,7 +57,7 @@ public class Coop : IComparable<Coop>
                                                          predictedSecondsRemaining -
                                                          coopStatus.SecondsSinceAllGoalsAchieved));
 
-        contributors = coopStatus.Contributors.Select(playerInfo => new Player(playerInfo,this)).ToList();
+        contributors = coopStatus.Contributors.Select(playerInfo => new Player(playerInfo, this)).ToList();
     }
 
     /// <summary>

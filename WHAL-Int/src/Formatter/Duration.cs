@@ -7,16 +7,19 @@ public class Duration : IComparable<Duration>
     public const int SECONDS_IN_AN_HOUR = SECONDS_IN_A_MINUTE * 60;
     public const int SECONDS_IN_A_DAY = SECONDS_IN_AN_HOUR * 24;
 
-    public long DurationInSeconds { get; set; } = 0;
+    public double DurationInSeconds { get; set; } = 0;
+    public double DurationInMinutes => DurationInSeconds / SECONDS_IN_A_MINUTE;
+    public double DurationInHours => DurationInSeconds / SECONDS_IN_AN_HOUR;
+    public double DurationInDays => DurationInSeconds / SECONDS_IN_A_DAY;
 
     public Duration(long durationInSeconds) => DurationInSeconds = durationInSeconds;
 
     public string Format()
     {
         // Find the total number of days, hours and minutes from the duration
-        long day = DurationInSeconds / SECONDS_IN_A_DAY;
-        long hour = (DurationInSeconds - day * SECONDS_IN_A_DAY) / SECONDS_IN_AN_HOUR;
-        long min = (DurationInSeconds - day * SECONDS_IN_A_DAY - hour * SECONDS_IN_AN_HOUR) / SECONDS_IN_A_MINUTE;
+        long day = (long) (DurationInSeconds / SECONDS_IN_A_DAY);
+        long hour = (long) ((DurationInSeconds - day * SECONDS_IN_A_DAY) / SECONDS_IN_AN_HOUR);
+        long min = (long) ((DurationInSeconds - day * SECONDS_IN_A_DAY - hour * SECONDS_IN_AN_HOUR) / SECONDS_IN_A_MINUTE);
 
         // Convert into string format of dd/hh/mm
         string coopDurationAsString = ""

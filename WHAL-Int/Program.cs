@@ -61,9 +61,7 @@ internal class Program
         }
 
         Console.Write("> ");
-        string input = Console.ReadLine();
-        int selectedContractIdx;
-        if (!int.TryParse(input, out selectedContractIdx))
+        if (!int.TryParse(Console.ReadLine(), out int selectedContractIdx))
         { // if input is not a number, take the first contract
             selectedContractIdx = 0;
         }
@@ -86,10 +84,10 @@ internal class Program
 
         Dictionary<string, string[]> coopCodesAndFlags = new() // create a dictionary to hold the maj coop codes by their coop flags
         {
-            { "SpeedRun", majCoops.Where(c => c.CoopFlags.SpeedRun == true).Select(c => c.Code).ToArray() },
-            { "FastRun" , majCoops.Where(c => c.CoopFlags.FastRun  == true).Select(c => c.Code).ToArray() },
-            { "AnyGrade", majCoops.Where(c => c.CoopFlags.AnyGrade == true).Select(c => c.Code).ToArray() },
-            { "Carry"   , majCoops.Where(c => c.CoopFlags.Carry    == true).Select(c => c.Code).ToArray() }
+            { "SpeedRun", majCoops.Where(c => c.CoopFlags.SpeedRun == true && c.Code != null).Select(c => c.Code!).ToArray() },
+            { "FastRun" , majCoops.Where(c => c.CoopFlags.FastRun  == true && c.Code != null).Select(c => c.Code!).ToArray() },
+            { "AnyGrade", majCoops.Where(c => c.CoopFlags.AnyGrade == true && c.Code != null).Select(c => c.Code!).ToArray() },
+            { "Carry"   , majCoops.Where(c => c.CoopFlags.Carry    == true && c.Code != null).Select(c => c.Code!).ToArray() }
         };
 
         Console.WriteLine("Coop codes:");
@@ -97,7 +95,7 @@ internal class Program
         {
             if (flag.Value) // if the flag is set, print the coop codes for that flag
             {
-                Console.WriteLine($"\t{flag.Key}: {String.Join(",", coopCodesAndFlags[flag.Key])}");
+                Console.WriteLine($"\t{flag.Key}: {string.Join(",", coopCodesAndFlags[flag.Key])}");
             }
         }
 
@@ -108,16 +106,15 @@ internal class Program
 
         var activeContract = await new ActiveContractBuilder(contractId).Build(); // build the active contract from the contract id
 
-        var coopCodes = coopCodesAndFlags
+        string[] coopCodes = [.. coopCodesAndFlags
             .Where(kvp => flags.ContainsKey(kvp.Key) && flags[kvp.Key]) // filter the coop codes by the flags that are set
             .ToDictionary().Values // get the values of the filtered coop codes
             .SelectMany(c => c) // flatten the coop codes into a single list
             .Where(c => !string.IsNullOrEmpty(c)) // filter out any empty coop codes
-            .Distinct() // remove duplicates
-            .ToArray(); // convert to an array
+            .Distinct()]; // convert to an array
 
         var tasks = new List<Task<Coop>>();
-        foreach (var coopCode in coopCodes)
+        foreach (string coopCode in coopCodes)
         { // loop through the coop codes and add them to the tasks list
             tasks.Add(activeContract.AddCoop(coopCode));
         }
@@ -142,12 +139,14 @@ internal class Program
 
         Console.WriteLine();
 
-
-        foreach (var player in orderedCoops.First().contributors)
-        {
-            Console.WriteLine($"{player.userName} | {player.contributionRatio}");
-        }
-        throw new NotImplementedException();
+        //Console.WriteLine($"{orderedCoops.ElementAt(2).CoopId}, {orderedCoops.ElementAt(2).PredictedDuration.Format()}");
+        //Console.WriteLine(string.Join("\n", orderedCoops.ElementAt(2).contributors.Select(c =>
+        //    $"{c.UserName}: {Math.Round(c.ContributionRatio, 3)}, {Math.Round(c.BuffTimeValue)}, {Math.Round(c.TeamworkScore, 3)}, {Math.Round(c.ContractScore)}"
+        //)));
+        ////Console.WriteLine(string.Join("\n", orderedCoops.ElementAt(2).contributors.Select(c =>
+        ////    $"{c.userName}: {Math.Round(c.contributionRatio, 3)}, {Math.Round(c.contributionRate,3)}, {Math.Round(c.offlineContribution, 3)}, {Math.Round(c.predictedContribution)}"
+        ////)));
+        //throw new NotImplementedException();
 
 
         /* ==========================
@@ -207,7 +206,7 @@ internal class Program
         Console.WriteLine($"""
             {"\x1b[92m"}========================= Output Start ========================={"\x1b[39m"}
 
-            {String.Join("\n", outputSegments)}
+            {string.Join("\n", outputSegments)}
 
             {"\x1b[92m"}=========================  Output End  ========================={"\x1b[39m"}
 

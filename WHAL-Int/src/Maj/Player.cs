@@ -12,53 +12,96 @@ public class Player
     private readonly ContractCoopStatusResponse.Types.ContributionInfo playerInfo;
     private readonly Coop coop;
 
-    public string userName => playerInfo.UserName;
+    public string UserName => playerInfo.UserName;
 
-    public double contribution => playerInfo.ContributionAmount;
-    public double offlineContribtuion => contribution
-        + (playerInfo.ContributionRate * (-(playerInfo.FarmInfo?.Timestamp) ?? 0));
-    public double predictedContribution => offlineContribtuion
+    // Contribution calculations
+    public double Contribution => playerInfo.ContributionAmount;
+    public double OfflineContribution => Contribution
+        + (playerInfo.ContributionRate * Math.Max(0,(-(playerInfo.FarmInfo?.Timestamp) ?? 0) - coop.secondsSinceAllGoalsAchieved));
+    public double PredictedContribution => OfflineContribution
         + (playerInfo.ContributionRate * Math.Max(0, coop.predictedSecondsRemaining));
-    public double contributionRatio => predictedContribution / (coop.eggGoal / coop.size);
+    public double ContributionRatio => PredictedContribution / (coop.eggGoal / coop.maxCoopSize);
 
     public Player(ContractCoopStatusResponse.Types.ContributionInfo playerInfo, Coop coop)
     {
-        this.playerInfo = playerInfo;
-        this.coop = coop;
+        this.playerInfo = playerInfo ?? throw new ArgumentNullException(nameof(playerInfo));
+        this.coop = coop ?? throw new ArgumentNullException(nameof(coop));
     }
 
+    // ================================================
+    // ================ CS Calulations ================
+    // ================================================
+
+    // Based coop score
     private short basePoints = 1;
-    private float durationPoints = 1 / 259200;
+    private double durationPoints = 1.0 / 259200.0;
     private double contractLength => coop.contractFarmMaximumTimeAllowed;
 
-    private float gradeMultiplier => coop.grade switch
+    // Grade multiplier
+    private double gradeMultiplier => coop.grade switch
     {
-        "GradeAaa" => 7f,
-        "GradeAa" => 5f,
-        "GradeA" => 3.5f,
-        "GradeB" => 2f,
-        "GradeC" => 1f,
+        "GradeAaa" => 7,
+        "GradeAa" => 5,
+        "GradeA" => 3.5,
+        "GradeB" => 2,
+        "GradeC" => 1,
 
         _ => throw new InvalidDataException("Unknown grade: " + coop.grade)
     };
 
     private int completionFactor = 1; // cases where completionPercent != 1 do not interest me
 
-    private double contributionFactor => contributionRatio <= 2.5
-        ? 3 * Math.Pow(contributionRatio,0.15) + 1
-        : 0.02221 * Math.Min(contributionRatio, 12.5) + 4.386486;
+    // Contribution score
+    private double contributionFactor => ContributionRatio <= 2.5
+        ? 3 * Math.Pow(ContributionRatio,0.15) + 1
+        : 0.02221 * Math.Min(ContributionRatio, 12.5) + 4.386486;
 
-    private double completionTimeBonus => 4 * Math.Pow(1 - (coop.PredictedDuration.DurationInSeconds / contractLength), 3) + 1;
+    // Completion time score
+    private double completionTimeBonus => 4.0 * Math.Pow(1.0 - (coop.PredictedDuration.DurationInSeconds / contractLength), 3.0) + 1.0;
 
-    private double teamWorkBonus => 0.19 * teamworkScore + 1;
-    private double teamworkScore => 0;
+    // Teamwork score
+    private double teamworkBonus => 0.19 * TeamworkScore + 1;
+    public double TeamworkScore => (5.0 * buffFactor + chickenRunFactor + tokenFactor) / 19.0;
 
-    public double contractScore =>
+    // Buff score
+    public double BuffTimeValue
+    {
+        get
+        {
+            double sum = 0;
+            for (int i = 0; i < playerInfo.BuffHistory.Count; i++)
+            {
+                var buff = playerInfo.BuffHistory[i];
+                double timeEquipped = i < playerInfo.BuffHistory.Count - 1
+                    ? buff.ServerTimestamp - playerInfo.BuffHistory[i + 1].ServerTimestamp
+                    : buff.ServerTimestamp + coop.predictedSecondsRemaining - coop.secondsSinceAllGoalsAchieved;
+
+                sum += timeEquipped * 7.5 * (buff.EggLayingRate - 1);
+                sum += timeEquipped * .75 * (buff.Earnings - 1);
+            }
+            return sum;
+        }
+    }
+    private double buffFactor => Math.Min(BuffTimeValue / coop.PredictedDuration.DurationInSeconds, 2);
+
+    // Chicken runs score (assuming max CRs)
+    private double chickenRunFactor => Math.Min(fcr * chickenRunCap, 6); // Assuming max CRs
+    private double fcr => Math.Max(12.0/(coop.maxCoopSize * coop.PredictedDuration.DurationInDays), 0.3);
+    private double chickenRunCap => Math.Min(Math.Ceiling((coop.PredictedDuration.DurationInDays * coop.maxCoopSize) / 2.0), 20);
+
+    // Token score (assuming max tval)
+    private double boostTokenAllotment => Math.Floor(coop.PredictedDuration.DurationInSeconds / (coop.minutesPerToken * 1.0));
+    private double tokenFactor => boostTokenAllotment <= 42
+        ? (2.0 / 3.0) * 3.0 + (8.0 / 3.0) * 3.0
+        : (200.0 / (7.0 * boostTokenAllotment)) * (0.07 * boostTokenAllotment)
+            + (800.0 / (7.0 * boostTokenAllotment)) * (0.07 * boostTokenAllotment);
+
+    public double ContractScore => Math.Ceiling(
         (basePoints + durationPoints * contractLength)
         * gradeMultiplier
         * completionFactor
         * contributionFactor
         * completionTimeBonus
-        * teamWorkBonus
-        * 187.5;
+        * teamworkBonus
+        * 187.5);
 }
