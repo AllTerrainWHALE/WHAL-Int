@@ -4,9 +4,6 @@ using WHAL_Int.EggIncApi;
 using WHAL_Int.Formatter;
 using WHAL_Int.Maj;
 
-using System.Windows.Forms;
-using System.Linq;
-
 namespace WHAL_Int;
 
 internal class Program
@@ -113,7 +110,7 @@ internal class Program
             .Where(c => !string.IsNullOrEmpty(c)) // filter out any empty coop codes
             .Distinct()]; // convert to an array
 
-        var tasks = new List<Task<Coop>>();
+        var tasks = new List<Task<Coop?>>();
         foreach (string coopCode in coopCodes)
         { // loop through the coop codes and add them to the tasks list
             tasks.Add(activeContract.AddCoop(coopCode));
@@ -121,7 +118,7 @@ internal class Program
 
         // wait for all tasks to complete and get the results
         var coops = await Task.WhenAll(tasks);
-        coops = coops.Where(c => c != null).ToArray(); // filter out any null coops
+        coops = [.. coops.Where(c => c != null)]; // filter out any null coops
         var orderedCoops = coops.OrderBy(x => x); // order the coops by their predicted duration
         if (reverse)
         { // if the reverse flag is set, reverse the order of the coops
@@ -248,7 +245,7 @@ internal class Program
         table.AddColumn("`  Coop   ", coop => $"[⧉](<https://eicoop-carpet.netlify.app/{coop.ContractId}/{coop.CoopId}>)`{StringFormatter.LeftAligned(coop.StrippedCoopId, 6)} ");
         //table.AddColumn(" Layrate ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.totalShippingRate, strLen: 5)}/h", 9));
         table.AddColumn(" Boosted ", coop => StringFormatter.Centered($"{coop.BoostedCount}", 9));
-        table.AddColumn("  Ship  ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.totalShippedEggs, strLen: 6)}", 8));
+        table.AddColumn("  Ship  ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.TotalShippedEggs, strLen: 6)}", 8));
         table.AddColumn(" Duration ", coop => StringFormatter.Centered(coop.PredictedDuration.DurationInSeconds < 8640000 ? coop.PredictedDuration.Format() : "too long", 10));
         table.AddColumn(" Finish`", coop => $"`{coop.PredictedCompletionTimeUnix.Format(DiscordTimestampDisplay.FullDateTime)}");
 
@@ -267,8 +264,8 @@ internal class Program
     {
         var table = new Table<Coop>(); // create a new table for the coops
         table.AddColumn("`  Coop   ", coop => $"[⧉](<https://eicoop-carpet.netlify.app/{coop.ContractId}/{coop.CoopId}>)`{StringFormatter.LeftAligned(coop.StrippedCoopId, 6)} ");
-        table.AddColumn(" Layrate ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.totalShippingRate, strLen: 5)}/h", 9));
-        table.AddColumn(" Shipped ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.totalShippedEggs, strLen: 7)}", 9));
+        table.AddColumn(" Layrate ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.TotalShippingRate, strLen: 5)}/h", 9));
+        table.AddColumn(" Shipped ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.TotalShippedEggs, strLen: 7)}", 9));
         table.AddColumn(" Duration ", coop => StringFormatter.Centered(coop.PredictedDuration.DurationInSeconds < 8640000 ? coop.PredictedDuration.Format() : "too long", 10));
         table.AddColumn(" Finish`", coop => $"`{coop.PredictedCompletionTimeUnix.Format(DiscordTimestampDisplay.FullDateTime)}");
 

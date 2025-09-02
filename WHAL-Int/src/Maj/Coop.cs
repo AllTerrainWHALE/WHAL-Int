@@ -10,18 +10,18 @@ public class Coop : IComparable<Coop>
     private readonly ContractCoopStatusResponse coopStatus;
     private readonly Contract contract;
     private readonly Contract.Types.GradeSpec gradeSpec;
-    public string grade => gradeSpec.Grade.ToString();
-    public double contractFarmMaximumTimeAllowed;
-    public double coopAllowableTimeRemaining => coopStatus.SecondsRemaining;
-    public double eggGoal => gradeSpec.Goals.MaxBy(g => g.TargetAmount)!.TargetAmount;
-    public uint maxCoopSize => contract.MaxCoopSize;
-    public double secondsSinceAllGoalsAchieved => coopStatus.SecondsSinceAllGoalsAchieved;
-    public double minutesPerToken => contract.MinutesPerToken;
+    public string Grade => gradeSpec.Grade.ToString();
+    public double ContractFarmMaximumTimeAllowed;
+    public double CoopAllowableTimeRemaining => coopStatus.SecondsRemaining;
+    public double EggGoal => gradeSpec.Goals.MaxBy(g => g.TargetAmount)!.TargetAmount;
+    public uint MaxCoopSize => contract.MaxCoopSize;
+    public double SecondsSinceAllGoalsAchieved => coopStatus.SecondsSinceAllGoalsAchieved;
+    public double MinutesPerToken => contract.MinutesPerToken;
 
-    public double shippedEggs => coopStatus.TotalAmount;
-    public double totalShippedEggs => shippedEggs + totalOfflineEggs;
+    public double ShippedEggs => coopStatus.TotalAmount;
+    public double TotalShippedEggs => ShippedEggs + totalOfflineEggs;
 
-    public double totalShippingRate => coopStatus.Contributors.Where(player => player.UserName != "[departed]").Sum(player => player.ContributionRate);
+    public double TotalShippingRate => coopStatus.Contributors.Where(player => player.UserName != "[departed]").Sum(player => player.ContributionRate);
 
     // `FarmInfo.Timestamp` is basically (LastSyncUnix - currentUnix) in seconds, so the negative is required in the maths
     // Credits to WHALE for figuring out the maths for this :happywiggle:
@@ -30,11 +30,11 @@ public class Coop : IComparable<Coop>
         coopStatus.Contributors.Sum(player =>
             player.ContributionRate * (-(player.FarmInfo?.Timestamp) ?? 0));
 
-    public double eggsRemaining => Math.Max(0, eggGoal - totalShippedEggs);
-    public long predictedSecondsRemaining => totalShippingRate != 0 ? Convert.ToInt64(eggsRemaining / totalShippingRate) : 0;
+    public double EggsRemaining => Math.Max(0, EggGoal - TotalShippedEggs);
+    public long PredictedSecondsRemaining => TotalShippingRate != 0 ? Convert.ToInt64(EggsRemaining / TotalShippingRate) : 0;
     private readonly long unixNow = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
-    public List<Player> contributors;
+    public List<Player> Contributors;
 
     // Assign CoopFlags
     public CoopFlags CoopFlags { get; set; } = new();
@@ -49,15 +49,15 @@ public class Coop : IComparable<Coop>
         this.coopStatus = coopStatus;
         this.contract = contract;
         gradeSpec = contract.GradeSpecs.SingleOrDefault(g => g.Grade == coopStatus.Grade)!;
-        contractFarmMaximumTimeAllowed = gradeSpec.LengthSeconds;
+        ContractFarmMaximumTimeAllowed = gradeSpec.LengthSeconds;
         PredictedCompletionTimeUnix =
-            new DiscordTimestamp(unixNow + predictedSecondsRemaining - (long)coopStatus.SecondsSinceAllGoalsAchieved);
-        PredictedDuration = new Duration(Convert.ToInt64(contractFarmMaximumTimeAllowed -
-                                                         coopAllowableTimeRemaining +
-                                                         predictedSecondsRemaining -
+            new DiscordTimestamp(unixNow + PredictedSecondsRemaining - (long)coopStatus.SecondsSinceAllGoalsAchieved);
+        PredictedDuration = new Duration(Convert.ToInt64(ContractFarmMaximumTimeAllowed -
+                                                         CoopAllowableTimeRemaining +
+                                                         PredictedSecondsRemaining -
                                                          coopStatus.SecondsSinceAllGoalsAchieved));
 
-        contributors = coopStatus.Contributors.Select(playerInfo => new Player(playerInfo, this)).ToList();
+        Contributors = coopStatus.Contributors.Select(playerInfo => new Player(playerInfo, this)).ToList();
     }
 
     /// <summary>

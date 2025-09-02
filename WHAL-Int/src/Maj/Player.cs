@@ -1,9 +1,4 @@
 using Ei;
-using Google.Protobuf.Collections;
-using Majcoops;
-using WHAL_Int.Formatter;
-
-using System.IO;
 
 namespace WHAL_Int.Maj;
 
@@ -17,10 +12,10 @@ public class Player
     // Contribution calculations
     public double Contribution => playerInfo.ContributionAmount;
     public double OfflineContribution => Contribution
-        + (playerInfo.ContributionRate * Math.Max(0,(-(playerInfo.FarmInfo?.Timestamp) ?? 0) - coop.secondsSinceAllGoalsAchieved));
+        + (playerInfo.ContributionRate * Math.Max(0,(-(playerInfo.FarmInfo?.Timestamp) ?? 0) - coop.SecondsSinceAllGoalsAchieved));
     public double PredictedContribution => OfflineContribution
-        + (playerInfo.ContributionRate * Math.Max(0, coop.predictedSecondsRemaining));
-    public double ContributionRatio => PredictedContribution / (coop.eggGoal / coop.maxCoopSize);
+        + (playerInfo.ContributionRate * Math.Max(0, coop.PredictedSecondsRemaining));
+    public double ContributionRatio => PredictedContribution / (coop.EggGoal / coop.MaxCoopSize);
 
     public Player(ContractCoopStatusResponse.Types.ContributionInfo playerInfo, Coop coop)
     {
@@ -35,10 +30,10 @@ public class Player
     // Based coop score
     private short basePoints = 1;
     private double durationPoints = 1.0 / 259200.0;
-    private double contractLength => coop.contractFarmMaximumTimeAllowed;
+    private double contractLength => coop.ContractFarmMaximumTimeAllowed;
 
     // Grade multiplier
-    private double gradeMultiplier => coop.grade switch
+    private double gradeMultiplier => coop.Grade switch
     {
         "GradeAaa" => 7,
         "GradeAa" => 5,
@@ -46,7 +41,7 @@ public class Player
         "GradeB" => 2,
         "GradeC" => 1,
 
-        _ => throw new InvalidDataException("Unknown grade: " + coop.grade)
+        _ => throw new InvalidDataException("Unknown grade: " + coop.Grade)
     };
 
     private int completionFactor = 1; // cases where completionPercent != 1 do not interest me
@@ -74,7 +69,7 @@ public class Player
                 var buff = playerInfo.BuffHistory[i];
                 double timeEquipped = i < playerInfo.BuffHistory.Count - 1
                     ? buff.ServerTimestamp - playerInfo.BuffHistory[i + 1].ServerTimestamp
-                    : buff.ServerTimestamp + coop.predictedSecondsRemaining - coop.secondsSinceAllGoalsAchieved;
+                    : buff.ServerTimestamp + coop.PredictedSecondsRemaining - coop.SecondsSinceAllGoalsAchieved;
 
                 sum += timeEquipped * 7.5 * (buff.EggLayingRate - 1);
                 sum += timeEquipped * .75 * (buff.Earnings - 1);
@@ -86,11 +81,11 @@ public class Player
 
     // Chicken runs score (assuming max CRs)
     private double chickenRunFactor => Math.Min(fcr * chickenRunCap, 6); // Assuming max CRs
-    private double fcr => Math.Max(12.0/(coop.maxCoopSize * coop.PredictedDuration.DurationInDays), 0.3);
-    private double chickenRunCap => Math.Min(Math.Ceiling((coop.PredictedDuration.DurationInDays * coop.maxCoopSize) / 2.0), 20);
+    private double fcr => Math.Max(12.0/(coop.MaxCoopSize * coop.PredictedDuration.DurationInDays), 0.3);
+    private double chickenRunCap => Math.Min(Math.Ceiling((coop.PredictedDuration.DurationInDays * coop.MaxCoopSize) / 2.0), 20);
 
     // Token score (assuming max tval)
-    private double boostTokenAllotment => Math.Floor(coop.PredictedDuration.DurationInSeconds / (coop.minutesPerToken * 1.0));
+    private double boostTokenAllotment => Math.Floor(coop.PredictedDuration.DurationInSeconds / (coop.MinutesPerToken * 1.0));
     private double tokenFactor => boostTokenAllotment <= 42
         ? (2.0 / 3.0) * 3.0 + (8.0 / 3.0) * 3.0
         : (200.0 / (7.0 * boostTokenAllotment)) * (0.07 * boostTokenAllotment)

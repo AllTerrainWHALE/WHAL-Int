@@ -2,9 +2,6 @@
 using Ei;
 using Majcoops;
 using Google.Protobuf;
-using Google.Protobuf.Collections;
-using System;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -50,7 +47,7 @@ public class Request
     {
         string url = $"https://eiapi-production.up.railway.app/majCoops?contract={contractId}";
 
-        var rawJson = await getRequest(url);
+        string rawJson = await getRequest(url);
         if (string.IsNullOrEmpty(rawJson))
         {
             throw new InvalidOperationException("Received empty JSON response.");
