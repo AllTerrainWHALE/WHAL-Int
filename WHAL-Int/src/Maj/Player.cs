@@ -1,20 +1,24 @@
 using Ei;
+using WHAL_Int.Formatter;
 
 namespace WHAL_Int.Maj;
 
-public class Player
+public class Player : IComparable<Player>
 {
     private readonly ContractCoopStatusResponse.Types.ContributionInfo playerInfo;
     private readonly Coop coop;
 
     public string UserName => playerInfo.UserName;
 
+    public bool Sink = false;
+
     // Contribution calculations
     public double Contribution => playerInfo.ContributionAmount;
+    public double ContributionRate => playerInfo.ContributionRate;
     public double OfflineContribution => Contribution
-        + (playerInfo.ContributionRate * Math.Max(0,(-(playerInfo.FarmInfo?.Timestamp) ?? 0) - coop.SecondsSinceAllGoalsAchieved));
+        + (ContributionRate * Math.Max(0,(-(playerInfo.FarmInfo?.Timestamp) ?? 0) - coop.SecondsSinceAllGoalsAchieved));
     public double PredictedContribution => OfflineContribution
-        + (playerInfo.ContributionRate * Math.Max(0, coop.PredictedSecondsRemaining));
+        + (ContributionRate * Math.Max(0, coop.PredictedSecondsRemaining));
     public double ContributionRatio => PredictedContribution / (coop.EggGoal / coop.MaxCoopSize);
 
     public Player(ContractCoopStatusResponse.Types.ContributionInfo playerInfo, Coop coop)
@@ -56,7 +60,7 @@ public class Player
 
     // Teamwork score
     private double teamworkBonus => 0.19 * TeamworkScore + 1;
-    public double TeamworkScore => (5.0 * buffFactor + chickenRunFactor + tokenFactor) / 19.0;
+    public double TeamworkScore => (5.0 * buffFactor + ChickenRunFactor + TokenFactor) / 19.0;
 
     // Buff score
     public double BuffTimeValue
@@ -79,14 +83,14 @@ public class Player
     }
     private double buffFactor => Math.Min(BuffTimeValue / coop.PredictedDuration.DurationInSeconds, 2);
 
-    // Chicken runs score (assuming max CRs)
-    private double chickenRunFactor => Math.Min(fcr * chickenRunCap, 6); // Assuming max CRs
-    private double fcr => Math.Max(12.0/(coop.MaxCoopSize * coop.PredictedDuration.DurationInDays), 0.3);
-    private double chickenRunCap => Math.Min(Math.Ceiling((coop.PredictedDuration.DurationInDays * coop.MaxCoopSize) / 2.0), 20);
+    // Chicken runs score (assuming n-1 CRs)
+    public double ChickenRunFactor => Math.Min(fcr * (coop.MaxCoopSize-1.0), 6); // Assuming n-1 CRs
+    private double fcr => Math.Max(12.0/(coop.MaxCoopSize * (contractLength / Duration.SECONDS_IN_A_DAY)), 0.3);
+    private double chickenRunCap => Math.Min(Math.Ceiling(((contractLength / Duration.SECONDS_IN_A_DAY) * coop.MaxCoopSize) / 2.0), 20);
 
     // Token score (assuming max tval)
     private double boostTokenAllotment => Math.Floor(coop.PredictedDuration.DurationInSeconds / (coop.MinutesPerToken * 1.0));
-    private double tokenFactor => boostTokenAllotment <= 42
+    public double TokenFactor => boostTokenAllotment <= 42
         ? (2.0 / 3.0) * 3.0 + (8.0 / 3.0) * 3.0
         : (200.0 / (7.0 * boostTokenAllotment)) * (0.07 * boostTokenAllotment)
             + (800.0 / (7.0 * boostTokenAllotment)) * (0.07 * boostTokenAllotment);
@@ -99,4 +103,15 @@ public class Player
         * completionTimeBonus
         * teamworkBonus
         * 187.5);
+
+    public int CompareTo(Player? other)
+    {
+        if (other is null) return 1;
+        int result = other.ContractScore.CompareTo(ContractScore);
+        if (result == 0)
+            result = other.ContributionRate.CompareTo(ContributionRate);
+        if (result == 0)
+            result = other.OfflineContribution.CompareTo(OfflineContribution);
+        return result;
+    }
 }

@@ -19,20 +19,23 @@ public class Coop : IComparable<Coop>
     public double MinutesPerToken => contract.MinutesPerToken;
 
     public double ShippedEggs => coopStatus.TotalAmount;
-    public double TotalShippedEggs => ShippedEggs + totalOfflineEggs;
+    public double TotalShippedEggs => ShippedEggs + offlineEggs;
+    public double ProjectedShippedEggs => ShippedEggs + (TotalShippingRate * CoopAllowableTimeRemaining);
 
     public double TotalShippingRate => coopStatus.Contributors.Where(player => player.UserName != "[departed]").Sum(player => player.ContributionRate);
 
     // `FarmInfo.Timestamp` is basically (LastSyncUnix - currentUnix) in seconds, so the negative is required in the maths
     // Credits to WHALE for figuring out the maths for this :happywiggle:
     // `FarmInfo` is also nullable if the player is `[departed]` or has a private farm
-    private double totalOfflineEggs =>
+    private double offlineEggs =>
         coopStatus.Contributors.Sum(player =>
             player.ContributionRate * (-(player.FarmInfo?.Timestamp) ?? 0));
 
     public double EggsRemaining => Math.Max(0, EggGoal - TotalShippedEggs);
     public long PredictedSecondsRemaining => TotalShippingRate != 0 ? Convert.ToInt64(EggsRemaining / TotalShippingRate) : 0;
     private readonly long unixNow = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+
+    public bool OnTrack => ProjectedShippedEggs > EggGoal;
 
     public List<Player> Contributors;
 

@@ -8,6 +8,7 @@ namespace WHAL_Int;
 
 internal class Program
 {
+    private static bool debug = false;
     public static async Task Main(string[] args)
     {
         if (string.IsNullOrEmpty(Config.EID))
@@ -20,7 +21,7 @@ internal class Program
            =  Command line args  =
            ======================= */
 
-        bool debug = args.Contains("--debug") || args.Contains("-d");
+        debug = args.Contains("--debug") || args.Contains("-d");
         bool reverse = args.Contains("--reverse") || args.Contains("-r");
         Dictionary<string, bool> flags = new()
         {
@@ -210,7 +211,7 @@ internal class Program
             """); // "\x1b[92m" is green and "\x1b[39m" is reset color
 
 
-        foreach (var (segment,index) in outputSegments.Select((v,i) => (v,i))) // print each segment of the sruc table
+        foreach (var (segment,index) in outputSegments.Select((v,i) => (v,i))) // print each segment of the !!fuc table
         {
             Console.Write($"Press ENTER to copy segment {index+1}/{outputSegments.Count()} ");
             Console.WriteLine(index == 0 ? "(HEADER)" : index == outputSegments.Count() - 1 ? "(FOOTER)" : "");
@@ -221,58 +222,127 @@ internal class Program
 
     private static string SRTable(Coop[] coops)
     {
-        var table = new Table<Coop>(); // create a new table for the coops
-        table.AddColumn("`  Coop   ", coop => $"[⧉](<https://eicoop-carpet.netlify.app/{coop.ContractId}/{coop.CoopId}>)`{StringFormatter.LeftAligned(coop.StrippedCoopId, 6)} ");
-        table.AddColumn(" Boosted ", coop => StringFormatter.Centered($"{coop.BoostedCount}", 9));
-        table.AddColumn(" Tokens ", coop => StringFormatter.Centered($"{coop.TotalTokens}", 8));
-        table.AddColumn(" Duration ", coop => StringFormatter.Centered(coop.PredictedDuration.DurationInSeconds < 8640000 ? coop.PredictedDuration.Format() : "too long", 10));
-        table.AddColumn(" Finish`", coop => $"`{coop.PredictedCompletionTimeUnix.Format(DiscordTimestampDisplay.FullDateTime)}");
+        // Get list of all players in the coops, and order them
+        var players = coops.Where(c => c.OnTrack)
+            .SelectMany(c => c.Contributors)
+            .Where(p => p.UserName != "[departed]")
+            .OrderBy(p => p);
+        var playersSubset = players.Take(10);
 
-        // add the coops to the table
-        foreach (var coop in coops) { table.AddDataPoint(coop); }
+        // Create table for coop stats
+        var coopTable = new Table<Coop>(); // create a new table for the coops
+        coopTable.AddColumn("`  Coop  ", coop => $"[⧉](<https://eicoop-carpet.netlify.app/{coop.ContractId}/{coop.CoopId}>)`{StringFormatter.LeftAligned(coop.StrippedCoopId, 6)}");
+        coopTable.AddColumn("Boosted", coop => StringFormatter.Centered($"{coop.BoostedCount}", 7));
+        coopTable.AddColumn("Tokens", coop => StringFormatter.Centered($"{coop.TotalTokens}", 6));
+        coopTable.AddColumn("Duration", coop => StringFormatter.Centered(coop.PredictedDuration.DurationInSeconds < 8640000 ? coop.PredictedDuration.Format() : "too long", 8));
+        coopTable.AddColumn("Finish`", coop => $"`{coop.PredictedCompletionTimeUnix.Format(DiscordTimestampDisplay.FullDateTime)}");
+
+        // Create table for player stats
+        int playerRow = 0;
+        int playerRowDigits = (int)Math.Floor(Math.Log10(Math.Max(1, players.Count()))) + 1; // get the number of digits in the player count for formatting purposes
+
+        var playerTable = new Table<Player>(); // create a new table for the players
+        playerTable.AddColumn(new string('#', playerRowDigits), _ => StringFormatter.RightAligned($"{++playerRow}", playerRowDigits, fillChar:'0'), playerRowDigits); // auto incrementing row number column
+        playerTable.AddColumn(" Player ", player => $"{StringFormatter.LeftAligned(player.UserName.Substring(0,Math.Min(8, player.UserName.Length)), 8)}");
+        playerTable.AddColumn("  CS  ", player => StringFormatter.Centered($"{Math.Round(player.ContractScore)}", 6));
+        playerTable.AddColumn(" Rate ", player => StringFormatter.Centered($"{StringFormatter.BigNumberToString(player.ContributionRate * Duration.SECONDS_IN_AN_HOUR, strLen:6)}", 6));
+
+        if (debug) // if debug flag is set, add additional columns to the player table
+        {
+            playerTable.AddColumn(" CR ", player => StringFormatter.Centered($"{Math.Round(player.ContributionRatio, 2)}", 6));
+            playerTable.AddColumn(" TS ", player => StringFormatter.Centered($"{Math.Round(player.TeamworkScore, 2)}", 6));
+            playerTable.AddColumn(" CR_F ", player => StringFormatter.Centered($"{Math.Round(player.ChickenRunFactor, 2)}", 6));
+            playerTable.AddColumn("Buff_F", player => StringFormatter.Centered($"{Math.Round(player.BuffTimeValue, 2)}", 6));
+            playerTable.AddColumn("Tok_F ", player => StringFormatter.Centered($"{Math.Round(player.TokenFactor, 2)}", 6));
+        }
+
+        // Add the coops and players to the tables
+        foreach (var coop in coops) { coopTable.AddDataPoint(coop); }
+        foreach (var player in playersSubset) { playerTable.AddDataPoint(player); }
+
+        double averageCS = players.Any() ? Math.Ceiling(players.Select(p => p.ContractScore).Average()) : 0;
 
         return $"""
-            **`{StringFormatter.Centered(" Speedruns ", table.GetHeader().Length-2, fillChar: '—')}`**
-            {table.GetHeader()}
-            {table.GetTable()}
+            **`{StringFormatter.Centered(" Speedruns ", coopTable.GetHeader().Length+1, fillChar: '—')}`**
+            {coopTable.GetHeader()}
+            {coopTable.GetTable()}
             `Primary order based off of duration`
+            ```
+            {playerTable.GetHeader()}
+            {new string('—', playerTable.GetHeader().Length+2)}
+            {playerTable.GetTable()}
+            {new string([.. Enumerable.Range(0,(playerTable.GetHeader().Length + 2)).Select(i => i % 2 == 0 ? '—' : ' ')])}
+            Avg. CS -> {(averageCS > 0 ? averageCS : "null")}
+            {new string('—', playerTable.GetHeader().Length + 2)}
+            Only showing top {playersSubset.Count()} players. CS calculations assume n-1 CRs and max Tval.
+            ```
             """;
     }
 
     private static string FRTable(Coop[] coops)
     {
-        var table = new Table<Coop>(); // create a new table for the coops
-        table.AddColumn("`  Coop   ", coop => $"[⧉](<https://eicoop-carpet.netlify.app/{coop.ContractId}/{coop.CoopId}>)`{StringFormatter.LeftAligned(coop.StrippedCoopId, 6)} ");
-        //table.AddColumn(" Layrate ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.totalShippingRate, strLen: 5)}/h", 9));
-        table.AddColumn(" Boosted ", coop => StringFormatter.Centered($"{coop.BoostedCount}", 9));
-        table.AddColumn("  Ship  ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.TotalShippedEggs, strLen: 6)}", 8));
-        table.AddColumn(" Duration ", coop => StringFormatter.Centered(coop.PredictedDuration.DurationInSeconds < 8640000 ? coop.PredictedDuration.Format() : "too long", 10));
-        table.AddColumn(" Finish`", coop => $"`{coop.PredictedCompletionTimeUnix.Format(DiscordTimestampDisplay.FullDateTime)}");
+        // Get list of all players in the coops, and order them
+        var players = coops.Where(c => c.OnTrack)
+            .SelectMany(c => c.Contributors)
+            .Where(p => p.UserName != "[departed]")
+            .OrderBy(p => p);
+        var playersSubset = players.Take(10);
 
-        // add the coops to the table
-        foreach (var coop in coops) { table.AddDataPoint(coop); }
+        // Create table for coop stats
+        var coopTable = new Table<Coop>(); // create a new table for the coops
+        coopTable.AddColumn("`  Coop  ", coop => $"[⧉](<https://eicoop-carpet.netlify.app/{coop.ContractId}/{coop.CoopId}>)`{StringFormatter.LeftAligned(coop.StrippedCoopId, 6)}");
+        //table.AddColumn(" Layrate ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.totalShippingRate, strLen: 5)}/h", 9));
+        coopTable.AddColumn("Boosted", coop => StringFormatter.Centered($"{coop.BoostedCount}", 7));
+        coopTable.AddColumn(" Ship ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.TotalShippedEggs, strLen: 6)}", 6));
+        coopTable.AddColumn("Duration", coop => StringFormatter.Centered(coop.PredictedDuration.DurationInSeconds < 8640000 ? coop.PredictedDuration.Format() : "too long", 8));
+        coopTable.AddColumn("Finish`", coop => $"`{coop.PredictedCompletionTimeUnix.Format(DiscordTimestampDisplay.FullDateTime)}");
+
+        // Create table for player stats
+        int playerRow = 0;
+        int playerRowDigits = (int)Math.Floor(Math.Log10(Math.Max(1, players.Count()))) + 1; // get the number of digits in the player count for formatting purposes
+
+        var playerTable = new Table<Player>(); // create a new table for the players
+        playerTable.AddColumn(new string('#', playerRowDigits), _ => StringFormatter.RightAligned($"{++playerRow}", playerRowDigits, fillChar: '0'), playerRowDigits); // auto incrementing row number column
+        playerTable.AddColumn(" Player ", player => $"{StringFormatter.LeftAligned(player.UserName.Substring(0, Math.Min(8, player.UserName.Length)), 8)}");
+        playerTable.AddColumn("  CS  ", player => StringFormatter.Centered($"{Math.Round(player.ContractScore)}", 6));
+        playerTable.AddColumn(" Rate ", player => StringFormatter.Centered($"{StringFormatter.BigNumberToString(player.ContributionRate * Duration.SECONDS_IN_AN_HOUR, strLen: 6)}", 6));
+
+        // Add the coops and players to the tables
+        foreach (var coop in coops) { coopTable.AddDataPoint(coop); }
+        foreach (var player in playersSubset) { playerTable.AddDataPoint(player); }
+
+        double averageCS = players.Any() ? Math.Ceiling(players.Select(p => p.ContractScore).Average()) : 0;
 
         return $"""
-            **`{StringFormatter.Centered(" Fastruns ", table.GetHeader().Length - 2, fillChar: '—')}`**
-            {table.GetHeader()}
-            {table.GetTable()}
+            **`{StringFormatter.Centered(" Fastruns ", coopTable.GetHeader().Length+1, fillChar: '—')}`**
+            {coopTable.GetHeader()}
+            {coopTable.GetTable()}
             `Primary order based off of duration`
+            ```
+            {playerTable.GetHeader()}
+            {new string('—', playerTable.GetHeader().Length+2)}
+            {playerTable.GetTable()}
+            {new string([.. Enumerable.Range(0, (playerTable.GetHeader().Length + 2)).Select(i => i % 2 == 0 ? '—' : ' ')])}
+            Avg. CS -> {averageCS}
+            {new string('—', playerTable.GetHeader().Length+2)}
+            Only showing top {playersSubset.Count()} players. CS calculations assume n-1 CRs and max Tval.
+            ```
             """;
     }
 
     private static string AGTable(Coop[] coops)
     {
         var table = new Table<Coop>(); // create a new table for the coops
-        table.AddColumn("`  Coop   ", coop => $"[⧉](<https://eicoop-carpet.netlify.app/{coop.ContractId}/{coop.CoopId}>)`{StringFormatter.LeftAligned(coop.StrippedCoopId, 6)} ");
-        table.AddColumn(" Layrate ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.TotalShippingRate, strLen: 5)}/h", 9));
-        table.AddColumn(" Shipped ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.TotalShippedEggs, strLen: 7)}", 9));
-        table.AddColumn(" Duration ", coop => StringFormatter.Centered(coop.PredictedDuration.DurationInSeconds < 8640000 ? coop.PredictedDuration.Format() : "too long", 10));
-        table.AddColumn(" Finish`", coop => $"`{coop.PredictedCompletionTimeUnix.Format(DiscordTimestampDisplay.FullDateTime)}");
+        table.AddColumn("`  Coop  ", coop => $"[⧉](<https://eicoop-carpet.netlify.app/{coop.ContractId}/{coop.CoopId}>)`{StringFormatter.LeftAligned(coop.StrippedCoopId, 6)}");
+        table.AddColumn("  Rate  ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.TotalShippingRate, strLen: 6)}/h", 8));
+        table.AddColumn(" Ship ", coop => StringFormatter.Centered($"{StringFormatter.BigNumberToString(coop.TotalShippedEggs, strLen: 6)}", 6));
+        table.AddColumn("Duration", coop => StringFormatter.Centered(coop.PredictedDuration.DurationInSeconds < 8640000 ? coop.PredictedDuration.Format() : "too long", 8));
+        table.AddColumn("Finish`", coop => $"`{coop.PredictedCompletionTimeUnix.Format(DiscordTimestampDisplay.FullDateTime)}");
 
         // add the coops to the table
         foreach (var coop in coops) { table.AddDataPoint(coop); }
         return $"""
-            **`{StringFormatter.Centered(" Anygrades ", table.GetHeader().Length - 2, fillChar: '—')}`**
+            **`{StringFormatter.Centered(" Anygrades ", table.GetHeader().Length+1, fillChar: '—')}`**
             {table.GetHeader()}
             {table.GetTable()}
             `Primary order based off of duration`
