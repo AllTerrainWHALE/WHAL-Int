@@ -27,7 +27,8 @@ internal class Program
         {
             { "SpeedRun", args.Contains("--speedrun") || args.Contains("-sr") },
             { "FastRun" , args.Contains("--fastrun")  || args.Contains("-fr") },
-            { "AnyGrade", args.Contains("--anygrade") || args.Contains("-ag") }
+            { "AnyGrade", args.Contains("--anygrade") || args.Contains("-ag") },
+            { "Carry"   , args.Contains("--carry")    || args.Contains("-c")  }
         };
         if (!flags.ContainsValue(true)) // if no flags are set, set SR and FR flags
         {
@@ -187,6 +188,15 @@ internal class Program
             starter = "_ _"; // reset the starter to an empty string so it doesn't repeat in the next segment
         }
 
+        if (flags["Carry"] && orderedCoops.Any(c => c.CoopFlags.Carry == true)) // if the anygrade flag is set and there are anygrade coops
+        {
+            outputSegments.AddRange(StringFormatter.SplitToCharLimitByLines($"""
+                {starter}
+                {FRTable(orderedCoops.Where(c => c.CoopFlags.Carry == true && c.CoopId.Substring(0,3) != "f--").ToArray())}
+                """));
+            starter = "_ _"; // reset the starter to an empty string so it doesn't repeat in the next segment
+        }
+
         outputSegments.Add("""
             _ _
             *`!!fuc` to summon an update!*
@@ -242,10 +252,10 @@ internal class Program
         int playerRowDigits = (int)Math.Floor(Math.Log10(Math.Max(1, players.Count()))) + 1; // get the number of digits in the player count for formatting purposes
 
         var playerTable = new Table<Player>(); // create a new table for the players
-        playerTable.AddColumn(new string('#', playerRowDigits), _ => StringFormatter.RightAligned($"{++playerRow}", playerRowDigits, fillChar:'0'), playerRowDigits); // auto incrementing row number column
-        playerTable.AddColumn(" Player ", player => $"{StringFormatter.LeftAligned(player.UserName.Substring(0,Math.Min(8, player.UserName.Length)), 8)}");
+        playerTable.AddColumn(new string('#', playerRowDigits), _ => StringFormatter.RightAligned($"{++playerRow}", playerRowDigits, fillChar: '0'), playerRowDigits); // auto incrementing row number column
+        playerTable.AddColumn(" Player ", player => $"{StringFormatter.LeftAligned(player.UserName.Substring(0, Math.Min(8, player.UserName.Length)), 8)}");
         playerTable.AddColumn("  CS  ", player => StringFormatter.Centered($"{Math.Round(player.ContractScore)}", 6));
-        playerTable.AddColumn(" Rate ", player => StringFormatter.Centered($"{StringFormatter.BigNumberToString(player.ContributionRate * Duration.SECONDS_IN_AN_HOUR, strLen:6)}", 6));
+        playerTable.AddColumn(" Rate ", player => StringFormatter.Centered($"{StringFormatter.BigNumberToString(player.ContributionRate * Duration.SECONDS_IN_AN_HOUR, strLen: 6)}", 6));
 
         if (debug) // if debug flag is set, add additional columns to the player table
         {
@@ -268,13 +278,14 @@ internal class Program
             {coopTable.GetTable()}
             `Primary order based off of duration`
             ```
-            {playerTable.GetHeader()}
-            {new string('—', playerTable.GetHeader().Length+2)}
-            {playerTable.GetTable()}
-            {new string([.. Enumerable.Range(0,(playerTable.GetHeader().Length + 2)).Select(i => i % 2 == 0 ? '—' : ' ')])}
-            Avg. CS -> {(averageCS > 0 ? averageCS : "null")}
-            {new string('—', playerTable.GetHeader().Length + 2)}
-            Only showing top {playersSubset.Count()} players. CS calculations assume n-1 CRs and max Tval.
+            { playerTable.GetHeader()}
+            { new string('—', playerTable.GetHeader().Length + 2)}
+            { playerTable.GetTable()}
+            { new string([.. Enumerable.Range(0, (playerTable.GetHeader().Length + 2)).Select(i => i % 2 == 0 ? '—' : ' ')])}
+            Avg.CS-> { (averageCS > 0 ? averageCS : "null")}
+            { new string('—', playerTable.GetHeader().Length + 2)}
+            Only showing top {playersSubset.Count()} players. CS calculations assume n-1 CRs {(coops.All(c => c.IsLeggacy) ? "and max tval."
+            : "\nCS likely off due to uncertainty in new formula understanding.")}
             ```
             """;
     }
@@ -320,12 +331,13 @@ internal class Program
             `Primary order based off of duration`
             ```
             {playerTable.GetHeader()}
-            {new string('—', playerTable.GetHeader().Length+2)}
+            {new string('—', playerTable.GetHeader().Length + 2)}
             {playerTable.GetTable()}
             {new string([.. Enumerable.Range(0, (playerTable.GetHeader().Length + 2)).Select(i => i % 2 == 0 ? '—' : ' ')])}
             Avg. CS -> {averageCS}
-            {new string('—', playerTable.GetHeader().Length+2)}
-            Only showing top {playersSubset.Count()} players. CS calculations assume n-1 CRs and max Tval.
+            {new string('—', playerTable.GetHeader().Length + 2)}
+            Only showing top {playersSubset.Count()} players. CS calculations assume n-1 CRs {(coops.All(c => c.IsLeggacy) ? "and max tval."
+            : "\nCS likely off due to uncertainty in new formula understanding.")}
             ```
             """;
     }

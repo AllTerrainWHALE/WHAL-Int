@@ -10,6 +10,8 @@ public class Coop : IComparable<Coop>
     private readonly ContractCoopStatusResponse coopStatus;
     private readonly Contract contract;
     private readonly Contract.Types.GradeSpec gradeSpec;
+
+    public bool IsLeggacy => contract.Leggacy;
     public string Grade => gradeSpec.Grade.ToString();
     public double ContractFarmMaximumTimeAllowed;
     public double CoopAllowableTimeRemaining => coopStatus.SecondsRemaining;
@@ -34,6 +36,7 @@ public class Coop : IComparable<Coop>
     public double EggsRemaining => Math.Max(0, EggGoal - TotalShippedEggs);
     public long PredictedSecondsRemaining => TotalShippingRate != 0 ? Convert.ToInt64(EggsRemaining / TotalShippingRate) : 0;
     private readonly long unixNow = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+
 
     public bool OnTrack => ProjectedShippedEggs > EggGoal;
 
