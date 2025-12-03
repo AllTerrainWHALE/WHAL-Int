@@ -14,7 +14,7 @@ public class CoopBuilder
         this.coopCode = coopCode;
     }
 
-    public async Task<Coop> Build()
+    public async Task<Coop?> Build()
     {
         var coopStatus = await Request.GetCoopStatus(contract.Identifier, coopCode);
 

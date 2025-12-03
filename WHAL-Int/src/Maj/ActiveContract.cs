@@ -10,11 +10,12 @@ public class ActiveContract
 
     public ActiveContract(Contract contract) => this.contract = contract;
 
-    public async Task<Coop> AddCoop(string coopCode)
+    public async Task<Coop?> AddCoop(string coopCode)
     {
         CoopBuilder builder = new(contract, coopCode);
-        Coop coop = await builder.Build();
-        coops.Add(coop);
+        Coop? coop = await builder.Build();
+        if (coop != null)
+            coops.Add(coop);
         return coop;
     }
 }

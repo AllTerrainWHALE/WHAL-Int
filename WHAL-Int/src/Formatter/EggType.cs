@@ -1,9 +1,8 @@
 using Ei;
-using System.ComponentModel;
 
 namespace WHAL_Int.Formatter;
 
-class EggType
+internal class EggType
 {
     public static string ToDiscordEmoji(Egg eggType)
     {

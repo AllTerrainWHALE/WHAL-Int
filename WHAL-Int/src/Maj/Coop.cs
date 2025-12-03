@@ -1,4 +1,5 @@
 using Ei;
+using Google.Protobuf.Collections;
 using Majcoops;
 using WHAL_Int.Formatter;
 
@@ -7,34 +8,42 @@ namespace WHAL_Int.Maj;
 public class Coop : IComparable<Coop>
 {
     private readonly ContractCoopStatusResponse coopStatus;
+    private readonly Contract contract;
     private readonly Contract.Types.GradeSpec gradeSpec;
-    private double contractFarmMaximumTimeAllowed;
-    private double coopAllowableTimeRemaining => coopStatus.SecondsRemaining;
-    private double eggGoal => gradeSpec.Goals.MaxBy(g => g.TargetAmount)!.TargetAmount;
-    public double shippedEggs => coopStatus.TotalAmount;
-    public double totalShippedEggs => shippedEggs + totalOfflineEggs;
 
-    public double totalShippingRate => coopStatus.Contributors.Where(player => player.UserName != "[departed]").Sum(player => player.ContributionRate);
+    public bool IsLeggacy => contract.Leggacy;
+    public string Grade => gradeSpec.Grade.ToString();
+    public double ContractFarmMaximumTimeAllowed;
+    public double CoopAllowableTimeRemaining => coopStatus.SecondsRemaining;
+    public double EggGoal => gradeSpec.Goals.MaxBy(g => g.TargetAmount)!.TargetAmount;
+    public uint MaxCoopSize => contract.MaxCoopSize;
+    public double SecondsSinceAllGoalsAchieved => coopStatus.SecondsSinceAllGoalsAchieved;
+    public double MinutesPerToken => contract.MinutesPerToken;
+
+    public double ShippedEggs => coopStatus.TotalAmount;
+    public double TotalShippedEggs => ShippedEggs + offlineEggs;
+    public double ProjectedShippedEggs => ShippedEggs + (TotalShippingRate * CoopAllowableTimeRemaining);
+
+    public double TotalShippingRate => coopStatus.Contributors.Where(player => player.UserName != "[departed]").Sum(player => player.ContributionRate);
 
     // `FarmInfo.Timestamp` is basically (LastSyncUnix - currentUnix) in seconds, so the negative is required in the maths
     // Credits to WHALE for figuring out the maths for this :happywiggle:
     // `FarmInfo` is also nullable if the player is `[departed]` or has a private farm
-    private double totalOfflineEggs =>
+    private double offlineEggs =>
         coopStatus.Contributors.Sum(player =>
             player.ContributionRate * (-(player.FarmInfo?.Timestamp) ?? 0));
 
-    private double eggsRemaining => Math.Max(0, eggGoal - totalShippedEggs);
-    private long predictedSecondsRemaining => totalShippingRate != 0 ? Convert.ToInt64(eggsRemaining / totalShippingRate) : 0;
+    public double EggsRemaining => Math.Max(0, EggGoal - TotalShippedEggs);
+    public long PredictedSecondsRemaining => TotalShippingRate != 0 ? Convert.ToInt64(EggsRemaining / TotalShippingRate) : 0;
     private readonly long unixNow = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
+
+    public bool OnTrack => ProjectedShippedEggs > EggGoal;
+
+    public List<Player> Contributors;
+
     // Assign CoopFlags
-    public CoopFlags CoopFlags { get; set; } = new CoopFlags
-    {
-        AnyGrade = false,
-        Carry = false,
-        FastRun = false,
-        SpeedRun = false
-    };
+    public CoopFlags CoopFlags { get; set; } = new();
 
     public Coop(ContractCoopStatusResponse coopStatus, Contract contract)
     {
@@ -42,16 +51,19 @@ public class Coop : IComparable<Coop>
         {
             throw new InvalidDataException("Cannot find coop, ResponseStatus = " + coopStatus.ResponseStatus);
         }
-
+        
         this.coopStatus = coopStatus;
+        this.contract = contract;
         gradeSpec = contract.GradeSpecs.SingleOrDefault(g => g.Grade == coopStatus.Grade)!;
-        contractFarmMaximumTimeAllowed = gradeSpec.LengthSeconds;
+        ContractFarmMaximumTimeAllowed = gradeSpec.LengthSeconds;
         PredictedCompletionTimeUnix =
-            new DiscordTimestamp(unixNow + predictedSecondsRemaining - (long)coopStatus.SecondsSinceAllGoalsAchieved);
-        PredictedDuration = new Duration(Convert.ToInt64(contractFarmMaximumTimeAllowed -
-                                                         coopAllowableTimeRemaining +
-                                                         predictedSecondsRemaining -
+            new DiscordTimestamp(unixNow + PredictedSecondsRemaining - (long)coopStatus.SecondsSinceAllGoalsAchieved);
+        PredictedDuration = new Duration(Convert.ToInt64(ContractFarmMaximumTimeAllowed -
+                                                         CoopAllowableTimeRemaining +
+                                                         PredictedSecondsRemaining -
                                                          coopStatus.SecondsSinceAllGoalsAchieved));
+
+        Contributors = coopStatus.Contributors.Select(playerInfo => new Player(playerInfo, this)).ToList();
     }
 
     /// <summary>
