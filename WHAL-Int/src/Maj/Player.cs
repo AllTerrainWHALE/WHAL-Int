@@ -64,7 +64,7 @@ public class Player : IComparable<Player>
     //public double TeamworkScore => (5.0 * buffFactor + ChickenRunFactor + TokenFactor) / 19.0; old cxp-v0.2.0
     public double TeamworkScore => coop.IsLeggacy
         ? (5.0 * buffFactor + ChickenRunFactor + TokenFactor) / 19.0 // OLD
-        : (5.0 * buffFactor + ChickenRunFactor) / 19.0; // NEW
+        : 5.0/19.0 * (buffFactor + ChickenRunFactor); // NEW
 
     // Buff score
     public double BuffTimeValue
@@ -83,23 +83,28 @@ public class Player : IComparable<Player>
                     ? buff.EggLayingRate - 1 // OLD
                     : buff.EggLayingRate switch //NEW
                     {
+                        1.00 => 0.0,
                         1.05 => 0.625,
                         1.08 => 1.000,
-                        >= 1.12 => 1.500,
-                        _ => 0,
+                        _ => 1.500,
                     };
+                //if (elrBTV == 0.0) Console.Error.WriteLine($"EggLayingRate BuffTimeValue not found, elrBTV = {elrBTV}");
+
                 double earningBTV = coop.IsLeggacy
                     ? buff.Earnings - 1 //OLD
                     : buff.Earnings switch //NEW
                     {
+                        1.0 => 0.0,
                         1.2 => 0.150,
                         1.3 => 0.225,
-                        >= 1.5 => 0.375,
-                        _ => 0,
+                        _ => 0.375,
                     };
+                //if (earningBTV == 0.0) Console.Error.WriteLine($"Earnings BuffTimeValue not found, earningBTV = {earningBTV}");
 
-                sum += timeEquipped * 7.5 * elrBTV;
-                sum += timeEquipped * .75 * earningBTV;
+                //Console.WriteLine($"{buff.EggLayingRate} -> {elrBTV} | {buff.Earnings} -> {earningBTV}");
+
+                sum += timeEquipped * (coop.IsLeggacy ? 7.5 : 1) * elrBTV;
+                sum += timeEquipped * (coop.IsLeggacy ? .75 : 1) * earningBTV;
             }
             return sum;
         }
