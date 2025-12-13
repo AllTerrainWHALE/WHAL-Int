@@ -26,38 +26,25 @@ internal class Program
         bool debug = args.Contains("--debug") || args.Contains("-d");
         bool reverse = args.Contains("--reverse") || args.Contains("-r");
 
-        // TO DELETE!!!
-        Dictionary<string, bool> flags = new()
-        {
-            { "SpeedRun", args.Contains("--speedrun") || args.Contains("-sr") },
-            { "FastRun" , args.Contains("--fastrun")  || args.Contains("-fr") },
-            { "AnyGrade", args.Contains("--anygrade") || args.Contains("-ag") }
-        };
-        if (!flags.ContainsValue(true)) // if no flags are set, set SR and FR flags
-        {
-            flags["SpeedRun"] = true;
-            flags["FastRun"] = true;
-        }
-        // End to delete!!!
-
-        CoopFlags coopFlags = new CoopFlags
+        CoopFlags targetFlags = new CoopFlags
         {
             SpeedRun = args.Contains("--speedrun") || args.Contains("-sr"),
             FastRun  = args.Contains("--fastrun")  || args.Contains("-fr"),
             AnyGrade = args.Contains("--anygrade") || args.Contains("-ag"),
             Carry    = args.Contains("--carry")    || args.Contains("-c")
         };
-        if (coopFlags.Flags.Count() == 0)
-        { // if no flags are set, set SR and FR flags
-            coopFlags.SpeedRun = true;
-            coopFlags.FastRun  = true;
+        if (targetFlags.Flags.Count() == 0)
+        { // if no targetFlags are set, set SR and FR targetFlags as default
+            targetFlags.SpeedRun = true;
+            targetFlags.FastRun  = true;
         }
+
+
 
         /* =====================
            =  Get contract id  =
            ===================== */
 
-        //var periodicals = await Request.GetPeriodicals();
         var contracts = ActiveContract.PeriodicalsContracts;
 
         // ask user to select a contract
@@ -91,7 +78,12 @@ internal class Program
 
 
 
-        Majeggstics majeggstics = new Majeggstics(coopFlags);
+
+        ///* ======================
+        //   =  Get Maj coops  =
+        //   ====================== */
+
+        Majeggstics majeggstics = new Majeggstics(targetFlags);
         majeggstics.AddContract(contractId);
         majeggstics.FetchCoopsForContract(contractId, force: true);
         majeggstics.BuildCoops();
@@ -101,7 +93,7 @@ internal class Program
 
         Console.WriteLine("Coop Codes:");
         //foreach (string flag in typeof(CoopFlags).GetProperties().Select(p => p.Name))
-        foreach (string flag in coopFlags.Flags)
+        foreach (string flag in targetFlags.Flags)
         {
             string[] codes = majeggstics.ActiveContracts[contractId].Coops
                 .Where(c => c.CoopFlags.Flags.Contains(flag))
@@ -111,71 +103,6 @@ internal class Program
         }
         Console.WriteLine();
 
-
-        ///* ======================
-        //   =  Get Maj SR coops  =
-        //   ====================== */
-
-        //var majCoopsResponse = await Request.GetMajCoops(contractId); // get the maj coops for the selected contract
-        //var majCoops = majCoopsResponse.Items.Last().Coops; // get the coops from the maj coops response
-
-        //Dictionary<string, string[]> coopCodesAndFlags = new() // create a dictionary to hold the maj coop codes by their coop flags
-        //{
-        //    { "SpeedRun", majCoops.Where(c => c.CoopFlags.SpeedRun == true).Select(c => c.Code).ToArray() },
-        //    { "FastRun" , majCoops.Where(c => c.CoopFlags.FastRun  == true).Select(c => c.Code).ToArray() },
-        //    { "AnyGrade", majCoops.Where(c => c.CoopFlags.AnyGrade == true).Select(c => c.Code).ToArray() },
-        //    { "Carry"   , majCoops.Where(c => c.CoopFlags.Carry    == true).Select(c => c.Code).ToArray() }
-        //};
-
-        //Console.WriteLine("Coop codes:");
-        //foreach (var flag in flags)
-        //{
-        //    if (flag.Value) // if the flag is set, print the coop codes for that flag
-        //    {
-        //        Console.WriteLine($"\t{flag.Key}: {String.Join(",", coopCodesAndFlags[flag.Key])}");
-        //    }
-        //}
-
-
-        ///* ==============================
-        //   =  Build contract and coops  =
-        //   ============================== */
-
-        //var activeContract = await new ActiveContractBuilder(contractId).Build(); // build the active contract from the contract id
-
-        //var coopCodes = coopCodesAndFlags
-        //    .Where(kvp => flags.ContainsKey(kvp.Key) && flags[kvp.Key]) // filter the coop codes by the flags that are set
-        //    .ToDictionary().Values // get the values of the filtered coop codes
-        //    .SelectMany(c => c) // flatten the coop codes into a single list
-        //    .Where(c => !string.IsNullOrEmpty(c)) // filter out any empty coop codes
-        //    .Distinct() // remove duplicates
-        //    .ToArray(); // convert to an array
-
-        //var tasks = new List<Task<Coop>>();
-        //foreach (var coopCode in coopCodes)
-        //{ // loop through the coop codes and add them to the tasks list
-        //    tasks.Add(activeContract.AddCoop(coopCode));
-        //}
-
-        //// wait for all tasks to complete and get the results
-        //var coops = await Task.WhenAll(tasks);
-        //coops = coops.Where(c => c != null).ToArray(); // filter out any null coops
-        //var orderedCoops = coops.OrderBy(x => x); // order the coops by their predicted duration
-        //if (reverse)
-        //{ // if the reverse flag is set, reverse the order of the coops
-        //    orderedCoops = orderedCoops.Reverse().OrderBy(x => 0);
-        //}
-
-        //// set coop flags based on the coop codes
-        //foreach (var coop in orderedCoops)
-        //{
-        //    coop.CoopFlags.SpeedRun = coopCodesAndFlags["SpeedRun"].Contains(coop.CoopId);
-        //    coop.CoopFlags.FastRun  = coopCodesAndFlags["FastRun"].Contains(coop.CoopId);
-        //    coop.CoopFlags.AnyGrade = coopCodesAndFlags["AnyGrade"].Contains(coop.CoopId);
-        //    coop.CoopFlags.Carry    = coopCodesAndFlags["Carry"].Contains(coop.CoopId);
-        //}
-
-        //Console.WriteLine();
 
 
         /* ==========================
@@ -191,7 +118,7 @@ internal class Program
 
         string starter = $"Last updated: {discordTimestampNow.Format(DiscordTimestampDisplay.Relative)}\n"; // create a starter string for the output segments
 
-        if (flags["SpeedRun"] && orderedCoops.Any(c => c.CoopFlags.SpeedRun == true)) // if the speedrun flag is set and there are speedrun coops
+        if (targetFlags.SpeedRun.Value && orderedCoops.Any(c => c.CoopFlags.SpeedRun == true)) // if the speedrun flag is set and there are speedrun coops
         {
             outputSegments.AddRange(StringFormatter.SplitToCharLimitByLines($"""
                 {starter}
@@ -200,7 +127,7 @@ internal class Program
             starter = "_ _"; // reset the starter to an empty string so it doesn't repeat in the next segment
         }
 
-        if (flags["FastRun"] && orderedCoops.Any(c => c.CoopFlags.FastRun == true)) // if the fastrun flag is set and there are fastrun coops
+        if (targetFlags.FastRun.Value && orderedCoops.Any(c => c.CoopFlags.FastRun == true)) // if the fastrun flag is set and there are fastrun coops
         {
             outputSegments.AddRange(StringFormatter.SplitToCharLimitByLines($"""
                 {starter}
@@ -209,7 +136,7 @@ internal class Program
             starter = "_ _"; // reset the starter to an empty string so it doesn't repeat in the next segment
         }
 
-        if (flags["AnyGrade"] && orderedCoops.Any(c => c.CoopFlags.AnyGrade == true)) // if the anygrade flag is set and there are anygrade coops
+        if (targetFlags.AnyGrade.Value && orderedCoops.Any(c => c.CoopFlags.AnyGrade == true)) // if the anygrade flag is set and there are anygrade coops
         {
             outputSegments.AddRange(StringFormatter.SplitToCharLimitByLines($"""
                 {starter}
@@ -226,9 +153,9 @@ internal class Program
 
         // test for combining the tables into one message
         string combinedTables = string.Join('\n', outputSegments.GetRange(1, outputSegments.Count() - 2)); // combine the tables into a single string, excluding the header and footer
-        if (flags.Where(f => f.Value).Count() >= outputSegments.Count()-2 && combinedTables.Length <= 2000)
+        if (targetFlags.Flags.Count() >= outputSegments.Count()-2 && combinedTables.Length <= 2000)
         {
-            outputSegments[1] = combinedTables; // if all flags are set and the combined tables are less than 2000 characters, combine the tables into the first segment
+            outputSegments[1] = combinedTables; // if all targetFlags are set and the combined tables are less than 2000 characters, combine the tables into the first segment
             outputSegments.RemoveRange(2, outputSegments.Count() - 3); // remove the other segments
         }
 
