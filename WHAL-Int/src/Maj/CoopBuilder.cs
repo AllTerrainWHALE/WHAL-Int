@@ -1,20 +1,23 @@
 ﻿using Ei;
+using Majcoops;
 using WHAL_Int.EggIncApi;
 
 namespace WHAL_Int.Maj;
 
 public class CoopBuilder
 {
-    private readonly Contract contract;
+    private readonly Ei.Contract contract;
     private readonly string coopCode;
+    private readonly CoopFlags coopFlags;
 
-    public CoopBuilder(Contract contract, string coopCode)
+    public CoopBuilder(Ei.Contract contract, string coopCode, CoopFlags? coopFlags = null)
     {
         this.contract = contract;
         this.coopCode = coopCode;
+        this.coopFlags = coopFlags!;
     }
 
-    public async Task<Coop> Build()
+    public async Task<Coop?> Build()
     {
         var coopStatus = await Request.GetCoopStatus(contract.Identifier, coopCode);
 
@@ -26,6 +29,6 @@ public class CoopBuilder
             return null;
         }
 
-        return new Coop(coopStatus, contract);
+        return new Coop(coopStatus, contract, coopFlags);
     }
 }

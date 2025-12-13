@@ -25,6 +25,8 @@ internal class Program
 
         bool debug = args.Contains("--debug") || args.Contains("-d");
         bool reverse = args.Contains("--reverse") || args.Contains("-r");
+
+        // TO DELETE!!!
         Dictionary<string, bool> flags = new()
         {
             { "SpeedRun", args.Contains("--speedrun") || args.Contains("-sr") },
@@ -34,22 +36,34 @@ internal class Program
         if (!flags.ContainsValue(true)) // if no flags are set, set SR and FR flags
         {
             flags["SpeedRun"] = true;
-            flags["FastRun"]  = true;
+            flags["FastRun"] = true;
+        }
+        // End to delete!!!
+
+        CoopFlags coopFlags = new CoopFlags
+        {
+            SpeedRun = args.Contains("--speedrun") || args.Contains("-sr"),
+            FastRun  = args.Contains("--fastrun")  || args.Contains("-fr"),
+            AnyGrade = args.Contains("--anygrade") || args.Contains("-ag"),
+            Carry    = args.Contains("--carry")    || args.Contains("-c")
+        };
+        if (coopFlags.Flags.Count() == 0)
+        { // if no flags are set, set SR and FR flags
+            coopFlags.SpeedRun = true;
+            coopFlags.FastRun  = true;
         }
 
         /* =====================
            =  Get contract id  =
            ===================== */
 
-        var periodicals = await Request.GetPeriodicals();
-        var contracts = periodicals.Contracts.Contracts
-            .OrderByDescending(c => c.StartTime)
-            .Where(c => c.Identifier != "first-contract");
+        //var periodicals = await Request.GetPeriodicals();
+        var contracts = ActiveContract.PeriodicalsContracts;
 
         // ask user to select a contract
         Console.WriteLine("Select contract ID:");
         int counter = 1;
-        foreach (Contract contract in contracts)
+        foreach (var contract in contracts)
         {
             if (counter == 1) // highlight the first contract
                 Console.Write($"\t[{counter}] ");
@@ -61,9 +75,8 @@ internal class Program
         }
 
         Console.Write("> ");
-        string input = Console.ReadLine();
-        int selectedContractIdx;
-        if (!int.TryParse(input, out selectedContractIdx))
+        string? input = Console.ReadLine();
+        if (!int.TryParse(input, out int selectedContractIdx))
         { // if input is not a number, take the first contract
             selectedContractIdx = 0;
         }
@@ -71,76 +84,98 @@ internal class Program
         { // if input is a number, subtract 1 to get the index
             selectedContractIdx -= 1;
         }
-        Contract selectedContract = contracts.ElementAt(selectedContractIdx); // get the contract at the selected index
+        var selectedContract = contracts.ElementAt(selectedContractIdx); // get the contract at the selected index
         Console.WriteLine($"\nSelected contract: {selectedContract.Identifier} | {selectedContract.Name}"); // print the selected contract
 
         string contractId = selectedContract.Identifier; // get the contract id from the selected contract
 
 
-        /* ======================
-           =  Get Maj SR coops  =
-           ====================== */
 
-        var majCoopsResponse = await Request.GetMajCoops(contractId); // get the maj coops for the selected contract
-        var majCoops = majCoopsResponse.Items.Last().Coops; // get the coops from the maj coops response
+        Majeggstics majeggstics = new Majeggstics(coopFlags);
+        majeggstics.AddContract(contractId);
+        majeggstics.FetchCoopsForContract(contractId, force: true);
+        majeggstics.BuildCoops();
 
-        Dictionary<string, string[]> coopCodesAndFlags = new() // create a dictionary to hold the maj coop codes by their coop flags
+        var orderedCoops = majeggstics.ActiveContracts[contractId].OrderCoopsBy(x => x);
+
+
+        Console.WriteLine("Coop Codes:");
+        //foreach (string flag in typeof(CoopFlags).GetProperties().Select(p => p.Name))
+        foreach (string flag in coopFlags.Flags)
         {
-            { "SpeedRun", majCoops.Where(c => c.CoopFlags.SpeedRun == true).Select(c => c.Code).ToArray() },
-            { "FastRun" , majCoops.Where(c => c.CoopFlags.FastRun  == true).Select(c => c.Code).ToArray() },
-            { "AnyGrade", majCoops.Where(c => c.CoopFlags.AnyGrade == true).Select(c => c.Code).ToArray() },
-            { "Carry"   , majCoops.Where(c => c.CoopFlags.Carry    == true).Select(c => c.Code).ToArray() }
-        };
-
-        Console.WriteLine("Coop codes:");
-        foreach (var flag in flags)
-        {
-            if (flag.Value) // if the flag is set, print the coop codes for that flag
-            {
-                Console.WriteLine($"\t{flag.Key}: {String.Join(",", coopCodesAndFlags[flag.Key])}");
-            }
+            string[] codes = majeggstics.ActiveContracts[contractId].Coops
+                .Where(c => c.CoopFlags.Flags.Contains(flag))
+                .Select(c => c.CoopId)
+                .ToArray();
+            Console.WriteLine($"\t{flag}: {string.Join(", ", codes)}");
         }
-
-
-        /* ==============================
-           =  Build contract and coops  =
-           ============================== */
-
-        var activeContract = await new ActiveContractBuilder(contractId).Build(); // build the active contract from the contract id
-
-        var coopCodes = coopCodesAndFlags
-            .Where(kvp => flags.ContainsKey(kvp.Key) && flags[kvp.Key]) // filter the coop codes by the flags that are set
-            .ToDictionary().Values // get the values of the filtered coop codes
-            .SelectMany(c => c) // flatten the coop codes into a single list
-            .Where(c => !string.IsNullOrEmpty(c)) // filter out any empty coop codes
-            .Distinct() // remove duplicates
-            .ToArray(); // convert to an array
-
-        var tasks = new List<Task<Coop>>();
-        foreach (var coopCode in coopCodes)
-        { // loop through the coop codes and add them to the tasks list
-            tasks.Add(activeContract.AddCoop(coopCode));
-        }
-
-        // wait for all tasks to complete and get the results
-        var coops = await Task.WhenAll(tasks);
-        coops = coops.Where(c => c != null).ToArray(); // filter out any null coops
-        var orderedCoops = coops.OrderBy(x => x); // order the coops by their predicted duration
-        if (reverse)
-        { // if the reverse flag is set, reverse the order of the coops
-            orderedCoops = orderedCoops.Reverse().OrderBy(x => 0);
-        }
-
-        // set coop flags based on the coop codes
-        foreach (var coop in orderedCoops)
-        {
-            coop.CoopFlags.SpeedRun = coopCodesAndFlags["SpeedRun"].Contains(coop.CoopId);
-            coop.CoopFlags.FastRun  = coopCodesAndFlags["FastRun"].Contains(coop.CoopId);
-            coop.CoopFlags.AnyGrade = coopCodesAndFlags["AnyGrade"].Contains(coop.CoopId);
-            coop.CoopFlags.Carry    = coopCodesAndFlags["Carry"].Contains(coop.CoopId);
-        }
-
         Console.WriteLine();
+
+
+        ///* ======================
+        //   =  Get Maj SR coops  =
+        //   ====================== */
+
+        //var majCoopsResponse = await Request.GetMajCoops(contractId); // get the maj coops for the selected contract
+        //var majCoops = majCoopsResponse.Items.Last().Coops; // get the coops from the maj coops response
+
+        //Dictionary<string, string[]> coopCodesAndFlags = new() // create a dictionary to hold the maj coop codes by their coop flags
+        //{
+        //    { "SpeedRun", majCoops.Where(c => c.CoopFlags.SpeedRun == true).Select(c => c.Code).ToArray() },
+        //    { "FastRun" , majCoops.Where(c => c.CoopFlags.FastRun  == true).Select(c => c.Code).ToArray() },
+        //    { "AnyGrade", majCoops.Where(c => c.CoopFlags.AnyGrade == true).Select(c => c.Code).ToArray() },
+        //    { "Carry"   , majCoops.Where(c => c.CoopFlags.Carry    == true).Select(c => c.Code).ToArray() }
+        //};
+
+        //Console.WriteLine("Coop codes:");
+        //foreach (var flag in flags)
+        //{
+        //    if (flag.Value) // if the flag is set, print the coop codes for that flag
+        //    {
+        //        Console.WriteLine($"\t{flag.Key}: {String.Join(",", coopCodesAndFlags[flag.Key])}");
+        //    }
+        //}
+
+
+        ///* ==============================
+        //   =  Build contract and coops  =
+        //   ============================== */
+
+        //var activeContract = await new ActiveContractBuilder(contractId).Build(); // build the active contract from the contract id
+
+        //var coopCodes = coopCodesAndFlags
+        //    .Where(kvp => flags.ContainsKey(kvp.Key) && flags[kvp.Key]) // filter the coop codes by the flags that are set
+        //    .ToDictionary().Values // get the values of the filtered coop codes
+        //    .SelectMany(c => c) // flatten the coop codes into a single list
+        //    .Where(c => !string.IsNullOrEmpty(c)) // filter out any empty coop codes
+        //    .Distinct() // remove duplicates
+        //    .ToArray(); // convert to an array
+
+        //var tasks = new List<Task<Coop>>();
+        //foreach (var coopCode in coopCodes)
+        //{ // loop through the coop codes and add them to the tasks list
+        //    tasks.Add(activeContract.AddCoop(coopCode));
+        //}
+
+        //// wait for all tasks to complete and get the results
+        //var coops = await Task.WhenAll(tasks);
+        //coops = coops.Where(c => c != null).ToArray(); // filter out any null coops
+        //var orderedCoops = coops.OrderBy(x => x); // order the coops by their predicted duration
+        //if (reverse)
+        //{ // if the reverse flag is set, reverse the order of the coops
+        //    orderedCoops = orderedCoops.Reverse().OrderBy(x => 0);
+        //}
+
+        //// set coop flags based on the coop codes
+        //foreach (var coop in orderedCoops)
+        //{
+        //    coop.CoopFlags.SpeedRun = coopCodesAndFlags["SpeedRun"].Contains(coop.CoopId);
+        //    coop.CoopFlags.FastRun  = coopCodesAndFlags["FastRun"].Contains(coop.CoopId);
+        //    coop.CoopFlags.AnyGrade = coopCodesAndFlags["AnyGrade"].Contains(coop.CoopId);
+        //    coop.CoopFlags.Carry    = coopCodesAndFlags["Carry"].Contains(coop.CoopId);
+        //}
+
+        //Console.WriteLine();
 
 
         /* ==========================
