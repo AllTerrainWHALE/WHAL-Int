@@ -78,9 +78,9 @@ internal class Program
 
 
 
-        ///* ======================
-        //   =  Get JsonCompilers coops  =
-        //   ====================== */
+        /* ===================
+           =  Get Maj coops  =
+           =================== */
 
         Majeggstics majeggstics = new Majeggstics();
         majeggstics.AddContract(contractId);
@@ -126,7 +126,9 @@ internal class Program
 
         string starter = $"Last updated: {discordTimestampNow.Format(DiscordTimestampDisplay.Relative)}\n"; // create a starter string for the output segments
 
-        if (targetFlags.SpeedRun.Value && orderedCoops.Any(c => c.CoopFlags.SpeedRun == true)) // if the speedrun flag is set and there are speedrun coops
+        Coop[] coops;
+
+        if (targetFlags.SpeedRun.Value && orderedCoops.Any(srExpression)) // if the speedrun flag is set and there are speedrun coops
         {
             coops = orderedCoops.Where(srExpression).ToArray();
 
@@ -146,7 +148,7 @@ internal class Program
             starter = "_ _"; // reset the starter to an empty string so it doesn't repeat in the next segment
         }
 
-        if (targetFlags.FastRun.Value && orderedCoops.Any(c => c.CoopFlags.FastRun == true)) // if the fastrun flag is set and there are fastrun coops
+        if (targetFlags.FastRun.Value && orderedCoops.Any(frExpression)) // if the fastrun flag is set and there are fastrun coops
         {
             coops = orderedCoops.Where(frExpression).ToArray();
 
@@ -166,7 +168,7 @@ internal class Program
             starter = "_ _"; // reset the starter to an empty string so it doesn't repeat in the next segment
         }
 
-        if (targetFlags.AnyGrade.Value && orderedCoops.Any(c => c.CoopFlags.AnyGrade == true)) // if the anygrade flag is set and there are anygrade coops
+        if (targetFlags.AnyGrade.Value && orderedCoops.Any(agExpression)) // if the anygrade flag is set and there are anygrade coops
         {
             coops = orderedCoops.Where(agExpression).ToArray();
 
@@ -186,7 +188,7 @@ internal class Program
             starter = "_ _"; // reset the starter to an empty string so it doesn't repeat in the next segment
         }
 
-        if (flags["Carry"] && orderedCoops.Any(cExpression)) // if the anygrade flag is set and there are anygrade coops
+        if (targetFlags.Carry.Value && orderedCoops.Any(cExpression)) // if the anygrade flag is set and there are anygrade coops
         {
             coops = orderedCoops.Where(cExpression).ToArray();
 
@@ -345,13 +347,8 @@ internal class Program
             Avg. CS -> {averageCS}
             {new string('—', table.GetHeader().Length + 2)}
             Only showing top {playersSubset.Count()} players. CS calculations assume n-1 CRs {(coops.All(c => c.IsLeggacy) ? "and max tval."
-            : "\nCS likely off due to uncertainty in new formula understanding.")}
+            : "")}
             ```
             """;
-    }
-
-    private static void Debug(PeriodicalsResponse periodicals, MajCoopsResponse majCoopsResponse)
-    {
-
     }
 }
