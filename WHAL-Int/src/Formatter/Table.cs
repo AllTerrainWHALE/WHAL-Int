@@ -14,13 +14,9 @@ public class Table<T>
 
     public void AddDataPoint(T dataPoint) => dataPoints.Add(dataPoint);
 
-    public string GetHeader() => string.Join("|", columns.Select(c => c.Name));
+    public string GetHeader() => string.Join("｜", columns.Select(c => c.Name));
 
-    public string GetTable()
-    {
-        string table = string.Join("\n", dataPoints.Select(x => string.Join("|", columns.Select(f => f.ColumnFunc(x)))));
-        return table;
-    }
+    public string GetTable() => string.Join("\n", dataPoints.Select(x => string.Join("｜", columns.Select(f => f.ColumnFunc(x)))));
 }
 
 public class TableColumn<T>(string name, Func<T, string> colFunc, int width, StringAlignment alignment)

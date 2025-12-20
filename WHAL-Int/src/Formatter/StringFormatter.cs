@@ -20,27 +20,27 @@ public class StringFormatter
         return s + new string(fillChar, width - s.Length);
     }
 
-    public static string RightAligned(string s, int width)
+    public static string RightAligned(string s, int width, char fillChar = ' ')
     {
         if (s.Length >= width) return s;
 
         int leftPadding = width - s.Length;
 
-        return new string(' ', leftPadding) + s;
+        return new string(fillChar, leftPadding) + s;
     }
 
-    //public static string Align(string s, int width, StringAlignment alignment)
-    //{
-    //    return alignment switch
-    //    {
-    //        StringAlignment.Left => LeftAligned(s, width),
-    //        StringAlignment.Centered => Centered(s, width),
-    //        StringAlignment.Right => RightAligned(s, width),
-    //        StringAlignment.None => s,
+    public static string Align(string s, int width, StringAlignment alignment)
+    {
+        return alignment switch
+        {
+            StringAlignment.Left => LeftAligned(s, width),
+            StringAlignment.Centered => Centered(s, width),
+            StringAlignment.Right => RightAligned(s, width),
+            StringAlignment.None => s,
 
-    //        _ => throw new InvalidEnumArgumentException()
-    //    };
-    //}
+            _ => throw new InvalidEnumArgumentException()
+        };
+    }
 
     public static List<string> SplitToCharLimitByLines(string s, int charLimit = 2000)
     {

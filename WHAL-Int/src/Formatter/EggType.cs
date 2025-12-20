@@ -2,7 +2,7 @@ using JsonCompilers;
 
 namespace Formatter;
 
-class EggType
+internal class EggType
 {
     public static string ToDiscordEmoji(Egg eggType)
     {
