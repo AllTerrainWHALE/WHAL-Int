@@ -6,7 +6,7 @@ namespace Ei;
 public class Coop : IComparable<Coop>
 {
     private readonly ContractCoopStatusResponse coopStatus;
-    private readonly Ei.Contract.Types.GradeSpec gradeSpec;
+    private readonly Contract.Types.GradeSpec gradeSpec;
     private double contractFarmMaximumTimeAllowed;
     private double coopAllowableTimeRemaining => coopStatus.SecondsRemaining;
     private double eggGoal => gradeSpec.Goals.MaxBy(g => g.TargetAmount)!.TargetAmount;
@@ -35,7 +35,7 @@ public class Coop : IComparable<Coop>
         SpeedRun = false
     };
 
-    public Coop(ContractCoopStatusResponse coopStatus, Ei.Contract contract, CoopFlags? flags = null)
+    public Coop(ContractCoopStatusResponse coopStatus, Contract contract, CoopFlags? flags = null)
     {
         if (coopStatus.ResponseStatus != ContractCoopStatusResponse.Types.ResponseStatus.NoError)
         {

@@ -37,7 +37,7 @@ public class ActiveContract
     public string ContractId => contract.Identifier;
     public IEnumerable<Coop> Coops => coops.AsEnumerable();
 
-    public ActiveContract(Ei.Contract contract) => this.contract = contract;
+    public ActiveContract(Contract contract) => this.contract = contract;
 
     public async Task<Coop?> AddCoop(string coopCode, CoopFlags? flags = null)
     {
