@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using JsonCompilers;
+using EggIncApi;
 using Ei;
-using Majcoops;
-using WHAL_Int.EggIncApi;
 
-namespace WHAL_Int.Maj;
+namespace Maj;
 public class Majeggstics
 {
 
@@ -38,7 +33,7 @@ public class Majeggstics
             ActiveContracts[contractId] = activeContractTask.Result;
         }
     }
-    public void AddContract(Ei.Contract contract) =>
+    public void AddContract(Contract contract) =>
         AddContract(contract.Identifier);
 
     public List<MajCoop> FetchCoopsForContract(string contractId, string? flag = null, bool force = false)
@@ -50,9 +45,9 @@ public class Majeggstics
 
         if (force || !contractMajCoops.ContainsKey(contractId))
         {
-            Task<MajCoopsResponse> majCoopsResponseTask = Request.GetMajCoops(contractId);
+            Task<MajResponse> majCoopsResponseTask = Request.GetMajCoops(contractId);
             majCoopsResponseTask.Wait();
-            MajCoopsResponse majCoopsResponse = majCoopsResponseTask.Result;
+            MajResponse majCoopsResponse = majCoopsResponseTask.Result;
             List<MajCoop> majCoops = majCoopsResponse.Items.Last().Coops;
 
             contractMajCoops[contractId] = majCoops;
@@ -66,7 +61,7 @@ public class Majeggstics
 
         return filteredCoops;
     }
-    public List<MajCoop> FetchCoopsForContract(Ei.Contract contract, string? flag = null, bool force = false) =>
+    public List<MajCoop> FetchCoopsForContract(global::JsonCompilers.Contract contract, string? flag = null, bool force = false) =>
         FetchCoopsForContract(contract.Identifier, flag: flag, force: force);
 
     public void BuildCoops()
@@ -99,8 +94,7 @@ public class Majeggstics
                 Task<Coop?> coopTask = activeContract.AddCoop(coop.Code, coop.CoopFlags);
                 if (coopTask != null) coopTasks.Add(coopTask);
             }
-            //Task.WaitAll(coopTasks.ToArray());
-            coopTasks.ToArray().AsParallel().ForAll(t => t.Wait());
+            Task.WaitAll(coopTasks.ToArray());
         }
     }
 }

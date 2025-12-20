@@ -1,16 +1,15 @@
-﻿using Ei;
-using Majcoops;
-using WHAL_Int.EggIncApi;
+﻿using JsonCompilers;
+using EggIncApi;
 
-namespace WHAL_Int.Maj;
+namespace Ei;
 
 public class CoopBuilder
 {
-    private readonly Ei.Contract contract;
+    private readonly global::JsonCompilers.Contract contract;
     private readonly string coopCode;
     private readonly CoopFlags coopFlags;
 
-    public CoopBuilder(Ei.Contract contract, string coopCode, CoopFlags? coopFlags = null)
+    public CoopBuilder(global::JsonCompilers.Contract contract, string coopCode, CoopFlags? coopFlags = null)
     {
         this.contract = contract;
         this.coopCode = coopCode;

@@ -1,8 +1,7 @@
-using Ei;
-using Majcoops;
-using WHAL_Int.EggIncApi;
+using JsonCompilers;
+using EggIncApi;
 
-namespace WHAL_Int.Maj;
+namespace Ei;
 
 public class ActiveContract
 {
@@ -20,11 +19,11 @@ public class ActiveContract
             return periodicalsResponse;
         }
     }
-    public static IEnumerable<Ei.Contract> PeriodicalsContracts =>
+    public static IEnumerable<Contract> PeriodicalsContracts =>
         PeriodicalsResponse.Contracts.Contracts
             .OrderByDescending(c => c.StartTime)
             .Where(c => c.Identifier != "first-contract");
-    public static Ei.Contract GetContractById(string id) =>
+    public static Contract GetContractById(string id) =>
         PeriodicalsContracts.FirstOrDefault(c => c.Identifier == id)
         ?? throw new InvalidDataException($"Contract ID invalid: {id}");
     public static List<string> ContractIds =>
@@ -32,7 +31,7 @@ public class ActiveContract
 
 
 
-    private Ei.Contract contract;
+    private Contract contract;
     private List<Coop> coops = new List<Coop>();
 
     public string ContractId => contract.Identifier;

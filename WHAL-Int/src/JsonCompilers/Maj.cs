@@ -1,16 +1,14 @@
-using System;
-using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Majcoops;
+namespace JsonCompilers;
 
-public class MajCoopsResponse
+public class MajResponse
 {
     [JsonPropertyName("items")]
-    public List<MajCoopGroup> Items { get; set; } = new();
+    public List<MajGroup> Items { get; set; } = new();
 }
 
-public class MajCoopGroup
+public class MajGroup
 {
     [JsonPropertyName("_id")]
     public string? Id { get; set; }

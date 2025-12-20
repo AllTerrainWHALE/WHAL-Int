@@ -1,7 +1,6 @@
-using Ei;
-using System.ComponentModel;
+using JsonCompilers;
 
-namespace WHAL_Int.Formatter;
+namespace Formatter;
 
 class EggType
 {

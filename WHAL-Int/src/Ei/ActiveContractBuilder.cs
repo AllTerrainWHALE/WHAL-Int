@@ -1,7 +1,4 @@
-using Ei;
-using WHAL_Int.EggIncApi;
-
-namespace WHAL_Int.Maj;
+namespace Ei;
 
 public class ActiveContractBuilder
 {

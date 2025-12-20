@@ -1,8 +1,7 @@
-using Ei;
-using Majcoops;
-using WHAL_Int.Formatter;
+using JsonCompilers;
+using Formatter;
 
-namespace WHAL_Int.Maj;
+namespace Ei;
 
 public class Coop : IComparable<Coop>
 {
@@ -53,7 +52,7 @@ public class Coop : IComparable<Coop>
                                                          predictedSecondsRemaining -
                                                          coopStatus.SecondsSinceAllGoalsAchieved));
 
-        if (flags != null) { this.CoopFlags = flags; }
+        if (flags != null) { CoopFlags = flags; }
     }
 
     /// <summary>

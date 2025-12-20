@@ -1,4 +1,4 @@
-namespace WHAL_Int.EggIncApi;
+namespace EggIncApi;
 
 public static class Config
 {

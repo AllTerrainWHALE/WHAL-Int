@@ -1,14 +1,10 @@
 ﻿using System.IO.Compression;
-using Ei;
-using Majcoops;
+using JsonCompilers;
 using Google.Protobuf;
-using Google.Protobuf.Collections;
-using System;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace WHAL_Int.EggIncApi;
+namespace EggIncApi;
 
 public class Request
 {
@@ -46,7 +42,7 @@ public class Request
         return await makeEggIncApiRequest("get_periodicals", getPeriodicalsRequest, PeriodicalsResponse.Parser.ParseFrom);
     }
 
-    public static async Task<MajCoopsResponse> GetMajCoops(string contractId)
+    public static async Task<MajResponse> GetMajCoops(string contractId)
     {
         string url = $"https://eiapi-production.up.railway.app/majCoops?contract={contractId}";
 
@@ -64,8 +60,8 @@ public class Request
             NumberHandling = JsonNumberHandling.AllowReadingFromString
         };
 
-        MajCoopsResponse? response = JsonSerializer
-            .Deserialize<MajCoopsResponse>(wrappedJson, options);
+        MajResponse? response = JsonSerializer
+            .Deserialize<MajResponse>(wrappedJson, options);
 
         return response ?? throw new JsonException("Deserialization returned null.");
     }

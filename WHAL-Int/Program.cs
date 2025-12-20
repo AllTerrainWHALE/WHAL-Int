@@ -1,11 +1,8 @@
-﻿using Ei;
-using Majcoops;
-using WHAL_Int.EggIncApi;
-using WHAL_Int.Formatter;
-using WHAL_Int.Maj;
-
-using System.Windows.Forms;
-using System.Linq;
+﻿using JsonCompilers;
+using EggIncApi;
+using Formatter;
+using Ei;
+using Maj;
 
 namespace WHAL_Int;
 
@@ -80,10 +77,10 @@ internal class Program
 
 
         ///* ======================
-        //   =  Get Maj coops  =
+        //   =  Get JsonCompilers coops  =
         //   ====================== */
 
-        Majeggstics majeggstics = new Majeggstics(targetFlags);
+        Majeggstics majeggstics = new Majeggstics();
         majeggstics.AddContract(contractId);
         majeggstics.FetchCoopsForContract(contractId, force: true);
         majeggstics.BuildCoops();
@@ -238,7 +235,7 @@ internal class Program
             """;
     }
 
-    private static void Debug(PeriodicalsResponse periodicals, MajCoopsResponse majCoopsResponse)
+    private static void Debug(PeriodicalsResponse periodicals, MajResponse majCoopsResponse)
     {
 
     }
