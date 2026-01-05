@@ -11,6 +11,7 @@ public class Coop : IComparable<Coop>
 
     public bool IsLeggacy => contract.Leggacy;
     public string Grade => gradeSpec.Grade.ToString();
+    public bool UseOldScoring => gradeSpec.Grade <= Contract.Types.PlayerGrade.GradeA && IsLeggacy;
     public double ContractFarmMaximumTimeAllowed;
     public double CoopAllowableTimeRemaining => coopStatus.SecondsRemaining;
     public double EggGoal => gradeSpec.Goals.MaxBy(g => g.TargetAmount)!.TargetAmount;
