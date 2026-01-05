@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace WHAL_Int.Formatter;
+namespace Formatter;
 
 public class DiscordTimestamp : IComparable<DiscordTimestamp>
 {

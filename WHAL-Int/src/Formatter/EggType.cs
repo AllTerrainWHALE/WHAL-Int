@@ -1,6 +1,6 @@
-using Ei;
+using JsonCompilers;
 
-namespace WHAL_Int.Formatter;
+namespace Formatter;
 
 internal class EggType
 {

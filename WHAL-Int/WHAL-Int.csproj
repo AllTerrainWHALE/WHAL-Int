@@ -29,5 +29,9 @@
   <ItemGroup>
     <Protobuf Include="protobuf\majcoops.proto" GrpcServices="None" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="src\Ei\" />
+  </ItemGroup>
 
 </Project>

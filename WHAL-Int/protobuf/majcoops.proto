@@ -2,7 +2,7 @@
 
 package majcoops;
 
-//option csharp_namespace = "WHAL_Int.EggIncApi";
+//option csharp_namespace = "EggIncApi";
 
 import "google/protobuf/wrappers.proto";
 

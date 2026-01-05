@@ -1,4 +1,4 @@
-namespace WHAL_Int.Formatter;
+namespace Formatter;
 
 public static class ClipboardHelper
 {

@@ -1,17 +1,19 @@
-﻿using Ei;
-using WHAL_Int.EggIncApi;
+﻿using JsonCompilers;
+using EggIncApi;
 
-namespace WHAL_Int.Maj;
+namespace Ei;
 
 public class CoopBuilder
 {
-    private readonly Contract contract;
+    private readonly global::JsonCompilers.Contract contract;
     private readonly string coopCode;
+    private readonly CoopFlags coopFlags;
 
-    public CoopBuilder(Contract contract, string coopCode)
+    public CoopBuilder(global::JsonCompilers.Contract contract, string coopCode, CoopFlags? coopFlags = null)
     {
         this.contract = contract;
         this.coopCode = coopCode;
+        this.coopFlags = coopFlags!;
     }
 
     public async Task<Coop?> Build()
@@ -26,6 +28,6 @@ public class CoopBuilder
             return null;
         }
 
-        return new Coop(coopStatus, contract);
+        return new Coop(coopStatus, contract, coopFlags);
     }
 }

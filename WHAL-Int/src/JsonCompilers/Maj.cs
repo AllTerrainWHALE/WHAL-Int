@@ -1,16 +1,14 @@
-using System;
-using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Majcoops;
+namespace JsonCompilers;
 
-public class MajCoopsResponse
+public class MajResponse
 {
     [JsonPropertyName("items")]
-    public List<MajCoopGroup> Items { get; set; } = new();
+    public List<MajGroup> Items { get; set; } = new();
 }
 
-public class MajCoopGroup
+public class MajGroup
 {
     [JsonPropertyName("_id")]
     public string? Id { get; set; }
@@ -66,14 +64,27 @@ public class MajCoop
 
 public class CoopFlags
 {
+    [JsonPropertyName("speedRun")]
+    public bool? SpeedRun { get; set; }
+    [JsonPropertyName("fastRun")]
+    public bool? FastRun { get; set; }
     [JsonPropertyName("anyGrade")]
     public bool? AnyGrade { get; set; }
     [JsonPropertyName("carry")]
     public bool? Carry { get; set; }
-    [JsonPropertyName("fastRun")]
-    public bool? FastRun { get; set; }
-    [JsonPropertyName("speedRun")]
-    public bool? SpeedRun { get; set; }
+
+    public string[] Flags
+    {
+        get
+        {
+            List<string> flags = new();
+            if (SpeedRun == true) flags.Add("SpeedRun");
+            if (FastRun == true) flags.Add("FastRun");
+            if (AnyGrade == true) flags.Add("AnyGrade");
+            if (Carry == true) flags.Add("Carry");
+            return flags.ToArray();
+        }
+    }
 }
 
 public class User

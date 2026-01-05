@@ -1,8 +1,7 @@
-using System.Linq.Expressions;
-using Ei;
-using WHAL_Int.Formatter;
+using JsonCompilers;
+using Formatter;
 
-namespace WHAL_Int.Maj;
+namespace Ei;
 
 public class Player : IComparable<Player>
 {

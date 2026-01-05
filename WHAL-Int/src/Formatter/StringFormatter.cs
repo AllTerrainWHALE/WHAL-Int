@@ -1,8 +1,7 @@
-using System;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace WHAL_Int.Formatter;
+namespace Formatter;
 
 public class StringFormatter
 {

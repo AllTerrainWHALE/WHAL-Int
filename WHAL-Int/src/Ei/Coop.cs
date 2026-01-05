@@ -1,9 +1,7 @@
-using Ei;
-using Google.Protobuf.Collections;
-using Majcoops;
-using WHAL_Int.Formatter;
+using JsonCompilers;
+using Formatter;
 
-namespace WHAL_Int.Maj;
+namespace Ei;
 
 public class Coop : IComparable<Coop>
 {
@@ -45,13 +43,13 @@ public class Coop : IComparable<Coop>
     // Assign CoopFlags
     public CoopFlags CoopFlags { get; set; } = new();
 
-    public Coop(ContractCoopStatusResponse coopStatus, Contract contract)
+    public Coop(ContractCoopStatusResponse coopStatus, Contract contract, CoopFlags? flags = null)
     {
         if (coopStatus.ResponseStatus != ContractCoopStatusResponse.Types.ResponseStatus.NoError)
         {
             throw new InvalidDataException("Cannot find coop, ResponseStatus = " + coopStatus.ResponseStatus);
         }
-        
+
         this.coopStatus = coopStatus;
         this.contract = contract;
         gradeSpec = contract.GradeSpecs.SingleOrDefault(g => g.Grade == coopStatus.Grade)!;
@@ -63,6 +61,7 @@ public class Coop : IComparable<Coop>
                                                          PredictedSecondsRemaining -
                                                          coopStatus.SecondsSinceAllGoalsAchieved));
 
+        if (flags != null) { CoopFlags = flags; }
         Contributors = coopStatus.Contributors.Select(playerInfo => new Player(playerInfo, this)).ToList();
     }
 

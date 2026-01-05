@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Ei {
+namespace JsonCompilers {
 
   /// <summary>Holder for reflection information generated from ei.proto</summary>
   public static partial class EiReflection {
@@ -1101,173 +1101,173 @@ namespace Ei {
             "Y29wZRIMCghBTExfVElNRRAAEhIKDkNVUlJFTlRfU0VBU09OEAE="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ei.Platform), typeof(global::Ei.DeviceFormFactor), typeof(global::Ei.AdNetwork), typeof(global::Ei.Egg), typeof(global::Ei.FarmType), typeof(global::Ei.GoalType), typeof(global::Ei.RewardType), typeof(global::Ei.UILocation), typeof(global::Ei.UserType), typeof(global::Ei.LeaderboardScope), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Vector3), global::Ei.Vector3.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Vector4), global::Ei.Vector4.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup), global::Ei.Backup.Parser, new[]{ "UserId", "EiUserId", "GameServicesId", "PushUserId", "DeviceId", "UserName", "ApproxTime", "Version", "ForceOfferBackup", "ForceBackup", "Settings", "Tutorial", "Stats", "Game", "Artifacts", "Shells", "Sim", "Farms", "Mission", "Misc", "Contracts", "ArtifactsDb", "ShellDb", "ReadMailIds", "MailState", "Checksum", "Signature" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.Settings), global::Ei.Backup.Types.Settings.Parser, new[]{ "Sfx", "Music", "LowBatteryMode", "LowPerformanceMode", "ForceTouchChickenBtn", "NotificationsQueried", "LastNotificationQueryTime", "NotificationsOn", "NotifyDailyGift", "LowPerformance", "AutoStopFueling", "MaxEnabled", "HideCcStatus", "ContractsWidgetEnabled", "LastBackupTime", "CoppaQueried", "CoppaRestricted", "GdprConsentQueried", "GdprAgeRestricted", "GdprConsentGiven", "AgeQueried", "AgeRestricted", "DataCollectionConsentQueried", "DataCollectionConsentGiven", "LastDayAgeQueried", "UserAdsEnabled", "UserCloudEnabled", "UserAnalyticsEnabled", "UserPersonalizedAdsEnabled" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.Tutorial), global::Ei.Backup.Types.Tutorial.Parser, new[]{ "IntroShown", "ClickTutorialShown", "BuyHabShown", "HireVehicleShown", "QNumShown", "SNumShown", "ContractsTabShown", "ContractInfoShown", "JoinCoopShown", "SwitchFarmShown", "TutorialShown" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.Stats), global::Ei.Backup.Types.Stats.Parser, new[]{ "EggTotalsOLD", "EggTotals", "UnlimitedChickensUses", "RefillUses", "Warp1Uses", "Warp8Uses", "BoostsUsed", "VideoDoublerUses", "DroneTakedowns", "DroneTakedownsElite", "NumPrestiges", "NumPiggyBreaks", "IapPacksPurchased", "PiggyFull", "PiggyFoundFull", "TimePiggyFilledRealtime", "TimePiggyFullGametime", "LostPiggyIncrements" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.Game), global::Ei.Backup.Types.Game.Parser, new[]{ "CurrentFarm", "MaxEggReached", "GoldenEggsEarned", "GoldenEggsSpent", "UncliamedGoldenEggs", "SoulEggs", "UnclaimedSoulEggs", "SoulEggsD", "UnclaimedSoulEggsD", "EggsOfProphecy", "UnclaimedEggsOfProphecy", "ShellScriptsEarned", "ShellScriptsSpent", "UnclaimedShellScripts", "PrestigeCashEarned", "PrestigeSoulBoostCash", "LifetimeCashEarned", "PiggyBank", "PiggyFullAlertShown", "PermitLevel", "EpicResearch", "HyperloopStation", "NextDailyGiftTime", "LastDailyGiftCollectedDay", "NumDailyGiftsCollected", "News", "LastNewsTime", "CurrentMultiplier", "CurrentMultiplierExpiration", "Achievements", "MaxFarmSizeReached", "EggMedalLevel", "LongIdleNotificationSet", "LongIdleNotificationThreshold", "LongIdleReward", "Boosts", "TotalTimeCheatsDetected", "ForceEliteContracts", "NewPlayerEventEndTime" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.Artifacts), global::Ei.Backup.Types.Artifacts.Parser, new[]{ "Infusing", "ItemBeingInfused", "SpecBeingInfused", "EggTypeInfusing", "InfusingEggsRequired", "EggsInfused", "FlowPercentageArtifacts", "FuelingEnabled", "TankFillingEnabled", "TankLevel", "TankFuels", "TankLimits", "LastFueledShip", "InventoryScore", "CraftingXp", "Enabled", "IntroShown", "InfusingEnabledDEPRECATED" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.Shells), global::Ei.Backup.Types.Shells.Parser, new[]{ "IntroAlert", "ContractsIntroAlert", "NumNew" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.Simulation), global::Ei.Backup.Types.Simulation.Parser, new[]{ "EggType", "FarmType", "ContractId", "CashEarned", "CashSpent", "UnclaimedCash", "LastStepTime", "NumChickens", "NumChickensUnsettled", "NumChickensRunning", "EggsLaid", "EggsShipped", "EggsPaidFor", "SilosOwned", "Habs", "HabPopulation", "HabPopulationIndound", "HabIncubatorPopuplation", "HatcheryPopulation", "Vehicles", "TrainLength", "CommonResearch", "ActiveBoosts", "LastCashBoostTime", "TimeCheatsDetected", "TimeCheatDebt", "BoostTokensReceived", "BoostTokensSpent", "BoostTokensGiven", "UnclaimedBoostTokens", "GametimeUntilNextBoostToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.Mission), global::Ei.Backup.Types.Mission.Parser, new[]{ "CurrentMission", "ReferenceValue", "CurrentMissions", "Missions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.Misc), global::Ei.Backup.Types.Misc.Parser, new[]{ "ChickenBtnPrefBig", "FreeHatcheryRefillGiven", "LastShareFarmValue", "LastShareSwarmFarmValue", "LastShareSwarmSize", "LastPrestigeAlertSoulEggsDEPRECATED", "FriendRank", "FriendRankPop", "GlobalRank", "GlobalRankPop", "ChallengesAlert", "TrophyAlert", "ArAlert", "ContractsAlert", "ContractsAlertV2", "CoopAlert", "CoopAlertV2", "SwitchAlert", "EggOfProphecyAlert", "BoostTokenAlert", "SoulEggAlert", "BackupReminderAlert", "MaxButtonAlert", "MissionTargetAlert" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.ResearchItem), global::Ei.Backup.Types.ResearchItem.Parser, new[]{ "Id", "Level" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.NewsHeadline), global::Ei.Backup.Types.NewsHeadline.Parser, new[]{ "Id", "Read" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.AchievementInfo), global::Ei.Backup.Types.AchievementInfo.Parser, new[]{ "Id", "Achieved" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.ActiveBoost), global::Ei.Backup.Types.ActiveBoost.Parser, new[]{ "BoostId", "TimeRemaining", "ReferenceValue" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.OwnedBoost), global::Ei.Backup.Types.OwnedBoost.Parser, new[]{ "BoostId", "Count" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Backup.Types.MissionInfo), global::Ei.Backup.Types.MissionInfo.Parser, new[]{ "Id", "Completed", "ReferenceValue" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.EggIncFirstContactRequest), global::Ei.EggIncFirstContactRequest.Parser, new[]{ "Rinfo", "EiUserId", "UserId", "GameServicesId", "DeviceId", "Username", "ClientVersion", "Platform" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.EggIncFirstContactResponse), global::Ei.EggIncFirstContactResponse.Parser, new[]{ "EiUserId", "IdsTransferred", "ErrorCode", "ErrorMessage", "Backup" }, null, new[]{ typeof(global::Ei.EggIncFirstContactResponse.Types.ErrorCodes) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.EggIncAdConfig), global::Ei.EggIncAdConfig.Parser, new[]{ "NetworkPriority" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.DailyGiftInfo), global::Ei.DailyGiftInfo.Parser, new[]{ "CurrentDay", "SecondsToNextDay" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.SalesInfoRequest), global::Ei.SalesInfoRequest.Parser, new[]{ "UserId", "PiggyFull", "PiggyFoundFull", "SecondsFullRealtime", "SecondsFullGametime", "LostIncrements", "CurrentClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.IAPSaleEntry), global::Ei.IAPSaleEntry.Parser, new[]{ "ProductId", "SecondsRemaining", "DiscountString", "SaleId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.SalesInfo), global::Ei.SalesInfo.Parser, new[]{ "Sales" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.EggIncEvent), global::Ei.EggIncEvent.Parser, new[]{ "Identifier", "SecondsRemaining", "Type", "Multiplier", "Subtitle", "StartTime", "Duration", "CcOnly" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.EggIncCurrentEvents), global::Ei.EggIncCurrentEvents.Parser, new[]{ "Events" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.DeviceInfo), global::Ei.DeviceInfo.Parser, new[]{ "DeviceId", "AdvertisingId", "Platform", "FormFactor", "DeviceName", "PlatformVersion", "LocaleCountry", "LocaleLanguage", "GpuVendor", "GpuModel", "DeviceBucket", "ScreenWidth", "ScreenHeight" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.AppInfo), global::Ei.AppInfo.Parser, new[]{ "VersionStr", "Sessions", "NumPrestiges", "SoulEggs", "CurrentEgg", "GoldEarned", "GoldSpent", "CurrentMission", "PiggySize", "NumPiggyBreaks", "VerifiedPiggyBreaks", "IapPacksPurchased", "PermitLevel", "VideoDoublerUses", "DroneTakedowns", "DroneTakedownsElite", "TrophiesUnlocked", "EggLevel", "StruggleFactor", "PiggyFull", "PiggyFoundFull", "TimePiggyFullRealtime", "TimePiggyFullGametime", "LostPiggyIncrements", "SaleId", "UnlimitedChickensUses", "RefillUses", "ShortWarpUses", "LongWarpUses" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ActionKeyValuePair), global::Ei.ActionKeyValuePair.Parser, new[]{ "Key", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.GenericAction), global::Ei.GenericAction.Parser, new[]{ "UserId", "CcUser", "AdvertisingId", "ApproxTimeDEP", "ApproxTime", "ActionName", "Data", "App", "Device" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.GenericActionBatchRequest), global::Ei.GenericActionBatchRequest.Parser, new[]{ "Rinfo", "Actions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.VerifyPurchaseRequest), global::Ei.VerifyPurchaseRequest.Parser, new[]{ "Rinfo", "Sku", "TransactionId", "OriginalTransactionId", "Receipt", "Platform", "Sandbox", "Log" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.VerifyPurchaseResponse), global::Ei.VerifyPurchaseResponse.Parser, new[]{ "Verified", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CurrencyFlowLog), global::Ei.CurrencyFlowLog.Parser, new[]{ "UserId", "ApproxTime", "Currency", "Amount", "Location", "Version", "Platform", "SoulEggs", "TicketsSpent", "GoldSpent" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CurrencyFlowBatchRequest), global::Ei.CurrencyFlowBatchRequest.Parser, new[]{ "Rinfo", "Logs" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Reward), global::Ei.Reward.Parser, new[]{ "RewardType", "RewardSubType", "RewardAmount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.GameModifier), global::Ei.GameModifier.Parser, new[]{ "Dimension", "Value", "Description" }, null, new[]{ typeof(global::Ei.GameModifier.Types.GameDimension) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Contract), global::Ei.Contract.Parser, new[]{ "Identifier", "Name", "Description", "Egg", "Goals", "GoalSets", "GradeSpecs", "SeasonId", "CoopAllowed", "MaxCoopSize", "MaxBoosts", "MinutesPerToken", "ChickenRunCooldownMinutes", "StartTime", "ExpirationTime", "LengthSeconds", "MaxSoulEggs", "MinClientVersion", "Leggacy", "CcOnly", "DefaultShellIds", "Debug", "Key" }, null, new[]{ typeof(global::Ei.Contract.Types.PlayerGrade) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Contract.Types.Goal), global::Ei.Contract.Types.Goal.Parser, new[]{ "Type", "TargetAmount", "RewardType", "RewardSubType", "RewardAmount", "TargetSoulEggs" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Contract.Types.GoalSet), global::Ei.Contract.Types.GoalSet.Parser, new[]{ "Goals" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.Contract.Types.GradeSpec), global::Ei.Contract.Types.GradeSpec.Parser, new[]{ "Grade", "Goals", "Modifiers", "LengthSeconds" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractPlayerInfo), global::Ei.ContractPlayerInfo.Parser, new[]{ "Grade", "TotalCxp", "SeasonCxp", "GradeScore", "TargetGradeScore", "SoulPower", "TargetSoulPower", "GradeProgress", "Issues", "IssueScore", "Status", "LastEvaluationTime", "LastEvaluationVersion", "UnreadEvaluations" }, null, new[]{ typeof(global::Ei.ContractPlayerInfo.Types.Status) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractEvaluation), global::Ei.ContractEvaluation.Parser, new[]{ "ContractIdentifier", "CoopIdentifier", "Cxp", "Replay", "CxpChange", "GradePerformance", "OldLeague", "OldGoals", "Grade", "ContributionRatio", "CompletionPercent", "OriginalLength", "CoopSize", "Solo", "SoulPower", "LastContributionTime", "CompletionTime", "ChickenRunsSent", "GiftTokensSent", "GiftTokensReceived", "GiftTokenValueSent", "GiftTokenValueReceived", "BoostTokenAllotment", "BuffTimeValue", "TeamworkScore", "OtherBonuses", "CountedInSeason", "SeasonId", "TimeCheats", "Issues", "Notes", "Version", "EvaluationStartTime", "Status" }, null, new[]{ typeof(global::Ei.ContractEvaluation.Types.PoorBehavior), typeof(global::Ei.ContractEvaluation.Types.Status) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractCitation), global::Ei.ContractCitation.Parser, new[]{ "Issue", "Timestamp", "Grade" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractEvaluationBatch), global::Ei.ContractEvaluationBatch.Parser, new[]{ "Evals" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractEvaluationBatch.Types.Pair), global::Ei.ContractEvaluationBatch.Types.Pair.Parser, new[]{ "UserId", "Cev" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CoopCompletionSnapshot), global::Ei.CoopCompletionSnapshot.Parser, new[]{ "Contributors" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CoopCompletionSnapshot.Types.ContributorSnapshot), global::Ei.CoopCompletionSnapshot.Types.ContributorSnapshot.Parser, new[]{ "Contribution", "LastContributionTime", "Finalized", "SoulPower", "UserId", "Tokens", "TokensSpent" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.BasicRequestInfo), global::Ei.BasicRequestInfo.Parser, new[]{ "EiUserId", "ClientVersion", "Version", "Build", "Platform", "Country", "Language", "Debug" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractSimConfig), global::Ei.ContractSimConfig.Parser, new[]{ "GradeConfigs" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractSimConfig.Types.ContractGradeSimConfig), global::Ei.ContractSimConfig.Types.ContractGradeSimConfig.Parser, new[]{ "Grade", "GoalParams" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams), global::Ei.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams.Parser, new[]{ "TargetSe", "CpsMult", "ElrMult", "EarningsMult", "TimeEfficacy", "HabCapacityMult", "EpicResearchBudget" }, null, null, null, null)})}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractSimPoll), global::Ei.ContractSimPoll.Parser, new[]{ "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractSimPollResponse), global::Ei.ContractSimPollResponse.Parser, new[]{ "ContractToSimulate", "SimConfig" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractSimResultUpdate), global::Ei.ContractSimResultUpdate.Parser, new[]{ "ContractId", "GoalInfos" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractSimResultUpdate.Types.GoalInfo), global::Ei.ContractSimResultUpdate.Types.GoalInfo.Parser, new[]{ "Grade", "GoalIndex", "ProjectedEggsLaid" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractsRequest), global::Ei.ContractsRequest.Parser, new[]{ "SoulEggs", "ClientVersion", "UserId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractsResponse), global::Ei.ContractsResponse.Parser, new[]{ "Contracts", "WarningMessage", "TotalEop", "ServerTime", "MaxEop" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractCoopStatusRequest), global::Ei.ContractCoopStatusRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "UserId", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.FarmProductionParams), global::Ei.FarmProductionParams.Parser, new[]{ "FarmPopulation", "FarmCapacity", "Elr", "Ihr", "Sr", "Delivered" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.PlayerFarmInfo), global::Ei.PlayerFarmInfo.Parser, new[]{ "ClientVersion", "SoulEggs", "EggsOfProphecy", "PermitLevel", "HyperloopStation", "EggMedalLevel", "EpicResearch", "EggType", "CashOnHand", "Habs", "HabPopulation", "HabCapacity", "Vehicles", "TrainLength", "SilosOwned", "CommonResearch", "ActiveBoosts", "BoostTokensOnHand", "EquippedArtifacts", "ArtifactInventoryScore", "FarmAppearance", "Timestamp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractCoopStatusResponse), global::Ei.ContractCoopStatusResponse.Parser, new[]{ "ResponseStatus", "ContractIdentifier", "TotalAmount", "CoopIdentifier", "Grade", "Contributors", "AutoGenerated", "Public", "CreatorId", "SecondsRemaining", "SecondsSinceAllGoalsAchieved", "AllGoalsAchieved", "AllMembersReporting", "GracePeriodSecondsRemaining", "ClearedForExit", "Gifts", "ChickenRuns", "LocalTimestamp", "LastSync" }, null, new[]{ typeof(global::Ei.ContractCoopStatusResponse.Types.ResponseStatus), typeof(global::Ei.ContractCoopStatusResponse.Types.MemberStatus), typeof(global::Ei.ContractCoopStatusResponse.Types.Status) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractCoopStatusResponse.Types.ContributionInfo), global::Ei.ContractCoopStatusResponse.Types.ContributionInfo.Parser, new[]{ "Uuid", "UserId", "UserName", "ContractIdentifier", "ContributionAmount", "ContributionRate", "SoulPower", "ProductionParams", "FarmInfo", "RankChange", "RecentlyActive", "Active", "CcMember", "Leech", "Finalized", "TimeCheatDetected", "Platform", "PushId", "BanVotes", "Autojoined", "BoostTokens", "BoostTokensSpent", "BuffHistory", "ChickenRunCooldown" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractCoopStatusResponse.Types.CoopGift), global::Ei.ContractCoopStatusResponse.Types.CoopGift.Parser, new[]{ "UserId", "UserName", "Amount", "Tracking" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractCoopStatusResponse.Types.ChickenRun), global::Ei.ContractCoopStatusResponse.Types.ChickenRun.Parser, new[]{ "UserId", "UserName", "Amount" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LocalContract), global::Ei.LocalContract.Parser, new[]{ "Contract", "CoopIdentifier", "Accepted", "TimeAccepted", "Cancelled", "New", "CoopSharedEndTime", "CoopSimulationEndTime", "CoopGracePeriodEndTime", "CoopContributionFinalized", "CoopLastUploadedContribution", "CoopUserId", "CoopShareFarm", "LastAmountWhenRewardGiven", "NumGoalsAchieved", "BoostsUsed", "PointsReplay", "League", "Grade", "LastNagTime", "Evaluation", "ReportedUuids" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.MyContracts), global::Ei.MyContracts.Parser, new[]{ "ContractIdsSeen", "Contracts", "Archive", "CurrentCoopStatuses", "LastCpi", "InitialGradeRevealed", "LastGradeProgressShown", "ShowAdvancedEvaluations" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.QueryCoopRequest), global::Ei.QueryCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "League", "Grade", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.QueryCoopResponse), global::Ei.QueryCoopResponse.Parser, new[]{ "Exists", "Full", "Expired", "DifferentLeague", "DifferentGrade", "CcOnly", "Banned" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CreateCoopRequest), global::Ei.CreateCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "Public", "CcOnly", "AllowAllGrades", "SecondsRemaining", "UserId", "UserName", "SoulPower", "Eop", "League", "Grade", "PointsReplay", "Platform", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CreateCoopResponse), global::Ei.CreateCoopResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.JoinCoopRequest), global::Ei.JoinCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "UserId", "UserName", "SoulPower", "Eop", "League", "Grade", "PointsReplay", "Platform", "SecondsRemaining", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.JoinCoopResponse), global::Ei.JoinCoopResponse.Parser, new[]{ "Success", "Message", "Banned", "CoopIdentifier", "SecondsRemaining", "MatchPercent", "NumMembers", "Status", "Grade", "CanStart" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.AutoJoinCoopRequest), global::Ei.AutoJoinCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "UserId", "UserName", "SoulPower", "Eop", "League", "Grade", "PointsReplay", "SecondsRemaining", "Platform", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.UpdateCoopPermissionsRequest), global::Ei.UpdateCoopPermissionsRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "RequestingUserId", "Public", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.UpdateCoopPermissionsResponse), global::Ei.UpdateCoopPermissionsResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LeaveCoopRequest), global::Ei.LeaveCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "PlayerIdentifier", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.GiftPlayerCoopRequest), global::Ei.GiftPlayerCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "PlayerIdentifier", "RequestingUserId", "RequestingUserName", "Amount", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.SendChickenRunCoopRequest), global::Ei.SendChickenRunCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "PlayerIdentifier", "RequestingUserId", "RequestingUserName", "FarmPop", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ReportPlayerCoopRequest), global::Ei.ReportPlayerCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "UserId", "Reason" }, null, new[]{ typeof(global::Ei.ReportPlayerCoopRequest.Types.Reason) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.KickPlayerCoopRequest), global::Ei.KickPlayerCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "PlayerIdentifier", "RequestingUserId", "Reason", "ClientVersion" }, null, new[]{ typeof(global::Ei.KickPlayerCoopRequest.Types.Reason) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractCoopStatusUpdateRequest), global::Ei.ContractCoopStatusUpdateRequest.Parser, new[]{ "Rinfo", "UserId", "ContractIdentifier", "CoopIdentifier", "PushUserId", "Amount", "Rate", "TimeCheatsDetected", "SoulPower", "Eop", "BoostTokens", "BoostTokensSpent", "HideCcStatus", "ProductionParams", "FarmInfo", "EggLayingRateBuff", "EarningsBuff" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractCoopStatusUpdateResponse), global::Ei.ContractCoopStatusUpdateResponse.Parser, new[]{ "Finalized", "Exists", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CoopBuffState), global::Ei.CoopBuffState.Parser, new[]{ "EggLayingRate", "Earnings", "ServerTimestamp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CoopBuffHistory), global::Ei.CoopBuffHistory.Parser, new[]{ "History" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CoopChickenRunEntry), global::Ei.CoopChickenRunEntry.Parser, new[]{ "UserId", "ServerTimestamp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CoopLastChickenRunTimes), global::Ei.CoopLastChickenRunTimes.Parser, new[]{ "Entries" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LeaderboardAnalysis), global::Ei.LeaderboardAnalysis.Parser, new[]{ "Chunks", "Count", "HighScore", "LowScore", "Cursor" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LeaderboardAnalysis.Types.Chunk), global::Ei.LeaderboardAnalysis.Types.Chunk.Parser, new[]{ "StartIndex", "EndIndex", "HighScore", "LowScore", "StartCursor", "EndCursor" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LeaderboardInfo), global::Ei.LeaderboardInfo.Parser, new[]{ "Seasons", "AllTimeScope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LeaderboardInfo.Types.Season), global::Ei.LeaderboardInfo.Types.Season.Parser, new[]{ "Scope", "Name" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LeaderboardRequest), global::Ei.LeaderboardRequest.Parser, new[]{ "Rinfo", "Scope", "Grade" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LeaderboardResponse), global::Ei.LeaderboardResponse.Parser, new[]{ "Scope", "Grade", "TopEntries", "Count", "Rank", "Score" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LeaderboardResponse.Types.Entry), global::Ei.LeaderboardResponse.Types.Entry.Parser, new[]{ "Rank", "Alias", "Score" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractsArchive), global::Ei.ContractsArchive.Parser, new[]{ "Archive" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ContractAction), global::Ei.ContractAction.Parser, new[]{ "UserId", "ActionName", "ApproxTime", "DestUserId", "ContractId", "CoopId", "Autojoin", "Grade", "Replay", "PointsReplay", "RewardType", "RewardSubtype", "RewardAmount", "GoalIndex", "BoostId", "Tokens", "KickReason", "Public", "CcOnly" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.UserDataInfoRequest), global::Ei.UserDataInfoRequest.Parser, new[]{ "Rinfo", "UserId", "DeviceId", "BackupChecksum" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.UserDataInfoResponse), global::Ei.UserDataInfoResponse.Parser, new[]{ "BackupChecksum", "BackupTotalCash", "CoopMemberships" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ClearAllUserDataRequest), global::Ei.ClearAllUserDataRequest.Parser, new[]{ "Rinfo", "UserId", "DeviceId", "BackupChecksum" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ServerGift), global::Ei.ServerGift.Parser, new[]{ "UserId", "RewardType", "RewardSubType", "RewardAmount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LiveConfig), global::Ei.LiveConfig.Parser, new[]{ "ConfigId", "BoostsConfig", "GiftConfig", "MiscConfig" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LiveConfig.Types.BoostsConfig), global::Ei.LiveConfig.Types.BoostsConfig.Parser, new[]{ "ItemConfigs", "CashBoostCooloffTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LiveConfig.Types.BoostsConfig.Types.ItemConfig), global::Ei.LiveConfig.Types.BoostsConfig.Types.ItemConfig.Parser, new[]{ "BoostId", "Price", "TokenPrice", "SeRequired" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LiveConfig.Types.GiftConfig), global::Ei.LiveConfig.Types.GiftConfig.Parser, new[]{ "GiftConfigs", "GiftMuMinSpent", "GiftMuMaxSpent", "GiftMuOverallMult", "RandomGiftMuConfig", "VideoGiftMuConfig", "PackageInterval", "VideoOfferInterval", "VideoOfferIntervalContract", "VideoOfferIntervalPiggyFull", "VideoOfferIntervalPiggyExtraFull", "VideoResetOnIdle", "PackageIntervalContract", "PackageIntervalPiggyFull", "PackageIntervalPiggyExtraFull", "PackageResetOnIdle" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LiveConfig.Types.GiftConfig.Types.GiftValueConfig), global::Ei.LiveConfig.Types.GiftConfig.Types.GiftValueConfig.Parser, new[]{ "GiftId", "Amount", "RandMin", "RandMax", "VideoMin", "VideoMax" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LiveConfig.Types.GiftConfig.Types.GiftMuConfig), global::Ei.LiveConfig.Types.GiftConfig.Types.GiftMuConfig.Parser, new[]{ "MinSpent", "MaxSpent", "OverallMult" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LiveConfig.Types.MiscConfig), global::Ei.LiveConfig.Types.MiscConfig.Parser, new[]{ "AskToTrack", "AskToTrackMinSoulEggs", "AskToTrackMessage", "AskToTrackShowPreDialog", "AskToTrackAfterPrivacy", "ChickenRunBoostPercentage", "ShellsIntroTickets", "ShellsMaxFreeChickenConfigs", "ShellsIntroAlertThreshold", "ShellsLightingControlsPrice", "ContractsExpertLeagueMinSoulPower", "NewPlayerEventDuration", "ContractsClubAvailable", "ContractsBeta" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.InGameMail), global::Ei.InGameMail.Parser, new[]{ "Id", "Title", "Date", "Message", "Action", "Url", "AppLink", "AppLinkExtra", "Image", "ImageWidth", "ImageHeight", "Platform", "Builds", "MinClientVersion", "MaxClientVersion", "MinSoulEggs", "MinMysticalBonus", "UserType", "MinPiggyBreaks", "GoldTip", "Tip", "Priority", "MinDaysSinceLastTip", "MaxRetries", "DaysUntilRetry", "Category" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.MailDB), global::Ei.MailDB.Parser, new[]{ "Mail", "TipsDbData", "TipsChecksum" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.TipsDB), global::Ei.TipsDB.Parser, new[]{ "Tips" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.MailState), global::Ei.MailState.Parser, new[]{ "ReadMailIds", "TipsStates", "TipsChecksum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.MailState.Types.TipState), global::Ei.MailState.Types.TipState.Parser, new[]{ "Id", "Reads", "TimeRead" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.PeriodicalsResponse), global::Ei.PeriodicalsResponse.Parser, new[]{ "Sales", "Events", "Contracts", "Evaluations", "Gifts", "ArtifactCases", "LiveConfig", "MailBag", "ContractPlayerInfo", "ShowcaseRoyalties" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.PeriodicalsResponse.Types.RoyaltyInfo), global::Ei.PeriodicalsResponse.Types.RoyaltyInfo.Parser, new[]{ "Id", "Amount" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.GetPeriodicalsRequest), global::Ei.GetPeriodicalsRequest.Parser, new[]{ "Rinfo", "UserId", "PiggyFull", "PiggyFoundFull", "SecondsFullRealtime", "SecondsFullGametime", "LostIncrements", "SoulEggs", "MysticalEarningsMult", "Eop", "ContractsUnlocked", "ArtifactsUnlocked", "CurrentClientVersion", "Debug" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ConfigRequest), global::Ei.ConfigRequest.Parser, new[]{ "Rinfo", "SoulEggs", "ContractsUnlocked", "ArtifactsUnlocked", "FuelTankUnlocked", "ProPermit", "Ultra", "TipsChecksum" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ConfigResponse), global::Ei.ConfigResponse.Parser, new[]{ "LiveConfig", "MailBag", "DlcCatalog" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.AdAttributionRawData), global::Ei.AdAttributionRawData.Parser, new[]{ "DeviceAdId", "UserId", "AdNetwork", "JsonData" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.AdAttributionRow), global::Ei.AdAttributionRow.Parser, new[]{ "UserId", "AdId", "AdNetwork", "Campaign", "Keyword", "Extra", "ClickDate", "DownloadDate", "ApproxTime" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.AdAttributionInfo), global::Ei.AdAttributionInfo.Parser, new[]{ "DeviceAdId", "NetworkName", "Attribution", "OrgName", "OrgId", "CampaignName", "CampaignId", "ClickDate", "ConversionDate", "ConversionType", "Geo", "AdgroupName", "AdgroupId", "Keyword", "KeywordId", "KeywordExtra", "CreativesetName", "CreativesetId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsClientInfo), global::Ei.ArtifactsClientInfo.Parser, new[]{ "MissionCapacityMult", "MissionDurationMult", "MissionFtlDurationMult", "LaunchCounts" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsClientInfo.Types.LaunchCount), global::Ei.ArtifactsClientInfo.Types.LaunchCount.Parser, new[]{ "Ship", "NumLaunches", "LaunchPoints" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.MissionInfo), global::Ei.MissionInfo.Parser, new[]{ "Ship", "Status", "DurationType", "Fuel", "Level", "DurationSeconds", "Capacity", "QualityBump", "TargetArtifact", "SecondsRemaining", "StartTimeDerived", "MissionLog", "Identifier" }, null, new[]{ typeof(global::Ei.MissionInfo.Types.Spaceship), typeof(global::Ei.MissionInfo.Types.Status), typeof(global::Ei.MissionInfo.Types.DurationType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.MissionInfo.Types.Fuel), global::Ei.MissionInfo.Types.Fuel.Parser, new[]{ "Egg", "Amount" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactSpec), global::Ei.ArtifactSpec.Parser, new[]{ "Name", "Level", "Rarity", "Egg" }, null, new[]{ typeof(global::Ei.ArtifactSpec.Types.Name), typeof(global::Ei.ArtifactSpec.Types.Level), typeof(global::Ei.ArtifactSpec.Types.Rarity), typeof(global::Ei.ArtifactSpec.Types.Type) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CompleteArtifact), global::Ei.CompleteArtifact.Parser, new[]{ "Spec", "Stones" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactInventoryItem), global::Ei.ArtifactInventoryItem.Parser, new[]{ "ItemId", "Artifact", "Quantity", "ServerId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.InventorySlot), global::Ei.InventorySlot.Parser, new[]{ "Occupied", "ItemId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsConfigurationRequest), global::Ei.ArtifactsConfigurationRequest.Parser, new[]{ "Rinfo", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsConfigurationResponse), global::Ei.ArtifactsConfigurationResponse.Parser, new[]{ "MissionParameters", "ArtifactParameters", "CraftingLevelInfos" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters), global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters.Parser, new[]{ "Ship", "Durations", "LevelMissionRequirements", "CapacityDEPRECATED" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration), global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration.Parser, new[]{ "DurationType", "Seconds", "Quality", "MinQuality", "MaxQuality", "Capacity", "LevelCapacityBump", "LevelQualityBump" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsConfigurationResponse.Types.ArtifactParameters), global::Ei.ArtifactsConfigurationResponse.Types.ArtifactParameters.Parser, new[]{ "Spec", "BaseQuality", "OddsMultiplier", "Value", "CraftingPrice", "CraftingPriceLow", "CraftingPriceDomain", "CraftingPriceCurve", "CraftingXp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsConfigurationResponse.Types.CraftingLevelInfo), global::Ei.ArtifactsConfigurationResponse.Types.CraftingLevelInfo.Parser, new[]{ "XpRequired", "RarityMult" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.MissionRequest), global::Ei.MissionRequest.Parser, new[]{ "Rinfo", "ClientVersion", "EiUserId", "Info", "ClientInfo" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.MissionResponse), global::Ei.MissionResponse.Parser, new[]{ "Success", "Info" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CompleteMissionResponse), global::Ei.CompleteMissionResponse.Parser, new[]{ "Success", "Info", "Artifacts", "OtherRewards", "EiUserId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CompleteMissionResponse.Types.SecureArtifactSpec), global::Ei.CompleteMissionResponse.Types.SecureArtifactSpec.Parser, new[]{ "Spec", "ServerId" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CollectContractArtifactRewardsRequest), global::Ei.CollectContractArtifactRewardsRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "League", "Grade", "GoalIndex", "BestShip" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CraftArtifactRequest), global::Ei.CraftArtifactRequest.Parser, new[]{ "Rinfo", "EiUserId", "Spec", "ItemId", "GoldPricePaid", "CraftingCount", "CraftingXp", "Ingredients" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CraftArtifactResponse), global::Ei.CraftArtifactResponse.Parser, new[]{ "ItemId", "EiUserId", "RarityAchieved", "ServerId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ConsumeArtifactRequest), global::Ei.ConsumeArtifactRequest.Parser, new[]{ "Rinfo", "EiUserId", "Spec", "ArtifactServerId", "OriginalItemId", "AdditionalServerIds", "AdditionalItemIds", "Quantity" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ConsumeArtifactResponse), global::Ei.ConsumeArtifactResponse.Parser, new[]{ "Success", "OriginalItemId", "AdditionalItemIds", "Byproducts", "OtherRewards", "EiUserId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.AuthenticateArtifactResponse), global::Ei.AuthenticateArtifactResponse.Parser, new[]{ "Success", "OriginalItemId", "Demote", "Delete", "EiUserId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.SetArtifactRequest), global::Ei.SetArtifactRequest.Parser, new[]{ "Rinfo", "Artifact", "Stones", "GoldPricePaid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.SetArtifactResponse), global::Ei.SetArtifactResponse.Parser, new[]{ "Success", "OriginalItemId", "EiUserId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsDB), global::Ei.ArtifactsDB.Parser, new[]{ "InventoryItems", "ItemSequence", "InventorySlots", "ActiveArtifactsDEPRECATED", "ActiveArtifactSets", "SavedArtifactSets", "ArtifactStatus", "MissionInfos", "MissionArchive", "DiscoveredArtifactsDEPRECATED", "CraftableArtifactsDEPRECATED", "CraftingCountsDEPRECATED" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsDB.Types.ActiveArtifactSlot), global::Ei.ArtifactsDB.Types.ActiveArtifactSlot.Parser, new[]{ "Occupied", "ItemId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsDB.Types.ActiveArtifactSet), global::Ei.ArtifactsDB.Types.ActiveArtifactSet.Parser, new[]{ "Slots", "Uid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ArtifactsDB.Types.CraftableArtifact), global::Ei.ArtifactsDB.Types.CraftableArtifact.Parser, new[]{ "Spec", "Discovered", "Craftable", "RecipeDiscovered", "Seen", "Count" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.AuthenticatedMessage), global::Ei.AuthenticatedMessage.Parser, new[]{ "Message", "Version", "Code", "Compressed", "OriginalSize", "UserId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LogCompleteMissionPayload), global::Ei.LogCompleteMissionPayload.Parser, new[]{ "Req", "Res" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LogCraftArtifactPayload), global::Ei.LogCraftArtifactPayload.Parser, new[]{ "Req", "Res" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LogConsumeArtifactPayload), global::Ei.LogConsumeArtifactPayload.Parser, new[]{ "Req", "Res" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.LogSetArtifactPayload), global::Ei.LogSetArtifactPayload.Parser, new[]{ "Req", "Res" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.AccountTransferPayload), global::Ei.AccountTransferPayload.Parser, new[]{ "FromId", "ToEiUserId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.SaveBackupResponse), global::Ei.SaveBackupResponse.Parser, new[]{ "Success", "ErrorCode", "Message", "ExistingBackup" }, null, new[]{ typeof(global::Ei.SaveBackupResponse.Types.ErrorCodes) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CleanAccountRequest), global::Ei.CleanAccountRequest.Parser, new[]{ "EiUserIdToKeep", "GameServicesId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ReturnEDTPayload), global::Ei.ReturnEDTPayload.Parser, new[]{ "EiUserId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.DLCItem), global::Ei.DLCItem.Parser, new[]{ "Name", "Directory", "Ext", "Compressed", "OriginalSize", "Url", "Checksum" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellSpec), global::Ei.ShellSpec.Parser, new[]{ "Identifier", "PrimaryPiece", "Pieces", "AltAssets", "Name", "SetIdentifier", "ModifiedGeometry", "Price", "RequiredEop", "RequiredSoulEggs", "RequiredParentShell", "IsNew", "Expires", "SecondsUntilAvailable", "SecondsRemaining", "Popularity", "DefaultAppearance" }, null, new[]{ typeof(global::Ei.ShellSpec.Types.AssetType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellSpec.Types.ShellPiece), global::Ei.ShellSpec.Types.ShellPiece.Parser, new[]{ "AssetType", "Dlc" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellSetSpec), global::Ei.ShellSetSpec.Parser, new[]{ "Identifier", "Name", "Price", "PriceMultDEPRECATED", "Discount", "RequiredEop", "RequiredSoulEggs", "RequiredParentSet", "IsNew", "Expires", "SecondsUntilAvailable", "SecondsRemaining", "Popularity", "Decorator", "ModifiedGeometry", "ElementSet", "HexBaseColor", "Variations", "Icon", "DefaultAppearance", "CustomAppearance" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellSetSpec.Types.VariationSpec), global::Ei.ShellSetSpec.Types.VariationSpec.Parser, new[]{ "Identifier", "HexColor", "Price", "SortPriority", "DefaultAppearance", "CustomAppearance" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellObjectSpec), global::Ei.ShellObjectSpec.Parser, new[]{ "Identifier", "Name", "AssetType", "ObjectClass", "IconColors", "Price", "RequiredEop", "RequiredSoulEggs", "IsNew", "Expires", "SecondsUntilAvailable", "SecondsRemaining", "Popularity", "Metadata", "NoHats", "ChickenAnimation", "SortPriority", "Pieces", "DefaultAppearance" }, null, new[]{ typeof(global::Ei.ShellObjectSpec.Types.ChickenAnimation) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellObjectSpec.Types.LODPiece), global::Ei.ShellObjectSpec.Types.LODPiece.Parser, new[]{ "Dlc", "Lod" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellGroupSpec), global::Ei.ShellGroupSpec.Parser, new[]{ "Identifier", "Name", "AssetType", "MemberIds", "PriceMultDEPRECATED" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.DLCCatalog), global::Ei.DLCCatalog.Parser, new[]{ "Items", "Shells", "ShellSets", "Decorators", "ShellObjects", "ShellGroups" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB), global::Ei.ShellDB.Parser, new[]{ "ShellInventory", "ShellElementInventory", "ShellVariationInventory", "ShellSetInventory", "ShellObjectInventory", "FarmConfigs", "SavedConfigs", "NewShellsDownloaded", "NewShellsSeen", "LightingControlsUnlocked" }, null, new[]{ typeof(global::Ei.ShellDB.Types.FarmElement) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB.Types.ShellStatus), global::Ei.ShellDB.Types.ShellStatus.Parser, new[]{ "Identifier", "Owned" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB.Types.ShellElementStatus), global::Ei.ShellDB.Types.ShellElementStatus.Parser, new[]{ "Element", "SetIdentifier" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB.Types.ShellSetVariationStatus), global::Ei.ShellDB.Types.ShellSetVariationStatus.Parser, new[]{ "SetIdentifier", "OwnedVariations" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB.Types.FarmConfiguration), global::Ei.ShellDB.Types.FarmConfiguration.Parser, new[]{ "LockedElements", "ShellConfigs", "ShellSetConfigs", "ConfigureChickensByGroup", "GroupConfigs", "ChickenConfigs", "LightingConfigEnabled", "LightingConfig" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB.Types.SavedFarmConfiguration), global::Ei.ShellDB.Types.SavedFarmConfiguration.Parser, new[]{ "Id", "Config", "ClientSaveTime", "ServerId", "DisplayName", "Purchased" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB.Types.ShellConfiguration), global::Ei.ShellDB.Types.ShellConfiguration.Parser, new[]{ "AssetType", "Index", "ShellIdentifier" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB.Types.ShellSetConfiguration), global::Ei.ShellDB.Types.ShellSetConfiguration.Parser, new[]{ "Element", "Index", "ShellSetIdentifier", "VariationIdentifier", "DecoratorIdentifier" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB.Types.ShellGroupConfiguration), global::Ei.ShellDB.Types.ShellGroupConfiguration.Parser, new[]{ "AssetType", "GroupIdentifier" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB.Types.ChickenConfig), global::Ei.ShellDB.Types.ChickenConfig.Parser, new[]{ "ChickenIdentifier", "HatIdentifier" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellDB.Types.LightingConfig), global::Ei.ShellDB.Types.LightingConfig.Parser, new[]{ "LightDir", "LightDirectColor", "LightDirectIntensity", "LightAmbientColor", "LightAmbientIntensity", "FogColor", "FogNear", "FogFar", "FogDensity" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellPopularityStats), global::Ei.ShellPopularityStats.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellPopularityStats.Types.Entry), global::Ei.ShellPopularityStats.Types.Entry.Parser, new[]{ "Id", "Element", "Spent", "Count" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellsActionLog), global::Ei.ShellsActionLog.Parser, new[]{ "Rinfo", "UserId", "Action", "SubId", "FarmElement", "Cost", "ApproxTime", "Version", "FarmIndex", "SoulEggs", "TicketsSpent", "GoldSpent" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.SubmitShellShowcaseRequest), global::Ei.SubmitShellShowcaseRequest.Parser, new[]{ "Rinfo", "LocalId", "UserId", "PublicUsername", "FarmConfig" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellShowcase), global::Ei.ShellShowcase.Parser, new[]{ "Top", "Featured", "Fresh" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellShowcaseListingInfo), global::Ei.ShellShowcaseListingInfo.Parser, new[]{ "Id", "LocalId", "Name", "Description", "CreatorName", "Status", "FarmConfig", "Sales", "Gross", "Views", "Equips", "Likes", "Dislikes", "ShareUrl" }, null, new[]{ typeof(global::Ei.ShellShowcaseListingInfo.Types.Status) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShowcaseRoyaltyDeliveryConfirmation), global::Ei.ShowcaseRoyaltyDeliveryConfirmation.Parser, new[]{ "Rinfo", "Ids", "Amount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellShowcaseListingSet), global::Ei.ShellShowcaseListingSet.Parser, new[]{ "Listings" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.ShellsActionBatch), global::Ei.ShellsActionBatch.Parser, new[]{ "Rinfo", "Actions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.UserVerificationAnalysis), global::Ei.UserVerificationAnalysis.Parser, new[]{ "OverallStatus", "StartTime", "CompletionTime", "NumPrestiges", "SoulEggs", "EggsOfProphecy", "IapStatus", "VerifiedProPermit", "VerifiedPiggyBreaks", "VerifiedOtherIap", "UnverifiedIap", "GoldEarned", "RegularIapBuyer", "RegularIapCheater", "ArtifactsStatus", "MissionsCompleted", "ArtifactsCollected", "ArtifactsConsumed", "ArtifactsInInventory", "RareArtifactsInInventory", "RareArtifactsOnServer", "LegendaryArtifactsInInventory", "LegendaryArtifactsOnServer", "GoldSpentCrafting", "ExcessiveConsumes", "ExcessiveInventory", "ExcessiveSpend", "ContractsStatus", "NumCoopMemberships", "ValidContracts", "InvalidContracts", "ExcessiveEop", "ExcessiveInvalidContracts", "Verified", "VerificationOverride", "VerificationOverrideValue" }, null, new[]{ typeof(global::Ei.UserVerificationAnalysis.Types.Status) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.UserSubscriptionInfo), global::Ei.UserSubscriptionInfo.Parser, new[]{ "SubscriptionLevel", "NextSubscriptionLevel", "LockNextSubscriptionLevel", "Platform", "OriginalTransactionId", "LinkedTransactionId", "Acknowledged", "FirstSubscribed", "PeriodEnd", "Status", "StoreStatus", "AutoRenew", "Sandbox", "LastUpdated", "History", "PastUserIds" }, null, new[]{ typeof(global::Ei.UserSubscriptionInfo.Types.Level), typeof(global::Ei.UserSubscriptionInfo.Types.Status) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ei.UserSubscriptionInfo.Types.HistoryEntry), global::Ei.UserSubscriptionInfo.Types.HistoryEntry.Parser, new[]{ "Timestamp", "MessageId", "Message" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.SubscriptionChangeHintRequest), global::Ei.SubscriptionChangeHintRequest.Parser, new[]{ "Rinfo", "OriginalTransactionId", "NextSubscriptionLevel" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ei.CXPEvalRolloutInfo), global::Ei.CXPEvalRolloutInfo.Parser, new[]{ "CurrentId", "BasisPoints" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::JsonCompilers.Platform), typeof(global::JsonCompilers.DeviceFormFactor), typeof(global::JsonCompilers.AdNetwork), typeof(global::JsonCompilers.Egg), typeof(global::JsonCompilers.FarmType), typeof(global::JsonCompilers.GoalType), typeof(global::JsonCompilers.RewardType), typeof(global::JsonCompilers.UILocation), typeof(global::JsonCompilers.UserType), typeof(global::JsonCompilers.LeaderboardScope), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Vector3), global::JsonCompilers.Vector3.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Vector4), global::JsonCompilers.Vector4.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup), global::JsonCompilers.Backup.Parser, new[]{ "UserId", "EiUserId", "GameServicesId", "PushUserId", "DeviceId", "UserName", "ApproxTime", "Version", "ForceOfferBackup", "ForceBackup", "Settings", "Tutorial", "Stats", "Game", "Artifacts", "Shells", "Sim", "Farms", "Mission", "Misc", "Contracts", "ArtifactsDb", "ShellDb", "ReadMailIds", "MailState", "Checksum", "Signature" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.Settings), global::JsonCompilers.Backup.Types.Settings.Parser, new[]{ "Sfx", "Music", "LowBatteryMode", "LowPerformanceMode", "ForceTouchChickenBtn", "NotificationsQueried", "LastNotificationQueryTime", "NotificationsOn", "NotifyDailyGift", "LowPerformance", "AutoStopFueling", "MaxEnabled", "HideCcStatus", "ContractsWidgetEnabled", "LastBackupTime", "CoppaQueried", "CoppaRestricted", "GdprConsentQueried", "GdprAgeRestricted", "GdprConsentGiven", "AgeQueried", "AgeRestricted", "DataCollectionConsentQueried", "DataCollectionConsentGiven", "LastDayAgeQueried", "UserAdsEnabled", "UserCloudEnabled", "UserAnalyticsEnabled", "UserPersonalizedAdsEnabled" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.Tutorial), global::JsonCompilers.Backup.Types.Tutorial.Parser, new[]{ "IntroShown", "ClickTutorialShown", "BuyHabShown", "HireVehicleShown", "QNumShown", "SNumShown", "ContractsTabShown", "ContractInfoShown", "JoinCoopShown", "SwitchFarmShown", "TutorialShown" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.Stats), global::JsonCompilers.Backup.Types.Stats.Parser, new[]{ "EggTotalsOLD", "EggTotals", "UnlimitedChickensUses", "RefillUses", "Warp1Uses", "Warp8Uses", "BoostsUsed", "VideoDoublerUses", "DroneTakedowns", "DroneTakedownsElite", "NumPrestiges", "NumPiggyBreaks", "IapPacksPurchased", "PiggyFull", "PiggyFoundFull", "TimePiggyFilledRealtime", "TimePiggyFullGametime", "LostPiggyIncrements" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.Game), global::JsonCompilers.Backup.Types.Game.Parser, new[]{ "CurrentFarm", "MaxEggReached", "GoldenEggsEarned", "GoldenEggsSpent", "UncliamedGoldenEggs", "SoulEggs", "UnclaimedSoulEggs", "SoulEggsD", "UnclaimedSoulEggsD", "EggsOfProphecy", "UnclaimedEggsOfProphecy", "ShellScriptsEarned", "ShellScriptsSpent", "UnclaimedShellScripts", "PrestigeCashEarned", "PrestigeSoulBoostCash", "LifetimeCashEarned", "PiggyBank", "PiggyFullAlertShown", "PermitLevel", "EpicResearch", "HyperloopStation", "NextDailyGiftTime", "LastDailyGiftCollectedDay", "NumDailyGiftsCollected", "News", "LastNewsTime", "CurrentMultiplier", "CurrentMultiplierExpiration", "Achievements", "MaxFarmSizeReached", "EggMedalLevel", "LongIdleNotificationSet", "LongIdleNotificationThreshold", "LongIdleReward", "Boosts", "TotalTimeCheatsDetected", "ForceEliteContracts", "NewPlayerEventEndTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.Artifacts), global::JsonCompilers.Backup.Types.Artifacts.Parser, new[]{ "Infusing", "ItemBeingInfused", "SpecBeingInfused", "EggTypeInfusing", "InfusingEggsRequired", "EggsInfused", "FlowPercentageArtifacts", "FuelingEnabled", "TankFillingEnabled", "TankLevel", "TankFuels", "TankLimits", "LastFueledShip", "InventoryScore", "CraftingXp", "Enabled", "IntroShown", "InfusingEnabledDEPRECATED" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.Shells), global::JsonCompilers.Backup.Types.Shells.Parser, new[]{ "IntroAlert", "ContractsIntroAlert", "NumNew" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.Simulation), global::JsonCompilers.Backup.Types.Simulation.Parser, new[]{ "EggType", "FarmType", "ContractId", "CashEarned", "CashSpent", "UnclaimedCash", "LastStepTime", "NumChickens", "NumChickensUnsettled", "NumChickensRunning", "EggsLaid", "EggsShipped", "EggsPaidFor", "SilosOwned", "Habs", "HabPopulation", "HabPopulationIndound", "HabIncubatorPopuplation", "HatcheryPopulation", "Vehicles", "TrainLength", "CommonResearch", "ActiveBoosts", "LastCashBoostTime", "TimeCheatsDetected", "TimeCheatDebt", "BoostTokensReceived", "BoostTokensSpent", "BoostTokensGiven", "UnclaimedBoostTokens", "GametimeUntilNextBoostToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.Mission), global::JsonCompilers.Backup.Types.Mission.Parser, new[]{ "CurrentMission", "ReferenceValue", "CurrentMissions", "Missions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.Misc), global::JsonCompilers.Backup.Types.Misc.Parser, new[]{ "ChickenBtnPrefBig", "FreeHatcheryRefillGiven", "LastShareFarmValue", "LastShareSwarmFarmValue", "LastShareSwarmSize", "LastPrestigeAlertSoulEggsDEPRECATED", "FriendRank", "FriendRankPop", "GlobalRank", "GlobalRankPop", "ChallengesAlert", "TrophyAlert", "ArAlert", "ContractsAlert", "ContractsAlertV2", "CoopAlert", "CoopAlertV2", "SwitchAlert", "EggOfProphecyAlert", "BoostTokenAlert", "SoulEggAlert", "BackupReminderAlert", "MaxButtonAlert", "MissionTargetAlert" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.ResearchItem), global::JsonCompilers.Backup.Types.ResearchItem.Parser, new[]{ "Id", "Level" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.NewsHeadline), global::JsonCompilers.Backup.Types.NewsHeadline.Parser, new[]{ "Id", "Read" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.AchievementInfo), global::JsonCompilers.Backup.Types.AchievementInfo.Parser, new[]{ "Id", "Achieved" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.ActiveBoost), global::JsonCompilers.Backup.Types.ActiveBoost.Parser, new[]{ "BoostId", "TimeRemaining", "ReferenceValue" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.OwnedBoost), global::JsonCompilers.Backup.Types.OwnedBoost.Parser, new[]{ "BoostId", "Count" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Backup.Types.MissionInfo), global::JsonCompilers.Backup.Types.MissionInfo.Parser, new[]{ "Id", "Completed", "ReferenceValue" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.EggIncFirstContactRequest), global::JsonCompilers.EggIncFirstContactRequest.Parser, new[]{ "Rinfo", "EiUserId", "UserId", "GameServicesId", "DeviceId", "Username", "ClientVersion", "Platform" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.EggIncFirstContactResponse), global::JsonCompilers.EggIncFirstContactResponse.Parser, new[]{ "EiUserId", "IdsTransferred", "ErrorCode", "ErrorMessage", "Backup" }, null, new[]{ typeof(global::JsonCompilers.EggIncFirstContactResponse.Types.ErrorCodes) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.EggIncAdConfig), global::JsonCompilers.EggIncAdConfig.Parser, new[]{ "NetworkPriority" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.DailyGiftInfo), global::JsonCompilers.DailyGiftInfo.Parser, new[]{ "CurrentDay", "SecondsToNextDay" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.SalesInfoRequest), global::JsonCompilers.SalesInfoRequest.Parser, new[]{ "UserId", "PiggyFull", "PiggyFoundFull", "SecondsFullRealtime", "SecondsFullGametime", "LostIncrements", "CurrentClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.IAPSaleEntry), global::JsonCompilers.IAPSaleEntry.Parser, new[]{ "ProductId", "SecondsRemaining", "DiscountString", "SaleId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.SalesInfo), global::JsonCompilers.SalesInfo.Parser, new[]{ "Sales" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.EggIncEvent), global::JsonCompilers.EggIncEvent.Parser, new[]{ "Identifier", "SecondsRemaining", "Type", "Multiplier", "Subtitle", "StartTime", "Duration", "CcOnly" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.EggIncCurrentEvents), global::JsonCompilers.EggIncCurrentEvents.Parser, new[]{ "Events" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.DeviceInfo), global::JsonCompilers.DeviceInfo.Parser, new[]{ "DeviceId", "AdvertisingId", "Platform", "FormFactor", "DeviceName", "PlatformVersion", "LocaleCountry", "LocaleLanguage", "GpuVendor", "GpuModel", "DeviceBucket", "ScreenWidth", "ScreenHeight" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.AppInfo), global::JsonCompilers.AppInfo.Parser, new[]{ "VersionStr", "Sessions", "NumPrestiges", "SoulEggs", "CurrentEgg", "GoldEarned", "GoldSpent", "CurrentMission", "PiggySize", "NumPiggyBreaks", "VerifiedPiggyBreaks", "IapPacksPurchased", "PermitLevel", "VideoDoublerUses", "DroneTakedowns", "DroneTakedownsElite", "TrophiesUnlocked", "EggLevel", "StruggleFactor", "PiggyFull", "PiggyFoundFull", "TimePiggyFullRealtime", "TimePiggyFullGametime", "LostPiggyIncrements", "SaleId", "UnlimitedChickensUses", "RefillUses", "ShortWarpUses", "LongWarpUses" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ActionKeyValuePair), global::JsonCompilers.ActionKeyValuePair.Parser, new[]{ "Key", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.GenericAction), global::JsonCompilers.GenericAction.Parser, new[]{ "UserId", "CcUser", "AdvertisingId", "ApproxTimeDEP", "ApproxTime", "ActionName", "Data", "App", "Device" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.GenericActionBatchRequest), global::JsonCompilers.GenericActionBatchRequest.Parser, new[]{ "Rinfo", "Actions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.VerifyPurchaseRequest), global::JsonCompilers.VerifyPurchaseRequest.Parser, new[]{ "Rinfo", "Sku", "TransactionId", "OriginalTransactionId", "Receipt", "Platform", "Sandbox", "Log" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.VerifyPurchaseResponse), global::JsonCompilers.VerifyPurchaseResponse.Parser, new[]{ "Verified", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CurrencyFlowLog), global::JsonCompilers.CurrencyFlowLog.Parser, new[]{ "UserId", "ApproxTime", "Currency", "Amount", "Location", "Version", "Platform", "SoulEggs", "TicketsSpent", "GoldSpent" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CurrencyFlowBatchRequest), global::JsonCompilers.CurrencyFlowBatchRequest.Parser, new[]{ "Rinfo", "Logs" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Reward), global::JsonCompilers.Reward.Parser, new[]{ "RewardType", "RewardSubType", "RewardAmount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.GameModifier), global::JsonCompilers.GameModifier.Parser, new[]{ "Dimension", "Value", "Description" }, null, new[]{ typeof(global::JsonCompilers.GameModifier.Types.GameDimension) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Contract), global::JsonCompilers.Contract.Parser, new[]{ "Identifier", "Name", "Description", "Egg", "Goals", "GoalSets", "GradeSpecs", "SeasonId", "CoopAllowed", "MaxCoopSize", "MaxBoosts", "MinutesPerToken", "ChickenRunCooldownMinutes", "StartTime", "ExpirationTime", "LengthSeconds", "MaxSoulEggs", "MinClientVersion", "Leggacy", "CcOnly", "DefaultShellIds", "Debug", "Key" }, null, new[]{ typeof(global::JsonCompilers.Contract.Types.PlayerGrade) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Contract.Types.Goal), global::JsonCompilers.Contract.Types.Goal.Parser, new[]{ "Type", "TargetAmount", "RewardType", "RewardSubType", "RewardAmount", "TargetSoulEggs" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Contract.Types.GoalSet), global::JsonCompilers.Contract.Types.GoalSet.Parser, new[]{ "Goals" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.Contract.Types.GradeSpec), global::JsonCompilers.Contract.Types.GradeSpec.Parser, new[]{ "Grade", "Goals", "Modifiers", "LengthSeconds" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractPlayerInfo), global::JsonCompilers.ContractPlayerInfo.Parser, new[]{ "Grade", "TotalCxp", "SeasonCxp", "GradeScore", "TargetGradeScore", "SoulPower", "TargetSoulPower", "GradeProgress", "Issues", "IssueScore", "Status", "LastEvaluationTime", "LastEvaluationVersion", "UnreadEvaluations" }, null, new[]{ typeof(global::JsonCompilers.ContractPlayerInfo.Types.Status) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractEvaluation), global::JsonCompilers.ContractEvaluation.Parser, new[]{ "ContractIdentifier", "CoopIdentifier", "Cxp", "Replay", "CxpChange", "GradePerformance", "OldLeague", "OldGoals", "Grade", "ContributionRatio", "CompletionPercent", "OriginalLength", "CoopSize", "Solo", "SoulPower", "LastContributionTime", "CompletionTime", "ChickenRunsSent", "GiftTokensSent", "GiftTokensReceived", "GiftTokenValueSent", "GiftTokenValueReceived", "BoostTokenAllotment", "BuffTimeValue", "TeamworkScore", "OtherBonuses", "CountedInSeason", "SeasonId", "TimeCheats", "Issues", "Notes", "Version", "EvaluationStartTime", "Status" }, null, new[]{ typeof(global::JsonCompilers.ContractEvaluation.Types.PoorBehavior), typeof(global::JsonCompilers.ContractEvaluation.Types.Status) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractCitation), global::JsonCompilers.ContractCitation.Parser, new[]{ "Issue", "Timestamp", "Grade" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractEvaluationBatch), global::JsonCompilers.ContractEvaluationBatch.Parser, new[]{ "Evals" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractEvaluationBatch.Types.Pair), global::JsonCompilers.ContractEvaluationBatch.Types.Pair.Parser, new[]{ "UserId", "Cev" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CoopCompletionSnapshot), global::JsonCompilers.CoopCompletionSnapshot.Parser, new[]{ "Contributors" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CoopCompletionSnapshot.Types.ContributorSnapshot), global::JsonCompilers.CoopCompletionSnapshot.Types.ContributorSnapshot.Parser, new[]{ "Contribution", "LastContributionTime", "Finalized", "SoulPower", "UserId", "Tokens", "TokensSpent" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.BasicRequestInfo), global::JsonCompilers.BasicRequestInfo.Parser, new[]{ "EiUserId", "ClientVersion", "Version", "Build", "Platform", "Country", "Language", "Debug" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractSimConfig), global::JsonCompilers.ContractSimConfig.Parser, new[]{ "GradeConfigs" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig), global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig.Parser, new[]{ "Grade", "GoalParams" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams), global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams.Parser, new[]{ "TargetSe", "CpsMult", "ElrMult", "EarningsMult", "TimeEfficacy", "HabCapacityMult", "EpicResearchBudget" }, null, null, null, null)})}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractSimPoll), global::JsonCompilers.ContractSimPoll.Parser, new[]{ "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractSimPollResponse), global::JsonCompilers.ContractSimPollResponse.Parser, new[]{ "ContractToSimulate", "SimConfig" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractSimResultUpdate), global::JsonCompilers.ContractSimResultUpdate.Parser, new[]{ "ContractId", "GoalInfos" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractSimResultUpdate.Types.GoalInfo), global::JsonCompilers.ContractSimResultUpdate.Types.GoalInfo.Parser, new[]{ "Grade", "GoalIndex", "ProjectedEggsLaid" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractsRequest), global::JsonCompilers.ContractsRequest.Parser, new[]{ "SoulEggs", "ClientVersion", "UserId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractsResponse), global::JsonCompilers.ContractsResponse.Parser, new[]{ "Contracts", "WarningMessage", "TotalEop", "ServerTime", "MaxEop" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractCoopStatusRequest), global::JsonCompilers.ContractCoopStatusRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "UserId", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.FarmProductionParams), global::JsonCompilers.FarmProductionParams.Parser, new[]{ "FarmPopulation", "FarmCapacity", "Elr", "Ihr", "Sr", "Delivered" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.PlayerFarmInfo), global::JsonCompilers.PlayerFarmInfo.Parser, new[]{ "ClientVersion", "SoulEggs", "EggsOfProphecy", "PermitLevel", "HyperloopStation", "EggMedalLevel", "EpicResearch", "EggType", "CashOnHand", "Habs", "HabPopulation", "HabCapacity", "Vehicles", "TrainLength", "SilosOwned", "CommonResearch", "ActiveBoosts", "BoostTokensOnHand", "EquippedArtifacts", "ArtifactInventoryScore", "FarmAppearance", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractCoopStatusResponse), global::JsonCompilers.ContractCoopStatusResponse.Parser, new[]{ "ResponseStatus", "ContractIdentifier", "TotalAmount", "CoopIdentifier", "Grade", "Contributors", "AutoGenerated", "Public", "CreatorId", "SecondsRemaining", "SecondsSinceAllGoalsAchieved", "AllGoalsAchieved", "AllMembersReporting", "GracePeriodSecondsRemaining", "ClearedForExit", "Gifts", "ChickenRuns", "LocalTimestamp", "LastSync" }, null, new[]{ typeof(global::JsonCompilers.ContractCoopStatusResponse.Types.ResponseStatus), typeof(global::JsonCompilers.ContractCoopStatusResponse.Types.MemberStatus), typeof(global::JsonCompilers.ContractCoopStatusResponse.Types.Status) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractCoopStatusResponse.Types.ContributionInfo), global::JsonCompilers.ContractCoopStatusResponse.Types.ContributionInfo.Parser, new[]{ "Uuid", "UserId", "UserName", "ContractIdentifier", "ContributionAmount", "ContributionRate", "SoulPower", "ProductionParams", "FarmInfo", "RankChange", "RecentlyActive", "Active", "CcMember", "Leech", "Finalized", "TimeCheatDetected", "Platform", "PushId", "BanVotes", "Autojoined", "BoostTokens", "BoostTokensSpent", "BuffHistory", "ChickenRunCooldown" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractCoopStatusResponse.Types.CoopGift), global::JsonCompilers.ContractCoopStatusResponse.Types.CoopGift.Parser, new[]{ "UserId", "UserName", "Amount", "Tracking" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractCoopStatusResponse.Types.ChickenRun), global::JsonCompilers.ContractCoopStatusResponse.Types.ChickenRun.Parser, new[]{ "UserId", "UserName", "Amount" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LocalContract), global::JsonCompilers.LocalContract.Parser, new[]{ "Contract", "CoopIdentifier", "Accepted", "TimeAccepted", "Cancelled", "New", "CoopSharedEndTime", "CoopSimulationEndTime", "CoopGracePeriodEndTime", "CoopContributionFinalized", "CoopLastUploadedContribution", "CoopUserId", "CoopShareFarm", "LastAmountWhenRewardGiven", "NumGoalsAchieved", "BoostsUsed", "PointsReplay", "League", "Grade", "LastNagTime", "Evaluation", "ReportedUuids" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.MyContracts), global::JsonCompilers.MyContracts.Parser, new[]{ "ContractIdsSeen", "Contracts", "Archive", "CurrentCoopStatuses", "LastCpi", "InitialGradeRevealed", "LastGradeProgressShown", "ShowAdvancedEvaluations" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.QueryCoopRequest), global::JsonCompilers.QueryCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "League", "Grade", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.QueryCoopResponse), global::JsonCompilers.QueryCoopResponse.Parser, new[]{ "Exists", "Full", "Expired", "DifferentLeague", "DifferentGrade", "CcOnly", "Banned" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CreateCoopRequest), global::JsonCompilers.CreateCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "Public", "CcOnly", "AllowAllGrades", "SecondsRemaining", "UserId", "UserName", "SoulPower", "Eop", "League", "Grade", "PointsReplay", "Platform", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CreateCoopResponse), global::JsonCompilers.CreateCoopResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.JoinCoopRequest), global::JsonCompilers.JoinCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "UserId", "UserName", "SoulPower", "Eop", "League", "Grade", "PointsReplay", "Platform", "SecondsRemaining", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.JoinCoopResponse), global::JsonCompilers.JoinCoopResponse.Parser, new[]{ "Success", "Message", "Banned", "CoopIdentifier", "SecondsRemaining", "MatchPercent", "NumMembers", "Status", "Grade", "CanStart" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.AutoJoinCoopRequest), global::JsonCompilers.AutoJoinCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "UserId", "UserName", "SoulPower", "Eop", "League", "Grade", "PointsReplay", "SecondsRemaining", "Platform", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.UpdateCoopPermissionsRequest), global::JsonCompilers.UpdateCoopPermissionsRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "RequestingUserId", "Public", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.UpdateCoopPermissionsResponse), global::JsonCompilers.UpdateCoopPermissionsResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LeaveCoopRequest), global::JsonCompilers.LeaveCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "PlayerIdentifier", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.GiftPlayerCoopRequest), global::JsonCompilers.GiftPlayerCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "PlayerIdentifier", "RequestingUserId", "RequestingUserName", "Amount", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.SendChickenRunCoopRequest), global::JsonCompilers.SendChickenRunCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "PlayerIdentifier", "RequestingUserId", "RequestingUserName", "FarmPop", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ReportPlayerCoopRequest), global::JsonCompilers.ReportPlayerCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "UserId", "Reason" }, null, new[]{ typeof(global::JsonCompilers.ReportPlayerCoopRequest.Types.Reason) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.KickPlayerCoopRequest), global::JsonCompilers.KickPlayerCoopRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "CoopIdentifier", "PlayerIdentifier", "RequestingUserId", "Reason", "ClientVersion" }, null, new[]{ typeof(global::JsonCompilers.KickPlayerCoopRequest.Types.Reason) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractCoopStatusUpdateRequest), global::JsonCompilers.ContractCoopStatusUpdateRequest.Parser, new[]{ "Rinfo", "UserId", "ContractIdentifier", "CoopIdentifier", "PushUserId", "Amount", "Rate", "TimeCheatsDetected", "SoulPower", "Eop", "BoostTokens", "BoostTokensSpent", "HideCcStatus", "ProductionParams", "FarmInfo", "EggLayingRateBuff", "EarningsBuff" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractCoopStatusUpdateResponse), global::JsonCompilers.ContractCoopStatusUpdateResponse.Parser, new[]{ "Finalized", "Exists", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CoopBuffState), global::JsonCompilers.CoopBuffState.Parser, new[]{ "EggLayingRate", "Earnings", "ServerTimestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CoopBuffHistory), global::JsonCompilers.CoopBuffHistory.Parser, new[]{ "History" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CoopChickenRunEntry), global::JsonCompilers.CoopChickenRunEntry.Parser, new[]{ "UserId", "ServerTimestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CoopLastChickenRunTimes), global::JsonCompilers.CoopLastChickenRunTimes.Parser, new[]{ "Entries" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LeaderboardAnalysis), global::JsonCompilers.LeaderboardAnalysis.Parser, new[]{ "Chunks", "Count", "HighScore", "LowScore", "Cursor" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LeaderboardAnalysis.Types.Chunk), global::JsonCompilers.LeaderboardAnalysis.Types.Chunk.Parser, new[]{ "StartIndex", "EndIndex", "HighScore", "LowScore", "StartCursor", "EndCursor" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LeaderboardInfo), global::JsonCompilers.LeaderboardInfo.Parser, new[]{ "Seasons", "AllTimeScope" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LeaderboardInfo.Types.Season), global::JsonCompilers.LeaderboardInfo.Types.Season.Parser, new[]{ "Scope", "Name" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LeaderboardRequest), global::JsonCompilers.LeaderboardRequest.Parser, new[]{ "Rinfo", "Scope", "Grade" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LeaderboardResponse), global::JsonCompilers.LeaderboardResponse.Parser, new[]{ "Scope", "Grade", "TopEntries", "Count", "Rank", "Score" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LeaderboardResponse.Types.Entry), global::JsonCompilers.LeaderboardResponse.Types.Entry.Parser, new[]{ "Rank", "Alias", "Score" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractsArchive), global::JsonCompilers.ContractsArchive.Parser, new[]{ "Archive" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ContractAction), global::JsonCompilers.ContractAction.Parser, new[]{ "UserId", "ActionName", "ApproxTime", "DestUserId", "ContractId", "CoopId", "Autojoin", "Grade", "Replay", "PointsReplay", "RewardType", "RewardSubtype", "RewardAmount", "GoalIndex", "BoostId", "Tokens", "KickReason", "Public", "CcOnly" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.UserDataInfoRequest), global::JsonCompilers.UserDataInfoRequest.Parser, new[]{ "Rinfo", "UserId", "DeviceId", "BackupChecksum" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.UserDataInfoResponse), global::JsonCompilers.UserDataInfoResponse.Parser, new[]{ "BackupChecksum", "BackupTotalCash", "CoopMemberships" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ClearAllUserDataRequest), global::JsonCompilers.ClearAllUserDataRequest.Parser, new[]{ "Rinfo", "UserId", "DeviceId", "BackupChecksum" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ServerGift), global::JsonCompilers.ServerGift.Parser, new[]{ "UserId", "RewardType", "RewardSubType", "RewardAmount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LiveConfig), global::JsonCompilers.LiveConfig.Parser, new[]{ "ConfigId", "BoostsConfig", "GiftConfig", "MiscConfig" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LiveConfig.Types.BoostsConfig), global::JsonCompilers.LiveConfig.Types.BoostsConfig.Parser, new[]{ "ItemConfigs", "CashBoostCooloffTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LiveConfig.Types.BoostsConfig.Types.ItemConfig), global::JsonCompilers.LiveConfig.Types.BoostsConfig.Types.ItemConfig.Parser, new[]{ "BoostId", "Price", "TokenPrice", "SeRequired" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LiveConfig.Types.GiftConfig), global::JsonCompilers.LiveConfig.Types.GiftConfig.Parser, new[]{ "GiftConfigs", "GiftMuMinSpent", "GiftMuMaxSpent", "GiftMuOverallMult", "RandomGiftMuConfig", "VideoGiftMuConfig", "PackageInterval", "VideoOfferInterval", "VideoOfferIntervalContract", "VideoOfferIntervalPiggyFull", "VideoOfferIntervalPiggyExtraFull", "VideoResetOnIdle", "PackageIntervalContract", "PackageIntervalPiggyFull", "PackageIntervalPiggyExtraFull", "PackageResetOnIdle" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftValueConfig), global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftValueConfig.Parser, new[]{ "GiftId", "Amount", "RandMin", "RandMax", "VideoMin", "VideoMax" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftMuConfig), global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftMuConfig.Parser, new[]{ "MinSpent", "MaxSpent", "OverallMult" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LiveConfig.Types.MiscConfig), global::JsonCompilers.LiveConfig.Types.MiscConfig.Parser, new[]{ "AskToTrack", "AskToTrackMinSoulEggs", "AskToTrackMessage", "AskToTrackShowPreDialog", "AskToTrackAfterPrivacy", "ChickenRunBoostPercentage", "ShellsIntroTickets", "ShellsMaxFreeChickenConfigs", "ShellsIntroAlertThreshold", "ShellsLightingControlsPrice", "ContractsExpertLeagueMinSoulPower", "NewPlayerEventDuration", "ContractsClubAvailable", "ContractsBeta" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.InGameMail), global::JsonCompilers.InGameMail.Parser, new[]{ "Id", "Title", "Date", "Message", "Action", "Url", "AppLink", "AppLinkExtra", "Image", "ImageWidth", "ImageHeight", "Platform", "Builds", "MinClientVersion", "MaxClientVersion", "MinSoulEggs", "MinMysticalBonus", "UserType", "MinPiggyBreaks", "GoldTip", "Tip", "Priority", "MinDaysSinceLastTip", "MaxRetries", "DaysUntilRetry", "Category" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.MailDB), global::JsonCompilers.MailDB.Parser, new[]{ "Mail", "TipsDbData", "TipsChecksum" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.TipsDB), global::JsonCompilers.TipsDB.Parser, new[]{ "Tips" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.MailState), global::JsonCompilers.MailState.Parser, new[]{ "ReadMailIds", "TipsStates", "TipsChecksum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.MailState.Types.TipState), global::JsonCompilers.MailState.Types.TipState.Parser, new[]{ "Id", "Reads", "TimeRead" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.PeriodicalsResponse), global::JsonCompilers.PeriodicalsResponse.Parser, new[]{ "Sales", "Events", "Contracts", "Evaluations", "Gifts", "ArtifactCases", "LiveConfig", "MailBag", "ContractPlayerInfo", "ShowcaseRoyalties" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.PeriodicalsResponse.Types.RoyaltyInfo), global::JsonCompilers.PeriodicalsResponse.Types.RoyaltyInfo.Parser, new[]{ "Id", "Amount" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.GetPeriodicalsRequest), global::JsonCompilers.GetPeriodicalsRequest.Parser, new[]{ "Rinfo", "UserId", "PiggyFull", "PiggyFoundFull", "SecondsFullRealtime", "SecondsFullGametime", "LostIncrements", "SoulEggs", "MysticalEarningsMult", "Eop", "ContractsUnlocked", "ArtifactsUnlocked", "CurrentClientVersion", "Debug" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ConfigRequest), global::JsonCompilers.ConfigRequest.Parser, new[]{ "Rinfo", "SoulEggs", "ContractsUnlocked", "ArtifactsUnlocked", "FuelTankUnlocked", "ProPermit", "Ultra", "TipsChecksum" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ConfigResponse), global::JsonCompilers.ConfigResponse.Parser, new[]{ "LiveConfig", "MailBag", "DlcCatalog" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.AdAttributionRawData), global::JsonCompilers.AdAttributionRawData.Parser, new[]{ "DeviceAdId", "UserId", "AdNetwork", "JsonData" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.AdAttributionRow), global::JsonCompilers.AdAttributionRow.Parser, new[]{ "UserId", "AdId", "AdNetwork", "Campaign", "Keyword", "Extra", "ClickDate", "DownloadDate", "ApproxTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.AdAttributionInfo), global::JsonCompilers.AdAttributionInfo.Parser, new[]{ "DeviceAdId", "NetworkName", "Attribution", "OrgName", "OrgId", "CampaignName", "CampaignId", "ClickDate", "ConversionDate", "ConversionType", "Geo", "AdgroupName", "AdgroupId", "Keyword", "KeywordId", "KeywordExtra", "CreativesetName", "CreativesetId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsClientInfo), global::JsonCompilers.ArtifactsClientInfo.Parser, new[]{ "MissionCapacityMult", "MissionDurationMult", "MissionFtlDurationMult", "LaunchCounts" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsClientInfo.Types.LaunchCount), global::JsonCompilers.ArtifactsClientInfo.Types.LaunchCount.Parser, new[]{ "Ship", "NumLaunches", "LaunchPoints" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.MissionInfo), global::JsonCompilers.MissionInfo.Parser, new[]{ "Ship", "Status", "DurationType", "Fuel", "Level", "DurationSeconds", "Capacity", "QualityBump", "TargetArtifact", "SecondsRemaining", "StartTimeDerived", "MissionLog", "Identifier" }, null, new[]{ typeof(global::JsonCompilers.MissionInfo.Types.Spaceship), typeof(global::JsonCompilers.MissionInfo.Types.Status), typeof(global::JsonCompilers.MissionInfo.Types.DurationType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.MissionInfo.Types.Fuel), global::JsonCompilers.MissionInfo.Types.Fuel.Parser, new[]{ "Egg", "Amount" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactSpec), global::JsonCompilers.ArtifactSpec.Parser, new[]{ "Name", "Level", "Rarity", "Egg" }, null, new[]{ typeof(global::JsonCompilers.ArtifactSpec.Types.Name), typeof(global::JsonCompilers.ArtifactSpec.Types.Level), typeof(global::JsonCompilers.ArtifactSpec.Types.Rarity), typeof(global::JsonCompilers.ArtifactSpec.Types.Type) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CompleteArtifact), global::JsonCompilers.CompleteArtifact.Parser, new[]{ "Spec", "Stones" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactInventoryItem), global::JsonCompilers.ArtifactInventoryItem.Parser, new[]{ "ItemId", "Artifact", "Quantity", "ServerId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.InventorySlot), global::JsonCompilers.InventorySlot.Parser, new[]{ "Occupied", "ItemId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsConfigurationRequest), global::JsonCompilers.ArtifactsConfigurationRequest.Parser, new[]{ "Rinfo", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsConfigurationResponse), global::JsonCompilers.ArtifactsConfigurationResponse.Parser, new[]{ "MissionParameters", "ArtifactParameters", "CraftingLevelInfos" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters), global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters.Parser, new[]{ "Ship", "Durations", "LevelMissionRequirements", "CapacityDEPRECATED" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration), global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration.Parser, new[]{ "DurationType", "Seconds", "Quality", "MinQuality", "MaxQuality", "Capacity", "LevelCapacityBump", "LevelQualityBump" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsConfigurationResponse.Types.ArtifactParameters), global::JsonCompilers.ArtifactsConfigurationResponse.Types.ArtifactParameters.Parser, new[]{ "Spec", "BaseQuality", "OddsMultiplier", "Value", "CraftingPrice", "CraftingPriceLow", "CraftingPriceDomain", "CraftingPriceCurve", "CraftingXp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsConfigurationResponse.Types.CraftingLevelInfo), global::JsonCompilers.ArtifactsConfigurationResponse.Types.CraftingLevelInfo.Parser, new[]{ "XpRequired", "RarityMult" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.MissionRequest), global::JsonCompilers.MissionRequest.Parser, new[]{ "Rinfo", "ClientVersion", "EiUserId", "Info", "ClientInfo" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.MissionResponse), global::JsonCompilers.MissionResponse.Parser, new[]{ "Success", "Info" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CompleteMissionResponse), global::JsonCompilers.CompleteMissionResponse.Parser, new[]{ "Success", "Info", "Artifacts", "OtherRewards", "EiUserId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CompleteMissionResponse.Types.SecureArtifactSpec), global::JsonCompilers.CompleteMissionResponse.Types.SecureArtifactSpec.Parser, new[]{ "Spec", "ServerId" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CollectContractArtifactRewardsRequest), global::JsonCompilers.CollectContractArtifactRewardsRequest.Parser, new[]{ "Rinfo", "ContractIdentifier", "League", "Grade", "GoalIndex", "BestShip" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CraftArtifactRequest), global::JsonCompilers.CraftArtifactRequest.Parser, new[]{ "Rinfo", "EiUserId", "Spec", "ItemId", "GoldPricePaid", "CraftingCount", "CraftingXp", "Ingredients" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CraftArtifactResponse), global::JsonCompilers.CraftArtifactResponse.Parser, new[]{ "ItemId", "EiUserId", "RarityAchieved", "ServerId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ConsumeArtifactRequest), global::JsonCompilers.ConsumeArtifactRequest.Parser, new[]{ "Rinfo", "EiUserId", "Spec", "ArtifactServerId", "OriginalItemId", "AdditionalServerIds", "AdditionalItemIds", "Quantity" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ConsumeArtifactResponse), global::JsonCompilers.ConsumeArtifactResponse.Parser, new[]{ "Success", "OriginalItemId", "AdditionalItemIds", "Byproducts", "OtherRewards", "EiUserId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.AuthenticateArtifactResponse), global::JsonCompilers.AuthenticateArtifactResponse.Parser, new[]{ "Success", "OriginalItemId", "Demote", "Delete", "EiUserId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.SetArtifactRequest), global::JsonCompilers.SetArtifactRequest.Parser, new[]{ "Rinfo", "Artifact", "Stones", "GoldPricePaid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.SetArtifactResponse), global::JsonCompilers.SetArtifactResponse.Parser, new[]{ "Success", "OriginalItemId", "EiUserId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsDB), global::JsonCompilers.ArtifactsDB.Parser, new[]{ "InventoryItems", "ItemSequence", "InventorySlots", "ActiveArtifactsDEPRECATED", "ActiveArtifactSets", "SavedArtifactSets", "ArtifactStatus", "MissionInfos", "MissionArchive", "DiscoveredArtifactsDEPRECATED", "CraftableArtifactsDEPRECATED", "CraftingCountsDEPRECATED" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot), global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot.Parser, new[]{ "Occupied", "ItemId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet), global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet.Parser, new[]{ "Slots", "Uid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact), global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact.Parser, new[]{ "Spec", "Discovered", "Craftable", "RecipeDiscovered", "Seen", "Count" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.AuthenticatedMessage), global::JsonCompilers.AuthenticatedMessage.Parser, new[]{ "Message", "Version", "Code", "Compressed", "OriginalSize", "UserId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LogCompleteMissionPayload), global::JsonCompilers.LogCompleteMissionPayload.Parser, new[]{ "Req", "Res" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LogCraftArtifactPayload), global::JsonCompilers.LogCraftArtifactPayload.Parser, new[]{ "Req", "Res" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LogConsumeArtifactPayload), global::JsonCompilers.LogConsumeArtifactPayload.Parser, new[]{ "Req", "Res" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.LogSetArtifactPayload), global::JsonCompilers.LogSetArtifactPayload.Parser, new[]{ "Req", "Res" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.AccountTransferPayload), global::JsonCompilers.AccountTransferPayload.Parser, new[]{ "FromId", "ToEiUserId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.SaveBackupResponse), global::JsonCompilers.SaveBackupResponse.Parser, new[]{ "Success", "ErrorCode", "Message", "ExistingBackup" }, null, new[]{ typeof(global::JsonCompilers.SaveBackupResponse.Types.ErrorCodes) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CleanAccountRequest), global::JsonCompilers.CleanAccountRequest.Parser, new[]{ "EiUserIdToKeep", "GameServicesId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ReturnEDTPayload), global::JsonCompilers.ReturnEDTPayload.Parser, new[]{ "EiUserId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.DLCItem), global::JsonCompilers.DLCItem.Parser, new[]{ "Name", "Directory", "Ext", "Compressed", "OriginalSize", "Url", "Checksum" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellSpec), global::JsonCompilers.ShellSpec.Parser, new[]{ "Identifier", "PrimaryPiece", "Pieces", "AltAssets", "Name", "SetIdentifier", "ModifiedGeometry", "Price", "RequiredEop", "RequiredSoulEggs", "RequiredParentShell", "IsNew", "Expires", "SecondsUntilAvailable", "SecondsRemaining", "Popularity", "DefaultAppearance" }, null, new[]{ typeof(global::JsonCompilers.ShellSpec.Types.AssetType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellSpec.Types.ShellPiece), global::JsonCompilers.ShellSpec.Types.ShellPiece.Parser, new[]{ "AssetType", "Dlc" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellSetSpec), global::JsonCompilers.ShellSetSpec.Parser, new[]{ "Identifier", "Name", "Price", "PriceMultDEPRECATED", "Discount", "RequiredEop", "RequiredSoulEggs", "RequiredParentSet", "IsNew", "Expires", "SecondsUntilAvailable", "SecondsRemaining", "Popularity", "Decorator", "ModifiedGeometry", "ElementSet", "HexBaseColor", "Variations", "Icon", "DefaultAppearance", "CustomAppearance" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellSetSpec.Types.VariationSpec), global::JsonCompilers.ShellSetSpec.Types.VariationSpec.Parser, new[]{ "Identifier", "HexColor", "Price", "SortPriority", "DefaultAppearance", "CustomAppearance" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellObjectSpec), global::JsonCompilers.ShellObjectSpec.Parser, new[]{ "Identifier", "Name", "AssetType", "ObjectClass", "IconColors", "Price", "RequiredEop", "RequiredSoulEggs", "IsNew", "Expires", "SecondsUntilAvailable", "SecondsRemaining", "Popularity", "Metadata", "NoHats", "ChickenAnimation", "SortPriority", "Pieces", "DefaultAppearance" }, null, new[]{ typeof(global::JsonCompilers.ShellObjectSpec.Types.ChickenAnimation) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellObjectSpec.Types.LODPiece), global::JsonCompilers.ShellObjectSpec.Types.LODPiece.Parser, new[]{ "Dlc", "Lod" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellGroupSpec), global::JsonCompilers.ShellGroupSpec.Parser, new[]{ "Identifier", "Name", "AssetType", "MemberIds", "PriceMultDEPRECATED" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.DLCCatalog), global::JsonCompilers.DLCCatalog.Parser, new[]{ "Items", "Shells", "ShellSets", "Decorators", "ShellObjects", "ShellGroups" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB), global::JsonCompilers.ShellDB.Parser, new[]{ "ShellInventory", "ShellElementInventory", "ShellVariationInventory", "ShellSetInventory", "ShellObjectInventory", "FarmConfigs", "SavedConfigs", "NewShellsDownloaded", "NewShellsSeen", "LightingControlsUnlocked" }, null, new[]{ typeof(global::JsonCompilers.ShellDB.Types.FarmElement) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB.Types.ShellStatus), global::JsonCompilers.ShellDB.Types.ShellStatus.Parser, new[]{ "Identifier", "Owned" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB.Types.ShellElementStatus), global::JsonCompilers.ShellDB.Types.ShellElementStatus.Parser, new[]{ "Element", "SetIdentifier" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB.Types.ShellSetVariationStatus), global::JsonCompilers.ShellDB.Types.ShellSetVariationStatus.Parser, new[]{ "SetIdentifier", "OwnedVariations" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB.Types.FarmConfiguration), global::JsonCompilers.ShellDB.Types.FarmConfiguration.Parser, new[]{ "LockedElements", "ShellConfigs", "ShellSetConfigs", "ConfigureChickensByGroup", "GroupConfigs", "ChickenConfigs", "LightingConfigEnabled", "LightingConfig" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB.Types.SavedFarmConfiguration), global::JsonCompilers.ShellDB.Types.SavedFarmConfiguration.Parser, new[]{ "Id", "Config", "ClientSaveTime", "ServerId", "DisplayName", "Purchased" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB.Types.ShellConfiguration), global::JsonCompilers.ShellDB.Types.ShellConfiguration.Parser, new[]{ "AssetType", "Index", "ShellIdentifier" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB.Types.ShellSetConfiguration), global::JsonCompilers.ShellDB.Types.ShellSetConfiguration.Parser, new[]{ "Element", "Index", "ShellSetIdentifier", "VariationIdentifier", "DecoratorIdentifier" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB.Types.ShellGroupConfiguration), global::JsonCompilers.ShellDB.Types.ShellGroupConfiguration.Parser, new[]{ "AssetType", "GroupIdentifier" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB.Types.ChickenConfig), global::JsonCompilers.ShellDB.Types.ChickenConfig.Parser, new[]{ "ChickenIdentifier", "HatIdentifier" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellDB.Types.LightingConfig), global::JsonCompilers.ShellDB.Types.LightingConfig.Parser, new[]{ "LightDir", "LightDirectColor", "LightDirectIntensity", "LightAmbientColor", "LightAmbientIntensity", "FogColor", "FogNear", "FogFar", "FogDensity" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellPopularityStats), global::JsonCompilers.ShellPopularityStats.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellPopularityStats.Types.Entry), global::JsonCompilers.ShellPopularityStats.Types.Entry.Parser, new[]{ "Id", "Element", "Spent", "Count" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellsActionLog), global::JsonCompilers.ShellsActionLog.Parser, new[]{ "Rinfo", "UserId", "Action", "SubId", "FarmElement", "Cost", "ApproxTime", "Version", "FarmIndex", "SoulEggs", "TicketsSpent", "GoldSpent" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.SubmitShellShowcaseRequest), global::JsonCompilers.SubmitShellShowcaseRequest.Parser, new[]{ "Rinfo", "LocalId", "UserId", "PublicUsername", "FarmConfig" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellShowcase), global::JsonCompilers.ShellShowcase.Parser, new[]{ "Top", "Featured", "Fresh" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellShowcaseListingInfo), global::JsonCompilers.ShellShowcaseListingInfo.Parser, new[]{ "Id", "LocalId", "Name", "Description", "CreatorName", "Status", "FarmConfig", "Sales", "Gross", "Views", "Equips", "Likes", "Dislikes", "ShareUrl" }, null, new[]{ typeof(global::JsonCompilers.ShellShowcaseListingInfo.Types.Status) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShowcaseRoyaltyDeliveryConfirmation), global::JsonCompilers.ShowcaseRoyaltyDeliveryConfirmation.Parser, new[]{ "Rinfo", "Ids", "Amount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellShowcaseListingSet), global::JsonCompilers.ShellShowcaseListingSet.Parser, new[]{ "Listings" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.ShellsActionBatch), global::JsonCompilers.ShellsActionBatch.Parser, new[]{ "Rinfo", "Actions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.UserVerificationAnalysis), global::JsonCompilers.UserVerificationAnalysis.Parser, new[]{ "OverallStatus", "StartTime", "CompletionTime", "NumPrestiges", "SoulEggs", "EggsOfProphecy", "IapStatus", "VerifiedProPermit", "VerifiedPiggyBreaks", "VerifiedOtherIap", "UnverifiedIap", "GoldEarned", "RegularIapBuyer", "RegularIapCheater", "ArtifactsStatus", "MissionsCompleted", "ArtifactsCollected", "ArtifactsConsumed", "ArtifactsInInventory", "RareArtifactsInInventory", "RareArtifactsOnServer", "LegendaryArtifactsInInventory", "LegendaryArtifactsOnServer", "GoldSpentCrafting", "ExcessiveConsumes", "ExcessiveInventory", "ExcessiveSpend", "ContractsStatus", "NumCoopMemberships", "ValidContracts", "InvalidContracts", "ExcessiveEop", "ExcessiveInvalidContracts", "Verified", "VerificationOverride", "VerificationOverrideValue" }, null, new[]{ typeof(global::JsonCompilers.UserVerificationAnalysis.Types.Status) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.UserSubscriptionInfo), global::JsonCompilers.UserSubscriptionInfo.Parser, new[]{ "SubscriptionLevel", "NextSubscriptionLevel", "LockNextSubscriptionLevel", "Platform", "OriginalTransactionId", "LinkedTransactionId", "Acknowledged", "FirstSubscribed", "PeriodEnd", "Status", "StoreStatus", "AutoRenew", "Sandbox", "LastUpdated", "History", "PastUserIds" }, null, new[]{ typeof(global::JsonCompilers.UserSubscriptionInfo.Types.Level), typeof(global::JsonCompilers.UserSubscriptionInfo.Types.Status) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.UserSubscriptionInfo.Types.HistoryEntry), global::JsonCompilers.UserSubscriptionInfo.Types.HistoryEntry.Parser, new[]{ "Timestamp", "MessageId", "Message" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.SubscriptionChangeHintRequest), global::JsonCompilers.SubscriptionChangeHintRequest.Parser, new[]{ "Rinfo", "OriginalTransactionId", "NextSubscriptionLevel" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::JsonCompilers.CXPEvalRolloutInfo), global::JsonCompilers.CXPEvalRolloutInfo.Parser, new[]{ "CurrentId", "BasisPoints" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1416,7 +1416,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[0]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1735,7 +1735,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[1]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2106,7 +2106,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[2]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2429,10 +2429,10 @@ namespace Ei {
 
     /// <summary>Field number for the "settings" field.</summary>
     public const int SettingsFieldNumber = 4;
-    private global::Ei.Backup.Types.Settings settings_;
+    private global::JsonCompilers.Backup.Types.Settings settings_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup.Types.Settings Settings {
+    public global::JsonCompilers.Backup.Types.Settings Settings {
       get { return settings_; }
       set {
         settings_ = value;
@@ -2441,10 +2441,10 @@ namespace Ei {
 
     /// <summary>Field number for the "tutorial" field.</summary>
     public const int TutorialFieldNumber = 5;
-    private global::Ei.Backup.Types.Tutorial tutorial_;
+    private global::JsonCompilers.Backup.Types.Tutorial tutorial_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup.Types.Tutorial Tutorial {
+    public global::JsonCompilers.Backup.Types.Tutorial Tutorial {
       get { return tutorial_; }
       set {
         tutorial_ = value;
@@ -2453,10 +2453,10 @@ namespace Ei {
 
     /// <summary>Field number for the "stats" field.</summary>
     public const int StatsFieldNumber = 6;
-    private global::Ei.Backup.Types.Stats stats_;
+    private global::JsonCompilers.Backup.Types.Stats stats_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup.Types.Stats Stats {
+    public global::JsonCompilers.Backup.Types.Stats Stats {
       get { return stats_; }
       set {
         stats_ = value;
@@ -2465,10 +2465,10 @@ namespace Ei {
 
     /// <summary>Field number for the "game" field.</summary>
     public const int GameFieldNumber = 7;
-    private global::Ei.Backup.Types.Game game_;
+    private global::JsonCompilers.Backup.Types.Game game_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup.Types.Game Game {
+    public global::JsonCompilers.Backup.Types.Game Game {
       get { return game_; }
       set {
         game_ = value;
@@ -2477,10 +2477,10 @@ namespace Ei {
 
     /// <summary>Field number for the "artifacts" field.</summary>
     public const int ArtifactsFieldNumber = 14;
-    private global::Ei.Backup.Types.Artifacts artifacts_;
+    private global::JsonCompilers.Backup.Types.Artifacts artifacts_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup.Types.Artifacts Artifacts {
+    public global::JsonCompilers.Backup.Types.Artifacts Artifacts {
       get { return artifacts_; }
       set {
         artifacts_ = value;
@@ -2489,10 +2489,10 @@ namespace Ei {
 
     /// <summary>Field number for the "shells" field.</summary>
     public const int ShellsFieldNumber = 25;
-    private global::Ei.Backup.Types.Shells shells_;
+    private global::JsonCompilers.Backup.Types.Shells shells_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup.Types.Shells Shells {
+    public global::JsonCompilers.Backup.Types.Shells Shells {
       get { return shells_; }
       set {
         shells_ = value;
@@ -2501,10 +2501,10 @@ namespace Ei {
 
     /// <summary>Field number for the "sim" field.</summary>
     public const int SimFieldNumber = 8;
-    private global::Ei.Backup.Types.Simulation sim_;
+    private global::JsonCompilers.Backup.Types.Simulation sim_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup.Types.Simulation Sim {
+    public global::JsonCompilers.Backup.Types.Simulation Sim {
       get { return sim_; }
       set {
         sim_ = value;
@@ -2513,21 +2513,21 @@ namespace Ei {
 
     /// <summary>Field number for the "farms" field.</summary>
     public const int FarmsFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Ei.Backup.Types.Simulation> _repeated_farms_codec
-        = pb::FieldCodec.ForMessage(98, global::Ei.Backup.Types.Simulation.Parser);
-    private readonly pbc::RepeatedField<global::Ei.Backup.Types.Simulation> farms_ = new pbc::RepeatedField<global::Ei.Backup.Types.Simulation>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.Simulation> _repeated_farms_codec
+        = pb::FieldCodec.ForMessage(98, global::JsonCompilers.Backup.Types.Simulation.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.Simulation> farms_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.Simulation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.Backup.Types.Simulation> Farms {
+    public pbc::RepeatedField<global::JsonCompilers.Backup.Types.Simulation> Farms {
       get { return farms_; }
     }
 
     /// <summary>Field number for the "mission" field.</summary>
     public const int MissionFieldNumber = 9;
-    private global::Ei.Backup.Types.Mission mission_;
+    private global::JsonCompilers.Backup.Types.Mission mission_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup.Types.Mission Mission {
+    public global::JsonCompilers.Backup.Types.Mission Mission {
       get { return mission_; }
       set {
         mission_ = value;
@@ -2536,10 +2536,10 @@ namespace Ei {
 
     /// <summary>Field number for the "misc" field.</summary>
     public const int MiscFieldNumber = 10;
-    private global::Ei.Backup.Types.Misc misc_;
+    private global::JsonCompilers.Backup.Types.Misc misc_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup.Types.Misc Misc {
+    public global::JsonCompilers.Backup.Types.Misc Misc {
       get { return misc_; }
       set {
         misc_ = value;
@@ -2548,10 +2548,10 @@ namespace Ei {
 
     /// <summary>Field number for the "contracts" field.</summary>
     public const int ContractsFieldNumber = 13;
-    private global::Ei.MyContracts contracts_;
+    private global::JsonCompilers.MyContracts contracts_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MyContracts Contracts {
+    public global::JsonCompilers.MyContracts Contracts {
       get { return contracts_; }
       set {
         contracts_ = value;
@@ -2560,10 +2560,10 @@ namespace Ei {
 
     /// <summary>Field number for the "artifacts_db" field.</summary>
     public const int ArtifactsDbFieldNumber = 15;
-    private global::Ei.ArtifactsDB artifactsDb_;
+    private global::JsonCompilers.ArtifactsDB artifactsDb_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactsDB ArtifactsDb {
+    public global::JsonCompilers.ArtifactsDB ArtifactsDb {
       get { return artifactsDb_; }
       set {
         artifactsDb_ = value;
@@ -2572,10 +2572,10 @@ namespace Ei {
 
     /// <summary>Field number for the "shell_db" field.</summary>
     public const int ShellDbFieldNumber = 24;
-    private global::Ei.ShellDB shellDb_;
+    private global::JsonCompilers.ShellDB shellDb_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ShellDB ShellDb {
+    public global::JsonCompilers.ShellDB ShellDb {
       get { return shellDb_; }
       set {
         shellDb_ = value;
@@ -2595,10 +2595,10 @@ namespace Ei {
 
     /// <summary>Field number for the "mail_state" field.</summary>
     public const int MailStateFieldNumber = 27;
-    private global::Ei.MailState mailState_;
+    private global::JsonCompilers.MailState mailState_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MailState MailState {
+    public global::JsonCompilers.MailState MailState {
       get { return mailState_; }
       set {
         mailState_ = value;
@@ -3097,81 +3097,81 @@ namespace Ei {
       }
       if (other.settings_ != null) {
         if (settings_ == null) {
-          Settings = new global::Ei.Backup.Types.Settings();
+          Settings = new global::JsonCompilers.Backup.Types.Settings();
         }
         Settings.MergeFrom(other.Settings);
       }
       if (other.tutorial_ != null) {
         if (tutorial_ == null) {
-          Tutorial = new global::Ei.Backup.Types.Tutorial();
+          Tutorial = new global::JsonCompilers.Backup.Types.Tutorial();
         }
         Tutorial.MergeFrom(other.Tutorial);
       }
       if (other.stats_ != null) {
         if (stats_ == null) {
-          Stats = new global::Ei.Backup.Types.Stats();
+          Stats = new global::JsonCompilers.Backup.Types.Stats();
         }
         Stats.MergeFrom(other.Stats);
       }
       if (other.game_ != null) {
         if (game_ == null) {
-          Game = new global::Ei.Backup.Types.Game();
+          Game = new global::JsonCompilers.Backup.Types.Game();
         }
         Game.MergeFrom(other.Game);
       }
       if (other.artifacts_ != null) {
         if (artifacts_ == null) {
-          Artifacts = new global::Ei.Backup.Types.Artifacts();
+          Artifacts = new global::JsonCompilers.Backup.Types.Artifacts();
         }
         Artifacts.MergeFrom(other.Artifacts);
       }
       if (other.shells_ != null) {
         if (shells_ == null) {
-          Shells = new global::Ei.Backup.Types.Shells();
+          Shells = new global::JsonCompilers.Backup.Types.Shells();
         }
         Shells.MergeFrom(other.Shells);
       }
       if (other.sim_ != null) {
         if (sim_ == null) {
-          Sim = new global::Ei.Backup.Types.Simulation();
+          Sim = new global::JsonCompilers.Backup.Types.Simulation();
         }
         Sim.MergeFrom(other.Sim);
       }
       farms_.Add(other.farms_);
       if (other.mission_ != null) {
         if (mission_ == null) {
-          Mission = new global::Ei.Backup.Types.Mission();
+          Mission = new global::JsonCompilers.Backup.Types.Mission();
         }
         Mission.MergeFrom(other.Mission);
       }
       if (other.misc_ != null) {
         if (misc_ == null) {
-          Misc = new global::Ei.Backup.Types.Misc();
+          Misc = new global::JsonCompilers.Backup.Types.Misc();
         }
         Misc.MergeFrom(other.Misc);
       }
       if (other.contracts_ != null) {
         if (contracts_ == null) {
-          Contracts = new global::Ei.MyContracts();
+          Contracts = new global::JsonCompilers.MyContracts();
         }
         Contracts.MergeFrom(other.Contracts);
       }
       if (other.artifactsDb_ != null) {
         if (artifactsDb_ == null) {
-          ArtifactsDb = new global::Ei.ArtifactsDB();
+          ArtifactsDb = new global::JsonCompilers.ArtifactsDB();
         }
         ArtifactsDb.MergeFrom(other.ArtifactsDb);
       }
       if (other.shellDb_ != null) {
         if (shellDb_ == null) {
-          ShellDb = new global::Ei.ShellDB();
+          ShellDb = new global::JsonCompilers.ShellDB();
         }
         ShellDb.MergeFrom(other.ShellDb);
       }
       readMailIds_.Add(other.readMailIds_);
       if (other.mailState_ != null) {
         if (mailState_ == null) {
-          MailState = new global::Ei.MailState();
+          MailState = new global::JsonCompilers.MailState();
         }
         MailState.MergeFrom(other.MailState);
       }
@@ -3380,49 +3380,49 @@ namespace Ei {
           }
           case 34: {
             if (settings_ == null) {
-              Settings = new global::Ei.Backup.Types.Settings();
+              Settings = new global::JsonCompilers.Backup.Types.Settings();
             }
             input.ReadMessage(Settings);
             break;
           }
           case 42: {
             if (tutorial_ == null) {
-              Tutorial = new global::Ei.Backup.Types.Tutorial();
+              Tutorial = new global::JsonCompilers.Backup.Types.Tutorial();
             }
             input.ReadMessage(Tutorial);
             break;
           }
           case 50: {
             if (stats_ == null) {
-              Stats = new global::Ei.Backup.Types.Stats();
+              Stats = new global::JsonCompilers.Backup.Types.Stats();
             }
             input.ReadMessage(Stats);
             break;
           }
           case 58: {
             if (game_ == null) {
-              Game = new global::Ei.Backup.Types.Game();
+              Game = new global::JsonCompilers.Backup.Types.Game();
             }
             input.ReadMessage(Game);
             break;
           }
           case 66: {
             if (sim_ == null) {
-              Sim = new global::Ei.Backup.Types.Simulation();
+              Sim = new global::JsonCompilers.Backup.Types.Simulation();
             }
             input.ReadMessage(Sim);
             break;
           }
           case 74: {
             if (mission_ == null) {
-              Mission = new global::Ei.Backup.Types.Mission();
+              Mission = new global::JsonCompilers.Backup.Types.Mission();
             }
             input.ReadMessage(Mission);
             break;
           }
           case 82: {
             if (misc_ == null) {
-              Misc = new global::Ei.Backup.Types.Misc();
+              Misc = new global::JsonCompilers.Backup.Types.Misc();
             }
             input.ReadMessage(Misc);
             break;
@@ -3433,21 +3433,21 @@ namespace Ei {
           }
           case 106: {
             if (contracts_ == null) {
-              Contracts = new global::Ei.MyContracts();
+              Contracts = new global::JsonCompilers.MyContracts();
             }
             input.ReadMessage(Contracts);
             break;
           }
           case 114: {
             if (artifacts_ == null) {
-              Artifacts = new global::Ei.Backup.Types.Artifacts();
+              Artifacts = new global::JsonCompilers.Backup.Types.Artifacts();
             }
             input.ReadMessage(Artifacts);
             break;
           }
           case 122: {
             if (artifactsDb_ == null) {
-              ArtifactsDb = new global::Ei.ArtifactsDB();
+              ArtifactsDb = new global::JsonCompilers.ArtifactsDB();
             }
             input.ReadMessage(ArtifactsDb);
             break;
@@ -3482,14 +3482,14 @@ namespace Ei {
           }
           case 194: {
             if (shellDb_ == null) {
-              ShellDb = new global::Ei.ShellDB();
+              ShellDb = new global::JsonCompilers.ShellDB();
             }
             input.ReadMessage(ShellDb);
             break;
           }
           case 202: {
             if (shells_ == null) {
-              Shells = new global::Ei.Backup.Types.Shells();
+              Shells = new global::JsonCompilers.Backup.Types.Shells();
             }
             input.ReadMessage(Shells);
             break;
@@ -3500,7 +3500,7 @@ namespace Ei {
           }
           case 218: {
             if (mailState_ == null) {
-              MailState = new global::Ei.MailState();
+              MailState = new global::JsonCompilers.MailState();
             }
             input.ReadMessage(MailState);
             break;
@@ -3539,7 +3539,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5210,7 +5210,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[1]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5921,7 +5921,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[2]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6973,7 +6973,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[3]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7072,12 +7072,12 @@ namespace Ei {
 
         /// <summary>Field number for the "max_egg_reached" field.</summary>
         public const int MaxEggReachedFieldNumber = 1;
-        private readonly static global::Ei.Egg MaxEggReachedDefaultValue = global::Ei.Egg.Edible;
+        private readonly static global::JsonCompilers.Egg MaxEggReachedDefaultValue = global::JsonCompilers.Egg.Edible;
 
-        private global::Ei.Egg maxEggReached_;
+        private global::JsonCompilers.Egg maxEggReached_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Egg MaxEggReached {
+        public global::JsonCompilers.Egg MaxEggReached {
           get { if ((_hasBits0 & 1) != 0) { return maxEggReached_; } else { return MaxEggReachedDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -7585,12 +7585,12 @@ namespace Ei {
 
         /// <summary>Field number for the "epic_research" field.</summary>
         public const int EpicResearchFieldNumber = 9;
-        private static readonly pb::FieldCodec<global::Ei.Backup.Types.ResearchItem> _repeated_epicResearch_codec
-            = pb::FieldCodec.ForMessage(74, global::Ei.Backup.Types.ResearchItem.Parser);
-        private readonly pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem> epicResearch_ = new pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.ResearchItem> _repeated_epicResearch_codec
+            = pb::FieldCodec.ForMessage(74, global::JsonCompilers.Backup.Types.ResearchItem.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem> epicResearch_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem> EpicResearch {
+        public pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem> EpicResearch {
           get { return epicResearch_; }
         }
 
@@ -7704,12 +7704,12 @@ namespace Ei {
 
         /// <summary>Field number for the "news" field.</summary>
         public const int NewsFieldNumber = 11;
-        private static readonly pb::FieldCodec<global::Ei.Backup.Types.NewsHeadline> _repeated_news_codec
-            = pb::FieldCodec.ForMessage(90, global::Ei.Backup.Types.NewsHeadline.Parser);
-        private readonly pbc::RepeatedField<global::Ei.Backup.Types.NewsHeadline> news_ = new pbc::RepeatedField<global::Ei.Backup.Types.NewsHeadline>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.NewsHeadline> _repeated_news_codec
+            = pb::FieldCodec.ForMessage(90, global::JsonCompilers.Backup.Types.NewsHeadline.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.NewsHeadline> news_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.NewsHeadline>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.Backup.Types.NewsHeadline> News {
+        public pbc::RepeatedField<global::JsonCompilers.Backup.Types.NewsHeadline> News {
           get { return news_; }
         }
 
@@ -7796,12 +7796,12 @@ namespace Ei {
 
         /// <summary>Field number for the "achievements" field.</summary>
         public const int AchievementsFieldNumber = 15;
-        private static readonly pb::FieldCodec<global::Ei.Backup.Types.AchievementInfo> _repeated_achievements_codec
-            = pb::FieldCodec.ForMessage(122, global::Ei.Backup.Types.AchievementInfo.Parser);
-        private readonly pbc::RepeatedField<global::Ei.Backup.Types.AchievementInfo> achievements_ = new pbc::RepeatedField<global::Ei.Backup.Types.AchievementInfo>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.AchievementInfo> _repeated_achievements_codec
+            = pb::FieldCodec.ForMessage(122, global::JsonCompilers.Backup.Types.AchievementInfo.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.AchievementInfo> achievements_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.AchievementInfo>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.Backup.Types.AchievementInfo> Achievements {
+        public pbc::RepeatedField<global::JsonCompilers.Backup.Types.AchievementInfo> Achievements {
           get { return achievements_; }
         }
 
@@ -7910,12 +7910,12 @@ namespace Ei {
 
         /// <summary>Field number for the "boosts" field.</summary>
         public const int BoostsFieldNumber = 30;
-        private static readonly pb::FieldCodec<global::Ei.Backup.Types.OwnedBoost> _repeated_boosts_codec
-            = pb::FieldCodec.ForMessage(242, global::Ei.Backup.Types.OwnedBoost.Parser);
-        private readonly pbc::RepeatedField<global::Ei.Backup.Types.OwnedBoost> boosts_ = new pbc::RepeatedField<global::Ei.Backup.Types.OwnedBoost>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.OwnedBoost> _repeated_boosts_codec
+            = pb::FieldCodec.ForMessage(242, global::JsonCompilers.Backup.Types.OwnedBoost.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.OwnedBoost> boosts_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.OwnedBoost>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.Backup.Types.OwnedBoost> Boosts {
+        public pbc::RepeatedField<global::JsonCompilers.Backup.Types.OwnedBoost> Boosts {
           get { return boosts_; }
         }
 
@@ -8833,7 +8833,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                MaxEggReached = (global::Ei.Egg) input.ReadEnum();
+                MaxEggReached = (global::JsonCompilers.Egg) input.ReadEnum();
                 break;
               }
               case 16: {
@@ -9013,7 +9013,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[4]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9090,10 +9090,10 @@ namespace Ei {
 
         /// <summary>Field number for the "item_being_infused" field.</summary>
         public const int ItemBeingInfusedFieldNumber = 2;
-        private global::Ei.ArtifactInventoryItem itemBeingInfused_;
+        private global::JsonCompilers.ArtifactInventoryItem itemBeingInfused_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ArtifactInventoryItem ItemBeingInfused {
+        public global::JsonCompilers.ArtifactInventoryItem ItemBeingInfused {
           get { return itemBeingInfused_; }
           set {
             itemBeingInfused_ = value;
@@ -9102,10 +9102,10 @@ namespace Ei {
 
         /// <summary>Field number for the "spec_being_infused" field.</summary>
         public const int SpecBeingInfusedFieldNumber = 13;
-        private global::Ei.ArtifactSpec specBeingInfused_;
+        private global::JsonCompilers.ArtifactSpec specBeingInfused_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ArtifactSpec SpecBeingInfused {
+        public global::JsonCompilers.ArtifactSpec SpecBeingInfused {
           get { return specBeingInfused_; }
           set {
             specBeingInfused_ = value;
@@ -9114,12 +9114,12 @@ namespace Ei {
 
         /// <summary>Field number for the "egg_type_infusing" field.</summary>
         public const int EggTypeInfusingFieldNumber = 3;
-        private readonly static global::Ei.Egg EggTypeInfusingDefaultValue = global::Ei.Egg.Edible;
+        private readonly static global::JsonCompilers.Egg EggTypeInfusingDefaultValue = global::JsonCompilers.Egg.Edible;
 
-        private global::Ei.Egg eggTypeInfusing_;
+        private global::JsonCompilers.Egg eggTypeInfusing_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Egg EggTypeInfusing {
+        public global::JsonCompilers.Egg EggTypeInfusing {
           get { if ((_hasBits0 & 2) != 0) { return eggTypeInfusing_; } else { return EggTypeInfusingDefaultValue; } }
           set {
             _hasBits0 |= 2;
@@ -9325,12 +9325,12 @@ namespace Ei {
 
         /// <summary>Field number for the "last_fueled_ship" field.</summary>
         public const int LastFueledShipFieldNumber = 9;
-        private readonly static global::Ei.MissionInfo.Types.Spaceship LastFueledShipDefaultValue = global::Ei.MissionInfo.Types.Spaceship.ChickenOne;
+        private readonly static global::JsonCompilers.MissionInfo.Types.Spaceship LastFueledShipDefaultValue = global::JsonCompilers.MissionInfo.Types.Spaceship.ChickenOne;
 
-        private global::Ei.MissionInfo.Types.Spaceship lastFueledShip_;
+        private global::JsonCompilers.MissionInfo.Types.Spaceship lastFueledShip_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.MissionInfo.Types.Spaceship LastFueledShip {
+        public global::JsonCompilers.MissionInfo.Types.Spaceship LastFueledShip {
           get { if ((_hasBits0 & 128) != 0) { return lastFueledShip_; } else { return LastFueledShipDefaultValue; } }
           set {
             _hasBits0 |= 128;
@@ -9780,13 +9780,13 @@ namespace Ei {
           }
           if (other.itemBeingInfused_ != null) {
             if (itemBeingInfused_ == null) {
-              ItemBeingInfused = new global::Ei.ArtifactInventoryItem();
+              ItemBeingInfused = new global::JsonCompilers.ArtifactInventoryItem();
             }
             ItemBeingInfused.MergeFrom(other.ItemBeingInfused);
           }
           if (other.specBeingInfused_ != null) {
             if (specBeingInfused_ == null) {
-              SpecBeingInfused = new global::Ei.ArtifactSpec();
+              SpecBeingInfused = new global::JsonCompilers.ArtifactSpec();
             }
             SpecBeingInfused.MergeFrom(other.SpecBeingInfused);
           }
@@ -9955,13 +9955,13 @@ namespace Ei {
               }
               case 18: {
                 if (itemBeingInfused_ == null) {
-                  ItemBeingInfused = new global::Ei.ArtifactInventoryItem();
+                  ItemBeingInfused = new global::JsonCompilers.ArtifactInventoryItem();
                 }
                 input.ReadMessage(ItemBeingInfused);
                 break;
               }
               case 24: {
-                EggTypeInfusing = (global::Ei.Egg) input.ReadEnum();
+                EggTypeInfusing = (global::JsonCompilers.Egg) input.ReadEnum();
                 break;
               }
               case 33: {
@@ -9985,7 +9985,7 @@ namespace Ei {
                 break;
               }
               case 72: {
-                LastFueledShip = (global::Ei.MissionInfo.Types.Spaceship) input.ReadEnum();
+                LastFueledShip = (global::JsonCompilers.MissionInfo.Types.Spaceship) input.ReadEnum();
                 break;
               }
               case 81: {
@@ -10002,7 +10002,7 @@ namespace Ei {
               }
               case 106: {
                 if (specBeingInfused_ == null) {
-                  SpecBeingInfused = new global::Ei.ArtifactSpec();
+                  SpecBeingInfused = new global::JsonCompilers.ArtifactSpec();
                 }
                 input.ReadMessage(SpecBeingInfused);
                 break;
@@ -10052,7 +10052,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[5]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10347,7 +10347,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[6]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[6]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10410,12 +10410,12 @@ namespace Ei {
 
         /// <summary>Field number for the "egg_type" field.</summary>
         public const int EggTypeFieldNumber = 1;
-        private readonly static global::Ei.Egg EggTypeDefaultValue = global::Ei.Egg.Edible;
+        private readonly static global::JsonCompilers.Egg EggTypeDefaultValue = global::JsonCompilers.Egg.Edible;
 
-        private global::Ei.Egg eggType_;
+        private global::JsonCompilers.Egg eggType_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Egg EggType {
+        public global::JsonCompilers.Egg EggType {
           get { if ((_hasBits0 & 1) != 0) { return eggType_; } else { return EggTypeDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -10437,12 +10437,12 @@ namespace Ei {
 
         /// <summary>Field number for the "farm_type" field.</summary>
         public const int FarmTypeFieldNumber = 19;
-        private readonly static global::Ei.FarmType FarmTypeDefaultValue = global::Ei.FarmType.Empty;
+        private readonly static global::JsonCompilers.FarmType FarmTypeDefaultValue = global::JsonCompilers.FarmType.Empty;
 
-        private global::Ei.FarmType farmType_;
+        private global::JsonCompilers.FarmType farmType_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.FarmType FarmType {
+        public global::JsonCompilers.FarmType FarmType {
           get { if ((_hasBits0 & 4096) != 0) { return farmType_; } else { return FarmTypeDefaultValue; } }
           set {
             _hasBits0 |= 4096;
@@ -10880,23 +10880,23 @@ namespace Ei {
 
         /// <summary>Field number for the "common_research" field.</summary>
         public const int CommonResearchFieldNumber = 18;
-        private static readonly pb::FieldCodec<global::Ei.Backup.Types.ResearchItem> _repeated_commonResearch_codec
-            = pb::FieldCodec.ForMessage(146, global::Ei.Backup.Types.ResearchItem.Parser);
-        private readonly pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem> commonResearch_ = new pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.ResearchItem> _repeated_commonResearch_codec
+            = pb::FieldCodec.ForMessage(146, global::JsonCompilers.Backup.Types.ResearchItem.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem> commonResearch_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem> CommonResearch {
+        public pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem> CommonResearch {
           get { return commonResearch_; }
         }
 
         /// <summary>Field number for the "active_boosts" field.</summary>
         public const int ActiveBoostsFieldNumber = 22;
-        private static readonly pb::FieldCodec<global::Ei.Backup.Types.ActiveBoost> _repeated_activeBoosts_codec
-            = pb::FieldCodec.ForMessage(178, global::Ei.Backup.Types.ActiveBoost.Parser);
-        private readonly pbc::RepeatedField<global::Ei.Backup.Types.ActiveBoost> activeBoosts_ = new pbc::RepeatedField<global::Ei.Backup.Types.ActiveBoost>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.ActiveBoost> _repeated_activeBoosts_codec
+            = pb::FieldCodec.ForMessage(178, global::JsonCompilers.Backup.Types.ActiveBoost.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.ActiveBoost> activeBoosts_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.ActiveBoost>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.Backup.Types.ActiveBoost> ActiveBoosts {
+        public pbc::RepeatedField<global::JsonCompilers.Backup.Types.ActiveBoost> ActiveBoosts {
           get { return activeBoosts_; }
         }
 
@@ -11773,7 +11773,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                EggType = (global::Ei.Egg) input.ReadEnum();
+                EggType = (global::JsonCompilers.Egg) input.ReadEnum();
                 break;
               }
               case 17: {
@@ -11850,7 +11850,7 @@ namespace Ei {
                 break;
               }
               case 152: {
-                FarmType = (global::Ei.FarmType) input.ReadEnum();
+                FarmType = (global::JsonCompilers.FarmType) input.ReadEnum();
                 break;
               }
               case 162: {
@@ -11925,7 +11925,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[7]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[7]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12025,12 +12025,12 @@ namespace Ei {
 
         /// <summary>Field number for the "missions" field.</summary>
         public const int MissionsFieldNumber = 3;
-        private static readonly pb::FieldCodec<global::Ei.Backup.Types.MissionInfo> _repeated_missions_codec
-            = pb::FieldCodec.ForMessage(26, global::Ei.Backup.Types.MissionInfo.Parser);
-        private readonly pbc::RepeatedField<global::Ei.Backup.Types.MissionInfo> missions_ = new pbc::RepeatedField<global::Ei.Backup.Types.MissionInfo>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.MissionInfo> _repeated_missions_codec
+            = pb::FieldCodec.ForMessage(26, global::JsonCompilers.Backup.Types.MissionInfo.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.MissionInfo> missions_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.MissionInfo>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.Backup.Types.MissionInfo> Missions {
+        public pbc::RepeatedField<global::JsonCompilers.Backup.Types.MissionInfo> Missions {
           get { return missions_; }
         }
 
@@ -12243,7 +12243,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[8]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[8]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13654,7 +13654,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[9]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[9]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13920,7 +13920,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[10]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[10]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14186,7 +14186,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[11]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[11]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14452,7 +14452,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[12]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[12]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14770,7 +14770,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[13]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[13]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15036,7 +15036,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Backup.Descriptor.NestedTypes[14]; }
+          get { return global::JsonCompilers.Backup.Descriptor.NestedTypes[14]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15359,7 +15359,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[3]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15399,10 +15399,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 8;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -15568,12 +15568,12 @@ namespace Ei {
 
     /// <summary>Field number for the "platform" field.</summary>
     public const int PlatformFieldNumber = 3;
-    private readonly static global::Ei.Platform PlatformDefaultValue = global::Ei.Platform.UnknownPlatform;
+    private readonly static global::JsonCompilers.Platform PlatformDefaultValue = global::JsonCompilers.Platform.UnknownPlatform;
 
-    private global::Ei.Platform platform_;
+    private global::JsonCompilers.Platform platform_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Platform Platform {
+    public global::JsonCompilers.Platform Platform {
       get { if ((_hasBits0 & 2) != 0) { return platform_; } else { return PlatformDefaultValue; } }
       set {
         _hasBits0 |= 2;
@@ -15771,7 +15771,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -15878,7 +15878,7 @@ namespace Ei {
             break;
           }
           case 24: {
-            Platform = (global::Ei.Platform) input.ReadEnum();
+            Platform = (global::JsonCompilers.Platform) input.ReadEnum();
             break;
           }
           case 34: {
@@ -15899,7 +15899,7 @@ namespace Ei {
           }
           case 66: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -15927,7 +15927,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[4]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16054,10 +16054,10 @@ namespace Ei {
 
     /// <summary>Field number for the "backup" field.</summary>
     public const int BackupFieldNumber = 1;
-    private global::Ei.Backup backup_;
+    private global::JsonCompilers.Backup backup_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup Backup {
+    public global::JsonCompilers.Backup Backup {
       get { return backup_; }
       set {
         backup_ = value;
@@ -16205,7 +16205,7 @@ namespace Ei {
       }
       if (other.backup_ != null) {
         if (backup_ == null) {
-          Backup = new global::Ei.Backup();
+          Backup = new global::JsonCompilers.Backup();
         }
         Backup.MergeFrom(other.Backup);
       }
@@ -16272,7 +16272,7 @@ namespace Ei {
             break;
           case 10: {
             if (backup_ == null) {
-              Backup = new global::Ei.Backup();
+              Backup = new global::JsonCompilers.Backup();
             }
             input.ReadMessage(Backup);
             break;
@@ -16330,7 +16330,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[5]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16362,12 +16362,12 @@ namespace Ei {
 
     /// <summary>Field number for the "network_priority" field.</summary>
     public const int NetworkPriorityFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.AdNetwork> _repeated_networkPriority_codec
-        = pb::FieldCodec.ForEnum(8, x => (int) x, x => (global::Ei.AdNetwork) x);
-    private readonly pbc::RepeatedField<global::Ei.AdNetwork> networkPriority_ = new pbc::RepeatedField<global::Ei.AdNetwork>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.AdNetwork> _repeated_networkPriority_codec
+        = pb::FieldCodec.ForEnum(8, x => (int) x, x => (global::JsonCompilers.AdNetwork) x);
+    private readonly pbc::RepeatedField<global::JsonCompilers.AdNetwork> networkPriority_ = new pbc::RepeatedField<global::JsonCompilers.AdNetwork>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.AdNetwork> NetworkPriority {
+    public pbc::RepeatedField<global::JsonCompilers.AdNetwork> NetworkPriority {
       get { return networkPriority_; }
     }
 
@@ -16520,7 +16520,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[6]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16787,7 +16787,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[7]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17313,7 +17313,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[8]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17680,7 +17680,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[9]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17712,12 +17712,12 @@ namespace Ei {
 
     /// <summary>Field number for the "sales" field.</summary>
     public const int SalesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.IAPSaleEntry> _repeated_sales_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.IAPSaleEntry.Parser);
-    private readonly pbc::RepeatedField<global::Ei.IAPSaleEntry> sales_ = new pbc::RepeatedField<global::Ei.IAPSaleEntry>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.IAPSaleEntry> _repeated_sales_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.IAPSaleEntry.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.IAPSaleEntry> sales_ = new pbc::RepeatedField<global::JsonCompilers.IAPSaleEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.IAPSaleEntry> Sales {
+    public pbc::RepeatedField<global::JsonCompilers.IAPSaleEntry> Sales {
       get { return sales_; }
     }
 
@@ -17868,7 +17868,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[10]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18443,7 +18443,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[11]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18475,12 +18475,12 @@ namespace Ei {
 
     /// <summary>Field number for the "events" field.</summary>
     public const int EventsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.EggIncEvent> _repeated_events_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.EggIncEvent.Parser);
-    private readonly pbc::RepeatedField<global::Ei.EggIncEvent> events_ = new pbc::RepeatedField<global::Ei.EggIncEvent>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.EggIncEvent> _repeated_events_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.EggIncEvent.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.EggIncEvent> events_ = new pbc::RepeatedField<global::JsonCompilers.EggIncEvent>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.EggIncEvent> Events {
+    public pbc::RepeatedField<global::JsonCompilers.EggIncEvent> Events {
       get { return events_; }
     }
 
@@ -18631,7 +18631,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[12]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19459,7 +19459,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[13]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21127,7 +21127,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[14]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21391,7 +21391,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[15]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21591,21 +21591,21 @@ namespace Ei {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.ActionKeyValuePair> _repeated_data_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.ActionKeyValuePair.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ActionKeyValuePair> data_ = new pbc::RepeatedField<global::Ei.ActionKeyValuePair>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ActionKeyValuePair> _repeated_data_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.ActionKeyValuePair.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ActionKeyValuePair> data_ = new pbc::RepeatedField<global::JsonCompilers.ActionKeyValuePair>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ActionKeyValuePair> Data {
+    public pbc::RepeatedField<global::JsonCompilers.ActionKeyValuePair> Data {
       get { return data_; }
     }
 
     /// <summary>Field number for the "app" field.</summary>
     public const int AppFieldNumber = 5;
-    private global::Ei.AppInfo app_;
+    private global::JsonCompilers.AppInfo app_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.AppInfo App {
+    public global::JsonCompilers.AppInfo App {
       get { return app_; }
       set {
         app_ = value;
@@ -21614,10 +21614,10 @@ namespace Ei {
 
     /// <summary>Field number for the "device" field.</summary>
     public const int DeviceFieldNumber = 6;
-    private global::Ei.DeviceInfo device_;
+    private global::JsonCompilers.DeviceInfo device_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.DeviceInfo Device {
+    public global::JsonCompilers.DeviceInfo Device {
       get { return device_; }
       set {
         device_ = value;
@@ -21826,13 +21826,13 @@ namespace Ei {
       data_.Add(other.data_);
       if (other.app_ != null) {
         if (app_ == null) {
-          App = new global::Ei.AppInfo();
+          App = new global::JsonCompilers.AppInfo();
         }
         App.MergeFrom(other.App);
       }
       if (other.device_ != null) {
         if (device_ == null) {
-          Device = new global::Ei.DeviceInfo();
+          Device = new global::JsonCompilers.DeviceInfo();
         }
         Device.MergeFrom(other.Device);
       }
@@ -21934,14 +21934,14 @@ namespace Ei {
           }
           case 42: {
             if (app_ == null) {
-              App = new global::Ei.AppInfo();
+              App = new global::JsonCompilers.AppInfo();
             }
             input.ReadMessage(App);
             break;
           }
           case 50: {
             if (device_ == null) {
-              Device = new global::Ei.DeviceInfo();
+              Device = new global::JsonCompilers.DeviceInfo();
             }
             input.ReadMessage(Device);
             break;
@@ -21980,7 +21980,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[16]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22013,10 +22013,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 1;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -22025,12 +22025,12 @@ namespace Ei {
 
     /// <summary>Field number for the "actions" field.</summary>
     public const int ActionsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ei.GenericAction> _repeated_actions_codec
-        = pb::FieldCodec.ForMessage(18, global::Ei.GenericAction.Parser);
-    private readonly pbc::RepeatedField<global::Ei.GenericAction> actions_ = new pbc::RepeatedField<global::Ei.GenericAction>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.GenericAction> _repeated_actions_codec
+        = pb::FieldCodec.ForMessage(18, global::JsonCompilers.GenericAction.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.GenericAction> actions_ = new pbc::RepeatedField<global::JsonCompilers.GenericAction>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.GenericAction> Actions {
+    public pbc::RepeatedField<global::JsonCompilers.GenericAction> Actions {
       get { return actions_; }
     }
 
@@ -22126,7 +22126,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -22182,7 +22182,7 @@ namespace Ei {
             break;
           case 10: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -22214,7 +22214,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[17]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22254,10 +22254,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 6;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -22423,10 +22423,10 @@ namespace Ei {
 
     /// <summary>Field number for the "log" field.</summary>
     public const int LogFieldNumber = 5;
-    private global::Ei.GenericAction log_;
+    private global::JsonCompilers.GenericAction log_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.GenericAction Log {
+    public global::JsonCompilers.GenericAction Log {
       get { return log_; }
       set {
         log_ = value;
@@ -22611,7 +22611,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -22635,7 +22635,7 @@ namespace Ei {
       }
       if (other.log_ != null) {
         if (log_ == null) {
-          Log = new global::Ei.GenericAction();
+          Log = new global::JsonCompilers.GenericAction();
         }
         Log.MergeFrom(other.Log);
       }
@@ -22733,14 +22733,14 @@ namespace Ei {
           }
           case 42: {
             if (log_ == null) {
-              Log = new global::Ei.GenericAction();
+              Log = new global::JsonCompilers.GenericAction();
             }
             input.ReadMessage(Log);
             break;
           }
           case 50: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -22776,7 +22776,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[18]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23042,7 +23042,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[19]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23137,12 +23137,12 @@ namespace Ei {
 
     /// <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 3;
-    private readonly static global::Ei.RewardType CurrencyDefaultValue = global::Ei.RewardType.Cash;
+    private readonly static global::JsonCompilers.RewardType CurrencyDefaultValue = global::JsonCompilers.RewardType.Cash;
 
-    private global::Ei.RewardType currency_;
+    private global::JsonCompilers.RewardType currency_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.RewardType Currency {
+    public global::JsonCompilers.RewardType Currency {
       get { if ((_hasBits0 & 2) != 0) { return currency_; } else { return CurrencyDefaultValue; } }
       set {
         _hasBits0 |= 2;
@@ -23667,7 +23667,7 @@ namespace Ei {
             break;
           }
           case 24: {
-            Currency = (global::Ei.RewardType) input.ReadEnum();
+            Currency = (global::JsonCompilers.RewardType) input.ReadEnum();
             break;
           }
           case 32: {
@@ -23720,7 +23720,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[20]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23753,10 +23753,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 2;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -23765,12 +23765,12 @@ namespace Ei {
 
     /// <summary>Field number for the "logs" field.</summary>
     public const int LogsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.CurrencyFlowLog> _repeated_logs_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.CurrencyFlowLog.Parser);
-    private readonly pbc::RepeatedField<global::Ei.CurrencyFlowLog> logs_ = new pbc::RepeatedField<global::Ei.CurrencyFlowLog>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.CurrencyFlowLog> _repeated_logs_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.CurrencyFlowLog.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.CurrencyFlowLog> logs_ = new pbc::RepeatedField<global::JsonCompilers.CurrencyFlowLog>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.CurrencyFlowLog> Logs {
+    public pbc::RepeatedField<global::JsonCompilers.CurrencyFlowLog> Logs {
       get { return logs_; }
     }
 
@@ -23866,7 +23866,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -23926,7 +23926,7 @@ namespace Ei {
           }
           case 18: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -23954,7 +23954,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[21]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23989,12 +23989,12 @@ namespace Ei {
 
     /// <summary>Field number for the "reward_type" field.</summary>
     public const int RewardTypeFieldNumber = 1;
-    private readonly static global::Ei.RewardType RewardTypeDefaultValue = global::Ei.RewardType.Cash;
+    private readonly static global::JsonCompilers.RewardType RewardTypeDefaultValue = global::JsonCompilers.RewardType.Cash;
 
-    private global::Ei.RewardType rewardType_;
+    private global::JsonCompilers.RewardType rewardType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.RewardType RewardType {
+    public global::JsonCompilers.RewardType RewardType {
       get { if ((_hasBits0 & 1) != 0) { return rewardType_; } else { return RewardTypeDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -24238,7 +24238,7 @@ namespace Ei {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            RewardType = (global::Ei.RewardType) input.ReadEnum();
+            RewardType = (global::JsonCompilers.RewardType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -24272,7 +24272,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[22]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -24307,12 +24307,12 @@ namespace Ei {
 
     /// <summary>Field number for the "dimension" field.</summary>
     public const int DimensionFieldNumber = 1;
-    private readonly static global::Ei.GameModifier.Types.GameDimension DimensionDefaultValue = global::Ei.GameModifier.Types.GameDimension.Earnings;
+    private readonly static global::JsonCompilers.GameModifier.Types.GameDimension DimensionDefaultValue = global::JsonCompilers.GameModifier.Types.GameDimension.Earnings;
 
-    private global::Ei.GameModifier.Types.GameDimension dimension_;
+    private global::JsonCompilers.GameModifier.Types.GameDimension dimension_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.GameModifier.Types.GameDimension Dimension {
+    public global::JsonCompilers.GameModifier.Types.GameDimension Dimension {
       get { if ((_hasBits0 & 1) != 0) { return dimension_; } else { return DimensionDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -24556,7 +24556,7 @@ namespace Ei {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Dimension = (global::Ei.GameModifier.Types.GameDimension) input.ReadEnum();
+            Dimension = (global::JsonCompilers.GameModifier.Types.GameDimension) input.ReadEnum();
             break;
           }
           case 17: {
@@ -24610,7 +24610,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[23]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -24743,12 +24743,12 @@ namespace Ei {
 
     /// <summary>Field number for the "egg" field.</summary>
     public const int EggFieldNumber = 2;
-    private readonly static global::Ei.Egg EggDefaultValue = global::Ei.Egg.Edible;
+    private readonly static global::JsonCompilers.Egg EggDefaultValue = global::JsonCompilers.Egg.Edible;
 
-    private global::Ei.Egg egg_;
+    private global::JsonCompilers.Egg egg_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Egg Egg {
+    public global::JsonCompilers.Egg Egg {
       get { if ((_hasBits0 & 1) != 0) { return egg_; } else { return EggDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -24770,34 +24770,34 @@ namespace Ei {
 
     /// <summary>Field number for the "goals" field.</summary>
     public const int GoalsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.Contract.Types.Goal> _repeated_goals_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.Contract.Types.Goal.Parser);
-    private readonly pbc::RepeatedField<global::Ei.Contract.Types.Goal> goals_ = new pbc::RepeatedField<global::Ei.Contract.Types.Goal>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.Contract.Types.Goal> _repeated_goals_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.Contract.Types.Goal.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.Contract.Types.Goal> goals_ = new pbc::RepeatedField<global::JsonCompilers.Contract.Types.Goal>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.Contract.Types.Goal> Goals {
+    public pbc::RepeatedField<global::JsonCompilers.Contract.Types.Goal> Goals {
       get { return goals_; }
     }
 
     /// <summary>Field number for the "goal_sets" field.</summary>
     public const int GoalSetsFieldNumber = 16;
-    private static readonly pb::FieldCodec<global::Ei.Contract.Types.GoalSet> _repeated_goalSets_codec
-        = pb::FieldCodec.ForMessage(130, global::Ei.Contract.Types.GoalSet.Parser);
-    private readonly pbc::RepeatedField<global::Ei.Contract.Types.GoalSet> goalSets_ = new pbc::RepeatedField<global::Ei.Contract.Types.GoalSet>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.Contract.Types.GoalSet> _repeated_goalSets_codec
+        = pb::FieldCodec.ForMessage(130, global::JsonCompilers.Contract.Types.GoalSet.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.Contract.Types.GoalSet> goalSets_ = new pbc::RepeatedField<global::JsonCompilers.Contract.Types.GoalSet>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.Contract.Types.GoalSet> GoalSets {
+    public pbc::RepeatedField<global::JsonCompilers.Contract.Types.GoalSet> GoalSets {
       get { return goalSets_; }
     }
 
     /// <summary>Field number for the "grade_specs" field.</summary>
     public const int GradeSpecsFieldNumber = 20;
-    private static readonly pb::FieldCodec<global::Ei.Contract.Types.GradeSpec> _repeated_gradeSpecs_codec
-        = pb::FieldCodec.ForMessage(162, global::Ei.Contract.Types.GradeSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.Contract.Types.GradeSpec> gradeSpecs_ = new pbc::RepeatedField<global::Ei.Contract.Types.GradeSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.Contract.Types.GradeSpec> _repeated_gradeSpecs_codec
+        = pb::FieldCodec.ForMessage(162, global::JsonCompilers.Contract.Types.GradeSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.Contract.Types.GradeSpec> gradeSpecs_ = new pbc::RepeatedField<global::JsonCompilers.Contract.Types.GradeSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.Contract.Types.GradeSpec> GradeSpecs {
+    public pbc::RepeatedField<global::JsonCompilers.Contract.Types.GradeSpec> GradeSpecs {
       get { return gradeSpecs_; }
     }
 
@@ -25750,7 +25750,7 @@ namespace Ei {
             break;
           }
           case 16: {
-            Egg = (global::Ei.Egg) input.ReadEnum();
+            Egg = (global::JsonCompilers.Egg) input.ReadEnum();
             break;
           }
           case 26: {
@@ -25872,7 +25872,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Contract.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.Contract.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -25910,12 +25910,12 @@ namespace Ei {
 
         /// <summary>Field number for the "type" field.</summary>
         public const int TypeFieldNumber = 1;
-        private readonly static global::Ei.GoalType TypeDefaultValue = global::Ei.GoalType.EggsLaid;
+        private readonly static global::JsonCompilers.GoalType TypeDefaultValue = global::JsonCompilers.GoalType.EggsLaid;
 
-        private global::Ei.GoalType type_;
+        private global::JsonCompilers.GoalType type_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.GoalType Type {
+        public global::JsonCompilers.GoalType Type {
           get { if ((_hasBits0 & 1) != 0) { return type_; } else { return TypeDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -25964,12 +25964,12 @@ namespace Ei {
 
         /// <summary>Field number for the "reward_type" field.</summary>
         public const int RewardTypeFieldNumber = 3;
-        private readonly static global::Ei.RewardType RewardTypeDefaultValue = global::Ei.RewardType.Cash;
+        private readonly static global::JsonCompilers.RewardType RewardTypeDefaultValue = global::JsonCompilers.RewardType.Cash;
 
-        private global::Ei.RewardType rewardType_;
+        private global::JsonCompilers.RewardType rewardType_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.RewardType RewardType {
+        public global::JsonCompilers.RewardType RewardType {
           get { if ((_hasBits0 & 4) != 0) { return rewardType_; } else { return RewardTypeDefaultValue; } }
           set {
             _hasBits0 |= 4;
@@ -26300,7 +26300,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                Type = (global::Ei.GoalType) input.ReadEnum();
+                Type = (global::JsonCompilers.GoalType) input.ReadEnum();
                 break;
               }
               case 17: {
@@ -26308,7 +26308,7 @@ namespace Ei {
                 break;
               }
               case 24: {
-                RewardType = (global::Ei.RewardType) input.ReadEnum();
+                RewardType = (global::JsonCompilers.RewardType) input.ReadEnum();
                 break;
               }
               case 34: {
@@ -26345,7 +26345,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Contract.Descriptor.NestedTypes[1]; }
+          get { return global::JsonCompilers.Contract.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -26377,12 +26377,12 @@ namespace Ei {
 
         /// <summary>Field number for the "goals" field.</summary>
         public const int GoalsFieldNumber = 1;
-        private static readonly pb::FieldCodec<global::Ei.Contract.Types.Goal> _repeated_goals_codec
-            = pb::FieldCodec.ForMessage(10, global::Ei.Contract.Types.Goal.Parser);
-        private readonly pbc::RepeatedField<global::Ei.Contract.Types.Goal> goals_ = new pbc::RepeatedField<global::Ei.Contract.Types.Goal>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.Contract.Types.Goal> _repeated_goals_codec
+            = pb::FieldCodec.ForMessage(10, global::JsonCompilers.Contract.Types.Goal.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.Contract.Types.Goal> goals_ = new pbc::RepeatedField<global::JsonCompilers.Contract.Types.Goal>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.Contract.Types.Goal> Goals {
+        public pbc::RepeatedField<global::JsonCompilers.Contract.Types.Goal> Goals {
           get { return goals_; }
         }
 
@@ -26533,7 +26533,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.Contract.Descriptor.NestedTypes[2]; }
+          get { return global::JsonCompilers.Contract.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -26569,12 +26569,12 @@ namespace Ei {
 
         /// <summary>Field number for the "grade" field.</summary>
         public const int GradeFieldNumber = 1;
-        private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+        private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-        private global::Ei.Contract.Types.PlayerGrade grade_;
+        private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Contract.Types.PlayerGrade Grade {
+        public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
           get { if ((_hasBits0 & 1) != 0) { return grade_; } else { return GradeDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -26596,23 +26596,23 @@ namespace Ei {
 
         /// <summary>Field number for the "goals" field.</summary>
         public const int GoalsFieldNumber = 2;
-        private static readonly pb::FieldCodec<global::Ei.Contract.Types.Goal> _repeated_goals_codec
-            = pb::FieldCodec.ForMessage(18, global::Ei.Contract.Types.Goal.Parser);
-        private readonly pbc::RepeatedField<global::Ei.Contract.Types.Goal> goals_ = new pbc::RepeatedField<global::Ei.Contract.Types.Goal>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.Contract.Types.Goal> _repeated_goals_codec
+            = pb::FieldCodec.ForMessage(18, global::JsonCompilers.Contract.Types.Goal.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.Contract.Types.Goal> goals_ = new pbc::RepeatedField<global::JsonCompilers.Contract.Types.Goal>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.Contract.Types.Goal> Goals {
+        public pbc::RepeatedField<global::JsonCompilers.Contract.Types.Goal> Goals {
           get { return goals_; }
         }
 
         /// <summary>Field number for the "modifiers" field.</summary>
         public const int ModifiersFieldNumber = 3;
-        private static readonly pb::FieldCodec<global::Ei.GameModifier> _repeated_modifiers_codec
-            = pb::FieldCodec.ForMessage(26, global::Ei.GameModifier.Parser);
-        private readonly pbc::RepeatedField<global::Ei.GameModifier> modifiers_ = new pbc::RepeatedField<global::Ei.GameModifier>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.GameModifier> _repeated_modifiers_codec
+            = pb::FieldCodec.ForMessage(26, global::JsonCompilers.GameModifier.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.GameModifier> modifiers_ = new pbc::RepeatedField<global::JsonCompilers.GameModifier>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.GameModifier> Modifiers {
+        public pbc::RepeatedField<global::JsonCompilers.GameModifier> Modifiers {
           get { return modifiers_; }
         }
 
@@ -26814,7 +26814,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+                Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
                 break;
               }
               case 18: {
@@ -26857,7 +26857,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[24]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -26903,12 +26903,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 1;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 1) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -27119,12 +27119,12 @@ namespace Ei {
 
     /// <summary>Field number for the "issues" field.</summary>
     public const int IssuesFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Ei.ContractEvaluation.Types.PoorBehavior> _repeated_issues_codec
-        = pb::FieldCodec.ForEnum(88, x => (int) x, x => (global::Ei.ContractEvaluation.Types.PoorBehavior) x);
-    private readonly pbc::RepeatedField<global::Ei.ContractEvaluation.Types.PoorBehavior> issues_ = new pbc::RepeatedField<global::Ei.ContractEvaluation.Types.PoorBehavior>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractEvaluation.Types.PoorBehavior> _repeated_issues_codec
+        = pb::FieldCodec.ForEnum(88, x => (int) x, x => (global::JsonCompilers.ContractEvaluation.Types.PoorBehavior) x);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractEvaluation.Types.PoorBehavior> issues_ = new pbc::RepeatedField<global::JsonCompilers.ContractEvaluation.Types.PoorBehavior>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractEvaluation.Types.PoorBehavior> Issues {
+    public pbc::RepeatedField<global::JsonCompilers.ContractEvaluation.Types.PoorBehavior> Issues {
       get { return issues_; }
     }
 
@@ -27157,12 +27157,12 @@ namespace Ei {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private readonly static global::Ei.ContractPlayerInfo.Types.Status StatusDefaultValue = global::Ei.ContractPlayerInfo.Types.Status.Unknown;
+    private readonly static global::JsonCompilers.ContractPlayerInfo.Types.Status StatusDefaultValue = global::JsonCompilers.ContractPlayerInfo.Types.Status.Unknown;
 
-    private global::Ei.ContractPlayerInfo.Types.Status status_;
+    private global::JsonCompilers.ContractPlayerInfo.Types.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractPlayerInfo.Types.Status Status {
+    public global::JsonCompilers.ContractPlayerInfo.Types.Status Status {
       get { if ((_hasBits0 & 4) != 0) { return status_; } else { return StatusDefaultValue; } }
       set {
         _hasBits0 |= 4;
@@ -27237,12 +27237,12 @@ namespace Ei {
 
     /// <summary>Field number for the "unread_evaluations" field.</summary>
     public const int UnreadEvaluationsFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Ei.ContractEvaluation> _repeated_unreadEvaluations_codec
-        = pb::FieldCodec.ForMessage(50, global::Ei.ContractEvaluation.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ContractEvaluation> unreadEvaluations_ = new pbc::RepeatedField<global::Ei.ContractEvaluation>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractEvaluation> _repeated_unreadEvaluations_codec
+        = pb::FieldCodec.ForMessage(50, global::JsonCompilers.ContractEvaluation.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractEvaluation> unreadEvaluations_ = new pbc::RepeatedField<global::JsonCompilers.ContractEvaluation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractEvaluation> UnreadEvaluations {
+    public pbc::RepeatedField<global::JsonCompilers.ContractEvaluation> UnreadEvaluations {
       get { return unreadEvaluations_; }
     }
 
@@ -27618,7 +27618,7 @@ namespace Ei {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
           case 17: {
@@ -27626,7 +27626,7 @@ namespace Ei {
             break;
           }
           case 24: {
-            Status = (global::Ei.ContractPlayerInfo.Types.Status) input.ReadEnum();
+            Status = (global::JsonCompilers.ContractPlayerInfo.Types.Status) input.ReadEnum();
             break;
           }
           case 33: {
@@ -27713,7 +27713,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[25]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -27993,12 +27993,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 3;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 4) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 4;
@@ -28559,12 +28559,12 @@ namespace Ei {
 
     /// <summary>Field number for the "issues" field.</summary>
     public const int IssuesFieldNumber = 19;
-    private static readonly pb::FieldCodec<global::Ei.ContractEvaluation.Types.PoorBehavior> _repeated_issues_codec
-        = pb::FieldCodec.ForEnum(152, x => (int) x, x => (global::Ei.ContractEvaluation.Types.PoorBehavior) x);
-    private readonly pbc::RepeatedField<global::Ei.ContractEvaluation.Types.PoorBehavior> issues_ = new pbc::RepeatedField<global::Ei.ContractEvaluation.Types.PoorBehavior>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractEvaluation.Types.PoorBehavior> _repeated_issues_codec
+        = pb::FieldCodec.ForEnum(152, x => (int) x, x => (global::JsonCompilers.ContractEvaluation.Types.PoorBehavior) x);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractEvaluation.Types.PoorBehavior> issues_ = new pbc::RepeatedField<global::JsonCompilers.ContractEvaluation.Types.PoorBehavior>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractEvaluation.Types.PoorBehavior> Issues {
+    public pbc::RepeatedField<global::JsonCompilers.ContractEvaluation.Types.PoorBehavior> Issues {
       get { return issues_; }
     }
 
@@ -28634,12 +28634,12 @@ namespace Ei {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 52;
-    private readonly static global::Ei.ContractEvaluation.Types.Status StatusDefaultValue = global::Ei.ContractEvaluation.Types.Status.Unknown;
+    private readonly static global::JsonCompilers.ContractEvaluation.Types.Status StatusDefaultValue = global::JsonCompilers.ContractEvaluation.Types.Status.Unknown;
 
-    private global::Ei.ContractEvaluation.Types.Status status_;
+    private global::JsonCompilers.ContractEvaluation.Types.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractEvaluation.Types.Status Status {
+    public global::JsonCompilers.ContractEvaluation.Types.Status Status {
       get { if ((_hasBits0 & 134217728) != 0) { return status_; } else { return StatusDefaultValue; } }
       set {
         _hasBits0 |= 134217728;
@@ -29439,7 +29439,7 @@ namespace Ei {
             break;
           }
           case 24: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
           case 33: {
@@ -29564,7 +29564,7 @@ namespace Ei {
             break;
           }
           case 416: {
-            Status = (global::Ei.ContractEvaluation.Types.Status) input.ReadEnum();
+            Status = (global::JsonCompilers.ContractEvaluation.Types.Status) input.ReadEnum();
             break;
           }
         }
@@ -29615,7 +29615,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[26]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -29650,12 +29650,12 @@ namespace Ei {
 
     /// <summary>Field number for the "issue" field.</summary>
     public const int IssueFieldNumber = 1;
-    private readonly static global::Ei.ContractEvaluation.Types.PoorBehavior IssueDefaultValue = global::Ei.ContractEvaluation.Types.PoorBehavior.None;
+    private readonly static global::JsonCompilers.ContractEvaluation.Types.PoorBehavior IssueDefaultValue = global::JsonCompilers.ContractEvaluation.Types.PoorBehavior.None;
 
-    private global::Ei.ContractEvaluation.Types.PoorBehavior issue_;
+    private global::JsonCompilers.ContractEvaluation.Types.PoorBehavior issue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractEvaluation.Types.PoorBehavior Issue {
+    public global::JsonCompilers.ContractEvaluation.Types.PoorBehavior Issue {
       get { if ((_hasBits0 & 1) != 0) { return issue_; } else { return IssueDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -29704,12 +29704,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 3;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 4) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 4;
@@ -29900,7 +29900,7 @@ namespace Ei {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Issue = (global::Ei.ContractEvaluation.Types.PoorBehavior) input.ReadEnum();
+            Issue = (global::JsonCompilers.ContractEvaluation.Types.PoorBehavior) input.ReadEnum();
             break;
           }
           case 17: {
@@ -29908,7 +29908,7 @@ namespace Ei {
             break;
           }
           case 24: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
         }
@@ -29933,7 +29933,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[27]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -29965,12 +29965,12 @@ namespace Ei {
 
     /// <summary>Field number for the "evals" field.</summary>
     public const int EvalsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.ContractEvaluationBatch.Types.Pair> _repeated_evals_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.ContractEvaluationBatch.Types.Pair.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ContractEvaluationBatch.Types.Pair> evals_ = new pbc::RepeatedField<global::Ei.ContractEvaluationBatch.Types.Pair>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractEvaluationBatch.Types.Pair> _repeated_evals_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.ContractEvaluationBatch.Types.Pair.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractEvaluationBatch.Types.Pair> evals_ = new pbc::RepeatedField<global::JsonCompilers.ContractEvaluationBatch.Types.Pair>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractEvaluationBatch.Types.Pair> Evals {
+    public pbc::RepeatedField<global::JsonCompilers.ContractEvaluationBatch.Types.Pair> Evals {
       get { return evals_; }
     }
 
@@ -30123,7 +30123,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ContractEvaluationBatch.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ContractEvaluationBatch.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -30182,10 +30182,10 @@ namespace Ei {
 
         /// <summary>Field number for the "cev" field.</summary>
         public const int CevFieldNumber = 2;
-        private global::Ei.ContractEvaluation cev_;
+        private global::JsonCompilers.ContractEvaluation cev_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ContractEvaluation Cev {
+        public global::JsonCompilers.ContractEvaluation Cev {
           get { return cev_; }
           set {
             cev_ = value;
@@ -30295,7 +30295,7 @@ namespace Ei {
           }
           if (other.cev_ != null) {
             if (cev_ == null) {
-              Cev = new global::Ei.ContractEvaluation();
+              Cev = new global::JsonCompilers.ContractEvaluation();
             }
             Cev.MergeFrom(other.Cev);
           }
@@ -30354,7 +30354,7 @@ namespace Ei {
               }
               case 18: {
                 if (cev_ == null) {
-                  Cev = new global::Ei.ContractEvaluation();
+                  Cev = new global::JsonCompilers.ContractEvaluation();
                 }
                 input.ReadMessage(Cev);
                 break;
@@ -30386,7 +30386,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[28]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -30418,12 +30418,12 @@ namespace Ei {
 
     /// <summary>Field number for the "contributors" field.</summary>
     public const int ContributorsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.CoopCompletionSnapshot.Types.ContributorSnapshot> _repeated_contributors_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.CoopCompletionSnapshot.Types.ContributorSnapshot.Parser);
-    private readonly pbc::RepeatedField<global::Ei.CoopCompletionSnapshot.Types.ContributorSnapshot> contributors_ = new pbc::RepeatedField<global::Ei.CoopCompletionSnapshot.Types.ContributorSnapshot>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.CoopCompletionSnapshot.Types.ContributorSnapshot> _repeated_contributors_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.CoopCompletionSnapshot.Types.ContributorSnapshot.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.CoopCompletionSnapshot.Types.ContributorSnapshot> contributors_ = new pbc::RepeatedField<global::JsonCompilers.CoopCompletionSnapshot.Types.ContributorSnapshot>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.CoopCompletionSnapshot.Types.ContributorSnapshot> Contributors {
+    public pbc::RepeatedField<global::JsonCompilers.CoopCompletionSnapshot.Types.ContributorSnapshot> Contributors {
       get { return contributors_; }
     }
 
@@ -30577,7 +30577,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.CoopCompletionSnapshot.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.CoopCompletionSnapshot.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -31108,7 +31108,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[29]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -31680,7 +31680,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[30]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -31712,12 +31712,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade_configs" field.</summary>
     public const int GradeConfigsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.ContractSimConfig.Types.ContractGradeSimConfig> _repeated_gradeConfigs_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.ContractSimConfig.Types.ContractGradeSimConfig.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ContractSimConfig.Types.ContractGradeSimConfig> gradeConfigs_ = new pbc::RepeatedField<global::Ei.ContractSimConfig.Types.ContractGradeSimConfig>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig> _repeated_gradeConfigs_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig> gradeConfigs_ = new pbc::RepeatedField<global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractSimConfig.Types.ContractGradeSimConfig> GradeConfigs {
+    public pbc::RepeatedField<global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig> GradeConfigs {
       get { return gradeConfigs_; }
     }
 
@@ -31871,7 +31871,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ContractSimConfig.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ContractSimConfig.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -31905,12 +31905,12 @@ namespace Ei {
 
         /// <summary>Field number for the "grade" field.</summary>
         public const int GradeFieldNumber = 1;
-        private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+        private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-        private global::Ei.Contract.Types.PlayerGrade grade_;
+        private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Contract.Types.PlayerGrade Grade {
+        public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
           get { if ((_hasBits0 & 1) != 0) { return grade_; } else { return GradeDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -31932,12 +31932,12 @@ namespace Ei {
 
         /// <summary>Field number for the "goal_params" field.</summary>
         public const int GoalParamsFieldNumber = 2;
-        private static readonly pb::FieldCodec<global::Ei.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams> _repeated_goalParams_codec
-            = pb::FieldCodec.ForMessage(18, global::Ei.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams.Parser);
-        private readonly pbc::RepeatedField<global::Ei.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams> goalParams_ = new pbc::RepeatedField<global::Ei.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams> _repeated_goalParams_codec
+            = pb::FieldCodec.ForMessage(18, global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams> goalParams_ = new pbc::RepeatedField<global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams> GoalParams {
+        public pbc::RepeatedField<global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig.Types.GoalParams> GoalParams {
           get { return goalParams_; }
         }
 
@@ -32082,7 +32082,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+                Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
                 break;
               }
               case 18: {
@@ -32115,7 +32115,7 @@ namespace Ei {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
-              get { return global::Ei.ContractSimConfig.Types.ContractGradeSimConfig.Descriptor.NestedTypes[0]; }
+              get { return global::JsonCompilers.ContractSimConfig.Types.ContractGradeSimConfig.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -32652,7 +32652,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[31]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -32866,7 +32866,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[32]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -32899,10 +32899,10 @@ namespace Ei {
 
     /// <summary>Field number for the "contract_to_simulate" field.</summary>
     public const int ContractToSimulateFieldNumber = 1;
-    private global::Ei.Contract contractToSimulate_;
+    private global::JsonCompilers.Contract contractToSimulate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract ContractToSimulate {
+    public global::JsonCompilers.Contract ContractToSimulate {
       get { return contractToSimulate_; }
       set {
         contractToSimulate_ = value;
@@ -32911,10 +32911,10 @@ namespace Ei {
 
     /// <summary>Field number for the "sim_config" field.</summary>
     public const int SimConfigFieldNumber = 2;
-    private global::Ei.ContractSimConfig simConfig_;
+    private global::JsonCompilers.ContractSimConfig simConfig_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractSimConfig SimConfig {
+    public global::JsonCompilers.ContractSimConfig SimConfig {
       get { return simConfig_; }
       set {
         simConfig_ = value;
@@ -33021,13 +33021,13 @@ namespace Ei {
       }
       if (other.contractToSimulate_ != null) {
         if (contractToSimulate_ == null) {
-          ContractToSimulate = new global::Ei.Contract();
+          ContractToSimulate = new global::JsonCompilers.Contract();
         }
         ContractToSimulate.MergeFrom(other.ContractToSimulate);
       }
       if (other.simConfig_ != null) {
         if (simConfig_ == null) {
-          SimConfig = new global::Ei.ContractSimConfig();
+          SimConfig = new global::JsonCompilers.ContractSimConfig();
         }
         SimConfig.MergeFrom(other.SimConfig);
       }
@@ -33085,14 +33085,14 @@ namespace Ei {
             break;
           case 10: {
             if (contractToSimulate_ == null) {
-              ContractToSimulate = new global::Ei.Contract();
+              ContractToSimulate = new global::JsonCompilers.Contract();
             }
             input.ReadMessage(ContractToSimulate);
             break;
           }
           case 18: {
             if (simConfig_ == null) {
-              SimConfig = new global::Ei.ContractSimConfig();
+              SimConfig = new global::JsonCompilers.ContractSimConfig();
             }
             input.ReadMessage(SimConfig);
             break;
@@ -33119,7 +33119,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[33]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -33178,12 +33178,12 @@ namespace Ei {
 
     /// <summary>Field number for the "goal_infos" field.</summary>
     public const int GoalInfosFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ei.ContractSimResultUpdate.Types.GoalInfo> _repeated_goalInfos_codec
-        = pb::FieldCodec.ForMessage(18, global::Ei.ContractSimResultUpdate.Types.GoalInfo.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ContractSimResultUpdate.Types.GoalInfo> goalInfos_ = new pbc::RepeatedField<global::Ei.ContractSimResultUpdate.Types.GoalInfo>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractSimResultUpdate.Types.GoalInfo> _repeated_goalInfos_codec
+        = pb::FieldCodec.ForMessage(18, global::JsonCompilers.ContractSimResultUpdate.Types.GoalInfo.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractSimResultUpdate.Types.GoalInfo> goalInfos_ = new pbc::RepeatedField<global::JsonCompilers.ContractSimResultUpdate.Types.GoalInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractSimResultUpdate.Types.GoalInfo> GoalInfos {
+    public pbc::RepeatedField<global::JsonCompilers.ContractSimResultUpdate.Types.GoalInfo> GoalInfos {
       get { return goalInfos_; }
     }
 
@@ -33361,7 +33361,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ContractSimResultUpdate.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ContractSimResultUpdate.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -33396,12 +33396,12 @@ namespace Ei {
 
         /// <summary>Field number for the "grade" field.</summary>
         public const int GradeFieldNumber = 1;
-        private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+        private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-        private global::Ei.Contract.Types.PlayerGrade grade_;
+        private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Contract.Types.PlayerGrade Grade {
+        public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
           get { if ((_hasBits0 & 1) != 0) { return grade_; } else { return GradeDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -33646,7 +33646,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+                Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
                 break;
               }
               case 16: {
@@ -33685,7 +33685,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[34]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -34003,7 +34003,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[35]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -34040,12 +34040,12 @@ namespace Ei {
 
     /// <summary>Field number for the "contracts" field.</summary>
     public const int ContractsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.Contract> _repeated_contracts_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.Contract.Parser);
-    private readonly pbc::RepeatedField<global::Ei.Contract> contracts_ = new pbc::RepeatedField<global::Ei.Contract>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.Contract> _repeated_contracts_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.Contract.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.Contract> contracts_ = new pbc::RepeatedField<global::JsonCompilers.Contract>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.Contract> Contracts {
+    public pbc::RepeatedField<global::JsonCompilers.Contract> Contracts {
       get { return contracts_; }
     }
 
@@ -34399,7 +34399,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[36]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -34436,10 +34436,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 5;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -34690,7 +34690,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -34785,7 +34785,7 @@ namespace Ei {
           }
           case 42: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -34813,7 +34813,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[37]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -35288,7 +35288,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[38]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[38]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -35488,23 +35488,23 @@ namespace Ei {
 
     /// <summary>Field number for the "epic_research" field.</summary>
     public const int EpicResearchFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Ei.Backup.Types.ResearchItem> _repeated_epicResearch_codec
-        = pb::FieldCodec.ForMessage(50, global::Ei.Backup.Types.ResearchItem.Parser);
-    private readonly pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem> epicResearch_ = new pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.ResearchItem> _repeated_epicResearch_codec
+        = pb::FieldCodec.ForMessage(50, global::JsonCompilers.Backup.Types.ResearchItem.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem> epicResearch_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem> EpicResearch {
+    public pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem> EpicResearch {
       get { return epicResearch_; }
     }
 
     /// <summary>Field number for the "egg_type" field.</summary>
     public const int EggTypeFieldNumber = 7;
-    private readonly static global::Ei.Egg EggTypeDefaultValue = global::Ei.Egg.Edible;
+    private readonly static global::JsonCompilers.Egg EggTypeDefaultValue = global::JsonCompilers.Egg.Edible;
 
-    private global::Ei.Egg eggType_;
+    private global::JsonCompilers.Egg eggType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Egg EggType {
+    public global::JsonCompilers.Egg EggType {
       get { if ((_hasBits0 & 16) != 0) { return eggType_; } else { return EggTypeDefaultValue; } }
       set {
         _hasBits0 |= 16;
@@ -35635,23 +35635,23 @@ namespace Ei {
 
     /// <summary>Field number for the "common_research" field.</summary>
     public const int CommonResearchFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Ei.Backup.Types.ResearchItem> _repeated_commonResearch_codec
-        = pb::FieldCodec.ForMessage(114, global::Ei.Backup.Types.ResearchItem.Parser);
-    private readonly pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem> commonResearch_ = new pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.ResearchItem> _repeated_commonResearch_codec
+        = pb::FieldCodec.ForMessage(114, global::JsonCompilers.Backup.Types.ResearchItem.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem> commonResearch_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.Backup.Types.ResearchItem> CommonResearch {
+    public pbc::RepeatedField<global::JsonCompilers.Backup.Types.ResearchItem> CommonResearch {
       get { return commonResearch_; }
     }
 
     /// <summary>Field number for the "active_boosts" field.</summary>
     public const int ActiveBoostsFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Ei.Backup.Types.ActiveBoost> _repeated_activeBoosts_codec
-        = pb::FieldCodec.ForMessage(122, global::Ei.Backup.Types.ActiveBoost.Parser);
-    private readonly pbc::RepeatedField<global::Ei.Backup.Types.ActiveBoost> activeBoosts_ = new pbc::RepeatedField<global::Ei.Backup.Types.ActiveBoost>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.Backup.Types.ActiveBoost> _repeated_activeBoosts_codec
+        = pb::FieldCodec.ForMessage(122, global::JsonCompilers.Backup.Types.ActiveBoost.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.Backup.Types.ActiveBoost> activeBoosts_ = new pbc::RepeatedField<global::JsonCompilers.Backup.Types.ActiveBoost>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.Backup.Types.ActiveBoost> ActiveBoosts {
+    public pbc::RepeatedField<global::JsonCompilers.Backup.Types.ActiveBoost> ActiveBoosts {
       get { return activeBoosts_; }
     }
 
@@ -35684,12 +35684,12 @@ namespace Ei {
 
     /// <summary>Field number for the "equipped_artifacts" field.</summary>
     public const int EquippedArtifactsFieldNumber = 17;
-    private static readonly pb::FieldCodec<global::Ei.CompleteArtifact> _repeated_equippedArtifacts_codec
-        = pb::FieldCodec.ForMessage(138, global::Ei.CompleteArtifact.Parser);
-    private readonly pbc::RepeatedField<global::Ei.CompleteArtifact> equippedArtifacts_ = new pbc::RepeatedField<global::Ei.CompleteArtifact>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.CompleteArtifact> _repeated_equippedArtifacts_codec
+        = pb::FieldCodec.ForMessage(138, global::JsonCompilers.CompleteArtifact.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.CompleteArtifact> equippedArtifacts_ = new pbc::RepeatedField<global::JsonCompilers.CompleteArtifact>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.CompleteArtifact> EquippedArtifacts {
+    public pbc::RepeatedField<global::JsonCompilers.CompleteArtifact> EquippedArtifacts {
       get { return equippedArtifacts_; }
     }
 
@@ -35722,10 +35722,10 @@ namespace Ei {
 
     /// <summary>Field number for the "farm_appearance" field.</summary>
     public const int FarmAppearanceFieldNumber = 19;
-    private global::Ei.ShellDB.Types.FarmConfiguration farmAppearance_;
+    private global::JsonCompilers.ShellDB.Types.FarmConfiguration farmAppearance_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ShellDB.Types.FarmConfiguration FarmAppearance {
+    public global::JsonCompilers.ShellDB.Types.FarmConfiguration FarmAppearance {
       get { return farmAppearance_; }
       set {
         farmAppearance_ = value;
@@ -36079,7 +36079,7 @@ namespace Ei {
       }
       if (other.farmAppearance_ != null) {
         if (farmAppearance_ == null) {
-          FarmAppearance = new global::Ei.ShellDB.Types.FarmConfiguration();
+          FarmAppearance = new global::JsonCompilers.ShellDB.Types.FarmConfiguration();
         }
         FarmAppearance.MergeFrom(other.FarmAppearance);
       }
@@ -36247,7 +36247,7 @@ namespace Ei {
             break;
           }
           case 56: {
-            EggType = (global::Ei.Egg) input.ReadEnum();
+            EggType = (global::JsonCompilers.Egg) input.ReadEnum();
             break;
           }
           case 65: {
@@ -36300,7 +36300,7 @@ namespace Ei {
           }
           case 154: {
             if (farmAppearance_ == null) {
-              FarmAppearance = new global::Ei.ShellDB.Types.FarmConfiguration();
+              FarmAppearance = new global::JsonCompilers.ShellDB.Types.FarmConfiguration();
             }
             input.ReadMessage(FarmAppearance);
             break;
@@ -36341,7 +36341,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[39]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[39]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -36392,12 +36392,12 @@ namespace Ei {
 
     /// <summary>Field number for the "response_status" field.</summary>
     public const int ResponseStatusFieldNumber = 19;
-    private readonly static global::Ei.ContractCoopStatusResponse.Types.ResponseStatus ResponseStatusDefaultValue = global::Ei.ContractCoopStatusResponse.Types.ResponseStatus.NoError;
+    private readonly static global::JsonCompilers.ContractCoopStatusResponse.Types.ResponseStatus ResponseStatusDefaultValue = global::JsonCompilers.ContractCoopStatusResponse.Types.ResponseStatus.NoError;
 
-    private global::Ei.ContractCoopStatusResponse.Types.ResponseStatus responseStatus_;
+    private global::JsonCompilers.ContractCoopStatusResponse.Types.ResponseStatus responseStatus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractCoopStatusResponse.Types.ResponseStatus ResponseStatus {
+    public global::JsonCompilers.ContractCoopStatusResponse.Types.ResponseStatus ResponseStatus {
       get { if ((_hasBits0 & 4096) != 0) { return responseStatus_; } else { return ResponseStatusDefaultValue; } }
       set {
         _hasBits0 |= 4096;
@@ -36498,12 +36498,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 17;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 1024) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 1024;
@@ -36525,12 +36525,12 @@ namespace Ei {
 
     /// <summary>Field number for the "contributors" field.</summary>
     public const int ContributorsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.ContractCoopStatusResponse.Types.ContributionInfo> _repeated_contributors_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.ContractCoopStatusResponse.Types.ContributionInfo.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ContractCoopStatusResponse.Types.ContributionInfo> contributors_ = new pbc::RepeatedField<global::Ei.ContractCoopStatusResponse.Types.ContributionInfo>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractCoopStatusResponse.Types.ContributionInfo> _repeated_contributors_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.ContractCoopStatusResponse.Types.ContributionInfo.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse.Types.ContributionInfo> contributors_ = new pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse.Types.ContributionInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractCoopStatusResponse.Types.ContributionInfo> Contributors {
+    public pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse.Types.ContributionInfo> Contributors {
       get { return contributors_; }
     }
 
@@ -36778,23 +36778,23 @@ namespace Ei {
 
     /// <summary>Field number for the "gifts" field.</summary>
     public const int GiftsFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Ei.ContractCoopStatusResponse.Types.CoopGift> _repeated_gifts_codec
-        = pb::FieldCodec.ForMessage(90, global::Ei.ContractCoopStatusResponse.Types.CoopGift.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ContractCoopStatusResponse.Types.CoopGift> gifts_ = new pbc::RepeatedField<global::Ei.ContractCoopStatusResponse.Types.CoopGift>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractCoopStatusResponse.Types.CoopGift> _repeated_gifts_codec
+        = pb::FieldCodec.ForMessage(90, global::JsonCompilers.ContractCoopStatusResponse.Types.CoopGift.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse.Types.CoopGift> gifts_ = new pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse.Types.CoopGift>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractCoopStatusResponse.Types.CoopGift> Gifts {
+    public pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse.Types.CoopGift> Gifts {
       get { return gifts_; }
     }
 
     /// <summary>Field number for the "chicken_runs" field.</summary>
     public const int ChickenRunsFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Ei.ContractCoopStatusResponse.Types.ChickenRun> _repeated_chickenRuns_codec
-        = pb::FieldCodec.ForMessage(106, global::Ei.ContractCoopStatusResponse.Types.ChickenRun.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ContractCoopStatusResponse.Types.ChickenRun> chickenRuns_ = new pbc::RepeatedField<global::Ei.ContractCoopStatusResponse.Types.ChickenRun>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractCoopStatusResponse.Types.ChickenRun> _repeated_chickenRuns_codec
+        = pb::FieldCodec.ForMessage(106, global::JsonCompilers.ContractCoopStatusResponse.Types.ChickenRun.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse.Types.ChickenRun> chickenRuns_ = new pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse.Types.ChickenRun>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractCoopStatusResponse.Types.ChickenRun> ChickenRuns {
+    public pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse.Types.ChickenRun> ChickenRuns {
       get { return chickenRuns_; }
     }
 
@@ -37377,7 +37377,7 @@ namespace Ei {
             break;
           }
           case 136: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
           case 145: {
@@ -37385,7 +37385,7 @@ namespace Ei {
             break;
           }
           case 152: {
-            ResponseStatus = (global::Ei.ContractCoopStatusResponse.Types.ResponseStatus) input.ReadEnum();
+            ResponseStatus = (global::JsonCompilers.ContractCoopStatusResponse.Types.ResponseStatus) input.ReadEnum();
             break;
           }
         }
@@ -37442,7 +37442,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ContractCoopStatusResponse.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ContractCoopStatusResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -37683,10 +37683,10 @@ namespace Ei {
 
         /// <summary>Field number for the "production_params" field.</summary>
         public const int ProductionParamsFieldNumber = 15;
-        private global::Ei.FarmProductionParams productionParams_;
+        private global::JsonCompilers.FarmProductionParams productionParams_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.FarmProductionParams ProductionParams {
+        public global::JsonCompilers.FarmProductionParams ProductionParams {
           get { return productionParams_; }
           set {
             productionParams_ = value;
@@ -37695,10 +37695,10 @@ namespace Ei {
 
         /// <summary>Field number for the "farm_info" field.</summary>
         public const int FarmInfoFieldNumber = 18;
-        private global::Ei.PlayerFarmInfo farmInfo_;
+        private global::JsonCompilers.PlayerFarmInfo farmInfo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.PlayerFarmInfo FarmInfo {
+        public global::JsonCompilers.PlayerFarmInfo FarmInfo {
           get { return farmInfo_; }
           set {
             farmInfo_ = value;
@@ -37896,12 +37896,12 @@ namespace Ei {
 
         /// <summary>Field number for the "platform" field.</summary>
         public const int PlatformFieldNumber = 5;
-        private readonly static global::Ei.Platform PlatformDefaultValue = global::Ei.Platform.UnknownPlatform;
+        private readonly static global::JsonCompilers.Platform PlatformDefaultValue = global::JsonCompilers.Platform.UnknownPlatform;
 
-        private global::Ei.Platform platform_;
+        private global::JsonCompilers.Platform platform_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Platform Platform {
+        public global::JsonCompilers.Platform Platform {
           get { if ((_hasBits0 & 4) != 0) { return platform_; } else { return PlatformDefaultValue; } }
           set {
             _hasBits0 |= 4;
@@ -38057,12 +38057,12 @@ namespace Ei {
 
         /// <summary>Field number for the "buff_history" field.</summary>
         public const int BuffHistoryFieldNumber = 13;
-        private static readonly pb::FieldCodec<global::Ei.CoopBuffState> _repeated_buffHistory_codec
-            = pb::FieldCodec.ForMessage(106, global::Ei.CoopBuffState.Parser);
-        private readonly pbc::RepeatedField<global::Ei.CoopBuffState> buffHistory_ = new pbc::RepeatedField<global::Ei.CoopBuffState>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.CoopBuffState> _repeated_buffHistory_codec
+            = pb::FieldCodec.ForMessage(106, global::JsonCompilers.CoopBuffState.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.CoopBuffState> buffHistory_ = new pbc::RepeatedField<global::JsonCompilers.CoopBuffState>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.CoopBuffState> BuffHistory {
+        public pbc::RepeatedField<global::JsonCompilers.CoopBuffState> BuffHistory {
           get { return buffHistory_; }
         }
 
@@ -38492,13 +38492,13 @@ namespace Ei {
           }
           if (other.productionParams_ != null) {
             if (productionParams_ == null) {
-              ProductionParams = new global::Ei.FarmProductionParams();
+              ProductionParams = new global::JsonCompilers.FarmProductionParams();
             }
             ProductionParams.MergeFrom(other.ProductionParams);
           }
           if (other.farmInfo_ != null) {
             if (farmInfo_ == null) {
-              FarmInfo = new global::Ei.PlayerFarmInfo();
+              FarmInfo = new global::JsonCompilers.PlayerFarmInfo();
             }
             FarmInfo.MergeFrom(other.FarmInfo);
           }
@@ -38702,7 +38702,7 @@ namespace Ei {
                 break;
               }
               case 40: {
-                Platform = (global::Ei.Platform) input.ReadEnum();
+                Platform = (global::JsonCompilers.Platform) input.ReadEnum();
                 break;
               }
               case 49: {
@@ -38743,7 +38743,7 @@ namespace Ei {
               }
               case 122: {
                 if (productionParams_ == null) {
-                  ProductionParams = new global::Ei.FarmProductionParams();
+                  ProductionParams = new global::JsonCompilers.FarmProductionParams();
                 }
                 input.ReadMessage(ProductionParams);
                 break;
@@ -38758,7 +38758,7 @@ namespace Ei {
               }
               case 146: {
                 if (farmInfo_ == null) {
-                  FarmInfo = new global::Ei.PlayerFarmInfo();
+                  FarmInfo = new global::JsonCompilers.PlayerFarmInfo();
                 }
                 input.ReadMessage(FarmInfo);
                 break;
@@ -38810,7 +38810,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ContractCoopStatusResponse.Descriptor.NestedTypes[1]; }
+          get { return global::JsonCompilers.ContractCoopStatusResponse.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -39178,7 +39178,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ContractCoopStatusResponse.Descriptor.NestedTypes[2]; }
+          get { return global::JsonCompilers.ContractCoopStatusResponse.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -39500,7 +39500,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[40]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[40]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -39554,10 +39554,10 @@ namespace Ei {
 
     /// <summary>Field number for the "contract" field.</summary>
     public const int ContractFieldNumber = 1;
-    private global::Ei.Contract contract_;
+    private global::JsonCompilers.Contract contract_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract Contract {
+    public global::JsonCompilers.Contract Contract {
       get { return contract_; }
       set {
         contract_ = value;
@@ -40023,12 +40023,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 18;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 16384) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 16384;
@@ -40077,10 +40077,10 @@ namespace Ei {
 
     /// <summary>Field number for the "evaluation" field.</summary>
     public const int EvaluationFieldNumber = 19;
-    private global::Ei.ContractEvaluation evaluation_;
+    private global::JsonCompilers.ContractEvaluation evaluation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractEvaluation Evaluation {
+    public global::JsonCompilers.ContractEvaluation Evaluation {
       get { return evaluation_; }
       set {
         evaluation_ = value;
@@ -40450,7 +40450,7 @@ namespace Ei {
       }
       if (other.contract_ != null) {
         if (contract_ == null) {
-          Contract = new global::Ei.Contract();
+          Contract = new global::JsonCompilers.Contract();
         }
         Contract.MergeFrom(other.Contract);
       }
@@ -40513,7 +40513,7 @@ namespace Ei {
       }
       if (other.evaluation_ != null) {
         if (evaluation_ == null) {
-          Evaluation = new global::Ei.ContractEvaluation();
+          Evaluation = new global::JsonCompilers.ContractEvaluation();
         }
         Evaluation.MergeFrom(other.Evaluation);
       }
@@ -40652,7 +40652,7 @@ namespace Ei {
             break;
           case 10: {
             if (contract_ == null) {
-              Contract = new global::Ei.Contract();
+              Contract = new global::JsonCompilers.Contract();
             }
             input.ReadMessage(Contract);
             break;
@@ -40722,12 +40722,12 @@ namespace Ei {
             break;
           }
           case 144: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
           case 154: {
             if (evaluation_ == null) {
-              Evaluation = new global::Ei.ContractEvaluation();
+              Evaluation = new global::JsonCompilers.ContractEvaluation();
             }
             input.ReadMessage(Evaluation);
             break;
@@ -40767,7 +40767,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[41]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[41]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -40818,43 +40818,43 @@ namespace Ei {
 
     /// <summary>Field number for the "contracts" field.</summary>
     public const int ContractsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.LocalContract> _repeated_contracts_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.LocalContract.Parser);
-    private readonly pbc::RepeatedField<global::Ei.LocalContract> contracts_ = new pbc::RepeatedField<global::Ei.LocalContract>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.LocalContract> _repeated_contracts_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.LocalContract.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.LocalContract> contracts_ = new pbc::RepeatedField<global::JsonCompilers.LocalContract>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.LocalContract> Contracts {
+    public pbc::RepeatedField<global::JsonCompilers.LocalContract> Contracts {
       get { return contracts_; }
     }
 
     /// <summary>Field number for the "archive" field.</summary>
     public const int ArchiveFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ei.LocalContract> _repeated_archive_codec
-        = pb::FieldCodec.ForMessage(18, global::Ei.LocalContract.Parser);
-    private readonly pbc::RepeatedField<global::Ei.LocalContract> archive_ = new pbc::RepeatedField<global::Ei.LocalContract>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.LocalContract> _repeated_archive_codec
+        = pb::FieldCodec.ForMessage(18, global::JsonCompilers.LocalContract.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.LocalContract> archive_ = new pbc::RepeatedField<global::JsonCompilers.LocalContract>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.LocalContract> Archive {
+    public pbc::RepeatedField<global::JsonCompilers.LocalContract> Archive {
       get { return archive_; }
     }
 
     /// <summary>Field number for the "current_coop_statuses" field.</summary>
     public const int CurrentCoopStatusesFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.ContractCoopStatusResponse> _repeated_currentCoopStatuses_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.ContractCoopStatusResponse.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ContractCoopStatusResponse> currentCoopStatuses_ = new pbc::RepeatedField<global::Ei.ContractCoopStatusResponse>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractCoopStatusResponse> _repeated_currentCoopStatuses_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.ContractCoopStatusResponse.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse> currentCoopStatuses_ = new pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractCoopStatusResponse> CurrentCoopStatuses {
+    public pbc::RepeatedField<global::JsonCompilers.ContractCoopStatusResponse> CurrentCoopStatuses {
       get { return currentCoopStatuses_; }
     }
 
     /// <summary>Field number for the "last_cpi" field.</summary>
     public const int LastCpiFieldNumber = 5;
-    private global::Ei.ContractPlayerInfo lastCpi_;
+    private global::JsonCompilers.ContractPlayerInfo lastCpi_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractPlayerInfo LastCpi {
+    public global::JsonCompilers.ContractPlayerInfo LastCpi {
       get { return lastCpi_; }
       set {
         lastCpi_ = value;
@@ -41092,7 +41092,7 @@ namespace Ei {
       currentCoopStatuses_.Add(other.currentCoopStatuses_);
       if (other.lastCpi_ != null) {
         if (lastCpi_ == null) {
-          LastCpi = new global::Ei.ContractPlayerInfo();
+          LastCpi = new global::JsonCompilers.ContractPlayerInfo();
         }
         LastCpi.MergeFrom(other.LastCpi);
       }
@@ -41196,7 +41196,7 @@ namespace Ei {
           }
           case 42: {
             if (lastCpi_ == null) {
-              LastCpi = new global::Ei.ContractPlayerInfo();
+              LastCpi = new global::JsonCompilers.ContractPlayerInfo();
             }
             input.ReadMessage(LastCpi);
             break;
@@ -41236,7 +41236,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[42]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[42]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -41274,10 +41274,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 5;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -41365,12 +41365,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 6;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 4) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 4;
@@ -41569,7 +41569,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -41671,13 +41671,13 @@ namespace Ei {
           }
           case 42: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
           }
           case 48: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
         }
@@ -41703,7 +41703,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[43]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[43]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -42230,7 +42230,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[44]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[44]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -42278,10 +42278,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 10;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -42583,12 +42583,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 12;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 64) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 64;
@@ -42637,12 +42637,12 @@ namespace Ei {
 
     /// <summary>Field number for the "platform" field.</summary>
     public const int PlatformFieldNumber = 6;
-    private readonly static global::Ei.Platform PlatformDefaultValue = global::Ei.Platform.UnknownPlatform;
+    private readonly static global::JsonCompilers.Platform PlatformDefaultValue = global::JsonCompilers.Platform.UnknownPlatform;
 
-    private global::Ei.Platform platform_;
+    private global::JsonCompilers.Platform platform_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Platform Platform {
+    public global::JsonCompilers.Platform Platform {
       get { if ((_hasBits0 & 2) != 0) { return platform_; } else { return PlatformDefaultValue; } }
       set {
         _hasBits0 |= 2;
@@ -42971,7 +42971,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -43146,7 +43146,7 @@ namespace Ei {
             break;
           }
           case 48: {
-            Platform = (global::Ei.Platform) input.ReadEnum();
+            Platform = (global::JsonCompilers.Platform) input.ReadEnum();
             break;
           }
           case 56: {
@@ -43163,7 +43163,7 @@ namespace Ei {
           }
           case 82: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -43173,7 +43173,7 @@ namespace Ei {
             break;
           }
           case 96: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
           case 104: {
@@ -43215,7 +43215,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[45]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[45]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -43481,7 +43481,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[46]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[46]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -43526,10 +43526,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 10;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -43723,12 +43723,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 13;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 64) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 64;
@@ -43777,12 +43777,12 @@ namespace Ei {
 
     /// <summary>Field number for the "platform" field.</summary>
     public const int PlatformFieldNumber = 5;
-    private readonly static global::Ei.Platform PlatformDefaultValue = global::Ei.Platform.UnknownPlatform;
+    private readonly static global::JsonCompilers.Platform PlatformDefaultValue = global::JsonCompilers.Platform.UnknownPlatform;
 
-    private global::Ei.Platform platform_;
+    private global::JsonCompilers.Platform platform_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Platform Platform {
+    public global::JsonCompilers.Platform Platform {
       get { if ((_hasBits0 & 1) != 0) { return platform_; } else { return PlatformDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -44099,7 +44099,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -44249,7 +44249,7 @@ namespace Ei {
             break;
           }
           case 40: {
-            Platform = (global::Ei.Platform) input.ReadEnum();
+            Platform = (global::JsonCompilers.Platform) input.ReadEnum();
             break;
           }
           case 56: {
@@ -44266,7 +44266,7 @@ namespace Ei {
           }
           case 82: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -44280,7 +44280,7 @@ namespace Ei {
             break;
           }
           case 104: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
           case 112: {
@@ -44310,7 +44310,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[47]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[47]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -44539,12 +44539,12 @@ namespace Ei {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 8;
-    private readonly static global::Ei.ContractCoopStatusResponse.Types.Status StatusDefaultValue = global::Ei.ContractCoopStatusResponse.Types.Status.Unknown;
+    private readonly static global::JsonCompilers.ContractCoopStatusResponse.Types.Status StatusDefaultValue = global::JsonCompilers.ContractCoopStatusResponse.Types.Status.Unknown;
 
-    private global::Ei.ContractCoopStatusResponse.Types.Status status_;
+    private global::JsonCompilers.ContractCoopStatusResponse.Types.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractCoopStatusResponse.Types.Status Status {
+    public global::JsonCompilers.ContractCoopStatusResponse.Types.Status Status {
       get { if ((_hasBits0 & 32) != 0) { return status_; } else { return StatusDefaultValue; } }
       set {
         _hasBits0 |= 32;
@@ -44566,12 +44566,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 9;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 64) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 64;
@@ -44957,11 +44957,11 @@ namespace Ei {
             break;
           }
           case 64: {
-            Status = (global::Ei.ContractCoopStatusResponse.Types.Status) input.ReadEnum();
+            Status = (global::JsonCompilers.ContractCoopStatusResponse.Types.Status) input.ReadEnum();
             break;
           }
           case 72: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
           case 80: {
@@ -44991,7 +44991,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[48]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[48]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -45035,10 +45035,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 9;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -45206,12 +45206,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 12;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 64) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 64;
@@ -45287,12 +45287,12 @@ namespace Ei {
 
     /// <summary>Field number for the "platform" field.</summary>
     public const int PlatformFieldNumber = 6;
-    private readonly static global::Ei.Platform PlatformDefaultValue = global::Ei.Platform.UnknownPlatform;
+    private readonly static global::JsonCompilers.Platform PlatformDefaultValue = global::JsonCompilers.Platform.UnknownPlatform;
 
-    private global::Ei.Platform platform_;
+    private global::JsonCompilers.Platform platform_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Platform Platform {
+    public global::JsonCompilers.Platform Platform {
       get { if ((_hasBits0 & 4) != 0) { return platform_; } else { return PlatformDefaultValue; } }
       set {
         _hasBits0 |= 4;
@@ -45569,7 +45569,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -45716,7 +45716,7 @@ namespace Ei {
             break;
           }
           case 48: {
-            Platform = (global::Ei.Platform) input.ReadEnum();
+            Platform = (global::JsonCompilers.Platform) input.ReadEnum();
             break;
           }
           case 56: {
@@ -45729,7 +45729,7 @@ namespace Ei {
           }
           case 74: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -45739,7 +45739,7 @@ namespace Ei {
             break;
           }
           case 96: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
           case 112: {
@@ -45769,7 +45769,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[49]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[49]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -45807,10 +45807,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 6;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -46101,7 +46101,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -46207,7 +46207,7 @@ namespace Ei {
           }
           case 50: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -46235,7 +46235,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[50]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[50]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -46501,7 +46501,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[51]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[51]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -46538,10 +46538,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 8;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -46792,7 +46792,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -46887,7 +46887,7 @@ namespace Ei {
           }
           case 66: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -46915,7 +46915,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[52]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[52]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -46955,10 +46955,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 8;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -47327,7 +47327,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -47455,7 +47455,7 @@ namespace Ei {
           }
           case 66: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -47483,7 +47483,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[53]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[53]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -47523,10 +47523,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 8;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -47895,7 +47895,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -48023,7 +48023,7 @@ namespace Ei {
           }
           case 66: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -48051,7 +48051,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[54]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[54]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -48088,10 +48088,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 1;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -48178,12 +48178,12 @@ namespace Ei {
 
     /// <summary>Field number for the "reason" field.</summary>
     public const int ReasonFieldNumber = 5;
-    private readonly static global::Ei.ReportPlayerCoopRequest.Types.Reason ReasonDefaultValue = global::Ei.ReportPlayerCoopRequest.Types.Reason.Unknown;
+    private readonly static global::JsonCompilers.ReportPlayerCoopRequest.Types.Reason ReasonDefaultValue = global::JsonCompilers.ReportPlayerCoopRequest.Types.Reason.Unknown;
 
-    private global::Ei.ReportPlayerCoopRequest.Types.Reason reason_;
+    private global::JsonCompilers.ReportPlayerCoopRequest.Types.Reason reason_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ReportPlayerCoopRequest.Types.Reason Reason {
+    public global::JsonCompilers.ReportPlayerCoopRequest.Types.Reason Reason {
       get { if ((_hasBits0 & 1) != 0) { return reason_; } else { return ReasonDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -48342,7 +48342,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -48421,7 +48421,7 @@ namespace Ei {
             break;
           case 10: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -48439,7 +48439,7 @@ namespace Ei {
             break;
           }
           case 40: {
-            Reason = (global::Ei.ReportPlayerCoopRequest.Types.Reason) input.ReadEnum();
+            Reason = (global::JsonCompilers.ReportPlayerCoopRequest.Types.Reason) input.ReadEnum();
             break;
           }
         }
@@ -48480,7 +48480,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[55]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[55]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -48519,10 +48519,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 8;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -48635,12 +48635,12 @@ namespace Ei {
 
     /// <summary>Field number for the "reason" field.</summary>
     public const int ReasonFieldNumber = 9;
-    private readonly static global::Ei.KickPlayerCoopRequest.Types.Reason ReasonDefaultValue = global::Ei.KickPlayerCoopRequest.Types.Reason.Invalid;
+    private readonly static global::JsonCompilers.KickPlayerCoopRequest.Types.Reason ReasonDefaultValue = global::JsonCompilers.KickPlayerCoopRequest.Types.Reason.Invalid;
 
-    private global::Ei.KickPlayerCoopRequest.Types.Reason reason_;
+    private global::JsonCompilers.KickPlayerCoopRequest.Types.Reason reason_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.KickPlayerCoopRequest.Types.Reason Reason {
+    public global::JsonCompilers.KickPlayerCoopRequest.Types.Reason Reason {
       get { if ((_hasBits0 & 2) != 0) { return reason_; } else { return ReasonDefaultValue; } }
       set {
         _hasBits0 |= 2;
@@ -48852,7 +48852,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -48965,13 +48965,13 @@ namespace Ei {
           }
           case 66: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
           }
           case 72: {
-            Reason = (global::Ei.KickPlayerCoopRequest.Types.Reason) input.ReadEnum();
+            Reason = (global::JsonCompilers.KickPlayerCoopRequest.Types.Reason) input.ReadEnum();
             break;
           }
         }
@@ -49013,7 +49013,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[56]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[56]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -49062,10 +49062,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 12;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -49394,10 +49394,10 @@ namespace Ei {
 
     /// <summary>Field number for the "production_params" field.</summary>
     public const int ProductionParamsFieldNumber = 14;
-    private global::Ei.FarmProductionParams productionParams_;
+    private global::JsonCompilers.FarmProductionParams productionParams_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.FarmProductionParams ProductionParams {
+    public global::JsonCompilers.FarmProductionParams ProductionParams {
       get { return productionParams_; }
       set {
         productionParams_ = value;
@@ -49406,10 +49406,10 @@ namespace Ei {
 
     /// <summary>Field number for the "farm_info" field.</summary>
     public const int FarmInfoFieldNumber = 16;
-    private global::Ei.PlayerFarmInfo farmInfo_;
+    private global::JsonCompilers.PlayerFarmInfo farmInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.PlayerFarmInfo FarmInfo {
+    public global::JsonCompilers.PlayerFarmInfo FarmInfo {
       get { return farmInfo_; }
       set {
         farmInfo_ = value;
@@ -49765,7 +49765,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -49807,13 +49807,13 @@ namespace Ei {
       }
       if (other.productionParams_ != null) {
         if (productionParams_ == null) {
-          ProductionParams = new global::Ei.FarmProductionParams();
+          ProductionParams = new global::JsonCompilers.FarmProductionParams();
         }
         ProductionParams.MergeFrom(other.ProductionParams);
       }
       if (other.farmInfo_ != null) {
         if (farmInfo_ == null) {
-          FarmInfo = new global::Ei.PlayerFarmInfo();
+          FarmInfo = new global::JsonCompilers.PlayerFarmInfo();
         }
         FarmInfo.MergeFrom(other.FarmInfo);
       }
@@ -49984,7 +49984,7 @@ namespace Ei {
           }
           case 98: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -49995,7 +49995,7 @@ namespace Ei {
           }
           case 114: {
             if (productionParams_ == null) {
-              ProductionParams = new global::Ei.FarmProductionParams();
+              ProductionParams = new global::JsonCompilers.FarmProductionParams();
             }
             input.ReadMessage(ProductionParams);
             break;
@@ -50006,7 +50006,7 @@ namespace Ei {
           }
           case 130: {
             if (farmInfo_ == null) {
-              FarmInfo = new global::Ei.PlayerFarmInfo();
+              FarmInfo = new global::JsonCompilers.PlayerFarmInfo();
             }
             input.ReadMessage(FarmInfo);
             break;
@@ -50038,7 +50038,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[57]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[57]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -50127,12 +50127,12 @@ namespace Ei {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private readonly static global::Ei.ContractCoopStatusResponse.Types.MemberStatus StatusDefaultValue = global::Ei.ContractCoopStatusResponse.Types.MemberStatus.Valid;
+    private readonly static global::JsonCompilers.ContractCoopStatusResponse.Types.MemberStatus StatusDefaultValue = global::JsonCompilers.ContractCoopStatusResponse.Types.MemberStatus.Valid;
 
-    private global::Ei.ContractCoopStatusResponse.Types.MemberStatus status_;
+    private global::JsonCompilers.ContractCoopStatusResponse.Types.MemberStatus status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractCoopStatusResponse.Types.MemberStatus Status {
+    public global::JsonCompilers.ContractCoopStatusResponse.Types.MemberStatus Status {
       get { if ((_hasBits0 & 4) != 0) { return status_; } else { return StatusDefaultValue; } }
       set {
         _hasBits0 |= 4;
@@ -50331,7 +50331,7 @@ namespace Ei {
             break;
           }
           case 24: {
-            Status = (global::Ei.ContractCoopStatusResponse.Types.MemberStatus) input.ReadEnum();
+            Status = (global::JsonCompilers.ContractCoopStatusResponse.Types.MemberStatus) input.ReadEnum();
             break;
           }
         }
@@ -50357,7 +50357,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[58]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[58]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -50675,7 +50675,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[59]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[59]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -50707,12 +50707,12 @@ namespace Ei {
 
     /// <summary>Field number for the "history" field.</summary>
     public const int HistoryFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.CoopBuffState> _repeated_history_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.CoopBuffState.Parser);
-    private readonly pbc::RepeatedField<global::Ei.CoopBuffState> history_ = new pbc::RepeatedField<global::Ei.CoopBuffState>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.CoopBuffState> _repeated_history_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.CoopBuffState.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.CoopBuffState> history_ = new pbc::RepeatedField<global::JsonCompilers.CoopBuffState>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.CoopBuffState> History {
+    public pbc::RepeatedField<global::JsonCompilers.CoopBuffState> History {
       get { return history_; }
     }
 
@@ -50863,7 +50863,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[60]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[60]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -51128,7 +51128,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[61]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[61]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -51160,12 +51160,12 @@ namespace Ei {
 
     /// <summary>Field number for the "entries" field.</summary>
     public const int EntriesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.CoopChickenRunEntry> _repeated_entries_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.CoopChickenRunEntry.Parser);
-    private readonly pbc::RepeatedField<global::Ei.CoopChickenRunEntry> entries_ = new pbc::RepeatedField<global::Ei.CoopChickenRunEntry>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.CoopChickenRunEntry> _repeated_entries_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.CoopChickenRunEntry.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.CoopChickenRunEntry> entries_ = new pbc::RepeatedField<global::JsonCompilers.CoopChickenRunEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.CoopChickenRunEntry> Entries {
+    public pbc::RepeatedField<global::JsonCompilers.CoopChickenRunEntry> Entries {
       get { return entries_; }
     }
 
@@ -51316,7 +51316,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[62]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[62]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -51353,12 +51353,12 @@ namespace Ei {
 
     /// <summary>Field number for the "chunks" field.</summary>
     public const int ChunksFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.LeaderboardAnalysis.Types.Chunk> _repeated_chunks_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.LeaderboardAnalysis.Types.Chunk.Parser);
-    private readonly pbc::RepeatedField<global::Ei.LeaderboardAnalysis.Types.Chunk> chunks_ = new pbc::RepeatedField<global::Ei.LeaderboardAnalysis.Types.Chunk>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.LeaderboardAnalysis.Types.Chunk> _repeated_chunks_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.LeaderboardAnalysis.Types.Chunk.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.LeaderboardAnalysis.Types.Chunk> chunks_ = new pbc::RepeatedField<global::JsonCompilers.LeaderboardAnalysis.Types.Chunk>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.LeaderboardAnalysis.Types.Chunk> Chunks {
+    public pbc::RepeatedField<global::JsonCompilers.LeaderboardAnalysis.Types.Chunk> Chunks {
       get { return chunks_; }
     }
 
@@ -51715,7 +51715,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.LeaderboardAnalysis.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.LeaderboardAnalysis.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -52192,7 +52192,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[63]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[63]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -52225,12 +52225,12 @@ namespace Ei {
 
     /// <summary>Field number for the "seasons" field.</summary>
     public const int SeasonsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.LeaderboardInfo.Types.Season> _repeated_seasons_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.LeaderboardInfo.Types.Season.Parser);
-    private readonly pbc::RepeatedField<global::Ei.LeaderboardInfo.Types.Season> seasons_ = new pbc::RepeatedField<global::Ei.LeaderboardInfo.Types.Season>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.LeaderboardInfo.Types.Season> _repeated_seasons_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.LeaderboardInfo.Types.Season.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.LeaderboardInfo.Types.Season> seasons_ = new pbc::RepeatedField<global::JsonCompilers.LeaderboardInfo.Types.Season>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.LeaderboardInfo.Types.Season> Seasons {
+    public pbc::RepeatedField<global::JsonCompilers.LeaderboardInfo.Types.Season> Seasons {
       get { return seasons_; }
     }
 
@@ -52433,7 +52433,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.LeaderboardInfo.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.LeaderboardInfo.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -52702,7 +52702,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[64]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[64]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -52737,10 +52737,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 1;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -52775,12 +52775,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 3;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 1) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -52913,7 +52913,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -52978,7 +52978,7 @@ namespace Ei {
             break;
           case 10: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -52988,7 +52988,7 @@ namespace Ei {
             break;
           }
           case 24: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
         }
@@ -53014,7 +53014,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[65]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[65]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -53078,12 +53078,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 2;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 1) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -53105,12 +53105,12 @@ namespace Ei {
 
     /// <summary>Field number for the "top_entries" field.</summary>
     public const int TopEntriesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.LeaderboardResponse.Types.Entry> _repeated_topEntries_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.LeaderboardResponse.Types.Entry.Parser);
-    private readonly pbc::RepeatedField<global::Ei.LeaderboardResponse.Types.Entry> topEntries_ = new pbc::RepeatedField<global::Ei.LeaderboardResponse.Types.Entry>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.LeaderboardResponse.Types.Entry> _repeated_topEntries_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.LeaderboardResponse.Types.Entry.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.LeaderboardResponse.Types.Entry> topEntries_ = new pbc::RepeatedField<global::JsonCompilers.LeaderboardResponse.Types.Entry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.LeaderboardResponse.Types.Entry> TopEntries {
+    public pbc::RepeatedField<global::JsonCompilers.LeaderboardResponse.Types.Entry> TopEntries {
       get { return topEntries_; }
     }
 
@@ -53420,7 +53420,7 @@ namespace Ei {
             break;
           }
           case 16: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
           case 26: {
@@ -53465,7 +53465,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.LeaderboardResponse.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.LeaderboardResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -53787,7 +53787,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[66]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[66]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -53819,12 +53819,12 @@ namespace Ei {
 
     /// <summary>Field number for the "archive" field.</summary>
     public const int ArchiveFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.LocalContract> _repeated_archive_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.LocalContract.Parser);
-    private readonly pbc::RepeatedField<global::Ei.LocalContract> archive_ = new pbc::RepeatedField<global::Ei.LocalContract>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.LocalContract> _repeated_archive_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.LocalContract.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.LocalContract> archive_ = new pbc::RepeatedField<global::JsonCompilers.LocalContract>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.LocalContract> Archive {
+    public pbc::RepeatedField<global::JsonCompilers.LocalContract> Archive {
       get { return archive_; }
     }
 
@@ -53975,7 +53975,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[67]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[67]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -55119,7 +55119,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[68]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[68]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -55155,10 +55155,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 4;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -55370,7 +55370,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -55454,7 +55454,7 @@ namespace Ei {
           }
           case 34: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -55482,7 +55482,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[69]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[69]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -55775,7 +55775,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[70]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[70]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -55811,10 +55811,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 4;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -56026,7 +56026,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -56110,7 +56110,7 @@ namespace Ei {
           }
           case 34: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -56138,7 +56138,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[71]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[71]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -56200,12 +56200,12 @@ namespace Ei {
 
     /// <summary>Field number for the "reward_type" field.</summary>
     public const int RewardTypeFieldNumber = 3;
-    private readonly static global::Ei.RewardType RewardTypeDefaultValue = global::Ei.RewardType.Cash;
+    private readonly static global::JsonCompilers.RewardType RewardTypeDefaultValue = global::JsonCompilers.RewardType.Cash;
 
-    private global::Ei.RewardType rewardType_;
+    private global::JsonCompilers.RewardType rewardType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.RewardType RewardType {
+    public global::JsonCompilers.RewardType RewardType {
       get { if ((_hasBits0 & 1) != 0) { return rewardType_; } else { return RewardTypeDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -56473,7 +56473,7 @@ namespace Ei {
             break;
           }
           case 24: {
-            RewardType = (global::Ei.RewardType) input.ReadEnum();
+            RewardType = (global::JsonCompilers.RewardType) input.ReadEnum();
             break;
           }
           case 34: {
@@ -56506,7 +56506,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[72]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[72]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -56567,10 +56567,10 @@ namespace Ei {
 
     /// <summary>Field number for the "boosts_config" field.</summary>
     public const int BoostsConfigFieldNumber = 2;
-    private global::Ei.LiveConfig.Types.BoostsConfig boostsConfig_;
+    private global::JsonCompilers.LiveConfig.Types.BoostsConfig boostsConfig_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.LiveConfig.Types.BoostsConfig BoostsConfig {
+    public global::JsonCompilers.LiveConfig.Types.BoostsConfig BoostsConfig {
       get { return boostsConfig_; }
       set {
         boostsConfig_ = value;
@@ -56579,10 +56579,10 @@ namespace Ei {
 
     /// <summary>Field number for the "gift_config" field.</summary>
     public const int GiftConfigFieldNumber = 3;
-    private global::Ei.LiveConfig.Types.GiftConfig giftConfig_;
+    private global::JsonCompilers.LiveConfig.Types.GiftConfig giftConfig_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.LiveConfig.Types.GiftConfig GiftConfig {
+    public global::JsonCompilers.LiveConfig.Types.GiftConfig GiftConfig {
       get { return giftConfig_; }
       set {
         giftConfig_ = value;
@@ -56591,10 +56591,10 @@ namespace Ei {
 
     /// <summary>Field number for the "misc_config" field.</summary>
     public const int MiscConfigFieldNumber = 4;
-    private global::Ei.LiveConfig.Types.MiscConfig miscConfig_;
+    private global::JsonCompilers.LiveConfig.Types.MiscConfig miscConfig_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.LiveConfig.Types.MiscConfig MiscConfig {
+    public global::JsonCompilers.LiveConfig.Types.MiscConfig MiscConfig {
       get { return miscConfig_; }
       set {
         miscConfig_ = value;
@@ -56730,19 +56730,19 @@ namespace Ei {
       }
       if (other.boostsConfig_ != null) {
         if (boostsConfig_ == null) {
-          BoostsConfig = new global::Ei.LiveConfig.Types.BoostsConfig();
+          BoostsConfig = new global::JsonCompilers.LiveConfig.Types.BoostsConfig();
         }
         BoostsConfig.MergeFrom(other.BoostsConfig);
       }
       if (other.giftConfig_ != null) {
         if (giftConfig_ == null) {
-          GiftConfig = new global::Ei.LiveConfig.Types.GiftConfig();
+          GiftConfig = new global::JsonCompilers.LiveConfig.Types.GiftConfig();
         }
         GiftConfig.MergeFrom(other.GiftConfig);
       }
       if (other.miscConfig_ != null) {
         if (miscConfig_ == null) {
-          MiscConfig = new global::Ei.LiveConfig.Types.MiscConfig();
+          MiscConfig = new global::JsonCompilers.LiveConfig.Types.MiscConfig();
         }
         MiscConfig.MergeFrom(other.MiscConfig);
       }
@@ -56815,21 +56815,21 @@ namespace Ei {
           }
           case 18: {
             if (boostsConfig_ == null) {
-              BoostsConfig = new global::Ei.LiveConfig.Types.BoostsConfig();
+              BoostsConfig = new global::JsonCompilers.LiveConfig.Types.BoostsConfig();
             }
             input.ReadMessage(BoostsConfig);
             break;
           }
           case 26: {
             if (giftConfig_ == null) {
-              GiftConfig = new global::Ei.LiveConfig.Types.GiftConfig();
+              GiftConfig = new global::JsonCompilers.LiveConfig.Types.GiftConfig();
             }
             input.ReadMessage(GiftConfig);
             break;
           }
           case 34: {
             if (miscConfig_ == null) {
-              MiscConfig = new global::Ei.LiveConfig.Types.MiscConfig();
+              MiscConfig = new global::JsonCompilers.LiveConfig.Types.MiscConfig();
             }
             input.ReadMessage(MiscConfig);
             break;
@@ -56860,7 +56860,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.LiveConfig.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.LiveConfig.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -56894,12 +56894,12 @@ namespace Ei {
 
         /// <summary>Field number for the "item_configs" field.</summary>
         public const int ItemConfigsFieldNumber = 1;
-        private static readonly pb::FieldCodec<global::Ei.LiveConfig.Types.BoostsConfig.Types.ItemConfig> _repeated_itemConfigs_codec
-            = pb::FieldCodec.ForMessage(10, global::Ei.LiveConfig.Types.BoostsConfig.Types.ItemConfig.Parser);
-        private readonly pbc::RepeatedField<global::Ei.LiveConfig.Types.BoostsConfig.Types.ItemConfig> itemConfigs_ = new pbc::RepeatedField<global::Ei.LiveConfig.Types.BoostsConfig.Types.ItemConfig>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.LiveConfig.Types.BoostsConfig.Types.ItemConfig> _repeated_itemConfigs_codec
+            = pb::FieldCodec.ForMessage(10, global::JsonCompilers.LiveConfig.Types.BoostsConfig.Types.ItemConfig.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.LiveConfig.Types.BoostsConfig.Types.ItemConfig> itemConfigs_ = new pbc::RepeatedField<global::JsonCompilers.LiveConfig.Types.BoostsConfig.Types.ItemConfig>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.LiveConfig.Types.BoostsConfig.Types.ItemConfig> ItemConfigs {
+        public pbc::RepeatedField<global::JsonCompilers.LiveConfig.Types.BoostsConfig.Types.ItemConfig> ItemConfigs {
           get { return itemConfigs_; }
         }
 
@@ -57104,7 +57104,7 @@ namespace Ei {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
-              get { return global::Ei.LiveConfig.Types.BoostsConfig.Descriptor.NestedTypes[0]; }
+              get { return global::JsonCompilers.LiveConfig.Types.BoostsConfig.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -57479,7 +57479,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.LiveConfig.Descriptor.NestedTypes[1]; }
+          get { return global::JsonCompilers.LiveConfig.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -57527,12 +57527,12 @@ namespace Ei {
 
         /// <summary>Field number for the "gift_configs" field.</summary>
         public const int GiftConfigsFieldNumber = 9;
-        private static readonly pb::FieldCodec<global::Ei.LiveConfig.Types.GiftConfig.Types.GiftValueConfig> _repeated_giftConfigs_codec
-            = pb::FieldCodec.ForMessage(74, global::Ei.LiveConfig.Types.GiftConfig.Types.GiftValueConfig.Parser);
-        private readonly pbc::RepeatedField<global::Ei.LiveConfig.Types.GiftConfig.Types.GiftValueConfig> giftConfigs_ = new pbc::RepeatedField<global::Ei.LiveConfig.Types.GiftConfig.Types.GiftValueConfig>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftValueConfig> _repeated_giftConfigs_codec
+            = pb::FieldCodec.ForMessage(74, global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftValueConfig.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftValueConfig> giftConfigs_ = new pbc::RepeatedField<global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftValueConfig>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.LiveConfig.Types.GiftConfig.Types.GiftValueConfig> GiftConfigs {
+        public pbc::RepeatedField<global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftValueConfig> GiftConfigs {
           get { return giftConfigs_; }
         }
 
@@ -57619,10 +57619,10 @@ namespace Ei {
 
         /// <summary>Field number for the "random_gift_mu_config" field.</summary>
         public const int RandomGiftMuConfigFieldNumber = 15;
-        private global::Ei.LiveConfig.Types.GiftConfig.Types.GiftMuConfig randomGiftMuConfig_;
+        private global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftMuConfig randomGiftMuConfig_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.LiveConfig.Types.GiftConfig.Types.GiftMuConfig RandomGiftMuConfig {
+        public global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftMuConfig RandomGiftMuConfig {
           get { return randomGiftMuConfig_; }
           set {
             randomGiftMuConfig_ = value;
@@ -57631,10 +57631,10 @@ namespace Ei {
 
         /// <summary>Field number for the "video_gift_mu_config" field.</summary>
         public const int VideoGiftMuConfigFieldNumber = 16;
-        private global::Ei.LiveConfig.Types.GiftConfig.Types.GiftMuConfig videoGiftMuConfig_;
+        private global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftMuConfig videoGiftMuConfig_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.LiveConfig.Types.GiftConfig.Types.GiftMuConfig VideoGiftMuConfig {
+        public global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftMuConfig VideoGiftMuConfig {
           get { return videoGiftMuConfig_; }
           set {
             videoGiftMuConfig_ = value;
@@ -58195,13 +58195,13 @@ namespace Ei {
           }
           if (other.randomGiftMuConfig_ != null) {
             if (randomGiftMuConfig_ == null) {
-              RandomGiftMuConfig = new global::Ei.LiveConfig.Types.GiftConfig.Types.GiftMuConfig();
+              RandomGiftMuConfig = new global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftMuConfig();
             }
             RandomGiftMuConfig.MergeFrom(other.RandomGiftMuConfig);
           }
           if (other.videoGiftMuConfig_ != null) {
             if (videoGiftMuConfig_ == null) {
-              VideoGiftMuConfig = new global::Ei.LiveConfig.Types.GiftConfig.Types.GiftMuConfig();
+              VideoGiftMuConfig = new global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftMuConfig();
             }
             VideoGiftMuConfig.MergeFrom(other.VideoGiftMuConfig);
           }
@@ -58401,14 +58401,14 @@ namespace Ei {
               }
               case 122: {
                 if (randomGiftMuConfig_ == null) {
-                  RandomGiftMuConfig = new global::Ei.LiveConfig.Types.GiftConfig.Types.GiftMuConfig();
+                  RandomGiftMuConfig = new global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftMuConfig();
                 }
                 input.ReadMessage(RandomGiftMuConfig);
                 break;
               }
               case 130: {
                 if (videoGiftMuConfig_ == null) {
-                  VideoGiftMuConfig = new global::Ei.LiveConfig.Types.GiftConfig.Types.GiftMuConfig();
+                  VideoGiftMuConfig = new global::JsonCompilers.LiveConfig.Types.GiftConfig.Types.GiftMuConfig();
                 }
                 input.ReadMessage(VideoGiftMuConfig);
                 break;
@@ -58439,7 +58439,7 @@ namespace Ei {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
-              get { return global::Ei.LiveConfig.Types.GiftConfig.Descriptor.NestedTypes[0]; }
+              get { return global::JsonCompilers.LiveConfig.Types.GiftConfig.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -58913,7 +58913,7 @@ namespace Ei {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
-              get { return global::Ei.LiveConfig.Types.GiftConfig.Descriptor.NestedTypes[1]; }
+              get { return global::JsonCompilers.LiveConfig.Types.GiftConfig.Descriptor.NestedTypes[1]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -59237,7 +59237,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.LiveConfig.Descriptor.NestedTypes[2]; }
+          get { return global::JsonCompilers.LiveConfig.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -60132,7 +60132,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[73]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[73]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -60346,12 +60346,12 @@ namespace Ei {
 
     /// <summary>Field number for the "app_link" field.</summary>
     public const int AppLinkFieldNumber = 14;
-    private readonly static global::Ei.UILocation AppLinkDefaultValue = global::Ei.UILocation.None;
+    private readonly static global::JsonCompilers.UILocation AppLinkDefaultValue = global::JsonCompilers.UILocation.None;
 
-    private global::Ei.UILocation appLink_;
+    private global::JsonCompilers.UILocation appLink_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.UILocation AppLink {
+    public global::JsonCompilers.UILocation AppLink {
       get { if ((_hasBits0 & 64) != 0) { return appLink_; } else { return AppLinkDefaultValue; } }
       set {
         _hasBits0 |= 64;
@@ -60399,10 +60399,10 @@ namespace Ei {
 
     /// <summary>Field number for the "image" field.</summary>
     public const int ImageFieldNumber = 16;
-    private global::Ei.DLCItem image_;
+    private global::JsonCompilers.DLCItem image_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.DLCItem Image {
+    public global::JsonCompilers.DLCItem Image {
       get { return image_; }
       set {
         image_ = value;
@@ -60611,12 +60611,12 @@ namespace Ei {
 
     /// <summary>Field number for the "user_type" field.</summary>
     public const int UserTypeFieldNumber = 17;
-    private readonly static global::Ei.UserType UserTypeDefaultValue = global::Ei.UserType.AllUsers;
+    private readonly static global::JsonCompilers.UserType UserTypeDefaultValue = global::JsonCompilers.UserType.AllUsers;
 
-    private global::Ei.UserType userType_;
+    private global::JsonCompilers.UserType userType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.UserType UserType {
+    public global::JsonCompilers.UserType UserType {
       get { if ((_hasBits0 & 128) != 0) { return userType_; } else { return UserTypeDefaultValue; } }
       set {
         _hasBits0 |= 128;
@@ -61279,7 +61279,7 @@ namespace Ei {
       }
       if (other.image_ != null) {
         if (image_ == null) {
-          Image = new global::Ei.DLCItem();
+          Image = new global::JsonCompilers.DLCItem();
         }
         Image.MergeFrom(other.Image);
       }
@@ -61530,7 +61530,7 @@ namespace Ei {
             break;
           }
           case 112: {
-            AppLink = (global::Ei.UILocation) input.ReadEnum();
+            AppLink = (global::JsonCompilers.UILocation) input.ReadEnum();
             break;
           }
           case 122: {
@@ -61539,13 +61539,13 @@ namespace Ei {
           }
           case 130: {
             if (image_ == null) {
-              Image = new global::Ei.DLCItem();
+              Image = new global::JsonCompilers.DLCItem();
             }
             input.ReadMessage(Image);
             break;
           }
           case 136: {
-            UserType = (global::Ei.UserType) input.ReadEnum();
+            UserType = (global::JsonCompilers.UserType) input.ReadEnum();
             break;
           }
           case 160: {
@@ -61606,7 +61606,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[74]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[74]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -61640,12 +61640,12 @@ namespace Ei {
 
     /// <summary>Field number for the "mail" field.</summary>
     public const int MailFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.InGameMail> _repeated_mail_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.InGameMail.Parser);
-    private readonly pbc::RepeatedField<global::Ei.InGameMail> mail_ = new pbc::RepeatedField<global::Ei.InGameMail>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.InGameMail> _repeated_mail_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.InGameMail.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.InGameMail> mail_ = new pbc::RepeatedField<global::JsonCompilers.InGameMail>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.InGameMail> Mail {
+    public pbc::RepeatedField<global::JsonCompilers.InGameMail> Mail {
       get { return mail_; }
     }
 
@@ -61895,7 +61895,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[75]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[75]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -61927,12 +61927,12 @@ namespace Ei {
 
     /// <summary>Field number for the "tips" field.</summary>
     public const int TipsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.InGameMail> _repeated_tips_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.InGameMail.Parser);
-    private readonly pbc::RepeatedField<global::Ei.InGameMail> tips_ = new pbc::RepeatedField<global::Ei.InGameMail>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.InGameMail> _repeated_tips_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.InGameMail.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.InGameMail> tips_ = new pbc::RepeatedField<global::JsonCompilers.InGameMail>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.InGameMail> Tips {
+    public pbc::RepeatedField<global::JsonCompilers.InGameMail> Tips {
       get { return tips_; }
     }
 
@@ -62082,7 +62082,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[76]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[76]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -62127,12 +62127,12 @@ namespace Ei {
 
     /// <summary>Field number for the "tips_states" field.</summary>
     public const int TipsStatesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ei.MailState.Types.TipState> _repeated_tipsStates_codec
-        = pb::FieldCodec.ForMessage(18, global::Ei.MailState.Types.TipState.Parser);
-    private readonly pbc::RepeatedField<global::Ei.MailState.Types.TipState> tipsStates_ = new pbc::RepeatedField<global::Ei.MailState.Types.TipState>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.MailState.Types.TipState> _repeated_tipsStates_codec
+        = pb::FieldCodec.ForMessage(18, global::JsonCompilers.MailState.Types.TipState.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.MailState.Types.TipState> tipsStates_ = new pbc::RepeatedField<global::JsonCompilers.MailState.Types.TipState>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.MailState.Types.TipState> TipsStates {
+    public pbc::RepeatedField<global::JsonCompilers.MailState.Types.TipState> TipsStates {
       get { return tipsStates_; }
     }
 
@@ -62350,7 +62350,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.MailState.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.MailState.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -62672,7 +62672,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[77]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[77]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -62713,10 +62713,10 @@ namespace Ei {
 
     /// <summary>Field number for the "sales" field.</summary>
     public const int SalesFieldNumber = 1;
-    private global::Ei.SalesInfo sales_;
+    private global::JsonCompilers.SalesInfo sales_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.SalesInfo Sales {
+    public global::JsonCompilers.SalesInfo Sales {
       get { return sales_; }
       set {
         sales_ = value;
@@ -62725,10 +62725,10 @@ namespace Ei {
 
     /// <summary>Field number for the "events" field.</summary>
     public const int EventsFieldNumber = 2;
-    private global::Ei.EggIncCurrentEvents events_;
+    private global::JsonCompilers.EggIncCurrentEvents events_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.EggIncCurrentEvents Events {
+    public global::JsonCompilers.EggIncCurrentEvents Events {
       get { return events_; }
       set {
         events_ = value;
@@ -62737,10 +62737,10 @@ namespace Ei {
 
     /// <summary>Field number for the "contracts" field.</summary>
     public const int ContractsFieldNumber = 3;
-    private global::Ei.ContractsResponse contracts_;
+    private global::JsonCompilers.ContractsResponse contracts_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractsResponse Contracts {
+    public global::JsonCompilers.ContractsResponse Contracts {
       get { return contracts_; }
       set {
         contracts_ = value;
@@ -62749,43 +62749,43 @@ namespace Ei {
 
     /// <summary>Field number for the "evaluations" field.</summary>
     public const int EvaluationsFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Ei.ContractEvaluation> _repeated_evaluations_codec
-        = pb::FieldCodec.ForMessage(66, global::Ei.ContractEvaluation.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ContractEvaluation> evaluations_ = new pbc::RepeatedField<global::Ei.ContractEvaluation>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ContractEvaluation> _repeated_evaluations_codec
+        = pb::FieldCodec.ForMessage(66, global::JsonCompilers.ContractEvaluation.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ContractEvaluation> evaluations_ = new pbc::RepeatedField<global::JsonCompilers.ContractEvaluation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ContractEvaluation> Evaluations {
+    public pbc::RepeatedField<global::JsonCompilers.ContractEvaluation> Evaluations {
       get { return evaluations_; }
     }
 
     /// <summary>Field number for the "gifts" field.</summary>
     public const int GiftsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.ServerGift> _repeated_gifts_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.ServerGift.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ServerGift> gifts_ = new pbc::RepeatedField<global::Ei.ServerGift>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ServerGift> _repeated_gifts_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.ServerGift.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ServerGift> gifts_ = new pbc::RepeatedField<global::JsonCompilers.ServerGift>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ServerGift> Gifts {
+    public pbc::RepeatedField<global::JsonCompilers.ServerGift> Gifts {
       get { return gifts_; }
     }
 
     /// <summary>Field number for the "artifact_cases" field.</summary>
     public const int ArtifactCasesFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Ei.CompleteMissionResponse> _repeated_artifactCases_codec
-        = pb::FieldCodec.ForMessage(74, global::Ei.CompleteMissionResponse.Parser);
-    private readonly pbc::RepeatedField<global::Ei.CompleteMissionResponse> artifactCases_ = new pbc::RepeatedField<global::Ei.CompleteMissionResponse>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.CompleteMissionResponse> _repeated_artifactCases_codec
+        = pb::FieldCodec.ForMessage(74, global::JsonCompilers.CompleteMissionResponse.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.CompleteMissionResponse> artifactCases_ = new pbc::RepeatedField<global::JsonCompilers.CompleteMissionResponse>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.CompleteMissionResponse> ArtifactCases {
+    public pbc::RepeatedField<global::JsonCompilers.CompleteMissionResponse> ArtifactCases {
       get { return artifactCases_; }
     }
 
     /// <summary>Field number for the "live_config" field.</summary>
     public const int LiveConfigFieldNumber = 5;
-    private global::Ei.LiveConfig liveConfig_;
+    private global::JsonCompilers.LiveConfig liveConfig_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.LiveConfig LiveConfig {
+    public global::JsonCompilers.LiveConfig LiveConfig {
       get { return liveConfig_; }
       set {
         liveConfig_ = value;
@@ -62794,10 +62794,10 @@ namespace Ei {
 
     /// <summary>Field number for the "mail_bag" field.</summary>
     public const int MailBagFieldNumber = 6;
-    private global::Ei.MailDB mailBag_;
+    private global::JsonCompilers.MailDB mailBag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MailDB MailBag {
+    public global::JsonCompilers.MailDB MailBag {
       get { return mailBag_; }
       set {
         mailBag_ = value;
@@ -62806,10 +62806,10 @@ namespace Ei {
 
     /// <summary>Field number for the "contract_player_info" field.</summary>
     public const int ContractPlayerInfoFieldNumber = 7;
-    private global::Ei.ContractPlayerInfo contractPlayerInfo_;
+    private global::JsonCompilers.ContractPlayerInfo contractPlayerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ContractPlayerInfo ContractPlayerInfo {
+    public global::JsonCompilers.ContractPlayerInfo ContractPlayerInfo {
       get { return contractPlayerInfo_; }
       set {
         contractPlayerInfo_ = value;
@@ -62818,12 +62818,12 @@ namespace Ei {
 
     /// <summary>Field number for the "showcase_royalties" field.</summary>
     public const int ShowcaseRoyaltiesFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Ei.PeriodicalsResponse.Types.RoyaltyInfo> _repeated_showcaseRoyalties_codec
-        = pb::FieldCodec.ForMessage(82, global::Ei.PeriodicalsResponse.Types.RoyaltyInfo.Parser);
-    private readonly pbc::RepeatedField<global::Ei.PeriodicalsResponse.Types.RoyaltyInfo> showcaseRoyalties_ = new pbc::RepeatedField<global::Ei.PeriodicalsResponse.Types.RoyaltyInfo>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.PeriodicalsResponse.Types.RoyaltyInfo> _repeated_showcaseRoyalties_codec
+        = pb::FieldCodec.ForMessage(82, global::JsonCompilers.PeriodicalsResponse.Types.RoyaltyInfo.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.PeriodicalsResponse.Types.RoyaltyInfo> showcaseRoyalties_ = new pbc::RepeatedField<global::JsonCompilers.PeriodicalsResponse.Types.RoyaltyInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.PeriodicalsResponse.Types.RoyaltyInfo> ShowcaseRoyalties {
+    public pbc::RepeatedField<global::JsonCompilers.PeriodicalsResponse.Types.RoyaltyInfo> ShowcaseRoyalties {
       get { return showcaseRoyalties_; }
     }
 
@@ -62999,19 +62999,19 @@ namespace Ei {
       }
       if (other.sales_ != null) {
         if (sales_ == null) {
-          Sales = new global::Ei.SalesInfo();
+          Sales = new global::JsonCompilers.SalesInfo();
         }
         Sales.MergeFrom(other.Sales);
       }
       if (other.events_ != null) {
         if (events_ == null) {
-          Events = new global::Ei.EggIncCurrentEvents();
+          Events = new global::JsonCompilers.EggIncCurrentEvents();
         }
         Events.MergeFrom(other.Events);
       }
       if (other.contracts_ != null) {
         if (contracts_ == null) {
-          Contracts = new global::Ei.ContractsResponse();
+          Contracts = new global::JsonCompilers.ContractsResponse();
         }
         Contracts.MergeFrom(other.Contracts);
       }
@@ -63020,19 +63020,19 @@ namespace Ei {
       artifactCases_.Add(other.artifactCases_);
       if (other.liveConfig_ != null) {
         if (liveConfig_ == null) {
-          LiveConfig = new global::Ei.LiveConfig();
+          LiveConfig = new global::JsonCompilers.LiveConfig();
         }
         LiveConfig.MergeFrom(other.LiveConfig);
       }
       if (other.mailBag_ != null) {
         if (mailBag_ == null) {
-          MailBag = new global::Ei.MailDB();
+          MailBag = new global::JsonCompilers.MailDB();
         }
         MailBag.MergeFrom(other.MailBag);
       }
       if (other.contractPlayerInfo_ != null) {
         if (contractPlayerInfo_ == null) {
-          ContractPlayerInfo = new global::Ei.ContractPlayerInfo();
+          ContractPlayerInfo = new global::JsonCompilers.ContractPlayerInfo();
         }
         ContractPlayerInfo.MergeFrom(other.ContractPlayerInfo);
       }
@@ -63135,21 +63135,21 @@ namespace Ei {
             break;
           case 10: {
             if (sales_ == null) {
-              Sales = new global::Ei.SalesInfo();
+              Sales = new global::JsonCompilers.SalesInfo();
             }
             input.ReadMessage(Sales);
             break;
           }
           case 18: {
             if (events_ == null) {
-              Events = new global::Ei.EggIncCurrentEvents();
+              Events = new global::JsonCompilers.EggIncCurrentEvents();
             }
             input.ReadMessage(Events);
             break;
           }
           case 26: {
             if (contracts_ == null) {
-              Contracts = new global::Ei.ContractsResponse();
+              Contracts = new global::JsonCompilers.ContractsResponse();
             }
             input.ReadMessage(Contracts);
             break;
@@ -63160,21 +63160,21 @@ namespace Ei {
           }
           case 42: {
             if (liveConfig_ == null) {
-              LiveConfig = new global::Ei.LiveConfig();
+              LiveConfig = new global::JsonCompilers.LiveConfig();
             }
             input.ReadMessage(LiveConfig);
             break;
           }
           case 50: {
             if (mailBag_ == null) {
-              MailBag = new global::Ei.MailDB();
+              MailBag = new global::JsonCompilers.MailDB();
             }
             input.ReadMessage(MailBag);
             break;
           }
           case 58: {
             if (contractPlayerInfo_ == null) {
-              ContractPlayerInfo = new global::Ei.ContractPlayerInfo();
+              ContractPlayerInfo = new global::JsonCompilers.ContractPlayerInfo();
             }
             input.ReadMessage(ContractPlayerInfo);
             break;
@@ -63217,7 +63217,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.PeriodicalsResponse.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.PeriodicalsResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -63488,7 +63488,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[78]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[78]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -63534,10 +63534,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 12;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -64150,7 +64150,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -64328,7 +64328,7 @@ namespace Ei {
           }
           case 98: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -64372,7 +64372,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[79]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[79]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -64412,10 +64412,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 1;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -64788,7 +64788,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -64888,7 +64888,7 @@ namespace Ei {
             break;
           case 10: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -64943,7 +64943,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[80]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[80]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -64977,10 +64977,10 @@ namespace Ei {
 
     /// <summary>Field number for the "live_config" field.</summary>
     public const int LiveConfigFieldNumber = 1;
-    private global::Ei.LiveConfig liveConfig_;
+    private global::JsonCompilers.LiveConfig liveConfig_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.LiveConfig LiveConfig {
+    public global::JsonCompilers.LiveConfig LiveConfig {
       get { return liveConfig_; }
       set {
         liveConfig_ = value;
@@ -64989,10 +64989,10 @@ namespace Ei {
 
     /// <summary>Field number for the "mail_bag" field.</summary>
     public const int MailBagFieldNumber = 2;
-    private global::Ei.MailDB mailBag_;
+    private global::JsonCompilers.MailDB mailBag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MailDB MailBag {
+    public global::JsonCompilers.MailDB MailBag {
       get { return mailBag_; }
       set {
         mailBag_ = value;
@@ -65001,10 +65001,10 @@ namespace Ei {
 
     /// <summary>Field number for the "dlc_catalog" field.</summary>
     public const int DlcCatalogFieldNumber = 3;
-    private global::Ei.DLCCatalog dlcCatalog_;
+    private global::JsonCompilers.DLCCatalog dlcCatalog_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.DLCCatalog DlcCatalog {
+    public global::JsonCompilers.DLCCatalog DlcCatalog {
       get { return dlcCatalog_; }
       set {
         dlcCatalog_ = value;
@@ -65124,19 +65124,19 @@ namespace Ei {
       }
       if (other.liveConfig_ != null) {
         if (liveConfig_ == null) {
-          LiveConfig = new global::Ei.LiveConfig();
+          LiveConfig = new global::JsonCompilers.LiveConfig();
         }
         LiveConfig.MergeFrom(other.LiveConfig);
       }
       if (other.mailBag_ != null) {
         if (mailBag_ == null) {
-          MailBag = new global::Ei.MailDB();
+          MailBag = new global::JsonCompilers.MailDB();
         }
         MailBag.MergeFrom(other.MailBag);
       }
       if (other.dlcCatalog_ != null) {
         if (dlcCatalog_ == null) {
-          DlcCatalog = new global::Ei.DLCCatalog();
+          DlcCatalog = new global::JsonCompilers.DLCCatalog();
         }
         DlcCatalog.MergeFrom(other.DlcCatalog);
       }
@@ -65201,21 +65201,21 @@ namespace Ei {
             break;
           case 10: {
             if (liveConfig_ == null) {
-              LiveConfig = new global::Ei.LiveConfig();
+              LiveConfig = new global::JsonCompilers.LiveConfig();
             }
             input.ReadMessage(LiveConfig);
             break;
           }
           case 18: {
             if (mailBag_ == null) {
-              MailBag = new global::Ei.MailDB();
+              MailBag = new global::JsonCompilers.MailDB();
             }
             input.ReadMessage(MailBag);
             break;
           }
           case 26: {
             if (dlcCatalog_ == null) {
-              DlcCatalog = new global::Ei.DLCCatalog();
+              DlcCatalog = new global::JsonCompilers.DLCCatalog();
             }
             input.ReadMessage(DlcCatalog);
             break;
@@ -65242,7 +65242,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[81]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[81]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -65608,7 +65608,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[82]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[82]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -66233,7 +66233,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[83]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[83]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -67315,7 +67315,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[84]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[84]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -67432,12 +67432,12 @@ namespace Ei {
 
     /// <summary>Field number for the "launch_counts" field.</summary>
     public const int LaunchCountsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactsClientInfo.Types.LaunchCount> _repeated_launchCounts_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.ArtifactsClientInfo.Types.LaunchCount.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactsClientInfo.Types.LaunchCount> launchCounts_ = new pbc::RepeatedField<global::Ei.ArtifactsClientInfo.Types.LaunchCount>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsClientInfo.Types.LaunchCount> _repeated_launchCounts_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.ArtifactsClientInfo.Types.LaunchCount.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsClientInfo.Types.LaunchCount> launchCounts_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsClientInfo.Types.LaunchCount>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactsClientInfo.Types.LaunchCount> LaunchCounts {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactsClientInfo.Types.LaunchCount> LaunchCounts {
       get { return launchCounts_; }
     }
 
@@ -67663,7 +67663,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ArtifactsClientInfo.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ArtifactsClientInfo.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -67698,12 +67698,12 @@ namespace Ei {
 
         /// <summary>Field number for the "ship" field.</summary>
         public const int ShipFieldNumber = 1;
-        private readonly static global::Ei.MissionInfo.Types.Spaceship ShipDefaultValue = global::Ei.MissionInfo.Types.Spaceship.ChickenOne;
+        private readonly static global::JsonCompilers.MissionInfo.Types.Spaceship ShipDefaultValue = global::JsonCompilers.MissionInfo.Types.Spaceship.ChickenOne;
 
-        private global::Ei.MissionInfo.Types.Spaceship ship_;
+        private global::JsonCompilers.MissionInfo.Types.Spaceship ship_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.MissionInfo.Types.Spaceship Ship {
+        public global::JsonCompilers.MissionInfo.Types.Spaceship Ship {
           get { if ((_hasBits0 & 1) != 0) { return ship_; } else { return ShipDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -67948,7 +67948,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                Ship = (global::Ei.MissionInfo.Types.Spaceship) input.ReadEnum();
+                Ship = (global::JsonCompilers.MissionInfo.Types.Spaceship) input.ReadEnum();
                 break;
               }
               case 16: {
@@ -67987,7 +67987,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[85]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[85]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -68032,12 +68032,12 @@ namespace Ei {
 
     /// <summary>Field number for the "ship" field.</summary>
     public const int ShipFieldNumber = 1;
-    private readonly static global::Ei.MissionInfo.Types.Spaceship ShipDefaultValue = global::Ei.MissionInfo.Types.Spaceship.ChickenOne;
+    private readonly static global::JsonCompilers.MissionInfo.Types.Spaceship ShipDefaultValue = global::JsonCompilers.MissionInfo.Types.Spaceship.ChickenOne;
 
-    private global::Ei.MissionInfo.Types.Spaceship ship_;
+    private global::JsonCompilers.MissionInfo.Types.Spaceship ship_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MissionInfo.Types.Spaceship Ship {
+    public global::JsonCompilers.MissionInfo.Types.Spaceship Ship {
       get { if ((_hasBits0 & 1) != 0) { return ship_; } else { return ShipDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -68059,12 +68059,12 @@ namespace Ei {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
-    private readonly static global::Ei.MissionInfo.Types.Status StatusDefaultValue = global::Ei.MissionInfo.Types.Status.Fueling;
+    private readonly static global::JsonCompilers.MissionInfo.Types.Status StatusDefaultValue = global::JsonCompilers.MissionInfo.Types.Status.Fueling;
 
-    private global::Ei.MissionInfo.Types.Status status_;
+    private global::JsonCompilers.MissionInfo.Types.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MissionInfo.Types.Status Status {
+    public global::JsonCompilers.MissionInfo.Types.Status Status {
       get { if ((_hasBits0 & 2) != 0) { return status_; } else { return StatusDefaultValue; } }
       set {
         _hasBits0 |= 2;
@@ -68086,12 +68086,12 @@ namespace Ei {
 
     /// <summary>Field number for the "duration_type" field.</summary>
     public const int DurationTypeFieldNumber = 3;
-    private readonly static global::Ei.MissionInfo.Types.DurationType DurationTypeDefaultValue = global::Ei.MissionInfo.Types.DurationType.Short;
+    private readonly static global::JsonCompilers.MissionInfo.Types.DurationType DurationTypeDefaultValue = global::JsonCompilers.MissionInfo.Types.DurationType.Short;
 
-    private global::Ei.MissionInfo.Types.DurationType durationType_;
+    private global::JsonCompilers.MissionInfo.Types.DurationType durationType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MissionInfo.Types.DurationType DurationType {
+    public global::JsonCompilers.MissionInfo.Types.DurationType DurationType {
       get { if ((_hasBits0 & 4) != 0) { return durationType_; } else { return DurationTypeDefaultValue; } }
       set {
         _hasBits0 |= 4;
@@ -68113,12 +68113,12 @@ namespace Ei {
 
     /// <summary>Field number for the "fuel" field.</summary>
     public const int FuelFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.MissionInfo.Types.Fuel> _repeated_fuel_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.MissionInfo.Types.Fuel.Parser);
-    private readonly pbc::RepeatedField<global::Ei.MissionInfo.Types.Fuel> fuel_ = new pbc::RepeatedField<global::Ei.MissionInfo.Types.Fuel>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.MissionInfo.Types.Fuel> _repeated_fuel_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.MissionInfo.Types.Fuel.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.MissionInfo.Types.Fuel> fuel_ = new pbc::RepeatedField<global::JsonCompilers.MissionInfo.Types.Fuel>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.MissionInfo.Types.Fuel> Fuel {
+    public pbc::RepeatedField<global::JsonCompilers.MissionInfo.Types.Fuel> Fuel {
       get { return fuel_; }
     }
 
@@ -68232,12 +68232,12 @@ namespace Ei {
 
     /// <summary>Field number for the "target_artifact" field.</summary>
     public const int TargetArtifactFieldNumber = 13;
-    private readonly static global::Ei.ArtifactSpec.Types.Name TargetArtifactDefaultValue = global::Ei.ArtifactSpec.Types.Name.LunarTotem;
+    private readonly static global::JsonCompilers.ArtifactSpec.Types.Name TargetArtifactDefaultValue = global::JsonCompilers.ArtifactSpec.Types.Name.LunarTotem;
 
-    private global::Ei.ArtifactSpec.Types.Name targetArtifact_;
+    private global::JsonCompilers.ArtifactSpec.Types.Name targetArtifact_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactSpec.Types.Name TargetArtifact {
+    public global::JsonCompilers.ArtifactSpec.Types.Name TargetArtifact {
       get { if ((_hasBits0 & 512) != 0) { return targetArtifact_; } else { return TargetArtifactDefaultValue; } }
       set {
         _hasBits0 |= 512;
@@ -68724,15 +68724,15 @@ namespace Ei {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Ship = (global::Ei.MissionInfo.Types.Spaceship) input.ReadEnum();
+            Ship = (global::JsonCompilers.MissionInfo.Types.Spaceship) input.ReadEnum();
             break;
           }
           case 16: {
-            Status = (global::Ei.MissionInfo.Types.Status) input.ReadEnum();
+            Status = (global::JsonCompilers.MissionInfo.Types.Status) input.ReadEnum();
             break;
           }
           case 24: {
-            DurationType = (global::Ei.MissionInfo.Types.DurationType) input.ReadEnum();
+            DurationType = (global::JsonCompilers.MissionInfo.Types.DurationType) input.ReadEnum();
             break;
           }
           case 34: {
@@ -68772,7 +68772,7 @@ namespace Ei {
             break;
           }
           case 104: {
-            TargetArtifact = (global::Ei.ArtifactSpec.Types.Name) input.ReadEnum();
+            TargetArtifact = (global::JsonCompilers.ArtifactSpec.Types.Name) input.ReadEnum();
             break;
           }
         }
@@ -68831,7 +68831,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.MissionInfo.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.MissionInfo.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -68865,12 +68865,12 @@ namespace Ei {
 
         /// <summary>Field number for the "egg" field.</summary>
         public const int EggFieldNumber = 1;
-        private readonly static global::Ei.Egg EggDefaultValue = global::Ei.Egg.Edible;
+        private readonly static global::JsonCompilers.Egg EggDefaultValue = global::JsonCompilers.Egg.Edible;
 
-        private global::Ei.Egg egg_;
+        private global::JsonCompilers.Egg egg_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Egg Egg {
+        public global::JsonCompilers.Egg Egg {
           get { if ((_hasBits0 & 1) != 0) { return egg_; } else { return EggDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -69068,7 +69068,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                Egg = (global::Ei.Egg) input.ReadEnum();
+                Egg = (global::JsonCompilers.Egg) input.ReadEnum();
                 break;
               }
               case 17: {
@@ -69103,7 +69103,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[86]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[86]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -69139,12 +69139,12 @@ namespace Ei {
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
-    private readonly static global::Ei.ArtifactSpec.Types.Name NameDefaultValue = global::Ei.ArtifactSpec.Types.Name.LunarTotem;
+    private readonly static global::JsonCompilers.ArtifactSpec.Types.Name NameDefaultValue = global::JsonCompilers.ArtifactSpec.Types.Name.LunarTotem;
 
-    private global::Ei.ArtifactSpec.Types.Name name_;
+    private global::JsonCompilers.ArtifactSpec.Types.Name name_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactSpec.Types.Name Name {
+    public global::JsonCompilers.ArtifactSpec.Types.Name Name {
       get { if ((_hasBits0 & 1) != 0) { return name_; } else { return NameDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -69166,12 +69166,12 @@ namespace Ei {
 
     /// <summary>Field number for the "level" field.</summary>
     public const int LevelFieldNumber = 2;
-    private readonly static global::Ei.ArtifactSpec.Types.Level LevelDefaultValue = global::Ei.ArtifactSpec.Types.Level.Inferior;
+    private readonly static global::JsonCompilers.ArtifactSpec.Types.Level LevelDefaultValue = global::JsonCompilers.ArtifactSpec.Types.Level.Inferior;
 
-    private global::Ei.ArtifactSpec.Types.Level level_;
+    private global::JsonCompilers.ArtifactSpec.Types.Level level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactSpec.Types.Level Level {
+    public global::JsonCompilers.ArtifactSpec.Types.Level Level {
       get { if ((_hasBits0 & 2) != 0) { return level_; } else { return LevelDefaultValue; } }
       set {
         _hasBits0 |= 2;
@@ -69193,12 +69193,12 @@ namespace Ei {
 
     /// <summary>Field number for the "rarity" field.</summary>
     public const int RarityFieldNumber = 3;
-    private readonly static global::Ei.ArtifactSpec.Types.Rarity RarityDefaultValue = global::Ei.ArtifactSpec.Types.Rarity.Common;
+    private readonly static global::JsonCompilers.ArtifactSpec.Types.Rarity RarityDefaultValue = global::JsonCompilers.ArtifactSpec.Types.Rarity.Common;
 
-    private global::Ei.ArtifactSpec.Types.Rarity rarity_;
+    private global::JsonCompilers.ArtifactSpec.Types.Rarity rarity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactSpec.Types.Rarity Rarity {
+    public global::JsonCompilers.ArtifactSpec.Types.Rarity Rarity {
       get { if ((_hasBits0 & 4) != 0) { return rarity_; } else { return RarityDefaultValue; } }
       set {
         _hasBits0 |= 4;
@@ -69220,12 +69220,12 @@ namespace Ei {
 
     /// <summary>Field number for the "egg" field.</summary>
     public const int EggFieldNumber = 4;
-    private readonly static global::Ei.Egg EggDefaultValue = global::Ei.Egg.Edible;
+    private readonly static global::JsonCompilers.Egg EggDefaultValue = global::JsonCompilers.Egg.Edible;
 
-    private global::Ei.Egg egg_;
+    private global::JsonCompilers.Egg egg_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Egg Egg {
+    public global::JsonCompilers.Egg Egg {
       get { if ((_hasBits0 & 8) != 0) { return egg_; } else { return EggDefaultValue; } }
       set {
         _hasBits0 |= 8;
@@ -69436,19 +69436,19 @@ namespace Ei {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Name = (global::Ei.ArtifactSpec.Types.Name) input.ReadEnum();
+            Name = (global::JsonCompilers.ArtifactSpec.Types.Name) input.ReadEnum();
             break;
           }
           case 16: {
-            Level = (global::Ei.ArtifactSpec.Types.Level) input.ReadEnum();
+            Level = (global::JsonCompilers.ArtifactSpec.Types.Level) input.ReadEnum();
             break;
           }
           case 24: {
-            Rarity = (global::Ei.ArtifactSpec.Types.Rarity) input.ReadEnum();
+            Rarity = (global::JsonCompilers.ArtifactSpec.Types.Rarity) input.ReadEnum();
             break;
           }
           case 32: {
-            Egg = (global::Ei.Egg) input.ReadEnum();
+            Egg = (global::JsonCompilers.Egg) input.ReadEnum();
             break;
           }
         }
@@ -69560,7 +69560,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[87]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[87]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -69593,10 +69593,10 @@ namespace Ei {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 1;
-    private global::Ei.ArtifactSpec spec_;
+    private global::JsonCompilers.ArtifactSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactSpec Spec {
+    public global::JsonCompilers.ArtifactSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -69605,12 +69605,12 @@ namespace Ei {
 
     /// <summary>Field number for the "stones" field.</summary>
     public const int StonesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactSpec> _repeated_stones_codec
-        = pb::FieldCodec.ForMessage(18, global::Ei.ArtifactSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactSpec> stones_ = new pbc::RepeatedField<global::Ei.ArtifactSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactSpec> _repeated_stones_codec
+        = pb::FieldCodec.ForMessage(18, global::JsonCompilers.ArtifactSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactSpec> stones_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactSpec> Stones {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactSpec> Stones {
       get { return stones_; }
     }
 
@@ -69706,7 +69706,7 @@ namespace Ei {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Ei.ArtifactSpec();
+          Spec = new global::JsonCompilers.ArtifactSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
@@ -69762,7 +69762,7 @@ namespace Ei {
             break;
           case 10: {
             if (spec_ == null) {
-              Spec = new global::Ei.ArtifactSpec();
+              Spec = new global::JsonCompilers.ArtifactSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -69794,7 +69794,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[88]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[88]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -69857,10 +69857,10 @@ namespace Ei {
 
     /// <summary>Field number for the "artifact" field.</summary>
     public const int ArtifactFieldNumber = 2;
-    private global::Ei.CompleteArtifact artifact_;
+    private global::JsonCompilers.CompleteArtifact artifact_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.CompleteArtifact Artifact {
+    public global::JsonCompilers.CompleteArtifact Artifact {
       get { return artifact_; }
       set {
         artifact_ = value;
@@ -70049,7 +70049,7 @@ namespace Ei {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          Artifact = new global::Ei.CompleteArtifact();
+          Artifact = new global::JsonCompilers.CompleteArtifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -70122,7 +70122,7 @@ namespace Ei {
           }
           case 18: {
             if (artifact_ == null) {
-              Artifact = new global::Ei.CompleteArtifact();
+              Artifact = new global::JsonCompilers.CompleteArtifact();
             }
             input.ReadMessage(Artifact);
             break;
@@ -70158,7 +70158,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[89]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[89]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -70425,7 +70425,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[90]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[90]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -70459,10 +70459,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 2;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -70596,7 +70596,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -70658,7 +70658,7 @@ namespace Ei {
           }
           case 18: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -70685,7 +70685,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[91]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[91]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -70719,34 +70719,34 @@ namespace Ei {
 
     /// <summary>Field number for the "mission_parameters" field.</summary>
     public const int MissionParametersFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters> _repeated_missionParameters_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters> missionParameters_ = new pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters> _repeated_missionParameters_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters> missionParameters_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters> MissionParameters {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters> MissionParameters {
       get { return missionParameters_; }
     }
 
     /// <summary>Field number for the "artifact_parameters" field.</summary>
     public const int ArtifactParametersFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactsConfigurationResponse.Types.ArtifactParameters> _repeated_artifactParameters_codec
-        = pb::FieldCodec.ForMessage(18, global::Ei.ArtifactsConfigurationResponse.Types.ArtifactParameters.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.ArtifactParameters> artifactParameters_ = new pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.ArtifactParameters>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsConfigurationResponse.Types.ArtifactParameters> _repeated_artifactParameters_codec
+        = pb::FieldCodec.ForMessage(18, global::JsonCompilers.ArtifactsConfigurationResponse.Types.ArtifactParameters.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.ArtifactParameters> artifactParameters_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.ArtifactParameters>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.ArtifactParameters> ArtifactParameters {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.ArtifactParameters> ArtifactParameters {
       get { return artifactParameters_; }
     }
 
     /// <summary>Field number for the "crafting_level_infos" field.</summary>
     public const int CraftingLevelInfosFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactsConfigurationResponse.Types.CraftingLevelInfo> _repeated_craftingLevelInfos_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.ArtifactsConfigurationResponse.Types.CraftingLevelInfo.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.CraftingLevelInfo> craftingLevelInfos_ = new pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.CraftingLevelInfo>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsConfigurationResponse.Types.CraftingLevelInfo> _repeated_craftingLevelInfos_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.ArtifactsConfigurationResponse.Types.CraftingLevelInfo.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.CraftingLevelInfo> craftingLevelInfos_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.CraftingLevelInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.CraftingLevelInfo> CraftingLevelInfos {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.CraftingLevelInfo> CraftingLevelInfos {
       get { return craftingLevelInfos_; }
     }
 
@@ -70928,7 +70928,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ArtifactsConfigurationResponse.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ArtifactsConfigurationResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -70964,12 +70964,12 @@ namespace Ei {
 
         /// <summary>Field number for the "ship" field.</summary>
         public const int ShipFieldNumber = 1;
-        private readonly static global::Ei.MissionInfo.Types.Spaceship ShipDefaultValue = global::Ei.MissionInfo.Types.Spaceship.ChickenOne;
+        private readonly static global::JsonCompilers.MissionInfo.Types.Spaceship ShipDefaultValue = global::JsonCompilers.MissionInfo.Types.Spaceship.ChickenOne;
 
-        private global::Ei.MissionInfo.Types.Spaceship ship_;
+        private global::JsonCompilers.MissionInfo.Types.Spaceship ship_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.MissionInfo.Types.Spaceship Ship {
+        public global::JsonCompilers.MissionInfo.Types.Spaceship Ship {
           get { if ((_hasBits0 & 1) != 0) { return ship_; } else { return ShipDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -70991,12 +70991,12 @@ namespace Ei {
 
         /// <summary>Field number for the "durations" field.</summary>
         public const int DurationsFieldNumber = 3;
-        private static readonly pb::FieldCodec<global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration> _repeated_durations_codec
-            = pb::FieldCodec.ForMessage(26, global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration.Parser);
-        private readonly pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration> durations_ = new pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration> _repeated_durations_codec
+            = pb::FieldCodec.ForMessage(26, global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration> durations_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration> Durations {
+        public pbc::RepeatedField<global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters.Types.Duration> Durations {
           get { return durations_; }
         }
 
@@ -71210,7 +71210,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                Ship = (global::Ei.MissionInfo.Types.Spaceship) input.ReadEnum();
+                Ship = (global::JsonCompilers.MissionInfo.Types.Spaceship) input.ReadEnum();
                 break;
               }
               case 16: {
@@ -71252,7 +71252,7 @@ namespace Ei {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
-              get { return global::Ei.ArtifactsConfigurationResponse.Types.MissionParameters.Descriptor.NestedTypes[0]; }
+              get { return global::JsonCompilers.ArtifactsConfigurationResponse.Types.MissionParameters.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -71292,12 +71292,12 @@ namespace Ei {
 
             /// <summary>Field number for the "duration_type" field.</summary>
             public const int DurationTypeFieldNumber = 1;
-            private readonly static global::Ei.MissionInfo.Types.DurationType DurationTypeDefaultValue = global::Ei.MissionInfo.Types.DurationType.Short;
+            private readonly static global::JsonCompilers.MissionInfo.Types.DurationType DurationTypeDefaultValue = global::JsonCompilers.MissionInfo.Types.DurationType.Short;
 
-            private global::Ei.MissionInfo.Types.DurationType durationType_;
+            private global::JsonCompilers.MissionInfo.Types.DurationType durationType_;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-            public global::Ei.MissionInfo.Types.DurationType DurationType {
+            public global::JsonCompilers.MissionInfo.Types.DurationType DurationType {
               get { if ((_hasBits0 & 1) != 0) { return durationType_; } else { return DurationTypeDefaultValue; } }
               set {
                 _hasBits0 |= 1;
@@ -71777,7 +71777,7 @@ namespace Ei {
                     _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                     break;
                   case 8: {
-                    DurationType = (global::Ei.MissionInfo.Types.DurationType) input.ReadEnum();
+                    DurationType = (global::JsonCompilers.MissionInfo.Types.DurationType) input.ReadEnum();
                     break;
                   }
                   case 17: {
@@ -71836,7 +71836,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ArtifactsConfigurationResponse.Descriptor.NestedTypes[1]; }
+          get { return global::JsonCompilers.ArtifactsConfigurationResponse.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -71877,10 +71877,10 @@ namespace Ei {
 
         /// <summary>Field number for the "spec" field.</summary>
         public const int SpecFieldNumber = 1;
-        private global::Ei.ArtifactSpec spec_;
+        private global::JsonCompilers.ArtifactSpec spec_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ArtifactSpec Spec {
+        public global::JsonCompilers.ArtifactSpec Spec {
           get { return spec_; }
           set {
             spec_ = value;
@@ -72294,7 +72294,7 @@ namespace Ei {
           }
           if (other.spec_ != null) {
             if (spec_ == null) {
-              Spec = new global::Ei.ArtifactSpec();
+              Spec = new global::JsonCompilers.ArtifactSpec();
             }
             Spec.MergeFrom(other.Spec);
           }
@@ -72401,7 +72401,7 @@ namespace Ei {
                 break;
               case 10: {
                 if (spec_ == null) {
-                  Spec = new global::Ei.ArtifactSpec();
+                  Spec = new global::JsonCompilers.ArtifactSpec();
                 }
                 input.ReadMessage(Spec);
                 break;
@@ -72461,7 +72461,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ArtifactsConfigurationResponse.Descriptor.NestedTypes[2]; }
+          get { return global::JsonCompilers.ArtifactsConfigurationResponse.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -72733,7 +72733,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[92]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[92]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -72770,10 +72770,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 4;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -72835,10 +72835,10 @@ namespace Ei {
 
     /// <summary>Field number for the "info" field.</summary>
     public const int InfoFieldNumber = 2;
-    private global::Ei.MissionInfo info_;
+    private global::JsonCompilers.MissionInfo info_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MissionInfo Info {
+    public global::JsonCompilers.MissionInfo Info {
       get { return info_; }
       set {
         info_ = value;
@@ -72847,10 +72847,10 @@ namespace Ei {
 
     /// <summary>Field number for the "client_info" field.</summary>
     public const int ClientInfoFieldNumber = 5;
-    private global::Ei.ArtifactsClientInfo clientInfo_;
+    private global::JsonCompilers.ArtifactsClientInfo clientInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactsClientInfo ClientInfo {
+    public global::JsonCompilers.ArtifactsClientInfo ClientInfo {
       get { return clientInfo_; }
       set {
         clientInfo_ = value;
@@ -72996,7 +72996,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -73008,13 +73008,13 @@ namespace Ei {
       }
       if (other.info_ != null) {
         if (info_ == null) {
-          Info = new global::Ei.MissionInfo();
+          Info = new global::JsonCompilers.MissionInfo();
         }
         Info.MergeFrom(other.Info);
       }
       if (other.clientInfo_ != null) {
         if (clientInfo_ == null) {
-          ClientInfo = new global::Ei.ArtifactsClientInfo();
+          ClientInfo = new global::JsonCompilers.ArtifactsClientInfo();
         }
         ClientInfo.MergeFrom(other.ClientInfo);
       }
@@ -73091,7 +73091,7 @@ namespace Ei {
           }
           case 18: {
             if (info_ == null) {
-              Info = new global::Ei.MissionInfo();
+              Info = new global::JsonCompilers.MissionInfo();
             }
             input.ReadMessage(Info);
             break;
@@ -73102,14 +73102,14 @@ namespace Ei {
           }
           case 34: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
           }
           case 42: {
             if (clientInfo_ == null) {
-              ClientInfo = new global::Ei.ArtifactsClientInfo();
+              ClientInfo = new global::JsonCompilers.ArtifactsClientInfo();
             }
             input.ReadMessage(ClientInfo);
             break;
@@ -73137,7 +73137,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[93]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[93]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -73198,10 +73198,10 @@ namespace Ei {
 
     /// <summary>Field number for the "info" field.</summary>
     public const int InfoFieldNumber = 2;
-    private global::Ei.MissionInfo info_;
+    private global::JsonCompilers.MissionInfo info_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MissionInfo Info {
+    public global::JsonCompilers.MissionInfo Info {
       get { return info_; }
       set {
         info_ = value;
@@ -73311,7 +73311,7 @@ namespace Ei {
       }
       if (other.info_ != null) {
         if (info_ == null) {
-          Info = new global::Ei.MissionInfo();
+          Info = new global::JsonCompilers.MissionInfo();
         }
         Info.MergeFrom(other.Info);
       }
@@ -73370,7 +73370,7 @@ namespace Ei {
           }
           case 18: {
             if (info_ == null) {
-              Info = new global::Ei.MissionInfo();
+              Info = new global::JsonCompilers.MissionInfo();
             }
             input.ReadMessage(Info);
             break;
@@ -73398,7 +73398,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[94]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[94]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -73462,10 +73462,10 @@ namespace Ei {
 
     /// <summary>Field number for the "info" field.</summary>
     public const int InfoFieldNumber = 2;
-    private global::Ei.MissionInfo info_;
+    private global::JsonCompilers.MissionInfo info_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MissionInfo Info {
+    public global::JsonCompilers.MissionInfo Info {
       get { return info_; }
       set {
         info_ = value;
@@ -73474,23 +73474,23 @@ namespace Ei {
 
     /// <summary>Field number for the "artifacts" field.</summary>
     public const int ArtifactsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.CompleteMissionResponse.Types.SecureArtifactSpec> _repeated_artifacts_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.CompleteMissionResponse.Types.SecureArtifactSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.CompleteMissionResponse.Types.SecureArtifactSpec> artifacts_ = new pbc::RepeatedField<global::Ei.CompleteMissionResponse.Types.SecureArtifactSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.CompleteMissionResponse.Types.SecureArtifactSpec> _repeated_artifacts_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.CompleteMissionResponse.Types.SecureArtifactSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.CompleteMissionResponse.Types.SecureArtifactSpec> artifacts_ = new pbc::RepeatedField<global::JsonCompilers.CompleteMissionResponse.Types.SecureArtifactSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.CompleteMissionResponse.Types.SecureArtifactSpec> Artifacts {
+    public pbc::RepeatedField<global::JsonCompilers.CompleteMissionResponse.Types.SecureArtifactSpec> Artifacts {
       get { return artifacts_; }
     }
 
     /// <summary>Field number for the "other_rewards" field.</summary>
     public const int OtherRewardsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.Reward> _repeated_otherRewards_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.Reward.Parser);
-    private readonly pbc::RepeatedField<global::Ei.Reward> otherRewards_ = new pbc::RepeatedField<global::Ei.Reward>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.Reward> _repeated_otherRewards_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.Reward.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.Reward> otherRewards_ = new pbc::RepeatedField<global::JsonCompilers.Reward>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.Reward> OtherRewards {
+    public pbc::RepeatedField<global::JsonCompilers.Reward> OtherRewards {
       get { return otherRewards_; }
     }
 
@@ -73646,7 +73646,7 @@ namespace Ei {
       }
       if (other.info_ != null) {
         if (info_ == null) {
-          Info = new global::Ei.MissionInfo();
+          Info = new global::JsonCompilers.MissionInfo();
         }
         Info.MergeFrom(other.Info);
       }
@@ -73722,7 +73722,7 @@ namespace Ei {
           }
           case 18: {
             if (info_ == null) {
-              Info = new global::Ei.MissionInfo();
+              Info = new global::JsonCompilers.MissionInfo();
             }
             input.ReadMessage(Info);
             break;
@@ -73764,7 +73764,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.CompleteMissionResponse.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.CompleteMissionResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -73797,10 +73797,10 @@ namespace Ei {
 
         /// <summary>Field number for the "spec" field.</summary>
         public const int SpecFieldNumber = 1;
-        private global::Ei.ArtifactSpec spec_;
+        private global::JsonCompilers.ArtifactSpec spec_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ArtifactSpec Spec {
+        public global::JsonCompilers.ArtifactSpec Spec {
           get { return spec_; }
           set {
             spec_ = value;
@@ -73933,7 +73933,7 @@ namespace Ei {
           }
           if (other.spec_ != null) {
             if (spec_ == null) {
-              Spec = new global::Ei.ArtifactSpec();
+              Spec = new global::JsonCompilers.ArtifactSpec();
             }
             Spec.MergeFrom(other.Spec);
           }
@@ -73991,7 +73991,7 @@ namespace Ei {
                 break;
               case 10: {
                 if (spec_ == null) {
-                  Spec = new global::Ei.ArtifactSpec();
+                  Spec = new global::JsonCompilers.ArtifactSpec();
                 }
                 input.ReadMessage(Spec);
                 break;
@@ -74028,7 +74028,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[95]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[95]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -74066,10 +74066,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 1;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -74131,12 +74131,12 @@ namespace Ei {
 
     /// <summary>Field number for the "grade" field.</summary>
     public const int GradeFieldNumber = 6;
-    private readonly static global::Ei.Contract.Types.PlayerGrade GradeDefaultValue = global::Ei.Contract.Types.PlayerGrade.GradeUnset;
+    private readonly static global::JsonCompilers.Contract.Types.PlayerGrade GradeDefaultValue = global::JsonCompilers.Contract.Types.PlayerGrade.GradeUnset;
 
-    private global::Ei.Contract.Types.PlayerGrade grade_;
+    private global::JsonCompilers.Contract.Types.PlayerGrade grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Contract.Types.PlayerGrade Grade {
+    public global::JsonCompilers.Contract.Types.PlayerGrade Grade {
       get { if ((_hasBits0 & 8) != 0) { return grade_; } else { return GradeDefaultValue; } }
       set {
         _hasBits0 |= 8;
@@ -74185,12 +74185,12 @@ namespace Ei {
 
     /// <summary>Field number for the "best_ship" field.</summary>
     public const int BestShipFieldNumber = 4;
-    private readonly static global::Ei.MissionInfo.Types.Spaceship BestShipDefaultValue = global::Ei.MissionInfo.Types.Spaceship.ChickenOne;
+    private readonly static global::JsonCompilers.MissionInfo.Types.Spaceship BestShipDefaultValue = global::JsonCompilers.MissionInfo.Types.Spaceship.ChickenOne;
 
-    private global::Ei.MissionInfo.Types.Spaceship bestShip_;
+    private global::JsonCompilers.MissionInfo.Types.Spaceship bestShip_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MissionInfo.Types.Spaceship BestShip {
+    public global::JsonCompilers.MissionInfo.Types.Spaceship BestShip {
       get { if ((_hasBits0 & 2) != 0) { return bestShip_; } else { return BestShipDefaultValue; } }
       set {
         _hasBits0 |= 2;
@@ -74362,7 +74362,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -74448,7 +74448,7 @@ namespace Ei {
             break;
           case 10: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -74462,7 +74462,7 @@ namespace Ei {
             break;
           }
           case 32: {
-            BestShip = (global::Ei.MissionInfo.Types.Spaceship) input.ReadEnum();
+            BestShip = (global::JsonCompilers.MissionInfo.Types.Spaceship) input.ReadEnum();
             break;
           }
           case 40: {
@@ -74470,7 +74470,7 @@ namespace Ei {
             break;
           }
           case 48: {
-            Grade = (global::Ei.Contract.Types.PlayerGrade) input.ReadEnum();
+            Grade = (global::JsonCompilers.Contract.Types.PlayerGrade) input.ReadEnum();
             break;
           }
         }
@@ -74496,7 +74496,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[96]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[96]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -74536,10 +74536,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 5;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -74574,10 +74574,10 @@ namespace Ei {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Ei.ArtifactSpec spec_;
+    private global::JsonCompilers.ArtifactSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactSpec Spec {
+    public global::JsonCompilers.ArtifactSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -74694,12 +74694,12 @@ namespace Ei {
 
     /// <summary>Field number for the "ingredients" field.</summary>
     public const int IngredientsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactInventoryItem> _repeated_ingredients_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.ArtifactInventoryItem.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactInventoryItem> ingredients_ = new pbc::RepeatedField<global::Ei.ArtifactInventoryItem>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactInventoryItem> _repeated_ingredients_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.ArtifactInventoryItem.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactInventoryItem> ingredients_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactInventoryItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactInventoryItem> Ingredients {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactInventoryItem> Ingredients {
       get { return ingredients_; }
     }
 
@@ -74873,7 +74873,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -74882,7 +74882,7 @@ namespace Ei {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Ei.ArtifactSpec();
+          Spec = new global::JsonCompilers.ArtifactSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
@@ -74981,7 +74981,7 @@ namespace Ei {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Ei.ArtifactSpec();
+              Spec = new global::JsonCompilers.ArtifactSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -74996,7 +74996,7 @@ namespace Ei {
           }
           case 42: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -75036,7 +75036,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[97]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[97]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -75125,12 +75125,12 @@ namespace Ei {
 
     /// <summary>Field number for the "rarity_achieved" field.</summary>
     public const int RarityAchievedFieldNumber = 2;
-    private readonly static global::Ei.ArtifactSpec.Types.Rarity RarityAchievedDefaultValue = global::Ei.ArtifactSpec.Types.Rarity.Common;
+    private readonly static global::JsonCompilers.ArtifactSpec.Types.Rarity RarityAchievedDefaultValue = global::JsonCompilers.ArtifactSpec.Types.Rarity.Common;
 
-    private global::Ei.ArtifactSpec.Types.Rarity rarityAchieved_;
+    private global::JsonCompilers.ArtifactSpec.Types.Rarity rarityAchieved_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactSpec.Types.Rarity RarityAchieved {
+    public global::JsonCompilers.ArtifactSpec.Types.Rarity RarityAchieved {
       get { if ((_hasBits0 & 2) != 0) { return rarityAchieved_; } else { return RarityAchievedDefaultValue; } }
       set {
         _hasBits0 |= 2;
@@ -75371,7 +75371,7 @@ namespace Ei {
             break;
           }
           case 16: {
-            RarityAchieved = (global::Ei.ArtifactSpec.Types.Rarity) input.ReadEnum();
+            RarityAchieved = (global::JsonCompilers.ArtifactSpec.Types.Rarity) input.ReadEnum();
             break;
           }
           case 26: {
@@ -75405,7 +75405,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[98]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[98]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -75445,10 +75445,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 4;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -75483,10 +75483,10 @@ namespace Ei {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 1;
-    private global::Ei.ArtifactSpec spec_;
+    private global::JsonCompilers.ArtifactSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactSpec Spec {
+    public global::JsonCompilers.ArtifactSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -75757,7 +75757,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -75766,7 +75766,7 @@ namespace Ei {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Ei.ArtifactSpec();
+          Spec = new global::JsonCompilers.ArtifactSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
@@ -75860,7 +75860,7 @@ namespace Ei {
             break;
           case 10: {
             if (spec_ == null) {
-              Spec = new global::Ei.ArtifactSpec();
+              Spec = new global::JsonCompilers.ArtifactSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -75875,7 +75875,7 @@ namespace Ei {
           }
           case 34: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -75920,7 +75920,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[99]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[99]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -76023,23 +76023,23 @@ namespace Ei {
 
     /// <summary>Field number for the "byproducts" field.</summary>
     public const int ByproductsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactSpec> _repeated_byproducts_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.ArtifactSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactSpec> byproducts_ = new pbc::RepeatedField<global::Ei.ArtifactSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactSpec> _repeated_byproducts_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.ArtifactSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactSpec> byproducts_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactSpec> Byproducts {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactSpec> Byproducts {
       get { return byproducts_; }
     }
 
     /// <summary>Field number for the "other_rewards" field.</summary>
     public const int OtherRewardsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.Reward> _repeated_otherRewards_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.Reward.Parser);
-    private readonly pbc::RepeatedField<global::Ei.Reward> otherRewards_ = new pbc::RepeatedField<global::Ei.Reward>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.Reward> _repeated_otherRewards_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.Reward.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.Reward> otherRewards_ = new pbc::RepeatedField<global::JsonCompilers.Reward>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.Reward> OtherRewards {
+    public pbc::RepeatedField<global::JsonCompilers.Reward> OtherRewards {
       get { return otherRewards_; }
     }
 
@@ -76318,7 +76318,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[100]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[100]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -76740,7 +76740,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[101]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[101]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -76776,10 +76776,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 1;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -76788,10 +76788,10 @@ namespace Ei {
 
     /// <summary>Field number for the "artifact" field.</summary>
     public const int ArtifactFieldNumber = 2;
-    private global::Ei.ArtifactInventoryItem artifact_;
+    private global::JsonCompilers.ArtifactInventoryItem artifact_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ArtifactInventoryItem Artifact {
+    public global::JsonCompilers.ArtifactInventoryItem Artifact {
       get { return artifact_; }
       set {
         artifact_ = value;
@@ -76800,12 +76800,12 @@ namespace Ei {
 
     /// <summary>Field number for the "stones" field.</summary>
     public const int StonesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactSpec> _repeated_stones_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.ArtifactSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactSpec> stones_ = new pbc::RepeatedField<global::Ei.ArtifactSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactSpec> _repeated_stones_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.ArtifactSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactSpec> stones_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactSpec> Stones {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactSpec> Stones {
       get { return stones_; }
     }
 
@@ -76954,13 +76954,13 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          Artifact = new global::Ei.ArtifactInventoryItem();
+          Artifact = new global::JsonCompilers.ArtifactInventoryItem();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -77030,14 +77030,14 @@ namespace Ei {
             break;
           case 10: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
           }
           case 18: {
             if (artifact_ == null) {
-              Artifact = new global::Ei.ArtifactInventoryItem();
+              Artifact = new global::JsonCompilers.ArtifactInventoryItem();
             }
             input.ReadMessage(Artifact);
             break;
@@ -77073,7 +77073,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[102]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[102]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -77391,7 +77391,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[103]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[103]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -77435,12 +77435,12 @@ namespace Ei {
 
     /// <summary>Field number for the "inventory_items" field.</summary>
     public const int InventoryItemsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactInventoryItem> _repeated_inventoryItems_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.ArtifactInventoryItem.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactInventoryItem> inventoryItems_ = new pbc::RepeatedField<global::Ei.ArtifactInventoryItem>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactInventoryItem> _repeated_inventoryItems_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.ArtifactInventoryItem.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactInventoryItem> inventoryItems_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactInventoryItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactInventoryItem> InventoryItems {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactInventoryItem> InventoryItems {
       get { return inventoryItems_; }
     }
 
@@ -77473,111 +77473,111 @@ namespace Ei {
 
     /// <summary>Field number for the "inventory_slots" field.</summary>
     public const int InventorySlotsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.InventorySlot> _repeated_inventorySlots_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.InventorySlot.Parser);
-    private readonly pbc::RepeatedField<global::Ei.InventorySlot> inventorySlots_ = new pbc::RepeatedField<global::Ei.InventorySlot>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.InventorySlot> _repeated_inventorySlots_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.InventorySlot.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.InventorySlot> inventorySlots_ = new pbc::RepeatedField<global::JsonCompilers.InventorySlot>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.InventorySlot> InventorySlots {
+    public pbc::RepeatedField<global::JsonCompilers.InventorySlot> InventorySlots {
       get { return inventorySlots_; }
     }
 
     /// <summary>Field number for the "active_artifacts_DEPRECATED" field.</summary>
     public const int ActiveArtifactsDEPRECATEDFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactsDB.Types.ActiveArtifactSlot> _repeated_activeArtifactsDEPRECATED_codec
-        = pb::FieldCodec.ForMessage(58, global::Ei.ArtifactsDB.Types.ActiveArtifactSlot.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSlot> activeArtifactsDEPRECATED_ = new pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSlot>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot> _repeated_activeArtifactsDEPRECATED_codec
+        = pb::FieldCodec.ForMessage(58, global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot> activeArtifactsDEPRECATED_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSlot> ActiveArtifactsDEPRECATED {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot> ActiveArtifactsDEPRECATED {
       get { return activeArtifactsDEPRECATED_; }
     }
 
     /// <summary>Field number for the "active_artifact_sets" field.</summary>
     public const int ActiveArtifactSetsFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactsDB.Types.ActiveArtifactSet> _repeated_activeArtifactSets_codec
-        = pb::FieldCodec.ForMessage(90, global::Ei.ArtifactsDB.Types.ActiveArtifactSet.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSet> activeArtifactSets_ = new pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSet>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet> _repeated_activeArtifactSets_codec
+        = pb::FieldCodec.ForMessage(90, global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet> activeArtifactSets_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSet> ActiveArtifactSets {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet> ActiveArtifactSets {
       get { return activeArtifactSets_; }
     }
 
     /// <summary>Field number for the "saved_artifact_sets" field.</summary>
     public const int SavedArtifactSetsFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactsDB.Types.ActiveArtifactSet> _repeated_savedArtifactSets_codec
-        = pb::FieldCodec.ForMessage(106, global::Ei.ArtifactsDB.Types.ActiveArtifactSet.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSet> savedArtifactSets_ = new pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSet>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet> _repeated_savedArtifactSets_codec
+        = pb::FieldCodec.ForMessage(106, global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet> savedArtifactSets_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSet> SavedArtifactSets {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSet> SavedArtifactSets {
       get { return savedArtifactSets_; }
     }
 
     /// <summary>Field number for the "artifact_status" field.</summary>
     public const int ArtifactStatusFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactsDB.Types.CraftableArtifact> _repeated_artifactStatus_codec
-        = pb::FieldCodec.ForMessage(98, global::Ei.ArtifactsDB.Types.CraftableArtifact.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactsDB.Types.CraftableArtifact> artifactStatus_ = new pbc::RepeatedField<global::Ei.ArtifactsDB.Types.CraftableArtifact>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact> _repeated_artifactStatus_codec
+        = pb::FieldCodec.ForMessage(98, global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact> artifactStatus_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactsDB.Types.CraftableArtifact> ArtifactStatus {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact> ArtifactStatus {
       get { return artifactStatus_; }
     }
 
     /// <summary>Field number for the "mission_infos" field.</summary>
     public const int MissionInfosFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.MissionInfo> _repeated_missionInfos_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.MissionInfo.Parser);
-    private readonly pbc::RepeatedField<global::Ei.MissionInfo> missionInfos_ = new pbc::RepeatedField<global::Ei.MissionInfo>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.MissionInfo> _repeated_missionInfos_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.MissionInfo.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.MissionInfo> missionInfos_ = new pbc::RepeatedField<global::JsonCompilers.MissionInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.MissionInfo> MissionInfos {
+    public pbc::RepeatedField<global::JsonCompilers.MissionInfo> MissionInfos {
       get { return missionInfos_; }
     }
 
     /// <summary>Field number for the "mission_archive" field.</summary>
     public const int MissionArchiveFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Ei.MissionInfo> _repeated_missionArchive_codec
-        = pb::FieldCodec.ForMessage(42, global::Ei.MissionInfo.Parser);
-    private readonly pbc::RepeatedField<global::Ei.MissionInfo> missionArchive_ = new pbc::RepeatedField<global::Ei.MissionInfo>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.MissionInfo> _repeated_missionArchive_codec
+        = pb::FieldCodec.ForMessage(42, global::JsonCompilers.MissionInfo.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.MissionInfo> missionArchive_ = new pbc::RepeatedField<global::JsonCompilers.MissionInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.MissionInfo> MissionArchive {
+    public pbc::RepeatedField<global::JsonCompilers.MissionInfo> MissionArchive {
       get { return missionArchive_; }
     }
 
     /// <summary>Field number for the "discovered_artifacts_DEPRECATED" field.</summary>
     public const int DiscoveredArtifactsDEPRECATEDFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactSpec> _repeated_discoveredArtifactsDEPRECATED_codec
-        = pb::FieldCodec.ForMessage(66, global::Ei.ArtifactSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactSpec> discoveredArtifactsDEPRECATED_ = new pbc::RepeatedField<global::Ei.ArtifactSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactSpec> _repeated_discoveredArtifactsDEPRECATED_codec
+        = pb::FieldCodec.ForMessage(66, global::JsonCompilers.ArtifactSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactSpec> discoveredArtifactsDEPRECATED_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactSpec> DiscoveredArtifactsDEPRECATED {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactSpec> DiscoveredArtifactsDEPRECATED {
       get { return discoveredArtifactsDEPRECATED_; }
     }
 
     /// <summary>Field number for the "craftable_artifacts_DEPRECATED" field.</summary>
     public const int CraftableArtifactsDEPRECATEDFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactsDB.Types.CraftableArtifact> _repeated_craftableArtifactsDEPRECATED_codec
-        = pb::FieldCodec.ForMessage(74, global::Ei.ArtifactsDB.Types.CraftableArtifact.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactsDB.Types.CraftableArtifact> craftableArtifactsDEPRECATED_ = new pbc::RepeatedField<global::Ei.ArtifactsDB.Types.CraftableArtifact>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact> _repeated_craftableArtifactsDEPRECATED_codec
+        = pb::FieldCodec.ForMessage(74, global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact> craftableArtifactsDEPRECATED_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactsDB.Types.CraftableArtifact> CraftableArtifactsDEPRECATED {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact> CraftableArtifactsDEPRECATED {
       get { return craftableArtifactsDEPRECATED_; }
     }
 
     /// <summary>Field number for the "crafting_counts_DEPRECATED" field.</summary>
     public const int CraftingCountsDEPRECATEDFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Ei.ArtifactsDB.Types.CraftableArtifact> _repeated_craftingCountsDEPRECATED_codec
-        = pb::FieldCodec.ForMessage(82, global::Ei.ArtifactsDB.Types.CraftableArtifact.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ArtifactsDB.Types.CraftableArtifact> craftingCountsDEPRECATED_ = new pbc::RepeatedField<global::Ei.ArtifactsDB.Types.CraftableArtifact>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact> _repeated_craftingCountsDEPRECATED_codec
+        = pb::FieldCodec.ForMessage(82, global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact> craftingCountsDEPRECATED_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ArtifactsDB.Types.CraftableArtifact> CraftingCountsDEPRECATED {
+    public pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.CraftableArtifact> CraftingCountsDEPRECATED {
       get { return craftingCountsDEPRECATED_; }
     }
 
@@ -77895,7 +77895,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ArtifactsDB.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ArtifactsDB.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -78162,7 +78162,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ArtifactsDB.Descriptor.NestedTypes[1]; }
+          get { return global::JsonCompilers.ArtifactsDB.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -78196,12 +78196,12 @@ namespace Ei {
 
         /// <summary>Field number for the "slots" field.</summary>
         public const int SlotsFieldNumber = 1;
-        private static readonly pb::FieldCodec<global::Ei.ArtifactsDB.Types.ActiveArtifactSlot> _repeated_slots_codec
-            = pb::FieldCodec.ForMessage(10, global::Ei.ArtifactsDB.Types.ActiveArtifactSlot.Parser);
-        private readonly pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSlot> slots_ = new pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSlot>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot> _repeated_slots_codec
+            = pb::FieldCodec.ForMessage(10, global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot> slots_ = new pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.ArtifactsDB.Types.ActiveArtifactSlot> Slots {
+        public pbc::RepeatedField<global::JsonCompilers.ArtifactsDB.Types.ActiveArtifactSlot> Slots {
           get { return slots_; }
         }
 
@@ -78403,7 +78403,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ArtifactsDB.Descriptor.NestedTypes[2]; }
+          get { return global::JsonCompilers.ArtifactsDB.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -78441,10 +78441,10 @@ namespace Ei {
 
         /// <summary>Field number for the "spec" field.</summary>
         public const int SpecFieldNumber = 1;
-        private global::Ei.ArtifactSpec spec_;
+        private global::JsonCompilers.ArtifactSpec spec_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ArtifactSpec Spec {
+        public global::JsonCompilers.ArtifactSpec Spec {
           get { return spec_; }
           set {
             spec_ = value;
@@ -78738,7 +78738,7 @@ namespace Ei {
           }
           if (other.spec_ != null) {
             if (spec_ == null) {
-              Spec = new global::Ei.ArtifactSpec();
+              Spec = new global::JsonCompilers.ArtifactSpec();
             }
             Spec.MergeFrom(other.Spec);
           }
@@ -78824,7 +78824,7 @@ namespace Ei {
                 break;
               case 10: {
                 if (spec_ == null) {
-                  Spec = new global::Ei.ArtifactSpec();
+                  Spec = new global::JsonCompilers.ArtifactSpec();
                 }
                 input.ReadMessage(Spec);
                 break;
@@ -78877,7 +78877,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[104]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[104]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -79348,7 +79348,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[105]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[105]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -79381,10 +79381,10 @@ namespace Ei {
 
     /// <summary>Field number for the "req" field.</summary>
     public const int ReqFieldNumber = 1;
-    private global::Ei.MissionRequest req_;
+    private global::JsonCompilers.MissionRequest req_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.MissionRequest Req {
+    public global::JsonCompilers.MissionRequest Req {
       get { return req_; }
       set {
         req_ = value;
@@ -79393,10 +79393,10 @@ namespace Ei {
 
     /// <summary>Field number for the "res" field.</summary>
     public const int ResFieldNumber = 2;
-    private global::Ei.CompleteMissionResponse res_;
+    private global::JsonCompilers.CompleteMissionResponse res_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.CompleteMissionResponse Res {
+    public global::JsonCompilers.CompleteMissionResponse Res {
       get { return res_; }
       set {
         res_ = value;
@@ -79503,13 +79503,13 @@ namespace Ei {
       }
       if (other.req_ != null) {
         if (req_ == null) {
-          Req = new global::Ei.MissionRequest();
+          Req = new global::JsonCompilers.MissionRequest();
         }
         Req.MergeFrom(other.Req);
       }
       if (other.res_ != null) {
         if (res_ == null) {
-          Res = new global::Ei.CompleteMissionResponse();
+          Res = new global::JsonCompilers.CompleteMissionResponse();
         }
         Res.MergeFrom(other.Res);
       }
@@ -79567,14 +79567,14 @@ namespace Ei {
             break;
           case 10: {
             if (req_ == null) {
-              Req = new global::Ei.MissionRequest();
+              Req = new global::JsonCompilers.MissionRequest();
             }
             input.ReadMessage(Req);
             break;
           }
           case 18: {
             if (res_ == null) {
-              Res = new global::Ei.CompleteMissionResponse();
+              Res = new global::JsonCompilers.CompleteMissionResponse();
             }
             input.ReadMessage(Res);
             break;
@@ -79601,7 +79601,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[106]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[106]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -79634,10 +79634,10 @@ namespace Ei {
 
     /// <summary>Field number for the "req" field.</summary>
     public const int ReqFieldNumber = 1;
-    private global::Ei.CraftArtifactRequest req_;
+    private global::JsonCompilers.CraftArtifactRequest req_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.CraftArtifactRequest Req {
+    public global::JsonCompilers.CraftArtifactRequest Req {
       get { return req_; }
       set {
         req_ = value;
@@ -79646,10 +79646,10 @@ namespace Ei {
 
     /// <summary>Field number for the "res" field.</summary>
     public const int ResFieldNumber = 2;
-    private global::Ei.CraftArtifactResponse res_;
+    private global::JsonCompilers.CraftArtifactResponse res_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.CraftArtifactResponse Res {
+    public global::JsonCompilers.CraftArtifactResponse Res {
       get { return res_; }
       set {
         res_ = value;
@@ -79756,13 +79756,13 @@ namespace Ei {
       }
       if (other.req_ != null) {
         if (req_ == null) {
-          Req = new global::Ei.CraftArtifactRequest();
+          Req = new global::JsonCompilers.CraftArtifactRequest();
         }
         Req.MergeFrom(other.Req);
       }
       if (other.res_ != null) {
         if (res_ == null) {
-          Res = new global::Ei.CraftArtifactResponse();
+          Res = new global::JsonCompilers.CraftArtifactResponse();
         }
         Res.MergeFrom(other.Res);
       }
@@ -79820,14 +79820,14 @@ namespace Ei {
             break;
           case 10: {
             if (req_ == null) {
-              Req = new global::Ei.CraftArtifactRequest();
+              Req = new global::JsonCompilers.CraftArtifactRequest();
             }
             input.ReadMessage(Req);
             break;
           }
           case 18: {
             if (res_ == null) {
-              Res = new global::Ei.CraftArtifactResponse();
+              Res = new global::JsonCompilers.CraftArtifactResponse();
             }
             input.ReadMessage(Res);
             break;
@@ -79854,7 +79854,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[107]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[107]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -79887,10 +79887,10 @@ namespace Ei {
 
     /// <summary>Field number for the "req" field.</summary>
     public const int ReqFieldNumber = 1;
-    private global::Ei.ConsumeArtifactRequest req_;
+    private global::JsonCompilers.ConsumeArtifactRequest req_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ConsumeArtifactRequest Req {
+    public global::JsonCompilers.ConsumeArtifactRequest Req {
       get { return req_; }
       set {
         req_ = value;
@@ -79899,10 +79899,10 @@ namespace Ei {
 
     /// <summary>Field number for the "res" field.</summary>
     public const int ResFieldNumber = 2;
-    private global::Ei.ConsumeArtifactResponse res_;
+    private global::JsonCompilers.ConsumeArtifactResponse res_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ConsumeArtifactResponse Res {
+    public global::JsonCompilers.ConsumeArtifactResponse Res {
       get { return res_; }
       set {
         res_ = value;
@@ -80009,13 +80009,13 @@ namespace Ei {
       }
       if (other.req_ != null) {
         if (req_ == null) {
-          Req = new global::Ei.ConsumeArtifactRequest();
+          Req = new global::JsonCompilers.ConsumeArtifactRequest();
         }
         Req.MergeFrom(other.Req);
       }
       if (other.res_ != null) {
         if (res_ == null) {
-          Res = new global::Ei.ConsumeArtifactResponse();
+          Res = new global::JsonCompilers.ConsumeArtifactResponse();
         }
         Res.MergeFrom(other.Res);
       }
@@ -80073,14 +80073,14 @@ namespace Ei {
             break;
           case 10: {
             if (req_ == null) {
-              Req = new global::Ei.ConsumeArtifactRequest();
+              Req = new global::JsonCompilers.ConsumeArtifactRequest();
             }
             input.ReadMessage(Req);
             break;
           }
           case 18: {
             if (res_ == null) {
-              Res = new global::Ei.ConsumeArtifactResponse();
+              Res = new global::JsonCompilers.ConsumeArtifactResponse();
             }
             input.ReadMessage(Res);
             break;
@@ -80107,7 +80107,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[108]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[108]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -80140,10 +80140,10 @@ namespace Ei {
 
     /// <summary>Field number for the "req" field.</summary>
     public const int ReqFieldNumber = 1;
-    private global::Ei.SetArtifactRequest req_;
+    private global::JsonCompilers.SetArtifactRequest req_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.SetArtifactRequest Req {
+    public global::JsonCompilers.SetArtifactRequest Req {
       get { return req_; }
       set {
         req_ = value;
@@ -80152,10 +80152,10 @@ namespace Ei {
 
     /// <summary>Field number for the "res" field.</summary>
     public const int ResFieldNumber = 2;
-    private global::Ei.SetArtifactResponse res_;
+    private global::JsonCompilers.SetArtifactResponse res_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.SetArtifactResponse Res {
+    public global::JsonCompilers.SetArtifactResponse Res {
       get { return res_; }
       set {
         res_ = value;
@@ -80262,13 +80262,13 @@ namespace Ei {
       }
       if (other.req_ != null) {
         if (req_ == null) {
-          Req = new global::Ei.SetArtifactRequest();
+          Req = new global::JsonCompilers.SetArtifactRequest();
         }
         Req.MergeFrom(other.Req);
       }
       if (other.res_ != null) {
         if (res_ == null) {
-          Res = new global::Ei.SetArtifactResponse();
+          Res = new global::JsonCompilers.SetArtifactResponse();
         }
         Res.MergeFrom(other.Res);
       }
@@ -80326,14 +80326,14 @@ namespace Ei {
             break;
           case 10: {
             if (req_ == null) {
-              Req = new global::Ei.SetArtifactRequest();
+              Req = new global::JsonCompilers.SetArtifactRequest();
             }
             input.ReadMessage(Req);
             break;
           }
           case 18: {
             if (res_ == null) {
-              Res = new global::Ei.SetArtifactResponse();
+              Res = new global::JsonCompilers.SetArtifactResponse();
             }
             input.ReadMessage(Res);
             break;
@@ -80360,7 +80360,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[109]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[109]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -80624,7 +80624,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[110]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[110]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -80740,10 +80740,10 @@ namespace Ei {
 
     /// <summary>Field number for the "existing_backup" field.</summary>
     public const int ExistingBackupFieldNumber = 4;
-    private global::Ei.Backup existingBackup_;
+    private global::JsonCompilers.Backup existingBackup_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Backup ExistingBackup {
+    public global::JsonCompilers.Backup ExistingBackup {
       get { return existingBackup_; }
       set {
         existingBackup_ = value;
@@ -80885,7 +80885,7 @@ namespace Ei {
       }
       if (other.existingBackup_ != null) {
         if (existingBackup_ == null) {
-          ExistingBackup = new global::Ei.Backup();
+          ExistingBackup = new global::JsonCompilers.Backup();
         }
         ExistingBackup.MergeFrom(other.ExistingBackup);
       }
@@ -80960,7 +80960,7 @@ namespace Ei {
           }
           case 34: {
             if (existingBackup_ == null) {
-              ExistingBackup = new global::Ei.Backup();
+              ExistingBackup = new global::JsonCompilers.Backup();
             }
             input.ReadMessage(ExistingBackup);
             break;
@@ -81003,7 +81003,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[111]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[111]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -81266,7 +81266,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[112]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[112]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -81479,7 +81479,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[113]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[113]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -82001,7 +82001,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[114]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[114]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -82076,10 +82076,10 @@ namespace Ei {
 
     /// <summary>Field number for the "primary_piece" field.</summary>
     public const int PrimaryPieceFieldNumber = 12;
-    private global::Ei.ShellSpec.Types.ShellPiece primaryPiece_;
+    private global::JsonCompilers.ShellSpec.Types.ShellPiece primaryPiece_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ShellSpec.Types.ShellPiece PrimaryPiece {
+    public global::JsonCompilers.ShellSpec.Types.ShellPiece PrimaryPiece {
       get { return primaryPiece_; }
       set {
         primaryPiece_ = value;
@@ -82088,23 +82088,23 @@ namespace Ei {
 
     /// <summary>Field number for the "pieces" field.</summary>
     public const int PiecesFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Ei.ShellSpec.Types.ShellPiece> _repeated_pieces_codec
-        = pb::FieldCodec.ForMessage(90, global::Ei.ShellSpec.Types.ShellPiece.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellSpec.Types.ShellPiece> pieces_ = new pbc::RepeatedField<global::Ei.ShellSpec.Types.ShellPiece>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellSpec.Types.ShellPiece> _repeated_pieces_codec
+        = pb::FieldCodec.ForMessage(90, global::JsonCompilers.ShellSpec.Types.ShellPiece.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellSpec.Types.ShellPiece> pieces_ = new pbc::RepeatedField<global::JsonCompilers.ShellSpec.Types.ShellPiece>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellSpec.Types.ShellPiece> Pieces {
+    public pbc::RepeatedField<global::JsonCompilers.ShellSpec.Types.ShellPiece> Pieces {
       get { return pieces_; }
     }
 
     /// <summary>Field number for the "alt_assets" field.</summary>
     public const int AltAssetsFieldNumber = 18;
-    private static readonly pb::FieldCodec<global::Ei.DLCItem> _repeated_altAssets_codec
-        = pb::FieldCodec.ForMessage(146, global::Ei.DLCItem.Parser);
-    private readonly pbc::RepeatedField<global::Ei.DLCItem> altAssets_ = new pbc::RepeatedField<global::Ei.DLCItem>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.DLCItem> _repeated_altAssets_codec
+        = pb::FieldCodec.ForMessage(146, global::JsonCompilers.DLCItem.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.DLCItem> altAssets_ = new pbc::RepeatedField<global::JsonCompilers.DLCItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.DLCItem> AltAssets {
+    public pbc::RepeatedField<global::JsonCompilers.DLCItem> AltAssets {
       get { return altAssets_; }
     }
 
@@ -82738,7 +82738,7 @@ namespace Ei {
       }
       if (other.primaryPiece_ != null) {
         if (primaryPiece_ == null) {
-          PrimaryPiece = new global::Ei.ShellSpec.Types.ShellPiece();
+          PrimaryPiece = new global::JsonCompilers.ShellSpec.Types.ShellPiece();
         }
         PrimaryPiece.MergeFrom(other.PrimaryPiece);
       }
@@ -82922,7 +82922,7 @@ namespace Ei {
           }
           case 98: {
             if (primaryPiece_ == null) {
-              PrimaryPiece = new global::Ei.ShellSpec.Types.ShellPiece();
+              PrimaryPiece = new global::JsonCompilers.ShellSpec.Types.ShellPiece();
             }
             input.ReadMessage(PrimaryPiece);
             break;
@@ -83088,7 +83088,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellSpec.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ShellSpec.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -83122,12 +83122,12 @@ namespace Ei {
 
         /// <summary>Field number for the "asset_type" field.</summary>
         public const int AssetTypeFieldNumber = 1;
-        private readonly static global::Ei.ShellSpec.Types.AssetType AssetTypeDefaultValue = global::Ei.ShellSpec.Types.AssetType.Coop;
+        private readonly static global::JsonCompilers.ShellSpec.Types.AssetType AssetTypeDefaultValue = global::JsonCompilers.ShellSpec.Types.AssetType.Coop;
 
-        private global::Ei.ShellSpec.Types.AssetType assetType_;
+        private global::JsonCompilers.ShellSpec.Types.AssetType assetType_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ShellSpec.Types.AssetType AssetType {
+        public global::JsonCompilers.ShellSpec.Types.AssetType AssetType {
           get { if ((_hasBits0 & 1) != 0) { return assetType_; } else { return AssetTypeDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -83149,10 +83149,10 @@ namespace Ei {
 
         /// <summary>Field number for the "dlc" field.</summary>
         public const int DlcFieldNumber = 2;
-        private global::Ei.DLCItem dlc_;
+        private global::JsonCompilers.DLCItem dlc_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.DLCItem Dlc {
+        public global::JsonCompilers.DLCItem Dlc {
           get { return dlc_; }
           set {
             dlc_ = value;
@@ -83262,7 +83262,7 @@ namespace Ei {
           }
           if (other.dlc_ != null) {
             if (dlc_ == null) {
-              Dlc = new global::Ei.DLCItem();
+              Dlc = new global::JsonCompilers.DLCItem();
             }
             Dlc.MergeFrom(other.Dlc);
           }
@@ -83316,12 +83316,12 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                AssetType = (global::Ei.ShellSpec.Types.AssetType) input.ReadEnum();
+                AssetType = (global::JsonCompilers.ShellSpec.Types.AssetType) input.ReadEnum();
                 break;
               }
               case 18: {
                 if (dlc_ == null) {
-                  Dlc = new global::Ei.DLCItem();
+                  Dlc = new global::JsonCompilers.DLCItem();
                 }
                 input.ReadMessage(Dlc);
                 break;
@@ -83354,7 +83354,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[115]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[115]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -83862,21 +83862,21 @@ namespace Ei {
 
     /// <summary>Field number for the "variations" field.</summary>
     public const int VariationsFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Ei.ShellSetSpec.Types.VariationSpec> _repeated_variations_codec
-        = pb::FieldCodec.ForMessage(122, global::Ei.ShellSetSpec.Types.VariationSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellSetSpec.Types.VariationSpec> variations_ = new pbc::RepeatedField<global::Ei.ShellSetSpec.Types.VariationSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellSetSpec.Types.VariationSpec> _repeated_variations_codec
+        = pb::FieldCodec.ForMessage(122, global::JsonCompilers.ShellSetSpec.Types.VariationSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellSetSpec.Types.VariationSpec> variations_ = new pbc::RepeatedField<global::JsonCompilers.ShellSetSpec.Types.VariationSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellSetSpec.Types.VariationSpec> Variations {
+    public pbc::RepeatedField<global::JsonCompilers.ShellSetSpec.Types.VariationSpec> Variations {
       get { return variations_; }
     }
 
     /// <summary>Field number for the "icon" field.</summary>
     public const int IconFieldNumber = 19;
-    private global::Ei.DLCItem icon_;
+    private global::JsonCompilers.DLCItem icon_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.DLCItem Icon {
+    public global::JsonCompilers.DLCItem Icon {
       get { return icon_; }
       set {
         icon_ = value;
@@ -84328,7 +84328,7 @@ namespace Ei {
       variations_.Add(other.variations_);
       if (other.icon_ != null) {
         if (icon_ == null) {
-          Icon = new global::Ei.DLCItem();
+          Icon = new global::JsonCompilers.DLCItem();
         }
         Icon.MergeFrom(other.Icon);
       }
@@ -84537,7 +84537,7 @@ namespace Ei {
           }
           case 154: {
             if (icon_ == null) {
-              Icon = new global::Ei.DLCItem();
+              Icon = new global::JsonCompilers.DLCItem();
             }
             input.ReadMessage(Icon);
             break;
@@ -84576,7 +84576,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellSetSpec.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ShellSetSpec.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -85054,7 +85054,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[116]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[116]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -85157,12 +85157,12 @@ namespace Ei {
 
     /// <summary>Field number for the "asset_type" field.</summary>
     public const int AssetTypeFieldNumber = 3;
-    private readonly static global::Ei.ShellSpec.Types.AssetType AssetTypeDefaultValue = global::Ei.ShellSpec.Types.AssetType.Coop;
+    private readonly static global::JsonCompilers.ShellSpec.Types.AssetType AssetTypeDefaultValue = global::JsonCompilers.ShellSpec.Types.AssetType.Coop;
 
-    private global::Ei.ShellSpec.Types.AssetType assetType_;
+    private global::JsonCompilers.ShellSpec.Types.AssetType assetType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ShellSpec.Types.AssetType AssetType {
+    public global::JsonCompilers.ShellSpec.Types.AssetType AssetType {
       get { if ((_hasBits0 & 1) != 0) { return assetType_; } else { return AssetTypeDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -85475,12 +85475,12 @@ namespace Ei {
 
     /// <summary>Field number for the "chicken_animation" field.</summary>
     public const int ChickenAnimationFieldNumber = 16;
-    private readonly static global::Ei.ShellObjectSpec.Types.ChickenAnimation ChickenAnimationDefaultValue = global::Ei.ShellObjectSpec.Types.ChickenAnimation.StandardRun;
+    private readonly static global::JsonCompilers.ShellObjectSpec.Types.ChickenAnimation ChickenAnimationDefaultValue = global::JsonCompilers.ShellObjectSpec.Types.ChickenAnimation.StandardRun;
 
-    private global::Ei.ShellObjectSpec.Types.ChickenAnimation chickenAnimation_;
+    private global::JsonCompilers.ShellObjectSpec.Types.ChickenAnimation chickenAnimation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ShellObjectSpec.Types.ChickenAnimation ChickenAnimation {
+    public global::JsonCompilers.ShellObjectSpec.Types.ChickenAnimation ChickenAnimation {
       get { if ((_hasBits0 & 512) != 0) { return chickenAnimation_; } else { return ChickenAnimationDefaultValue; } }
       set {
         _hasBits0 |= 512;
@@ -85529,12 +85529,12 @@ namespace Ei {
 
     /// <summary>Field number for the "pieces" field.</summary>
     public const int PiecesFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Ei.ShellObjectSpec.Types.LODPiece> _repeated_pieces_codec
-        = pb::FieldCodec.ForMessage(66, global::Ei.ShellObjectSpec.Types.LODPiece.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellObjectSpec.Types.LODPiece> pieces_ = new pbc::RepeatedField<global::Ei.ShellObjectSpec.Types.LODPiece>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellObjectSpec.Types.LODPiece> _repeated_pieces_codec
+        = pb::FieldCodec.ForMessage(66, global::JsonCompilers.ShellObjectSpec.Types.LODPiece.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellObjectSpec.Types.LODPiece> pieces_ = new pbc::RepeatedField<global::JsonCompilers.ShellObjectSpec.Types.LODPiece>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellObjectSpec.Types.LODPiece> Pieces {
+    public pbc::RepeatedField<global::JsonCompilers.ShellObjectSpec.Types.LODPiece> Pieces {
       get { return pieces_; }
     }
 
@@ -86035,7 +86035,7 @@ namespace Ei {
             break;
           }
           case 24: {
-            AssetType = (global::Ei.ShellSpec.Types.AssetType) input.ReadEnum();
+            AssetType = (global::JsonCompilers.ShellSpec.Types.AssetType) input.ReadEnum();
             break;
           }
           case 32: {
@@ -86088,7 +86088,7 @@ namespace Ei {
             break;
           }
           case 128: {
-            ChickenAnimation = (global::Ei.ShellObjectSpec.Types.ChickenAnimation) input.ReadEnum();
+            ChickenAnimation = (global::JsonCompilers.ShellObjectSpec.Types.ChickenAnimation) input.ReadEnum();
             break;
           }
           case 136: {
@@ -86141,7 +86141,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellObjectSpec.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ShellObjectSpec.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -86175,10 +86175,10 @@ namespace Ei {
 
         /// <summary>Field number for the "dlc" field.</summary>
         public const int DlcFieldNumber = 1;
-        private global::Ei.DLCItem dlc_;
+        private global::JsonCompilers.DLCItem dlc_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.DLCItem Dlc {
+        public global::JsonCompilers.DLCItem Dlc {
           get { return dlc_; }
           set {
             dlc_ = value;
@@ -86312,7 +86312,7 @@ namespace Ei {
           }
           if (other.dlc_ != null) {
             if (dlc_ == null) {
-              Dlc = new global::Ei.DLCItem();
+              Dlc = new global::JsonCompilers.DLCItem();
             }
             Dlc.MergeFrom(other.Dlc);
           }
@@ -86370,7 +86370,7 @@ namespace Ei {
                 break;
               case 10: {
                 if (dlc_ == null) {
-                  Dlc = new global::Ei.DLCItem();
+                  Dlc = new global::JsonCompilers.DLCItem();
                 }
                 input.ReadMessage(Dlc);
                 break;
@@ -86407,7 +86407,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[117]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[117]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -86496,12 +86496,12 @@ namespace Ei {
 
     /// <summary>Field number for the "asset_type" field.</summary>
     public const int AssetTypeFieldNumber = 5;
-    private readonly static global::Ei.ShellSpec.Types.AssetType AssetTypeDefaultValue = global::Ei.ShellSpec.Types.AssetType.Coop;
+    private readonly static global::JsonCompilers.ShellSpec.Types.AssetType AssetTypeDefaultValue = global::JsonCompilers.ShellSpec.Types.AssetType.Coop;
 
-    private global::Ei.ShellSpec.Types.AssetType assetType_;
+    private global::JsonCompilers.ShellSpec.Types.AssetType assetType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ShellSpec.Types.AssetType AssetType {
+    public global::JsonCompilers.ShellSpec.Types.AssetType AssetType {
       get { if ((_hasBits0 & 2) != 0) { return assetType_; } else { return AssetTypeDefaultValue; } }
       set {
         _hasBits0 |= 2;
@@ -86776,7 +86776,7 @@ namespace Ei {
             break;
           }
           case 40: {
-            AssetType = (global::Ei.ShellSpec.Types.AssetType) input.ReadEnum();
+            AssetType = (global::JsonCompilers.ShellSpec.Types.AssetType) input.ReadEnum();
             break;
           }
         }
@@ -86801,7 +86801,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[118]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[118]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -86838,67 +86838,67 @@ namespace Ei {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.DLCItem> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.DLCItem.Parser);
-    private readonly pbc::RepeatedField<global::Ei.DLCItem> items_ = new pbc::RepeatedField<global::Ei.DLCItem>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.DLCItem> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.DLCItem.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.DLCItem> items_ = new pbc::RepeatedField<global::JsonCompilers.DLCItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.DLCItem> Items {
+    public pbc::RepeatedField<global::JsonCompilers.DLCItem> Items {
       get { return items_; }
     }
 
     /// <summary>Field number for the "shells" field.</summary>
     public const int ShellsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ei.ShellSpec> _repeated_shells_codec
-        = pb::FieldCodec.ForMessage(18, global::Ei.ShellSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellSpec> shells_ = new pbc::RepeatedField<global::Ei.ShellSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellSpec> _repeated_shells_codec
+        = pb::FieldCodec.ForMessage(18, global::JsonCompilers.ShellSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellSpec> shells_ = new pbc::RepeatedField<global::JsonCompilers.ShellSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellSpec> Shells {
+    public pbc::RepeatedField<global::JsonCompilers.ShellSpec> Shells {
       get { return shells_; }
     }
 
     /// <summary>Field number for the "shell_sets" field.</summary>
     public const int ShellSetsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.ShellSetSpec> _repeated_shellSets_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.ShellSetSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellSetSpec> shellSets_ = new pbc::RepeatedField<global::Ei.ShellSetSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellSetSpec> _repeated_shellSets_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.ShellSetSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellSetSpec> shellSets_ = new pbc::RepeatedField<global::JsonCompilers.ShellSetSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellSetSpec> ShellSets {
+    public pbc::RepeatedField<global::JsonCompilers.ShellSetSpec> ShellSets {
       get { return shellSets_; }
     }
 
     /// <summary>Field number for the "decorators" field.</summary>
     public const int DecoratorsFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Ei.ShellSetSpec> _repeated_decorators_codec
-        = pb::FieldCodec.ForMessage(50, global::Ei.ShellSetSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellSetSpec> decorators_ = new pbc::RepeatedField<global::Ei.ShellSetSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellSetSpec> _repeated_decorators_codec
+        = pb::FieldCodec.ForMessage(50, global::JsonCompilers.ShellSetSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellSetSpec> decorators_ = new pbc::RepeatedField<global::JsonCompilers.ShellSetSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellSetSpec> Decorators {
+    public pbc::RepeatedField<global::JsonCompilers.ShellSetSpec> Decorators {
       get { return decorators_; }
     }
 
     /// <summary>Field number for the "shell_objects" field.</summary>
     public const int ShellObjectsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.ShellObjectSpec> _repeated_shellObjects_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.ShellObjectSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellObjectSpec> shellObjects_ = new pbc::RepeatedField<global::Ei.ShellObjectSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellObjectSpec> _repeated_shellObjects_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.ShellObjectSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellObjectSpec> shellObjects_ = new pbc::RepeatedField<global::JsonCompilers.ShellObjectSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellObjectSpec> ShellObjects {
+    public pbc::RepeatedField<global::JsonCompilers.ShellObjectSpec> ShellObjects {
       get { return shellObjects_; }
     }
 
     /// <summary>Field number for the "shell_groups" field.</summary>
     public const int ShellGroupsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Ei.ShellGroupSpec> _repeated_shellGroups_codec
-        = pb::FieldCodec.ForMessage(42, global::Ei.ShellGroupSpec.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellGroupSpec> shellGroups_ = new pbc::RepeatedField<global::Ei.ShellGroupSpec>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellGroupSpec> _repeated_shellGroups_codec
+        = pb::FieldCodec.ForMessage(42, global::JsonCompilers.ShellGroupSpec.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellGroupSpec> shellGroups_ = new pbc::RepeatedField<global::JsonCompilers.ShellGroupSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellGroupSpec> ShellGroups {
+    public pbc::RepeatedField<global::JsonCompilers.ShellGroupSpec> ShellGroups {
       get { return shellGroups_; }
     }
 
@@ -87119,7 +87119,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[119]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[119]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -87161,78 +87161,78 @@ namespace Ei {
 
     /// <summary>Field number for the "shell_inventory" field.</summary>
     public const int ShellInventoryFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.ShellStatus> _repeated_shellInventory_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.ShellDB.Types.ShellStatus.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.ShellStatus> shellInventory_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.ShellStatus>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.ShellStatus> _repeated_shellInventory_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.ShellDB.Types.ShellStatus.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellStatus> shellInventory_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellStatus>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellDB.Types.ShellStatus> ShellInventory {
+    public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellStatus> ShellInventory {
       get { return shellInventory_; }
     }
 
     /// <summary>Field number for the "shell_element_inventory" field.</summary>
     public const int ShellElementInventoryFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.ShellElementStatus> _repeated_shellElementInventory_codec
-        = pb::FieldCodec.ForMessage(42, global::Ei.ShellDB.Types.ShellElementStatus.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.ShellElementStatus> shellElementInventory_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.ShellElementStatus>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.ShellElementStatus> _repeated_shellElementInventory_codec
+        = pb::FieldCodec.ForMessage(42, global::JsonCompilers.ShellDB.Types.ShellElementStatus.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellElementStatus> shellElementInventory_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellElementStatus>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellDB.Types.ShellElementStatus> ShellElementInventory {
+    public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellElementStatus> ShellElementInventory {
       get { return shellElementInventory_; }
     }
 
     /// <summary>Field number for the "shell_variation_inventory" field.</summary>
     public const int ShellVariationInventoryFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.ShellSetVariationStatus> _repeated_shellVariationInventory_codec
-        = pb::FieldCodec.ForMessage(66, global::Ei.ShellDB.Types.ShellSetVariationStatus.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.ShellSetVariationStatus> shellVariationInventory_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.ShellSetVariationStatus>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.ShellSetVariationStatus> _repeated_shellVariationInventory_codec
+        = pb::FieldCodec.ForMessage(66, global::JsonCompilers.ShellDB.Types.ShellSetVariationStatus.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellSetVariationStatus> shellVariationInventory_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellSetVariationStatus>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellDB.Types.ShellSetVariationStatus> ShellVariationInventory {
+    public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellSetVariationStatus> ShellVariationInventory {
       get { return shellVariationInventory_; }
     }
 
     /// <summary>Field number for the "shell_set_inventory" field.</summary>
     public const int ShellSetInventoryFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.ShellStatus> _repeated_shellSetInventory_codec
-        = pb::FieldCodec.ForMessage(18, global::Ei.ShellDB.Types.ShellStatus.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.ShellStatus> shellSetInventory_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.ShellStatus>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.ShellStatus> _repeated_shellSetInventory_codec
+        = pb::FieldCodec.ForMessage(18, global::JsonCompilers.ShellDB.Types.ShellStatus.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellStatus> shellSetInventory_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellStatus>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellDB.Types.ShellStatus> ShellSetInventory {
+    public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellStatus> ShellSetInventory {
       get { return shellSetInventory_; }
     }
 
     /// <summary>Field number for the "shell_object_inventory" field.</summary>
     public const int ShellObjectInventoryFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.ShellStatus> _repeated_shellObjectInventory_codec
-        = pb::FieldCodec.ForMessage(34, global::Ei.ShellDB.Types.ShellStatus.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.ShellStatus> shellObjectInventory_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.ShellStatus>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.ShellStatus> _repeated_shellObjectInventory_codec
+        = pb::FieldCodec.ForMessage(34, global::JsonCompilers.ShellDB.Types.ShellStatus.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellStatus> shellObjectInventory_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellStatus>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellDB.Types.ShellStatus> ShellObjectInventory {
+    public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellStatus> ShellObjectInventory {
       get { return shellObjectInventory_; }
     }
 
     /// <summary>Field number for the "farm_configs" field.</summary>
     public const int FarmConfigsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.FarmConfiguration> _repeated_farmConfigs_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.ShellDB.Types.FarmConfiguration.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.FarmConfiguration> farmConfigs_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.FarmConfiguration>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.FarmConfiguration> _repeated_farmConfigs_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.ShellDB.Types.FarmConfiguration.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.FarmConfiguration> farmConfigs_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.FarmConfiguration>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellDB.Types.FarmConfiguration> FarmConfigs {
+    public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.FarmConfiguration> FarmConfigs {
       get { return farmConfigs_; }
     }
 
     /// <summary>Field number for the "saved_configs" field.</summary>
     public const int SavedConfigsFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.SavedFarmConfiguration> _repeated_savedConfigs_codec
-        = pb::FieldCodec.ForMessage(74, global::Ei.ShellDB.Types.SavedFarmConfiguration.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.SavedFarmConfiguration> savedConfigs_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.SavedFarmConfiguration>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.SavedFarmConfiguration> _repeated_savedConfigs_codec
+        = pb::FieldCodec.ForMessage(74, global::JsonCompilers.ShellDB.Types.SavedFarmConfiguration.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.SavedFarmConfiguration> savedConfigs_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.SavedFarmConfiguration>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellDB.Types.SavedFarmConfiguration> SavedConfigs {
+    public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.SavedFarmConfiguration> SavedConfigs {
       get { return savedConfigs_; }
     }
 
@@ -87590,7 +87590,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellDB.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ShellDB.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -87856,7 +87856,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellDB.Descriptor.NestedTypes[1]; }
+          get { return global::JsonCompilers.ShellDB.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -87890,12 +87890,12 @@ namespace Ei {
 
         /// <summary>Field number for the "element" field.</summary>
         public const int ElementFieldNumber = 1;
-        private readonly static global::Ei.ShellDB.Types.FarmElement ElementDefaultValue = global::Ei.ShellDB.Types.FarmElement.HenHouse;
+        private readonly static global::JsonCompilers.ShellDB.Types.FarmElement ElementDefaultValue = global::JsonCompilers.ShellDB.Types.FarmElement.HenHouse;
 
-        private global::Ei.ShellDB.Types.FarmElement element_;
+        private global::JsonCompilers.ShellDB.Types.FarmElement element_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ShellDB.Types.FarmElement Element {
+        public global::JsonCompilers.ShellDB.Types.FarmElement Element {
           get { if ((_hasBits0 & 1) != 0) { return element_; } else { return ElementDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -88092,7 +88092,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                Element = (global::Ei.ShellDB.Types.FarmElement) input.ReadEnum();
+                Element = (global::JsonCompilers.ShellDB.Types.FarmElement) input.ReadEnum();
                 break;
               }
               case 18: {
@@ -88121,7 +88121,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellDB.Descriptor.NestedTypes[2]; }
+          get { return global::JsonCompilers.ShellDB.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -88360,7 +88360,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellDB.Descriptor.NestedTypes[3]; }
+          get { return global::JsonCompilers.ShellDB.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -88400,34 +88400,34 @@ namespace Ei {
 
         /// <summary>Field number for the "locked_elements" field.</summary>
         public const int LockedElementsFieldNumber = 10;
-        private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.FarmElement> _repeated_lockedElements_codec
-            = pb::FieldCodec.ForEnum(80, x => (int) x, x => (global::Ei.ShellDB.Types.FarmElement) x);
-        private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.FarmElement> lockedElements_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.FarmElement>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.FarmElement> _repeated_lockedElements_codec
+            = pb::FieldCodec.ForEnum(80, x => (int) x, x => (global::JsonCompilers.ShellDB.Types.FarmElement) x);
+        private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.FarmElement> lockedElements_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.FarmElement>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.ShellDB.Types.FarmElement> LockedElements {
+        public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.FarmElement> LockedElements {
           get { return lockedElements_; }
         }
 
         /// <summary>Field number for the "shell_configs" field.</summary>
         public const int ShellConfigsFieldNumber = 1;
-        private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.ShellConfiguration> _repeated_shellConfigs_codec
-            = pb::FieldCodec.ForMessage(10, global::Ei.ShellDB.Types.ShellConfiguration.Parser);
-        private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.ShellConfiguration> shellConfigs_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.ShellConfiguration>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.ShellConfiguration> _repeated_shellConfigs_codec
+            = pb::FieldCodec.ForMessage(10, global::JsonCompilers.ShellDB.Types.ShellConfiguration.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellConfiguration> shellConfigs_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellConfiguration>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.ShellDB.Types.ShellConfiguration> ShellConfigs {
+        public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellConfiguration> ShellConfigs {
           get { return shellConfigs_; }
         }
 
         /// <summary>Field number for the "shell_set_configs" field.</summary>
         public const int ShellSetConfigsFieldNumber = 2;
-        private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.ShellSetConfiguration> _repeated_shellSetConfigs_codec
-            = pb::FieldCodec.ForMessage(18, global::Ei.ShellDB.Types.ShellSetConfiguration.Parser);
-        private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.ShellSetConfiguration> shellSetConfigs_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.ShellSetConfiguration>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.ShellSetConfiguration> _repeated_shellSetConfigs_codec
+            = pb::FieldCodec.ForMessage(18, global::JsonCompilers.ShellDB.Types.ShellSetConfiguration.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellSetConfiguration> shellSetConfigs_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellSetConfiguration>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.ShellDB.Types.ShellSetConfiguration> ShellSetConfigs {
+        public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellSetConfiguration> ShellSetConfigs {
           get { return shellSetConfigs_; }
         }
 
@@ -88460,23 +88460,23 @@ namespace Ei {
 
         /// <summary>Field number for the "group_configs" field.</summary>
         public const int GroupConfigsFieldNumber = 8;
-        private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.ShellGroupConfiguration> _repeated_groupConfigs_codec
-            = pb::FieldCodec.ForMessage(66, global::Ei.ShellDB.Types.ShellGroupConfiguration.Parser);
-        private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.ShellGroupConfiguration> groupConfigs_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.ShellGroupConfiguration>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.ShellGroupConfiguration> _repeated_groupConfigs_codec
+            = pb::FieldCodec.ForMessage(66, global::JsonCompilers.ShellDB.Types.ShellGroupConfiguration.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellGroupConfiguration> groupConfigs_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellGroupConfiguration>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.ShellDB.Types.ShellGroupConfiguration> GroupConfigs {
+        public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ShellGroupConfiguration> GroupConfigs {
           get { return groupConfigs_; }
         }
 
         /// <summary>Field number for the "chicken_configs" field.</summary>
         public const int ChickenConfigsFieldNumber = 9;
-        private static readonly pb::FieldCodec<global::Ei.ShellDB.Types.ChickenConfig> _repeated_chickenConfigs_codec
-            = pb::FieldCodec.ForMessage(74, global::Ei.ShellDB.Types.ChickenConfig.Parser);
-        private readonly pbc::RepeatedField<global::Ei.ShellDB.Types.ChickenConfig> chickenConfigs_ = new pbc::RepeatedField<global::Ei.ShellDB.Types.ChickenConfig>();
+        private static readonly pb::FieldCodec<global::JsonCompilers.ShellDB.Types.ChickenConfig> _repeated_chickenConfigs_codec
+            = pb::FieldCodec.ForMessage(74, global::JsonCompilers.ShellDB.Types.ChickenConfig.Parser);
+        private readonly pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ChickenConfig> chickenConfigs_ = new pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ChickenConfig>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::Ei.ShellDB.Types.ChickenConfig> ChickenConfigs {
+        public pbc::RepeatedField<global::JsonCompilers.ShellDB.Types.ChickenConfig> ChickenConfigs {
           get { return chickenConfigs_; }
         }
 
@@ -88509,10 +88509,10 @@ namespace Ei {
 
         /// <summary>Field number for the "lighting_config" field.</summary>
         public const int LightingConfigFieldNumber = 12;
-        private global::Ei.ShellDB.Types.LightingConfig lightingConfig_;
+        private global::JsonCompilers.ShellDB.Types.LightingConfig lightingConfig_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ShellDB.Types.LightingConfig LightingConfig {
+        public global::JsonCompilers.ShellDB.Types.LightingConfig LightingConfig {
           get { return lightingConfig_; }
           set {
             lightingConfig_ = value;
@@ -88668,7 +88668,7 @@ namespace Ei {
           }
           if (other.lightingConfig_ != null) {
             if (lightingConfig_ == null) {
-              LightingConfig = new global::Ei.ShellDB.Types.LightingConfig();
+              LightingConfig = new global::JsonCompilers.ShellDB.Types.LightingConfig();
             }
             LightingConfig.MergeFrom(other.LightingConfig);
           }
@@ -88777,7 +88777,7 @@ namespace Ei {
               }
               case 98: {
                 if (lightingConfig_ == null) {
-                  LightingConfig = new global::Ei.ShellDB.Types.LightingConfig();
+                  LightingConfig = new global::JsonCompilers.ShellDB.Types.LightingConfig();
                 }
                 input.ReadMessage(LightingConfig);
                 break;
@@ -88805,7 +88805,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellDB.Descriptor.NestedTypes[4]; }
+          get { return global::JsonCompilers.ShellDB.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -88869,10 +88869,10 @@ namespace Ei {
 
         /// <summary>Field number for the "config" field.</summary>
         public const int ConfigFieldNumber = 2;
-        private global::Ei.ShellDB.Types.FarmConfiguration config_;
+        private global::JsonCompilers.ShellDB.Types.FarmConfiguration config_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ShellDB.Types.FarmConfiguration Config {
+        public global::JsonCompilers.ShellDB.Types.FarmConfiguration Config {
           get { return config_; }
           set {
             config_ = value;
@@ -89140,7 +89140,7 @@ namespace Ei {
           }
           if (other.config_ != null) {
             if (config_ == null) {
-              Config = new global::Ei.ShellDB.Types.FarmConfiguration();
+              Config = new global::JsonCompilers.ShellDB.Types.FarmConfiguration();
             }
             Config.MergeFrom(other.Config);
           }
@@ -89227,7 +89227,7 @@ namespace Ei {
               }
               case 18: {
                 if (config_ == null) {
-                  Config = new global::Ei.ShellDB.Types.FarmConfiguration();
+                  Config = new global::JsonCompilers.ShellDB.Types.FarmConfiguration();
                 }
                 input.ReadMessage(Config);
                 break;
@@ -89271,7 +89271,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellDB.Descriptor.NestedTypes[5]; }
+          get { return global::JsonCompilers.ShellDB.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -89306,12 +89306,12 @@ namespace Ei {
 
         /// <summary>Field number for the "asset_type" field.</summary>
         public const int AssetTypeFieldNumber = 1;
-        private readonly static global::Ei.ShellSpec.Types.AssetType AssetTypeDefaultValue = global::Ei.ShellSpec.Types.AssetType.Coop;
+        private readonly static global::JsonCompilers.ShellSpec.Types.AssetType AssetTypeDefaultValue = global::JsonCompilers.ShellSpec.Types.AssetType.Coop;
 
-        private global::Ei.ShellSpec.Types.AssetType assetType_;
+        private global::JsonCompilers.ShellSpec.Types.AssetType assetType_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ShellSpec.Types.AssetType AssetType {
+        public global::JsonCompilers.ShellSpec.Types.AssetType AssetType {
           get { if ((_hasBits0 & 1) != 0) { return assetType_; } else { return AssetTypeDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -89555,7 +89555,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                AssetType = (global::Ei.ShellSpec.Types.AssetType) input.ReadEnum();
+                AssetType = (global::JsonCompilers.ShellSpec.Types.AssetType) input.ReadEnum();
                 break;
               }
               case 16: {
@@ -89589,7 +89589,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellDB.Descriptor.NestedTypes[6]; }
+          get { return global::JsonCompilers.ShellDB.Descriptor.NestedTypes[6]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -89626,12 +89626,12 @@ namespace Ei {
 
         /// <summary>Field number for the "element" field.</summary>
         public const int ElementFieldNumber = 1;
-        private readonly static global::Ei.ShellDB.Types.FarmElement ElementDefaultValue = global::Ei.ShellDB.Types.FarmElement.HenHouse;
+        private readonly static global::JsonCompilers.ShellDB.Types.FarmElement ElementDefaultValue = global::JsonCompilers.ShellDB.Types.FarmElement.HenHouse;
 
-        private global::Ei.ShellDB.Types.FarmElement element_;
+        private global::JsonCompilers.ShellDB.Types.FarmElement element_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ShellDB.Types.FarmElement Element {
+        public global::JsonCompilers.ShellDB.Types.FarmElement Element {
           get { if ((_hasBits0 & 1) != 0) { return element_; } else { return ElementDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -89967,7 +89967,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                Element = (global::Ei.ShellDB.Types.FarmElement) input.ReadEnum();
+                Element = (global::JsonCompilers.ShellDB.Types.FarmElement) input.ReadEnum();
                 break;
               }
               case 16: {
@@ -90009,7 +90009,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellDB.Descriptor.NestedTypes[7]; }
+          get { return global::JsonCompilers.ShellDB.Descriptor.NestedTypes[7]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -90043,12 +90043,12 @@ namespace Ei {
 
         /// <summary>Field number for the "asset_type" field.</summary>
         public const int AssetTypeFieldNumber = 1;
-        private readonly static global::Ei.ShellSpec.Types.AssetType AssetTypeDefaultValue = global::Ei.ShellSpec.Types.AssetType.Coop;
+        private readonly static global::JsonCompilers.ShellSpec.Types.AssetType AssetTypeDefaultValue = global::JsonCompilers.ShellSpec.Types.AssetType.Coop;
 
-        private global::Ei.ShellSpec.Types.AssetType assetType_;
+        private global::JsonCompilers.ShellSpec.Types.AssetType assetType_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ShellSpec.Types.AssetType AssetType {
+        public global::JsonCompilers.ShellSpec.Types.AssetType AssetType {
           get { if ((_hasBits0 & 1) != 0) { return assetType_; } else { return AssetTypeDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -90245,7 +90245,7 @@ namespace Ei {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                AssetType = (global::Ei.ShellSpec.Types.AssetType) input.ReadEnum();
+                AssetType = (global::JsonCompilers.ShellSpec.Types.AssetType) input.ReadEnum();
                 break;
               }
               case 18: {
@@ -90274,7 +90274,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellDB.Descriptor.NestedTypes[8]; }
+          get { return global::JsonCompilers.ShellDB.Descriptor.NestedTypes[8]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -90538,7 +90538,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellDB.Descriptor.NestedTypes[9]; }
+          get { return global::JsonCompilers.ShellDB.Descriptor.NestedTypes[9]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -90579,10 +90579,10 @@ namespace Ei {
 
         /// <summary>Field number for the "light_dir" field.</summary>
         public const int LightDirFieldNumber = 1;
-        private global::Ei.Vector3 lightDir_;
+        private global::JsonCompilers.Vector3 lightDir_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Vector3 LightDir {
+        public global::JsonCompilers.Vector3 LightDir {
           get { return lightDir_; }
           set {
             lightDir_ = value;
@@ -90591,10 +90591,10 @@ namespace Ei {
 
         /// <summary>Field number for the "light_direct_color" field.</summary>
         public const int LightDirectColorFieldNumber = 2;
-        private global::Ei.Vector4 lightDirectColor_;
+        private global::JsonCompilers.Vector4 lightDirectColor_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Vector4 LightDirectColor {
+        public global::JsonCompilers.Vector4 LightDirectColor {
           get { return lightDirectColor_; }
           set {
             lightDirectColor_ = value;
@@ -90630,10 +90630,10 @@ namespace Ei {
 
         /// <summary>Field number for the "light_ambient_color" field.</summary>
         public const int LightAmbientColorFieldNumber = 4;
-        private global::Ei.Vector4 lightAmbientColor_;
+        private global::JsonCompilers.Vector4 lightAmbientColor_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Vector4 LightAmbientColor {
+        public global::JsonCompilers.Vector4 LightAmbientColor {
           get { return lightAmbientColor_; }
           set {
             lightAmbientColor_ = value;
@@ -90669,10 +90669,10 @@ namespace Ei {
 
         /// <summary>Field number for the "fog_color" field.</summary>
         public const int FogColorFieldNumber = 6;
-        private global::Ei.Vector4 fogColor_;
+        private global::JsonCompilers.Vector4 fogColor_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.Vector4 FogColor {
+        public global::JsonCompilers.Vector4 FogColor {
           get { return fogColor_; }
           set {
             fogColor_ = value;
@@ -90951,13 +90951,13 @@ namespace Ei {
           }
           if (other.lightDir_ != null) {
             if (lightDir_ == null) {
-              LightDir = new global::Ei.Vector3();
+              LightDir = new global::JsonCompilers.Vector3();
             }
             LightDir.MergeFrom(other.LightDir);
           }
           if (other.lightDirectColor_ != null) {
             if (lightDirectColor_ == null) {
-              LightDirectColor = new global::Ei.Vector4();
+              LightDirectColor = new global::JsonCompilers.Vector4();
             }
             LightDirectColor.MergeFrom(other.LightDirectColor);
           }
@@ -90966,7 +90966,7 @@ namespace Ei {
           }
           if (other.lightAmbientColor_ != null) {
             if (lightAmbientColor_ == null) {
-              LightAmbientColor = new global::Ei.Vector4();
+              LightAmbientColor = new global::JsonCompilers.Vector4();
             }
             LightAmbientColor.MergeFrom(other.LightAmbientColor);
           }
@@ -90975,7 +90975,7 @@ namespace Ei {
           }
           if (other.fogColor_ != null) {
             if (fogColor_ == null) {
-              FogColor = new global::Ei.Vector4();
+              FogColor = new global::JsonCompilers.Vector4();
             }
             FogColor.MergeFrom(other.FogColor);
           }
@@ -91076,14 +91076,14 @@ namespace Ei {
                 break;
               case 10: {
                 if (lightDir_ == null) {
-                  LightDir = new global::Ei.Vector3();
+                  LightDir = new global::JsonCompilers.Vector3();
                 }
                 input.ReadMessage(LightDir);
                 break;
               }
               case 18: {
                 if (lightDirectColor_ == null) {
-                  LightDirectColor = new global::Ei.Vector4();
+                  LightDirectColor = new global::JsonCompilers.Vector4();
                 }
                 input.ReadMessage(LightDirectColor);
                 break;
@@ -91094,7 +91094,7 @@ namespace Ei {
               }
               case 34: {
                 if (lightAmbientColor_ == null) {
-                  LightAmbientColor = new global::Ei.Vector4();
+                  LightAmbientColor = new global::JsonCompilers.Vector4();
                 }
                 input.ReadMessage(LightAmbientColor);
                 break;
@@ -91105,7 +91105,7 @@ namespace Ei {
               }
               case 50: {
                 if (fogColor_ == null) {
-                  FogColor = new global::Ei.Vector4();
+                  FogColor = new global::JsonCompilers.Vector4();
                 }
                 input.ReadMessage(FogColor);
                 break;
@@ -91149,7 +91149,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[120]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[120]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -91181,12 +91181,12 @@ namespace Ei {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.ShellPopularityStats.Types.Entry> _repeated_data_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.ShellPopularityStats.Types.Entry.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellPopularityStats.Types.Entry> data_ = new pbc::RepeatedField<global::Ei.ShellPopularityStats.Types.Entry>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellPopularityStats.Types.Entry> _repeated_data_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.ShellPopularityStats.Types.Entry.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellPopularityStats.Types.Entry> data_ = new pbc::RepeatedField<global::JsonCompilers.ShellPopularityStats.Types.Entry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellPopularityStats.Types.Entry> Data {
+    public pbc::RepeatedField<global::JsonCompilers.ShellPopularityStats.Types.Entry> Data {
       get { return data_; }
     }
 
@@ -91340,7 +91340,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.ShellPopularityStats.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.ShellPopularityStats.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -91402,12 +91402,12 @@ namespace Ei {
 
         /// <summary>Field number for the "element" field.</summary>
         public const int ElementFieldNumber = 2;
-        private readonly static global::Ei.ShellDB.Types.FarmElement ElementDefaultValue = global::Ei.ShellDB.Types.FarmElement.HenHouse;
+        private readonly static global::JsonCompilers.ShellDB.Types.FarmElement ElementDefaultValue = global::JsonCompilers.ShellDB.Types.FarmElement.HenHouse;
 
-        private global::Ei.ShellDB.Types.FarmElement element_;
+        private global::JsonCompilers.ShellDB.Types.FarmElement element_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Ei.ShellDB.Types.FarmElement Element {
+        public global::JsonCompilers.ShellDB.Types.FarmElement Element {
           get { if ((_hasBits0 & 1) != 0) { return element_; } else { return ElementDefaultValue; } }
           set {
             _hasBits0 |= 1;
@@ -91676,7 +91676,7 @@ namespace Ei {
                 break;
               }
               case 16: {
-                Element = (global::Ei.ShellDB.Types.FarmElement) input.ReadEnum();
+                Element = (global::JsonCompilers.ShellDB.Types.FarmElement) input.ReadEnum();
                 break;
               }
               case 24: {
@@ -91715,7 +91715,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[121]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[121]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -91759,10 +91759,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 8;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -91849,12 +91849,12 @@ namespace Ei {
 
     /// <summary>Field number for the "farm_element" field.</summary>
     public const int FarmElementFieldNumber = 9;
-    private readonly static global::Ei.ShellDB.Types.FarmElement FarmElementDefaultValue = global::Ei.ShellDB.Types.FarmElement.HenHouse;
+    private readonly static global::JsonCompilers.ShellDB.Types.FarmElement FarmElementDefaultValue = global::JsonCompilers.ShellDB.Types.FarmElement.HenHouse;
 
-    private global::Ei.ShellDB.Types.FarmElement farmElement_;
+    private global::JsonCompilers.ShellDB.Types.FarmElement farmElement_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ShellDB.Types.FarmElement FarmElement {
+    public global::JsonCompilers.ShellDB.Types.FarmElement FarmElement {
       get { if ((_hasBits0 & 8) != 0) { return farmElement_; } else { return FarmElementDefaultValue; } }
       set {
         _hasBits0 |= 8;
@@ -92292,7 +92292,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -92448,13 +92448,13 @@ namespace Ei {
           }
           case 66: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
           }
           case 72: {
-            FarmElement = (global::Ei.ShellDB.Types.FarmElement) input.ReadEnum();
+            FarmElement = (global::JsonCompilers.ShellDB.Types.FarmElement) input.ReadEnum();
             break;
           }
           case 81: {
@@ -92492,7 +92492,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[122]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[122]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -92529,10 +92529,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 4;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -92620,10 +92620,10 @@ namespace Ei {
 
     /// <summary>Field number for the "farm_config" field.</summary>
     public const int FarmConfigFieldNumber = 3;
-    private global::Ei.ShellDB.Types.FarmConfiguration farmConfig_;
+    private global::JsonCompilers.ShellDB.Types.FarmConfiguration farmConfig_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ShellDB.Types.FarmConfiguration FarmConfig {
+    public global::JsonCompilers.ShellDB.Types.FarmConfiguration FarmConfig {
       get { return farmConfig_; }
       set {
         farmConfig_ = value;
@@ -92769,7 +92769,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -92784,7 +92784,7 @@ namespace Ei {
       }
       if (other.farmConfig_ != null) {
         if (farmConfig_ == null) {
-          FarmConfig = new global::Ei.ShellDB.Types.FarmConfiguration();
+          FarmConfig = new global::JsonCompilers.ShellDB.Types.FarmConfiguration();
         }
         FarmConfig.MergeFrom(other.FarmConfig);
       }
@@ -92862,14 +92862,14 @@ namespace Ei {
           }
           case 26: {
             if (farmConfig_ == null) {
-              FarmConfig = new global::Ei.ShellDB.Types.FarmConfiguration();
+              FarmConfig = new global::JsonCompilers.ShellDB.Types.FarmConfiguration();
             }
             input.ReadMessage(FarmConfig);
             break;
           }
           case 34: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -92900,7 +92900,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[123]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[123]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -92934,34 +92934,34 @@ namespace Ei {
 
     /// <summary>Field number for the "top" field.</summary>
     public const int TopFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.ShellShowcaseListingInfo> _repeated_top_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.ShellShowcaseListingInfo.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo> top_ = new pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellShowcaseListingInfo> _repeated_top_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.ShellShowcaseListingInfo.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo> top_ = new pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo> Top {
+    public pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo> Top {
       get { return top_; }
     }
 
     /// <summary>Field number for the "featured" field.</summary>
     public const int FeaturedFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ei.ShellShowcaseListingInfo> _repeated_featured_codec
-        = pb::FieldCodec.ForMessage(18, global::Ei.ShellShowcaseListingInfo.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo> featured_ = new pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellShowcaseListingInfo> _repeated_featured_codec
+        = pb::FieldCodec.ForMessage(18, global::JsonCompilers.ShellShowcaseListingInfo.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo> featured_ = new pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo> Featured {
+    public pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo> Featured {
       get { return featured_; }
     }
 
     /// <summary>Field number for the "fresh" field.</summary>
     public const int FreshFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ei.ShellShowcaseListingInfo> _repeated_fresh_codec
-        = pb::FieldCodec.ForMessage(26, global::Ei.ShellShowcaseListingInfo.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo> fresh_ = new pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellShowcaseListingInfo> _repeated_fresh_codec
+        = pb::FieldCodec.ForMessage(26, global::JsonCompilers.ShellShowcaseListingInfo.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo> fresh_ = new pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo> Fresh {
+    public pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo> Fresh {
       get { return fresh_; }
     }
 
@@ -93140,7 +93140,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[124]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[124]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -93316,12 +93316,12 @@ namespace Ei {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 11;
-    private readonly static global::Ei.ShellShowcaseListingInfo.Types.Status StatusDefaultValue = global::Ei.ShellShowcaseListingInfo.Types.Status.None;
+    private readonly static global::JsonCompilers.ShellShowcaseListingInfo.Types.Status StatusDefaultValue = global::JsonCompilers.ShellShowcaseListingInfo.Types.Status.None;
 
-    private global::Ei.ShellShowcaseListingInfo.Types.Status status_;
+    private global::JsonCompilers.ShellShowcaseListingInfo.Types.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ShellShowcaseListingInfo.Types.Status Status {
+    public global::JsonCompilers.ShellShowcaseListingInfo.Types.Status Status {
       get { if ((_hasBits0 & 32) != 0) { return status_; } else { return StatusDefaultValue; } }
       set {
         _hasBits0 |= 32;
@@ -93343,10 +93343,10 @@ namespace Ei {
 
     /// <summary>Field number for the "farm_config" field.</summary>
     public const int FarmConfigFieldNumber = 4;
-    private global::Ei.ShellDB.Types.FarmConfiguration farmConfig_;
+    private global::JsonCompilers.ShellDB.Types.FarmConfiguration farmConfig_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.ShellDB.Types.FarmConfiguration FarmConfig {
+    public global::JsonCompilers.ShellDB.Types.FarmConfiguration FarmConfig {
       get { return farmConfig_; }
       set {
         farmConfig_ = value;
@@ -93815,7 +93815,7 @@ namespace Ei {
       }
       if (other.farmConfig_ != null) {
         if (farmConfig_ == null) {
-          FarmConfig = new global::Ei.ShellDB.Types.FarmConfiguration();
+          FarmConfig = new global::JsonCompilers.ShellDB.Types.FarmConfiguration();
         }
         FarmConfig.MergeFrom(other.FarmConfig);
       }
@@ -93951,7 +93951,7 @@ namespace Ei {
           }
           case 34: {
             if (farmConfig_ == null) {
-              FarmConfig = new global::Ei.ShellDB.Types.FarmConfiguration();
+              FarmConfig = new global::JsonCompilers.ShellDB.Types.FarmConfiguration();
             }
             input.ReadMessage(FarmConfig);
             break;
@@ -93981,7 +93981,7 @@ namespace Ei {
             break;
           }
           case 88: {
-            Status = (global::Ei.ShellShowcaseListingInfo.Types.Status) input.ReadEnum();
+            Status = (global::JsonCompilers.ShellShowcaseListingInfo.Types.Status) input.ReadEnum();
             break;
           }
           case 98: {
@@ -94035,7 +94035,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[125]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[125]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -94070,10 +94070,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 3;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -94223,7 +94223,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -94294,7 +94294,7 @@ namespace Ei {
           }
           case 26: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -94321,7 +94321,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[126]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[126]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -94353,12 +94353,12 @@ namespace Ei {
 
     /// <summary>Field number for the "listings" field.</summary>
     public const int ListingsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ei.ShellShowcaseListingInfo> _repeated_listings_codec
-        = pb::FieldCodec.ForMessage(10, global::Ei.ShellShowcaseListingInfo.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo> listings_ = new pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellShowcaseListingInfo> _repeated_listings_codec
+        = pb::FieldCodec.ForMessage(10, global::JsonCompilers.ShellShowcaseListingInfo.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo> listings_ = new pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellShowcaseListingInfo> Listings {
+    public pbc::RepeatedField<global::JsonCompilers.ShellShowcaseListingInfo> Listings {
       get { return listings_; }
     }
 
@@ -94508,7 +94508,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[127]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[127]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -94541,10 +94541,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 1;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -94553,12 +94553,12 @@ namespace Ei {
 
     /// <summary>Field number for the "actions" field.</summary>
     public const int ActionsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ei.ShellsActionLog> _repeated_actions_codec
-        = pb::FieldCodec.ForMessage(18, global::Ei.ShellsActionLog.Parser);
-    private readonly pbc::RepeatedField<global::Ei.ShellsActionLog> actions_ = new pbc::RepeatedField<global::Ei.ShellsActionLog>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.ShellsActionLog> _repeated_actions_codec
+        = pb::FieldCodec.ForMessage(18, global::JsonCompilers.ShellsActionLog.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.ShellsActionLog> actions_ = new pbc::RepeatedField<global::JsonCompilers.ShellsActionLog>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.ShellsActionLog> Actions {
+    public pbc::RepeatedField<global::JsonCompilers.ShellsActionLog> Actions {
       get { return actions_; }
     }
 
@@ -94654,7 +94654,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -94710,7 +94710,7 @@ namespace Ei {
             break;
           case 10: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -94743,7 +94743,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[128]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[128]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -94812,12 +94812,12 @@ namespace Ei {
 
     /// <summary>Field number for the "overall_status" field.</summary>
     public const int OverallStatusFieldNumber = 1;
-    private readonly static global::Ei.UserVerificationAnalysis.Types.Status OverallStatusDefaultValue = global::Ei.UserVerificationAnalysis.Types.Status.Unknown;
+    private readonly static global::JsonCompilers.UserVerificationAnalysis.Types.Status OverallStatusDefaultValue = global::JsonCompilers.UserVerificationAnalysis.Types.Status.Unknown;
 
-    private global::Ei.UserVerificationAnalysis.Types.Status overallStatus_;
+    private global::JsonCompilers.UserVerificationAnalysis.Types.Status overallStatus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.UserVerificationAnalysis.Types.Status OverallStatus {
+    public global::JsonCompilers.UserVerificationAnalysis.Types.Status OverallStatus {
       get { if ((_hasBits0 & 1) != 0) { return overallStatus_; } else { return OverallStatusDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -94974,12 +94974,12 @@ namespace Ei {
 
     /// <summary>Field number for the "iap_status" field.</summary>
     public const int IapStatusFieldNumber = 18;
-    private readonly static global::Ei.UserVerificationAnalysis.Types.Status IapStatusDefaultValue = global::Ei.UserVerificationAnalysis.Types.Status.Unknown;
+    private readonly static global::JsonCompilers.UserVerificationAnalysis.Types.Status IapStatusDefaultValue = global::JsonCompilers.UserVerificationAnalysis.Types.Status.Unknown;
 
-    private global::Ei.UserVerificationAnalysis.Types.Status iapStatus_;
+    private global::JsonCompilers.UserVerificationAnalysis.Types.Status iapStatus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.UserVerificationAnalysis.Types.Status IapStatus {
+    public global::JsonCompilers.UserVerificationAnalysis.Types.Status IapStatus {
       get { if ((_hasBits0 & 65536) != 0) { return iapStatus_; } else { return IapStatusDefaultValue; } }
       set {
         _hasBits0 |= 65536;
@@ -95190,12 +95190,12 @@ namespace Ei {
 
     /// <summary>Field number for the "artifacts_status" field.</summary>
     public const int ArtifactsStatusFieldNumber = 19;
-    private readonly static global::Ei.UserVerificationAnalysis.Types.Status ArtifactsStatusDefaultValue = global::Ei.UserVerificationAnalysis.Types.Status.Unknown;
+    private readonly static global::JsonCompilers.UserVerificationAnalysis.Types.Status ArtifactsStatusDefaultValue = global::JsonCompilers.UserVerificationAnalysis.Types.Status.Unknown;
 
-    private global::Ei.UserVerificationAnalysis.Types.Status artifactsStatus_;
+    private global::JsonCompilers.UserVerificationAnalysis.Types.Status artifactsStatus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.UserVerificationAnalysis.Types.Status ArtifactsStatus {
+    public global::JsonCompilers.UserVerificationAnalysis.Types.Status ArtifactsStatus {
       get { if ((_hasBits0 & 131072) != 0) { return artifactsStatus_; } else { return ArtifactsStatusDefaultValue; } }
       set {
         _hasBits0 |= 131072;
@@ -95541,12 +95541,12 @@ namespace Ei {
 
     /// <summary>Field number for the "contracts_status" field.</summary>
     public const int ContractsStatusFieldNumber = 20;
-    private readonly static global::Ei.UserVerificationAnalysis.Types.Status ContractsStatusDefaultValue = global::Ei.UserVerificationAnalysis.Types.Status.Unknown;
+    private readonly static global::JsonCompilers.UserVerificationAnalysis.Types.Status ContractsStatusDefaultValue = global::JsonCompilers.UserVerificationAnalysis.Types.Status.Unknown;
 
-    private global::Ei.UserVerificationAnalysis.Types.Status contractsStatus_;
+    private global::JsonCompilers.UserVerificationAnalysis.Types.Status contractsStatus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.UserVerificationAnalysis.Types.Status ContractsStatus {
+    public global::JsonCompilers.UserVerificationAnalysis.Types.Status ContractsStatus {
       get { if ((_hasBits0 & 262144) != 0) { return contractsStatus_; } else { return ContractsStatusDefaultValue; } }
       set {
         _hasBits0 |= 262144;
@@ -96587,7 +96587,7 @@ namespace Ei {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            OverallStatus = (global::Ei.UserVerificationAnalysis.Types.Status) input.ReadEnum();
+            OverallStatus = (global::JsonCompilers.UserVerificationAnalysis.Types.Status) input.ReadEnum();
             break;
           }
           case 17: {
@@ -96655,15 +96655,15 @@ namespace Ei {
             break;
           }
           case 144: {
-            IapStatus = (global::Ei.UserVerificationAnalysis.Types.Status) input.ReadEnum();
+            IapStatus = (global::JsonCompilers.UserVerificationAnalysis.Types.Status) input.ReadEnum();
             break;
           }
           case 152: {
-            ArtifactsStatus = (global::Ei.UserVerificationAnalysis.Types.Status) input.ReadEnum();
+            ArtifactsStatus = (global::JsonCompilers.UserVerificationAnalysis.Types.Status) input.ReadEnum();
             break;
           }
           case 160: {
-            ContractsStatus = (global::Ei.UserVerificationAnalysis.Types.Status) input.ReadEnum();
+            ContractsStatus = (global::JsonCompilers.UserVerificationAnalysis.Types.Status) input.ReadEnum();
             break;
           }
           case 169: {
@@ -96767,7 +96767,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[129]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[129]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96815,12 +96815,12 @@ namespace Ei {
 
     /// <summary>Field number for the "subscription_level" field.</summary>
     public const int SubscriptionLevelFieldNumber = 13;
-    private readonly static global::Ei.UserSubscriptionInfo.Types.Level SubscriptionLevelDefaultValue = global::Ei.UserSubscriptionInfo.Types.Level.Standard;
+    private readonly static global::JsonCompilers.UserSubscriptionInfo.Types.Level SubscriptionLevelDefaultValue = global::JsonCompilers.UserSubscriptionInfo.Types.Level.Standard;
 
-    private global::Ei.UserSubscriptionInfo.Types.Level subscriptionLevel_;
+    private global::JsonCompilers.UserSubscriptionInfo.Types.Level subscriptionLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.UserSubscriptionInfo.Types.Level SubscriptionLevel {
+    public global::JsonCompilers.UserSubscriptionInfo.Types.Level SubscriptionLevel {
       get { if ((_hasBits0 & 64) != 0) { return subscriptionLevel_; } else { return SubscriptionLevelDefaultValue; } }
       set {
         _hasBits0 |= 64;
@@ -96842,12 +96842,12 @@ namespace Ei {
 
     /// <summary>Field number for the "next_subscription_level" field.</summary>
     public const int NextSubscriptionLevelFieldNumber = 15;
-    private readonly static global::Ei.UserSubscriptionInfo.Types.Level NextSubscriptionLevelDefaultValue = global::Ei.UserSubscriptionInfo.Types.Level.Standard;
+    private readonly static global::JsonCompilers.UserSubscriptionInfo.Types.Level NextSubscriptionLevelDefaultValue = global::JsonCompilers.UserSubscriptionInfo.Types.Level.Standard;
 
-    private global::Ei.UserSubscriptionInfo.Types.Level nextSubscriptionLevel_;
+    private global::JsonCompilers.UserSubscriptionInfo.Types.Level nextSubscriptionLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.UserSubscriptionInfo.Types.Level NextSubscriptionLevel {
+    public global::JsonCompilers.UserSubscriptionInfo.Types.Level NextSubscriptionLevel {
       get { if ((_hasBits0 & 128) != 0) { return nextSubscriptionLevel_; } else { return NextSubscriptionLevelDefaultValue; } }
       set {
         _hasBits0 |= 128;
@@ -96896,12 +96896,12 @@ namespace Ei {
 
     /// <summary>Field number for the "platform" field.</summary>
     public const int PlatformFieldNumber = 10;
-    private readonly static global::Ei.Platform PlatformDefaultValue = global::Ei.Platform.UnknownPlatform;
+    private readonly static global::JsonCompilers.Platform PlatformDefaultValue = global::JsonCompilers.Platform.UnknownPlatform;
 
-    private global::Ei.Platform platform_;
+    private global::JsonCompilers.Platform platform_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.Platform Platform {
+    public global::JsonCompilers.Platform Platform {
       get { if ((_hasBits0 & 32) != 0) { return platform_; } else { return PlatformDefaultValue; } }
       set {
         _hasBits0 |= 32;
@@ -97056,12 +97056,12 @@ namespace Ei {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 5;
-    private readonly static global::Ei.UserSubscriptionInfo.Types.Status StatusDefaultValue = global::Ei.UserSubscriptionInfo.Types.Status.Unknown;
+    private readonly static global::JsonCompilers.UserSubscriptionInfo.Types.Status StatusDefaultValue = global::JsonCompilers.UserSubscriptionInfo.Types.Status.Unknown;
 
-    private global::Ei.UserSubscriptionInfo.Types.Status status_;
+    private global::JsonCompilers.UserSubscriptionInfo.Types.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.UserSubscriptionInfo.Types.Status Status {
+    public global::JsonCompilers.UserSubscriptionInfo.Types.Status Status {
       get { if ((_hasBits0 & 4) != 0) { return status_; } else { return StatusDefaultValue; } }
       set {
         _hasBits0 |= 4;
@@ -97190,12 +97190,12 @@ namespace Ei {
 
     /// <summary>Field number for the "history" field.</summary>
     public const int HistoryFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Ei.UserSubscriptionInfo.Types.HistoryEntry> _repeated_history_codec
-        = pb::FieldCodec.ForMessage(74, global::Ei.UserSubscriptionInfo.Types.HistoryEntry.Parser);
-    private readonly pbc::RepeatedField<global::Ei.UserSubscriptionInfo.Types.HistoryEntry> history_ = new pbc::RepeatedField<global::Ei.UserSubscriptionInfo.Types.HistoryEntry>();
+    private static readonly pb::FieldCodec<global::JsonCompilers.UserSubscriptionInfo.Types.HistoryEntry> _repeated_history_codec
+        = pb::FieldCodec.ForMessage(74, global::JsonCompilers.UserSubscriptionInfo.Types.HistoryEntry.Parser);
+    private readonly pbc::RepeatedField<global::JsonCompilers.UserSubscriptionInfo.Types.HistoryEntry> history_ = new pbc::RepeatedField<global::JsonCompilers.UserSubscriptionInfo.Types.HistoryEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ei.UserSubscriptionInfo.Types.HistoryEntry> History {
+    public pbc::RepeatedField<global::JsonCompilers.UserSubscriptionInfo.Types.HistoryEntry> History {
       get { return history_; }
     }
 
@@ -97633,7 +97633,7 @@ namespace Ei {
             break;
           }
           case 40: {
-            Status = (global::Ei.UserSubscriptionInfo.Types.Status) input.ReadEnum();
+            Status = (global::JsonCompilers.UserSubscriptionInfo.Types.Status) input.ReadEnum();
             break;
           }
           case 48: {
@@ -97649,7 +97649,7 @@ namespace Ei {
             break;
           }
           case 80: {
-            Platform = (global::Ei.Platform) input.ReadEnum();
+            Platform = (global::JsonCompilers.Platform) input.ReadEnum();
             break;
           }
           case 90: {
@@ -97657,7 +97657,7 @@ namespace Ei {
             break;
           }
           case 104: {
-            SubscriptionLevel = (global::Ei.UserSubscriptionInfo.Types.Level) input.ReadEnum();
+            SubscriptionLevel = (global::JsonCompilers.UserSubscriptionInfo.Types.Level) input.ReadEnum();
             break;
           }
           case 114: {
@@ -97665,7 +97665,7 @@ namespace Ei {
             break;
           }
           case 120: {
-            NextSubscriptionLevel = (global::Ei.UserSubscriptionInfo.Types.Level) input.ReadEnum();
+            NextSubscriptionLevel = (global::JsonCompilers.UserSubscriptionInfo.Types.Level) input.ReadEnum();
             break;
           }
           case 130: {
@@ -97724,7 +97724,7 @@ namespace Ei {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Ei.UserSubscriptionInfo.Descriptor.NestedTypes[0]; }
+          get { return global::JsonCompilers.UserSubscriptionInfo.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98046,7 +98046,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[130]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[130]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98081,10 +98081,10 @@ namespace Ei {
 
     /// <summary>Field number for the "rinfo" field.</summary>
     public const int RinfoFieldNumber = 3;
-    private global::Ei.BasicRequestInfo rinfo_;
+    private global::JsonCompilers.BasicRequestInfo rinfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.BasicRequestInfo Rinfo {
+    public global::JsonCompilers.BasicRequestInfo Rinfo {
       get { return rinfo_; }
       set {
         rinfo_ = value;
@@ -98119,12 +98119,12 @@ namespace Ei {
 
     /// <summary>Field number for the "next_subscription_level" field.</summary>
     public const int NextSubscriptionLevelFieldNumber = 2;
-    private readonly static global::Ei.UserSubscriptionInfo.Types.Level NextSubscriptionLevelDefaultValue = global::Ei.UserSubscriptionInfo.Types.Level.Standard;
+    private readonly static global::JsonCompilers.UserSubscriptionInfo.Types.Level NextSubscriptionLevelDefaultValue = global::JsonCompilers.UserSubscriptionInfo.Types.Level.Standard;
 
-    private global::Ei.UserSubscriptionInfo.Types.Level nextSubscriptionLevel_;
+    private global::JsonCompilers.UserSubscriptionInfo.Types.Level nextSubscriptionLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ei.UserSubscriptionInfo.Types.Level NextSubscriptionLevel {
+    public global::JsonCompilers.UserSubscriptionInfo.Types.Level NextSubscriptionLevel {
       get { if ((_hasBits0 & 1) != 0) { return nextSubscriptionLevel_; } else { return NextSubscriptionLevelDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -98257,7 +98257,7 @@ namespace Ei {
       }
       if (other.rinfo_ != null) {
         if (rinfo_ == null) {
-          Rinfo = new global::Ei.BasicRequestInfo();
+          Rinfo = new global::JsonCompilers.BasicRequestInfo();
         }
         Rinfo.MergeFrom(other.Rinfo);
       }
@@ -98325,12 +98325,12 @@ namespace Ei {
             break;
           }
           case 16: {
-            NextSubscriptionLevel = (global::Ei.UserSubscriptionInfo.Types.Level) input.ReadEnum();
+            NextSubscriptionLevel = (global::JsonCompilers.UserSubscriptionInfo.Types.Level) input.ReadEnum();
             break;
           }
           case 26: {
             if (rinfo_ == null) {
-              Rinfo = new global::Ei.BasicRequestInfo();
+              Rinfo = new global::JsonCompilers.BasicRequestInfo();
             }
             input.ReadMessage(Rinfo);
             break;
@@ -98358,7 +98358,7 @@ namespace Ei {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ei.EiReflection.Descriptor.MessageTypes[131]; }
+      get { return global::JsonCompilers.EiReflection.Descriptor.MessageTypes[131]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
