@@ -148,4 +148,14 @@ public class Player : IComparable<Player>
             result = other.OfflineContribution.CompareTo(OfflineContribution);
         return result;
     }
+
+
+
+    public static MajUser IGNToMajPlayer(string ign)
+    {
+        var allMajPlayers = EggIncApi.Request.GetAllMaj().Result;
+        var majPlayer = allMajPlayers.FirstOrDefault(p => p.IGN == ign);
+
+        return majPlayer ?? throw new KeyNotFoundException($"MajPlayer with IGN '{ign}' not found.");
+    }
 }

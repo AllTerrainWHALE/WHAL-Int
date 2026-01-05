@@ -3,11 +3,16 @@ using JsonCompilers;
 using Google.Protobuf;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using WHAL_Int.src.JsonCompilers;
 
 namespace EggIncApi;
 
 public class Request
 {
+    private static MajUsersResponse? majPlayersCache;
+    private static LBInfoResponse? lBInfoCache;
+    private static LBResponse? lBCache;
+
     private static BasicRequestInfo rInfo = new()
     {
         EiUserId = Config.EID,
@@ -42,29 +47,50 @@ public class Request
         return await makeEggIncApiRequest("get_periodicals", getPeriodicalsRequest, PeriodicalsResponse.Parser.ParseFrom);
     }
 
-    public static async Task<MajResponse> GetMajCoops(string contractId)
+    public static async Task<MajCoopResponse> GetMajCoops(string contractId)
     {
         string url = $"https://eiapi-production.up.railway.app/majCoops?contract={contractId}";
 
         string rawJson = await getRequest(url);
-        if (string.IsNullOrEmpty(rawJson))
-        {
-            throw new InvalidOperationException("Received empty JSON response.");
-        }
         string wrappedJson = $"{{ \"items\": {rawJson} }}";
 
-        // Configure options if you need case-insensitive or custom converters:
-        var options = new JsonSerializerOptions
-        {
-            PropertyNameCaseInsensitive = true,
-            NumberHandling = JsonNumberHandling.AllowReadingFromString
-        };
-
-        MajResponse? response = JsonSerializer
-            .Deserialize<MajResponse>(wrappedJson, options);
-
-        return response ?? throw new JsonException("Deserialization returned null.");
+        return parseJsonRsponse<MajCoopResponse>(wrappedJson);
     }
+
+    public static async Task<MajUsersResponse> GetAllMaj(bool force = false)
+    {
+        if (majPlayersCache != null && !force)
+            return majPlayersCache;
+
+        string url = $"https://eiapi-production.up.railway.app/allMaj";
+        string rawJson = await getRequest(url);
+
+        return parseJsonRsponse<MajUsersResponse>(rawJson);
+    }
+
+    public static async Task<LBInfoResponse> GetLBInfo(bool force = false)
+    {
+        if (lBInfoCache != null && !force)
+            return lBInfoCache;
+
+        string url = "https://ei_worker.tylertms.workers.dev/leaderboard_info";
+        string rawJson = await getRequest(url);
+
+        return parseJsonRsponse<LBInfoResponse>(rawJson);
+    }
+
+    public static async Task<LBResponse> GetLeaderboard(string scope, int grade = 5, bool force = false)
+    {
+        if (lBCache != null && !force && lBCache.Grade == grade)
+            return lBCache;
+
+        string url = $"https://ei_worker.tylertms.workers.dev/leaderboard?EID={Config.EID}&grade={grade}&scope={scope}";
+        string rawJson = await getRequest(url);
+
+        return parseJsonRsponse<LBResponse>(rawJson);
+    }
+    public static async Task<LBResponse> GetLeaderboard(string scope, Contract.Types.PlayerGrade grade = Contract.Types.PlayerGrade.GradeAaa, bool force = false)
+        => await GetLeaderboard(scope, (int)grade, force);
 
     private static async Task<T> makeEggIncApiRequest<T>(string endpoint, IMessage data, Func<byte[], T> parseMethod, bool isAuthenticatedMsg = true)
     {
@@ -127,5 +153,26 @@ public class Request
         {
             return resBytes.ToArray();
         }
+    }
+
+    private static T parseJsonRsponse<T>(string json)
+    {
+
+        if (string.IsNullOrEmpty(json))
+        {
+            throw new InvalidOperationException("Received empty JSON response.");
+        }
+
+        // Configure options if you need case-insensitive or custom converters:
+        var options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            NumberHandling = JsonNumberHandling.AllowReadingFromString
+        };
+
+        T? response = JsonSerializer
+            .Deserialize<T>(json, options);
+
+        return response ?? throw new JsonException("Deserialization returned null.");
     }
 }

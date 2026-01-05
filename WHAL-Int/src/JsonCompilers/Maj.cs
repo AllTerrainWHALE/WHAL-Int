@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace JsonCompilers;
 
-public class MajResponse
+public class MajCoopResponse
 {
     [JsonPropertyName("items")]
     public List<MajGroup> Items { get; set; } = new();
@@ -118,4 +118,56 @@ public class User
 
     [JsonPropertyName("_id")]
     public string? Id { get; set; }
+}
+
+
+
+public class MajUsersResponse : List<MajUser> { }
+
+public class MajUser
+{
+    [JsonPropertyName("_id")]
+    public string? _id { get; set; }
+
+    [JsonPropertyName("ID")]
+    public string? DiscordId { get; set; }
+
+    [JsonPropertyName("discordName")]
+    public string? DiscordUsername { get; set; }
+
+    [JsonPropertyName("farmerRole")]
+    public string? FarmerRole { get; set; }
+
+    [JsonPropertyName("EB")]
+    public double? EB { get; set; }
+
+    [JsonPropertyName("grade")]
+    public string? Grade { get; set; }
+
+    [JsonPropertyName("active")]
+    public bool? Active { get; set; }
+
+    [JsonPropertyName("IGN")]
+    public string? IGN { get; set; }
+
+    [JsonPropertyName("displayName")]
+    public string? DiscordDisplayname { get; set; }
+
+    [JsonPropertyName("PE")]
+    public double? PE { get; set; }
+
+    [JsonPropertyName("SE")]
+    public double? SE { get; set; }
+
+    [JsonPropertyName("updatedAt")]
+    public DateTime? UpdatedAt { get; set; }
+
+    [JsonPropertyName("joinedAt")]
+    public DateTime? JoinedAt { get; set; }
+
+    [JsonPropertyName("numPrestiges")]
+    public int? NumPrestiges { get; set; }
+
+    [JsonPropertyName("TE")]
+    public double? TE { get; set; }
 }

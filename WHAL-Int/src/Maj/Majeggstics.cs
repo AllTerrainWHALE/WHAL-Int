@@ -23,6 +23,9 @@ public class Majeggstics
         };
     }
 
+    public void SetTargetFlags(CoopFlags targetFlags) =>
+        this.targetFlags = targetFlags;
+
     public void AddContract(string contractId)
     {
         if (!ActiveContracts.ContainsKey(contractId))
@@ -45,9 +48,9 @@ public class Majeggstics
 
         if (force || !contractMajCoops.ContainsKey(contractId))
         {
-            Task<MajResponse> majCoopsResponseTask = Request.GetMajCoops(contractId);
+            Task<MajCoopResponse> majCoopsResponseTask = Request.GetMajCoops(contractId);
             majCoopsResponseTask.Wait();
-            MajResponse majCoopsResponse = majCoopsResponseTask.Result;
+            MajCoopResponse majCoopsResponse = majCoopsResponseTask.Result;
             List<MajCoop> majCoops = majCoopsResponse.Items.Last().Coops;
 
             contractMajCoops[contractId] = majCoops;
