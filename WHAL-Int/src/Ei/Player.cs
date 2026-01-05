@@ -61,7 +61,7 @@ public class Player : IComparable<Player>
     // Teamwork score
     private double teamworkBonus => 0.19 * TeamworkScore + 1;
     //public double TeamworkScore => (5.0 * buffFactor + ChickenRunFactor + TokenFactor) / 19.0; old cxp-v0.2.0
-    public double TeamworkScore => coop.IsLeggacy
+    public double TeamworkScore => coop.UseOldScoring
         ? (5.0 * buffFactor + ChickenRunFactor + TokenFactor) / 19.0 // OLD
         : 5.0/19.0 * (buffFactor + ChickenRunFactor); // NEW
 
@@ -78,7 +78,7 @@ public class Player : IComparable<Player>
                     ? buff.ServerTimestamp - playerInfo.BuffHistory[i + 1].ServerTimestamp
                     : buff.ServerTimestamp + coop.PredictedSecondsRemaining - coop.SecondsSinceAllGoalsAchieved;
 
-                double elrBTV = coop.IsLeggacy
+                double elrBTV = coop.UseOldScoring
                     ? buff.EggLayingRate - 1 // OLD
                     : buff.EggLayingRate switch //NEW
                     {
@@ -89,7 +89,7 @@ public class Player : IComparable<Player>
                     };
                 //if (elrBTV == 0.0) Console.Error.WriteLine($"EggLayingRate BuffTimeValue not found, elrBTV = {elrBTV}");
 
-                double earningBTV = coop.IsLeggacy
+                double earningBTV = coop.UseOldScoring
                     ? buff.Earnings - 1 //OLD
                     : buff.Earnings switch //NEW
                     {
@@ -102,20 +102,20 @@ public class Player : IComparable<Player>
 
                 //Console.WriteLine($"{buff.EggLayingRate} -> {elrBTV} | {buff.Earnings} -> {earningBTV}");
 
-                sum += timeEquipped * (coop.IsLeggacy ? 7.5 : 1) * elrBTV;
-                sum += timeEquipped * (coop.IsLeggacy ? .75 : 1) * earningBTV;
+                sum += timeEquipped * (coop.UseOldScoring ? 7.5 : 1) * elrBTV;
+                sum += timeEquipped * (coop.UseOldScoring ? .75 : 1) * earningBTV;
             }
             return sum;
         }
     }
     //private double buffFactor => Math.Min(BuffTimeValue / coop.PredictedDuration.DurationInSeconds, 2); old cxp-v0.2.0
-    private double buffFactor => coop.IsLeggacy
+    private double buffFactor => coop.UseOldScoring
         ? Math.Min(BuffTimeValue / coop.PredictedDuration.DurationInSeconds, 2) //OLD
         : Math.Min(BuffTimeValue / coop.PredictedDuration.DurationInSeconds, 2); //NEW
 
     // Chicken runs score (assuming n-1 CRs)
     //public double ChickenRunFactor => Math.Min(fcr * (coop.MaxCoopSize-1.0), 6); // Assuming n-1 CRs | old cxp-v0.2.0
-    public double ChickenRunFactor => coop.IsLeggacy // Assuming n-1 CRs
+    public double ChickenRunFactor => coop.UseOldScoring // Assuming n-1 CRs
         ? Math.Min(fcr * (coop.MaxCoopSize - 1.0), 6.0) // OLD
         : Math.Min(chickenRunsSent / Math.Min(coop.MaxCoopSize - 1.0, 20.0), 1.0); // NEW
     private double fcr => Math.Max(12.0/(coop.MaxCoopSize * (contractLength / Duration.SECONDS_IN_A_DAY)), 0.3);
