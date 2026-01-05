@@ -136,7 +136,9 @@ public class Player : IComparable<Player>
         * contributionFactor
         * completionTimeBonus
         * teamworkBonus
-        * 187.5);
+        * 187.5
+        * (!coop.UseOldScoring ? 1.05 : 1) // NEW scoring gets a 5% bonus to bring in line with old scoring
+    );
 
     public int CompareTo(Player? other)
     {
