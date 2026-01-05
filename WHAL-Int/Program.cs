@@ -346,7 +346,7 @@ internal class Program
             {new string([.. Enumerable.Range(0, table.GetHeader().Length + 2).Select(i => i % 2 == 0 ? '—' : ' ')])}
             Avg. CS -> {averageCS}
             {new string('—', table.GetHeader().Length + 2)}
-            Only showing top {playersSubset.Count()} players. CS calculations assume n-1 CRs {(coops.All(c => c.IsLeggacy) ? "and max tval."
+            Only showing top {playersSubset.Count()} players. CS calculations assume n-1 CRs {(coops.All(c => c.UseOldScoring) ? "and max tval."
             : "")}
             ```
             """;
