@@ -33,11 +33,10 @@ internal class Program
             Carry    = args.Contains("--carry")    || args.Contains("-c")
         };
         if (targetFlags.Flags.Count() == 0)
-        { // if no targetFlags are set, set SR and FR targetFlags as default
+        { // if no TargetFlags are set, set SR and FR TargetFlags as default
             targetFlags.SpeedRun = true;
             targetFlags.FastRun  = true;
         }
-
 
 
         /* =====================
@@ -78,29 +77,59 @@ internal class Program
 
 
 
+        string seasonId = (await Request.GetLBInfo()).SeasonsList!.Last().Scope!;
+        CookieCache cc = new CookieCache(seasonId);
+        cc.SetTargetFlags(targetFlags);
+        cc.AddContract(contractId);
+        //cc.FetchMajCoops(contractId, force: true);
+
+        Console.WriteLine("Coop Codes:");
+        foreach (string flag in targetFlags.Flags)
+        {
+            string[] codes = Majeggstics.FetchCoopsForContract(contractId, flag)
+                .Select(c => c.Code!)
+                .ToArray();
+            Console.WriteLine($"\t{flag}: {string.Join(", ", codes)}");
+        }
+        Console.WriteLine();
+
+        cc.BuildCoops();
+
+        cc.ProcessContracts();
+
+        //Console.WriteLine("External Players:");
+        //foreach (var coop in Majeggstics.FetchMajCoops(contractId, cc.TargetFlags))
+        //{
+        //    var externalPlayers = coop.Users.Where(u => u.IsExternal == true);
+        //    if (externalPlayers.Count() > 0)
+        //    {
+        //        Console.WriteLine($"\t{coop.Code}: {string.Join(", ", externalPlayers.Select(p => p.IGN))}");
+        //    }
+        //}
+
+        return;
+
+
         /* ===================
            =  Get Maj coops  =
            =================== */
 
         Majeggstics majeggstics = new Majeggstics();
         majeggstics.AddContract(contractId);
-        majeggstics.FetchCoopsForContract(contractId, force: true);
-        majeggstics.BuildCoops();
-
-        var orderedCoops = majeggstics.ActiveContracts[contractId].OrderCoopsBy(x => x);
-
 
         Console.WriteLine("Coop Codes:");
-        //foreach (string flag in typeof(CoopFlags).GetProperties().Select(p => p.Name))
         foreach (string flag in targetFlags.Flags)
         {
-            string[] codes = majeggstics.ActiveContracts[contractId].Coops
-                .Where(c => c.CoopFlags.Flags.Contains(flag))
-                .Select(c => c.CoopId)
+            string[] codes = Majeggstics.FetchCoopsForContract(contractId, flag)
+                .Select(c => c.Code!)
                 .ToArray();
             Console.WriteLine($"\t{flag}: {string.Join(", ", codes)}");
         }
         Console.WriteLine();
+
+        majeggstics.BuildCoops();
+
+        var orderedCoops = majeggstics.ActiveContracts[contractId].OrderCoopsBy(x => x);
 
 
 
@@ -218,7 +247,7 @@ internal class Program
         string combinedTables = string.Join('\n', outputSegments.GetRange(1, outputSegments.Count() - 2)); // combine the tables into a single string, excluding the header and footer
         if (targetFlags.Flags.Count() >= outputSegments.Count()-2 && combinedTables.Length <= 2000)
         {
-            outputSegments[1] = combinedTables; // if all targetFlags are set and the combined tables are less than 2000 characters, combine the tables into the first segment
+            outputSegments[1] = combinedTables; // if all TargetFlags are set and the combined tables are less than 2000 characters, combine the tables into the first segment
             outputSegments.RemoveRange(2, outputSegments.Count() - 3); // remove the other segments
         }
 
@@ -308,7 +337,7 @@ internal class Program
         // Get list of all players in the coops, and order them
         var players = coops.Where(c => c.OnTrack)
             .SelectMany(c => c.Contributors)
-            .Where(p => p.UserName != "[departed]")
+            .Where(p => p.IGN != "[departed]")
             .OrderBy(p => p);
         var playersSubset = players.Take(10);
 
@@ -318,7 +347,7 @@ internal class Program
 
         var table = new Table<Player>(); // create a new table for the players
         table.AddColumn(new string('#', playerRowDigits), _ => StringFormatter.RightAligned($"{++playerRow}", playerRowDigits, fillChar: '0'), playerRowDigits); // auto incrementing row number column
-        table.AddColumn(" Player ", player => $"{StringFormatter.LeftAligned(player.UserName.Substring(0, Math.Min(8, player.UserName.Length)), 8)}");
+        table.AddColumn(" Player ", player => $"{StringFormatter.LeftAligned(player.IGN.Substring(0, Math.Min(8, player.IGN.Length)), 8)}");
         table.AddColumn("  CS  ", player => StringFormatter.Centered($"{Math.Round(player.ContractScore)}", 6));
         table.AddColumn(" Rate ", player => StringFormatter.Centered($"{StringFormatter.BigNumberToString(player.ContributionRate * Duration.SECONDS_IN_AN_HOUR, strLen: 6)}", 6));
 

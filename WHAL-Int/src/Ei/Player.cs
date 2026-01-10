@@ -6,11 +6,15 @@ namespace Ei;
 public class Player : IComparable<Player>
 {
     private readonly ContractCoopStatusResponse.Types.ContributionInfo playerInfo;
+    private readonly MajCoopUser? majPlayerInfo;
     private readonly Coop coop;
 
-    public string UserName => playerInfo.UserName;
+    public string IGN => playerInfo.UserName;
+    public string? DiscordId => majPlayerInfo?.ID ?? null;
 
     public bool Sink = false;
+
+    public bool IsExternal => majPlayerInfo?.IsExternal ?? true;
 
     // Contribution calculations
     public double Contribution => playerInfo.ContributionAmount;
@@ -21,11 +25,19 @@ public class Player : IComparable<Player>
         + (ContributionRate * Math.Max(0, coop.PredictedSecondsRemaining));
     public double ContributionRatio => PredictedContribution / (coop.EggGoal / coop.MaxCoopSize);
 
-    public Player(ContractCoopStatusResponse.Types.ContributionInfo playerInfo, Coop coop)
+    public Player(ContractCoopStatusResponse.Types.ContributionInfo playerInfo, MajCoopUser? majPlayerInfo, Coop coop)
     {
         this.playerInfo = playerInfo ?? throw new ArgumentNullException(nameof(playerInfo));
         this.coop = coop ?? throw new ArgumentNullException(nameof(coop));
+
+        if (majPlayerInfo != null)
+        {
+            this.majPlayerInfo = majPlayerInfo;
+        }
     }
+    public Player(ContractCoopStatusResponse.Types.ContributionInfo playerInfo, Coop coop) =>
+        new Player(playerInfo, null, coop);
+
 
     // ================================================
     // ================ CS Calulations ================
@@ -159,5 +171,12 @@ public class Player : IComparable<Player>
         var majPlayer = allMajPlayers.FirstOrDefault(p => p.IGN == ign);
 
         return majPlayer ?? throw new KeyNotFoundException($"MajPlayer with IGN '{ign}' not found.");
+    }
+
+    public static MajUser DiscordIdToMajPlayer(string discordId)
+    {
+        var allMajPlayers = EggIncApi.Request.GetAllMaj().Result;
+        var majPlayer = allMajPlayers.FirstOrDefault(p => p.DiscordId == discordId);
+        return majPlayer ?? throw new KeyNotFoundException($"MajPlayer with Discord ID '{discordId}' not found.");
     }
 }

@@ -2,11 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace JsonCompilers;
 
-public class MajCoopResponse
-{
-    [JsonPropertyName("items")]
-    public List<MajGroup> Items { get; set; } = new();
-}
+public class MajCoopResponse : List<MajGroup> { }
 
 public class MajGroup
 {
@@ -53,7 +49,7 @@ public class MajCoop
     public string? ThreadLink { get; set; }
 
     [JsonPropertyName("users")]
-    public List<User> Users { get; set; } = new();
+    public List<MajCoopUser> Users { get; set; } = new();
 
     [JsonPropertyName("makeCoopsTimestamp")]
     public long? MakeCoopsTimestamp { get; set; }
@@ -85,9 +81,18 @@ public class CoopFlags
             return flags.ToArray();
         }
     }
+
+    public static CoopFlags NewCoopFlags(bool speedRun = false, bool fastRun = false, bool anyGrade = false, bool carry = false, bool all = false) =>
+        new CoopFlags
+        {
+            SpeedRun = speedRun || all,
+            FastRun = fastRun || all,
+            AnyGrade = anyGrade || all,
+            Carry = carry || all
+        };
 }
 
-public class User
+public class MajCoopUser
 {
     [JsonPropertyName("ID")]
     public string? ID { get; set; }
@@ -117,7 +122,7 @@ public class User
     public int? TimeslotOverride { get; set; }
 
     [JsonPropertyName("_id")]
-    public string? Id { get; set; }
+    public string? _id { get; set; }
 }
 
 

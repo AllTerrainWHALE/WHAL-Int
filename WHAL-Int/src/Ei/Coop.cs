@@ -8,6 +8,7 @@ public class Coop : IComparable<Coop>
     private readonly ContractCoopStatusResponse coopStatus;
     private readonly Contract contract;
     private readonly Contract.Types.GradeSpec gradeSpec;
+    private readonly MajCoop? majCoop;
 
     public bool IsLeggacy => contract.Leggacy;
     public string Grade => gradeSpec.Grade.ToString();
@@ -62,8 +63,28 @@ public class Coop : IComparable<Coop>
                                                          PredictedSecondsRemaining -
                                                          coopStatus.SecondsSinceAllGoalsAchieved));
 
+        var majCoopsTask = EggIncApi.Request.GetMajCoops(contract.Identifier);
+        majCoopsTask.Wait();
+        majCoop = majCoopsTask.Result
+            .Last(g => g.Group == "majeggstics").Coops
+            .FirstOrDefault(c => c.Code == CoopId);
+
         if (flags != null) { CoopFlags = flags; }
-        Contributors = coopStatus.Contributors.Select(playerInfo => new Player(playerInfo, this)).ToList();
+
+        try
+        {
+        Contributors = coopStatus.Contributors
+            .Select(playerInfo => new Player(
+                playerInfo,
+                majCoop.Users.FirstOrDefault(u => u.IGN == playerInfo.UserName) ?? null,
+                this))
+            .ToList();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error building Contributors for Coop {CoopId}. MajCoop = {majCoop}");
+            throw;
+        }
     }
 
     /// <summary>
