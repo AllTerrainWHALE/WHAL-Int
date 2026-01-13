@@ -7,16 +7,14 @@ using Newtonsoft.Json;
 
 /**
  * TODO:
- *   - Handle duplicates gracefully (e.g., ignore or update existing entries)
+ *   - Handle duplicates gracefully (e.g., ignore or update existing ccEntries)
  *   
  *   - Process and log LB progress entries
+ *   - Process and log LB progress ccEntries
  *     - Don't piss about with auto-detecting when to update.
  *       Instead, just have a Y/N prompt for it.
  *     - Log past LBs in JSON file.
  *       - MAKE SURE NOT TO REPLACE THE DATA WHEN AN ERROR OCCURSES DURING PROCESSING!!!
- *     - Need to include tracking of IGNs, otherwise players will be missed if they aren't in the Users table.
- *       - Include check in Users.Validate(), where DiscordID is found but IGN is different to the one in the DB.
- *       - Prompt for auto replacement of IGN in such cases.
  */
 
 namespace Maj;
@@ -24,11 +22,27 @@ public class CookieCache : Majeggstics
 {
     private static readonly string leaderboardsDir = "WHAL-Int\\data\\leaderboards";
 
-    private List<Tables.CookieCache.Entry> entries = new();
+    private List<Tables.CookieCache.Entry> ccEntries = new();
 
     private SQLiteConnection dbConnection = SQLiteConnection.Instance();
 
     private SeasonLB season;
+    private Tables.Seasons.Entry _seasonEntry;
+    private Tables.Seasons.Entry seasonEntry
+    {
+        get
+        {
+            if (_seasonEntry.Id == null)
+            {
+                _seasonEntry = new Tables.Seasons.Entry
+                {
+                    Id = season.Scope!,
+                    Name = season.Name
+                };
+            }
+            return _seasonEntry;
+        }
+    }
 
     private string dbName = "majeggstics.db";
 
@@ -74,28 +88,44 @@ public class CookieCache : Majeggstics
 
             activeContract.OrderCoopsBy(x => x);
 
+            // Validate player IGNs
+            Tables.Users.Entry[] userEntriesToValidate = activeContract.Coops
+                .SelectMany(c => c.Contributors)
+                .Where(p => !p.IsExternal)
+                .Select(p => new Tables.Users.Entry
+                {
+                    DiscordId = p.DiscordId!,
+                    Username = "",
+                    IGN = p.IGN
+                })
+                .Distinct()
+                .ToArray();
+            Tables.Users.ValidateIGN(userEntriesToValidate);
+
             // Process Fastest Speedrun Coop
             Coop? fastestSrCoop = activeContract.Coops
                 .Where(c => c.CoopFlags.SpeedRun == true)
                 .FirstOrDefault();
             if (fastestSrCoop != null)
             {
-                List<string> fastestSrCoopDiscordIds = fastestSrCoop.Contributors
+                List<Player> fastestSrCoopContributors = fastestSrCoop.Contributors
                 .Where(p => !p.IsExternal)
-                .Select(p => p.DiscordId!)
                 .ToList();
 
-                fastestSrCoopDiscordIds.ForEach(id =>
+                Tables.Coops.Entry coopEntry = new() { ContractId = contractId, CoopId = fastestSrCoop.CoopId };
+
+                fastestSrCoopContributors.ForEach(p =>
                 {
-                    Tables.CookieCache.Entry entry = new()
+                    Tables.Users.Entry userEntry = new() { DiscordId = p.DiscordId!, Username = "", IGN = p.IGN };
+
+                    Tables.CookieCache.Entry ccEntry = new()
                     {
-                        SeasonId = season.Scope!,
-                        ContractId = contractId,
-                        CoopCode = fastestSrCoop.CoopId,
-                        UserId = id,
-                        RuleId = (int)Tables.Rules.Indexes.FastestCoop
+                        Season = seasonEntry,
+                        Coop = coopEntry,
+                        User = userEntry,
+                        RuleId = Tables.Rules.Indexes.FastestCoop
                     };
-                    entries.Add(entry);
+                    ccEntries.Add(ccEntry);
                 });
             }
 
@@ -105,22 +135,24 @@ public class CookieCache : Majeggstics
                 .FirstOrDefault();
             if (fastestFrCoop != null)
             {
-                List<string> fastestFrCoopDiscordIds = fastestFrCoop.Contributors
+                List<Player> fastestFrCoopContributors = fastestFrCoop.Contributors
                 .Where(p => !p.IsExternal)
-                .Select(p => p.DiscordId!)
                 .ToList();
 
-                fastestFrCoopDiscordIds.ForEach(id =>
+                Tables.Coops.Entry coopEntry = new() { ContractId = contractId, CoopId = fastestFrCoop.CoopId };
+
+                fastestFrCoopContributors.ForEach(p =>
                 {
-                    Tables.CookieCache.Entry entry = new()
+                    Tables.Users.Entry userEntry = new() { DiscordId = p.DiscordId!, Username = "", IGN = p.IGN };
+
+                    Tables.CookieCache.Entry ccEntry = new()
                     {
-                        SeasonId = season.Scope!,
-                        ContractId = contractId,
-                        CoopCode = fastestFrCoop.CoopId,
-                        UserId = id,
-                        RuleId = (int)Tables.Rules.Indexes.FastestCoop
+                        Season = seasonEntry,
+                        Coop = coopEntry,
+                        User = userEntry,
+                        RuleId = Tables.Rules.Indexes.FastestCoop
                     };
-                    entries.Add(entry);
+                    ccEntries.Add(ccEntry);
                 });
             }
         }
@@ -181,34 +213,36 @@ public class CookieCache : Majeggstics
                 Formatting.Indented
         ));
 
-        // Sort the leaderboard entries, filter out unknown players, and add to queued entries
+        // Sort the leaderboard ccEntries, filter out unknown players, and add to queued ccEntries
         foreach (LBEntry playerEntry in differenceLbResponse.Entries!)
+        {
+            string discordId;
+            try
             {
-                string discordId;
-                try
-                {
-                    MajUser majUser = Player.IGNToMajPlayer(playerEntry.IGN!);
-                    discordId = majUser.DiscordId!;
-                }
-                catch (KeyNotFoundException)
-                {
-                    if (!knownIGNsAndIds.ContainsKey(playerEntry.IGN!))
-                        continue; // Skip players that can't map to a Discord ID
-                    discordId = knownIGNsAndIds[playerEntry.IGN!];
-                }
-
-                Tables.CookieCache.Entry entry = new()
-                {
-                    SeasonId = differenceLbResponse.Scope!,
-                    UserId = discordId,
-                    RuleId = differenceLbResponse.Scope! == "ALL_TIME"
-                        ? (int)Tables.Rules.Indexes.AlltimeLbProgress
-                        : (int)Tables.Rules.Indexes.SeasonalLbProgress,
-                };
-                entries.Add(entry);
-
-                Console.WriteLine($"Queued entry for {playerEntry.IGN} ({discordId})");
+                MajUser majUser = Player.IGNToMajPlayer(playerEntry.IGN!);
+                discordId = majUser.DiscordId!;
             }
+            catch (KeyNotFoundException)
+            {
+                if (!knownIGNsAndIds.ContainsKey(playerEntry.IGN!))
+                    continue; // Skip players that can't map to a Discord ID
+                discordId = knownIGNsAndIds[playerEntry.IGN!];
+            }
+
+            Tables.Users.Entry userEntry = new() {DiscordId = discordId, Username = "", IGN = playerEntry.IGN! };
+
+            Tables.CookieCache.Entry entry = new()
+            {
+                Season = seasonEntry,
+                User = userEntry,
+                RuleId = differenceLbResponse.Scope! == "ALL_TIME"
+                    ? Tables.Rules.Indexes.AlltimeLbProgress
+                    : Tables.Rules.Indexes.SeasonalLbProgress,
+            };
+            ccEntries.Add(entry);
+
+            Console.WriteLine($"Queued entry for {playerEntry.IGN} ({discordId})");
+        }
     }
 
     private LBResponse CompareLeaderboards(LBResponse lb1, LBResponse lb2)
@@ -250,30 +284,22 @@ public class CookieCache : Majeggstics
         Tables.Seasons.Validate(season);
 
         // Validate users
-        Tables.Users.Validate([.. entries.Select(e =>
-            new Tables.Users.Entry(){
-                DiscordId = e.UserId,
-                Username = "",
-                IGN = ""
-        })]);
+        Tables.Users.Validate([.. ccEntries.Select(e => e.User)]);
 
         // Validate coops
-        Tables.Coops.Entry[] coopEntriesToValidate = entries
+        Tables.Coops.Entry[] coopEntriesToValidate = ccEntries
             .Where(e =>
-                e.CoopId == null &&
-                e.ContractId != null &&
-                e.CoopCode != null)
-            .Select(e => new Tables.Coops.Entry
-            {
-                ContractId = e.ContractId!,
-                CoopId = e.CoopCode!
-            })
+                e.Coop.HasValue &&
+                e.Coop.Value.Id == null &&
+                e.Coop.Value.ContractId != null &&
+                e.Coop.Value.CoopId != null)
+            .Select(e => e.Coop!.Value)
             .Distinct()
             .ToArray();
         Tables.Coops.Validate(coopEntriesToValidate);
 
-        // Insert entries into CookieCache table
-        Tables.CookieCache.Insert(entries.ToArray());
+        // Insert ccEntries into CookieCache table
+        Tables.CookieCache.Insert(ccEntries.ToArray());
     }
 }
 
@@ -285,12 +311,10 @@ internal static class Tables
     {
         internal struct Entry
         {
-            public string SeasonId;
-            public string? ContractId;
-            public string? CoopCode;
-            public int? CoopId;
-            public string UserId;
-            public int RuleId;
+            public Tables.Seasons.Entry Season;
+            public Tables.Coops.Entry? Coop;
+            public Tables.Users.Entry User;
+            public Tables.Rules.Indexes RuleId;
             public int? AdditionalCookies;
         }
 
@@ -317,15 +341,9 @@ internal static class Tables
             {
                 var entry = entries[i];
 
-                if (
-                    entry.CoopId == null &&
-                    entry.ContractId != null &&
-                    entry.CoopCode != null)
-                { entry.CoopId = Coops.GetId(entry.ContractId!, entry.CoopCode!); }
-
-                cmd.Parameters.AddWithValue($"$season_id_{i}", entry.SeasonId);
-                cmd.Parameters.AddWithValue($"$coop_id_{i}", entry.CoopId != null ? entry.CoopId! : DBNull.Value);
-                cmd.Parameters.AddWithValue($"$user_id_{i}", entry.UserId);
+                cmd.Parameters.AddWithValue($"$season_id_{i}", entry.Season.Id);
+                cmd.Parameters.AddWithValue($"$coop_id_{i}", entry.Coop.HasValue ? Tables.Coops.GetId(entry.Coop.Value) : DBNull.Value);
+                cmd.Parameters.AddWithValue($"$user_id_{i}", entry.User.DiscordId);
                 cmd.Parameters.AddWithValue($"$rule_id_{i}", entry.RuleId);
                 cmd.Parameters.AddWithValue($"$additional_cookies_{i}", entry.AdditionalCookies.HasValue ? entry.AdditionalCookies!.Value : DBNull.Value);
 
@@ -333,23 +351,46 @@ internal static class Tables
             cmd.ExecuteNonQuery();
         }
         public static void Insert(Entry entry) => Insert([entry]);
-        public static void Insert(string seasonId, int coopId, string userId, int ruleId, int? additionalCookies = null) =>
-            Insert(new Entry
-            {
-                SeasonId = seasonId,
-                CoopId = coopId,
-                UserId = userId,
-                RuleId = ruleId,
-                AdditionalCookies = additionalCookies
-            });
     }
 
     public static class Seasons
     {
+        public struct Entry {
+            public string Id;
+            public string? Name;
+        }
+
         public static string Name = "Seasons";
         public static bool Exists() => TableExists(Name);
 
-        public static bool Validate(SeasonLB season)
+        public static void Insert(Entry[] entries)
+        {
+            string query;
+            Microsoft.Data.Sqlite.SqliteCommand cmd;
+
+            string[] queryValues = entries
+                .Select((e, i) =>
+                    $"($season_id_{i}, $season_name_{i})")
+                .ToArray();
+
+            query = $@"
+                INSERT INTO {Name} (id, name)
+                VALUES {string.Join(", ", queryValues)};";
+            cmd = dbConnection.CreateCommand(query);
+
+            for (int i = 0; i < entries.Length; i++)
+            {
+                cmd.Parameters.AddWithValue($"$season_id_{i}", entries[i].Id);
+                cmd.Parameters.AddWithValue($"$season_name_{i}", entries[i].Name);
+            }
+
+            cmd.ExecuteNonQuery();
+        }
+        public static void Insert(Entry entry) => Insert([entry]);
+        public static void Insert(SeasonLB season) =>
+            Insert([new Entry { Id = season.Scope!, Name = season.Name }]);
+
+        public static bool Validate(Entry entry)
         {
             string query;
             Microsoft.Data.Sqlite.SqliteCommand cmd;
@@ -358,33 +399,29 @@ internal static class Tables
             query = $@"SELECT count(*) FROM {Name} WHERE id=$season_id";
 
             cmd = dbConnection.CreateCommand(query);
-            cmd.Parameters.AddWithValue("$season_id", season.Scope!);
+            cmd.Parameters.AddWithValue("$season_id", entry.Id);
 
             long count = Convert.ToInt32(cmd.ExecuteScalar()!);
             if (count == 0)
             {
                 // Insert season into database
-                cmd.Dispose();
-                query = $@"
-                INSERT INTO {Name} (id, name)
-                VALUES ($season_id, $season_name);";
-                cmd = dbConnection.CreateCommand(query);
-                cmd.Parameters.AddWithValue("$season_id", season.Scope!);
-                cmd.Parameters.AddWithValue("$season_name", season.Name!);
-                cmd.ExecuteNonQuery();
+                Insert(entry);
 
                 return false; // Season was not previously present
             }
             return true; // Season already exists
         }
+        public static bool Validate(SeasonLB season) =>
+            Validate(new Entry { Id = season.Scope!, Name = season.Name });
     }
 
     public static class Coops
     {
         internal struct Entry
         {
-            public string CoopId;
-            public string ContractId;
+            public int? Id;
+            public string? CoopId;
+            public string? ContractId;
         }
 
         public static string Name = "Coops";
@@ -410,7 +447,11 @@ internal static class Tables
             return id;
         }
         public static int GetId(Coop coop) => GetId(coop.ContractId, coop.CoopId);
-        public static int GetId(Entry entry) => GetId(entry.ContractId, entry.CoopId);
+        public static int GetId(Entry entry) {
+            if (entry.Id.HasValue)
+                return entry.Id.Value;
+            return GetId(entry.ContractId!, entry.CoopId!);
+        }
 
         public static void Insert(Entry[] entries)
         {
@@ -428,8 +469,9 @@ internal static class Tables
             cmd = dbConnection.CreateCommand(query);
             for (int i = 0; i < entries.Length; i++)
             {
-                cmd.Parameters.AddWithValue($"$coop_id_{i}", entries[i].CoopId);
-                cmd.Parameters.AddWithValue($"$contract_id_{i}", entries[i].ContractId);
+                Entry entry = entries[i];
+                cmd.Parameters.AddWithValue($"$coop_id_{i}", entry.CoopId);
+                cmd.Parameters.AddWithValue($"$contract_id_{i}", entry.ContractId);
             }
             cmd.ExecuteNonQuery();
         }
@@ -502,61 +544,84 @@ internal static class Tables
         public static string Name = "Users";
         public static bool Exists() => TableExists(Name);
 
-        public static bool Validate(List<Entry> entries)
+        public static void Insert(Entry[] entries)
+        {
+            string query;
+            Microsoft.Data.Sqlite.SqliteCommand cmd;
+
+            string[] queryValues = entries
+                .Select((e, i) =>
+                    $"($discord_id_{i}, $username_{i}, $ign_{i}, $nickname_{i})")
+                .ToArray();
+
+            query = $@"
+                INSERT INTO {Name} (discord_id, username, ign, nickname)
+                VALUES {string.Join(", ", queryValues)};";
+            cmd = dbConnection.CreateCommand(query);
+
+            for (int i = 0; i < entries.Length; i++)
+            {
+                Entry entry = entries[i];
+
+                cmd.Parameters.AddWithValue($"$discord_id_{i}", entry.DiscordId);
+                cmd.Parameters.AddWithValue($"$username_{i}", entry.Username);
+                cmd.Parameters.AddWithValue($"$ign_{i}", entry.IGN);
+                cmd.Parameters.AddWithValue($"$nickname_{i}", entry.Nickname);
+            }
+        }
+
+        public static bool Validate(Entry[] entries)
         {
 
             string query;
             Microsoft.Data.Sqlite.SqliteCommand cmd;
 
             // Get existing list of users
-            HashSet<string> existingUsers = new();
+            List<Entry> existingEntries = new();
 
-            query = $"SELECT discord_id FROM {Name};";
+            query = $"SELECT discord_id, ign FROM {Name};";
 
             cmd = dbConnection.CreateCommand(query);
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 string discordId = reader.GetString(0);
-                existingUsers.Add(discordId);
+                string ign = reader.GetString(1);
+                existingEntries.Add(new Entry() { DiscordId = discordId, Username = "", IGN = ign });
             }
 
             // Find missing users
-            List<Entry> missingUsers = entries
-                .Where(e => !existingUsers.Contains(e.DiscordId))
-                .ToList();
+            string[] existingDiscordIds = existingEntries
+                .Select(e => e.DiscordId)
+                .ToArray();
+            Entry[] missingEntries = entries
+                .Where(e => !existingDiscordIds.Contains(e.DiscordId))
+                .ToArray();
 
             // Insert missing users into the database
-            MajUser user;
-            Entry entry;
-            for (int i = 0; i < missingUsers.Count(); i++)
+            MajUser majUser;
+            Entry missingEntry;
+            for (int i = 0; i < missingEntries.Count(); i++)
             {
                 cmd.Dispose();
-                entry = missingUsers[i];
+                missingEntry = missingEntries[i];
 
                 try
                 {
-                    user = Player.DiscordIdToMajPlayer(entry.DiscordId);
-                    entry.Username = user.DiscordUsername!;
-                    entry.IGN = user.IGN!;
+                    majUser = Player.DiscordIdToMajPlayer(missingEntry.DiscordId);
+                    missingEntry.Username = majUser.DiscordUsername!;
                 }
                 catch (KeyNotFoundException)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine($"Warning: Could not find a username and IGN for `{entry.DiscordId}`. Please enter manually below:");
+                    Console.WriteLine($"Warning: Could not find a username for `{missingEntry.IGN}` ({missingEntry.DiscordId}). Please enter manually below:");
                     Console.ResetColor();
 
-                    // Username entry
+                    // Username ccEntry
                     Console.Write("> ");
-                    entry.Username = Console.ReadLine() ?? "unknown_user";
-                    if (string.IsNullOrWhiteSpace(entry.Username))
-                        entry.Username = "unknown_user";
-
-                    // IGN entry
-                    Console.Write("> ");
-                    entry.IGN = Console.ReadLine() ?? "unknown_ign";
-                    if (string.IsNullOrWhiteSpace(entry.IGN))
-                        entry.IGN = "unknown_ign";
+                    missingEntry.Username = Console.ReadLine() ?? "unknown_user";
+                    if (string.IsNullOrWhiteSpace(missingEntry.Username))
+                        missingEntry.Username = "unknown_user";
                 }
 
                 query = $@"
@@ -564,17 +629,76 @@ internal static class Tables
                 VALUES ($discord_id, $username, $ign);";
                 cmd = dbConnection.CreateCommand(query);
 
-                cmd.Parameters.AddWithValue("$discord_id", entry.DiscordId);
-                cmd.Parameters.AddWithValue("$username", entry.Username);
-                cmd.Parameters.AddWithValue("$ign", entry.IGN);
+                cmd.Parameters.AddWithValue("$discord_id", missingEntry.DiscordId);
+                cmd.Parameters.AddWithValue("$username", missingEntry.Username);
+                cmd.Parameters.AddWithValue("$ign", missingEntry.IGN);
 
                 cmd.ExecuteNonQuery();
             }
 
-            return missingUsers.Count == 0; // Return true if no users were missing
+            return missingEntries.Count() == 0; // Return true if no users were missing
         }
         public static bool Validate(string discordId, string username = "", string ign = "") =>
             Validate([new Entry { DiscordId = discordId, Username = username, IGN = ign }]);
+
+        public static void ValidateIGN(Entry[] entries, Entry[] existingEntries)
+        {
+            string query;
+            Microsoft.Data.Sqlite.SqliteCommand cmd;
+
+            foreach (Entry entry in entries)
+            {
+                Entry existingEntry = existingEntries
+                    .FirstOrDefault(e => e.DiscordId == entry.DiscordId);
+
+                if (existingEntry.DiscordId == null || existingEntry.IGN == entry.IGN)
+                    continue; // IGN matches or is unknown, no update needed
+
+                // IGN mismatch detected, prompt for update
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"Warning: IGN mismatch for Discord ID `{entry.DiscordId}`. Database has `{existingEntry.IGN}`, but new entry has `{entry.IGN}`.");
+                Console.Write("\tWould you like to update the IGN in the database? ([Y]/N): ");
+                Console.ResetColor();
+
+                string? input = Console.ReadLine()?.ToLower();
+                if (input == "n" || input == "no")
+                    continue; // Skip update
+
+                // Update IGN in database
+                query = $@"
+                    UPDATE {Name}
+                    SET ign=$ign
+                    WHERE discord_id=$discord_id;";
+                cmd = dbConnection.CreateCommand(query);
+                cmd.Parameters.AddWithValue("$ign", entry.IGN);
+                cmd.Parameters.AddWithValue("$discord_id", entry.DiscordId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public static void ValidateIGN(Entry entry, Entry[] existingEntries) => ValidateIGN([entry], existingEntries);
+        public static void ValidateIGN(Entry[] entries)
+        {
+            string query;
+            Microsoft.Data.Sqlite.SqliteCommand cmd;
+
+            // Get existing list of users
+            List<Entry> existingEntries = new();
+
+            query = $"SELECT discord_id, ign FROM {Name};";
+
+            cmd = dbConnection.CreateCommand(query);
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string discordId = reader.GetString(0);
+                string ign = reader.GetString(1);
+                existingEntries.Add(new Entry() { DiscordId = discordId, Username = "", IGN = ign });
+            }
+
+            ValidateIGN(entries, [.. existingEntries]);
+        }
+        public static void ValidateIGN(Entry entry) =>
+            ValidateIGN([entry]);
     }
 
     public static class Rules
@@ -605,4 +729,7 @@ internal static class Tables
         object? result = cmd.ExecuteScalar();
         return result != null;
     }
+
+    public static object ValueOrDBNull(object? value) =>
+        value ?? DBNull.Value;
 }
