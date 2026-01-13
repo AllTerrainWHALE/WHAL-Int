@@ -45,6 +45,9 @@ public class LBResponse
 
     [JsonPropertyName("score")]
     public long? Score { get; set; }
+
+    [JsonPropertyName("datetime")]
+    public DateTime Datetime { get; set; } = DateTime.UtcNow;
 }
 
 public class LBEntry
