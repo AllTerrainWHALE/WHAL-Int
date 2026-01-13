@@ -244,7 +244,11 @@ public class CookieCache : Majeggstics
             Console.WriteLine($"Queued entry for {playerEntry.IGN} ({discordId})");
         }
     }
-
+    public void ProcessLeaderboards()
+    {
+        ProcessLeaderboard(season.Scope!);
+        ProcessLeaderboard("ALL_TIME");
+    }
     private LBResponse CompareLeaderboards(LBResponse lb1, LBResponse lb2)
     {
         // Deep clone lb1 to avoid modifying the original
@@ -299,6 +303,9 @@ public class CookieCache : Majeggstics
         Tables.Coops.Validate(coopEntriesToValidate);
 
         // Insert ccEntries into CookieCache table
+        ccEntries = Tables.CookieCache.FilterOutExistingEntries(
+                ccEntries.Where(e => e.Coop.HasValue).ToArray()
+            ).ToList();
         Tables.CookieCache.Insert(ccEntries.ToArray());
     }
 }
@@ -321,6 +328,42 @@ internal static class Tables
         public static string Name = "CookieCache";
         public static bool Exists() => TableExists(Name);
 
+        public static Entry[] FilterOutExistingEntries(Entry[] entries)
+        {
+            List<Entry> nonExistingEntries = new();
+            foreach (Entry e in entries)
+            {
+                if (EntryExists(e))
+                    nonExistingEntries.Add(e);
+            }
+
+            return nonExistingEntries.ToArray();
+        }
+        public static bool EntryExists(Entry entry)
+        {
+            string query;
+            Microsoft.Data.Sqlite.SqliteCommand cmd;
+
+            query = $@"
+                SELECT count(*) FROM {Name}
+                WHERE season_id=$season_id
+                    AND coop_id{(entry.Coop.HasValue ? "=$coop_id" : "IS NULL")}
+                    AND user_id=$user_id
+                    AND rule_id=$rule_id
+                    AND additional_cookies IS {(entry.AdditionalCookies.HasValue ? "= $additional_cookies" : "NULL")};";
+            cmd = dbConnection.CreateCommand(query);
+            cmd.Parameters.AddWithValue("$season_id", entry.Season.Id);
+            if (entry.Coop.HasValue)
+                cmd.Parameters.AddWithValue("$coop_id", entry.Coop.Value.Id.HasValue ? entry.Coop.Value.Id.Value : DBNull.Value);
+            cmd.Parameters.AddWithValue("$user_id", entry.User.DiscordId);
+            cmd.Parameters.AddWithValue("$rule_id", entry.RuleId);
+            if (entry.AdditionalCookies.HasValue)
+                cmd.Parameters.AddWithValue("$additional_cookies", entry.AdditionalCookies.Value);
+            long count = Convert.ToInt32(cmd.ExecuteScalar()!);
+
+            return count > 0;
+        }
+
         public static void Insert(Entry[] entries)
         {
             string query;
@@ -330,6 +373,9 @@ internal static class Tables
                 .Select((e, i) =>
                     $"($season_id_{i}, $coop_id_{i}, $user_id_{i}, $rule_id_{i}, $additional_cookies_{i})")
                 .ToArray();
+
+            if (queryValues.Length == 0)
+                return; // No entries to insert
 
             query = $@"
                 INSERT INTO {Name} (season_id, coop_id, user_id, rule_id, additional_cookies)
