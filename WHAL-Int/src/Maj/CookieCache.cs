@@ -7,14 +7,7 @@ using Newtonsoft.Json;
 
 /**
  * TODO:
- *   - Handle duplicates gracefully (e.g., ignore or update existing ccEntries)
- *   
- *   - Process and log LB progress entries
- *   - Process and log LB progress ccEntries
- *     - Don't piss about with auto-detecting when to update.
- *       Instead, just have a Y/N prompt for it.
- *     - Log past LBs in JSON file.
- *       - MAKE SURE NOT TO REPLACE THE DATA WHEN AN ERROR OCCURSES DURING PROCESSING!!!
+ *   - Integrate CLI interactions
  */
 
 namespace Maj;
@@ -46,24 +39,14 @@ public class CookieCache : Majeggstics
 
     private string dbName = "majeggstics.db";
 
+    #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
     public CookieCache(SeasonLB season)
     {
-        dbConnection.DataSource = dbName;
-        dbConnection.Connect();
-
-        if (!dbConnection.IsConnected())
-            throw new InvalidOperationException($"Failed to connect to the `{dbConnection.DataSource}` database.");
-
-        this.season = season;
+        init(season);
     }
+    #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
     public CookieCache(string seasonId)
     {
-        dbConnection.DataSource = dbName;
-        dbConnection.Connect();
-
-        if (!dbConnection.IsConnected())
-            throw new InvalidOperationException($"Failed to connect to the `{dbConnection.DataSource}` database.");
-
         Task<LBInfoResponse> lbInfoTask = Request.GetLBInfo();
         lbInfoTask.Wait();
         LBInfoResponse lbInfo = lbInfoTask.Result
@@ -72,11 +55,29 @@ public class CookieCache : Majeggstics
             .First(s => s.Scope == seasonId);
         if (season == null)
             throw new InvalidDataException($"Season ID invalid: {seasonId}");
+
+        init(season);
+    }
+    public CookieCache()
+    {
+        Task<LBInfoResponse> lbInfoTask = Request.GetLBInfo();
+        lbInfoTask.Wait();
+        LBInfoResponse lbInfo = lbInfoTask.Result
+            ?? throw new Exception("Failed to retrieve leaderboard info.");
+        season = lbInfo.SeasonsList!.Last()
+            ?? throw new InvalidDataException("No current season is active.");
+        init(season);
     }
 
-    public new void AddContract(string contractId)
+    private void init(SeasonLB season)
     {
-        base.AddContract(contractId);
+        dbConnection.DataSource = dbName;
+        dbConnection.Connect();
+
+        if (!dbConnection.IsConnected())
+            throw new InvalidOperationException($"Failed to connect to the `{dbConnection.DataSource}` database.");
+
+        this.season = season;
     }
 
     public void ProcessContracts()
@@ -240,8 +241,6 @@ public class CookieCache : Majeggstics
                     : Tables.Rules.Indexes.SeasonalLbProgress,
             };
             ccEntries.Add(entry);
-
-            Console.WriteLine($"Queued entry for {playerEntry.IGN} ({discordId})");
         }
     }
     public void ProcessLeaderboards()
@@ -307,6 +306,89 @@ public class CookieCache : Majeggstics
                 ccEntries.Where(e => e.Coop.HasValue).ToArray()
             ).ToList();
         Tables.CookieCache.Insert(ccEntries.ToArray());
+    }
+
+
+
+    public void CliStart()
+    {
+
+        string? input = "y";
+        while (input == "y")
+        {
+            try
+            {
+                Contract selectedContract = ActiveContractBuilder.CliSelectContract();
+                Console.WriteLine($"Selected contract: {selectedContract.Identifier} | {selectedContract.Name}"); // print the selected contract
+                AddContract(selectedContract);
+            }
+            catch (InvalidDataException ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"{ex.Message}");
+                Console.ResetColor();
+            }
+
+            Console.Write("\nWould you like to add another contract? (Y/[N]): ");
+            input = Console.ReadLine()?.ToLower() ?? "n";
+            Console.WriteLine(input);
+        }
+
+        Formatter.StringFormatter.ConsoleSpiner consoleSpiner = new();
+        Thread thread;
+
+        // Build Coops for selected contracts
+        Console.Write("Fetching coops for selected contracts...   ");
+        thread = new Thread(new ThreadStart(BuildCoops));
+        thread.Start();
+        while (thread.IsAlive)
+        {
+            consoleSpiner.Turn();
+            System.Threading.Thread.Sleep(200);
+        }
+        consoleSpiner.Stop();
+        Console.WriteLine("Done.");
+
+        // Process contracts
+        Console.Write("Processing contracts...   ");
+        thread = new Thread( new ThreadStart(ProcessContracts) );
+        thread.Start();
+        while (thread.IsAlive)
+        {
+            consoleSpiner.Turn();
+            System.Threading.Thread.Sleep(200);
+        }
+        consoleSpiner.Stop();
+        Console.WriteLine("Done.");
+
+        // Process leaderboards
+        Console.Write("Would you like to process the leaderboards? (Y/[N])");
+        input = Console.ReadLine()?.ToLower() ?? "n";
+        if (input == "y" || input == "yes")
+        {
+            Console.Write("Processing leaderboards...   ");
+            thread = new Thread(new ThreadStart(ProcessLeaderboards));
+            thread.Start();
+            while (thread.IsAlive)
+            {
+                consoleSpiner.Turn();
+                System.Threading.Thread.Sleep(200);
+            }
+            consoleSpiner.Stop();
+            Console.WriteLine("Done.");
+        }
+
+        // Write to database
+        Console.Write("Updating cookie cache database...   ");
+        thread = new Thread(new ThreadStart(UpdateCache));
+        thread.Start();
+        while (thread.IsAlive)
+        {
+            consoleSpiner.Turn();
+            System.Threading.Thread.Sleep(200);
+        }
+        consoleSpiner.Stop();
+        Console.WriteLine("Done.");
     }
 }
 

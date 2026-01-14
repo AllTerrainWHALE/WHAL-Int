@@ -1,8 +1,8 @@
 ﻿using System.IO.Compression;
-using JsonCompilers;
-using Google.Protobuf;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Google.Protobuf;
+using JsonCompilers;
 
 namespace EggIncApi;
 
@@ -33,6 +33,18 @@ public class Request
         };
 
         return await makeEggIncApiRequest("coop_status", coopStatusRequest, ContractCoopStatusResponse.Parser.ParseFrom);
+    }
+
+    public static async Task<EggIncFirstContactResponse> GetFirstContact()
+    {
+        EggIncFirstContactRequest firstContactRequest = new()
+        {
+            Rinfo = rInfo,
+            EiUserId = Config.EID,
+            ClientVersion = Config.CURRENT_CLIENT_VERSION
+        };
+
+        return await makeEggIncApiRequest("bot_first_contact", firstContactRequest, EggIncFirstContactResponse.Parser.ParseFrom, false);
     }
 
     public static async Task<PeriodicalsResponse> GetPeriodicals()

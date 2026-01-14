@@ -25,13 +25,12 @@ public class Majeggstics
         if (!ActiveContracts.ContainsKey(contractId))
         {
             ActiveContractBuilder activeContractBuilder = new ActiveContractBuilder(contractId);
-            Task<ActiveContract> activeContractTask = activeContractBuilder.Build();
-            activeContractTask.Wait();
-            ActiveContracts[contractId] = activeContractTask.Result;
+            ActiveContract activeContract = activeContractBuilder.Build();
+            ActiveContracts[contractId] = activeContract;
         }
     }
     public void AddContract(Contract contract) =>
-        AddContract(contract.Identifier);
+        ActiveContracts[contract.Identifier] = new ActiveContract(contract);
 
     public static List<MajCoop> FetchMajCoops(string contractId, CoopFlags? flags = null, bool force = false)
     {
@@ -59,7 +58,7 @@ public class Majeggstics
 
         return filteredCoops;
     }
-    public static List<MajCoop> FetchCoopsForContract(string contractId, string? flag, bool force = false)
+    public static List<MajCoop> FetchMajCoops(string contractId, string? flag, bool force = false)
     {
         List<MajCoop> contractMajCoops = FetchMajCoops(contractId: contractId, flags: null, force: force);
 
