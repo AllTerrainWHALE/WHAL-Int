@@ -5,11 +5,13 @@ namespace Formatter;
 
 public class StringFormatter
 {
-    public static string Centered(string s, int width, char fillChar = ' ')
+    public static string Centered(string s, int width, char fillChar = ' ', StringAlignment favouredAlignment = StringAlignment.Left)
     {
         if (s.Length >= width) return s;
 
-        int leftPadding = (width - s.Length) / 2;
+        int leftPadding = (int)(favouredAlignment == StringAlignment.Right
+            ? Math.Ceiling((decimal)(width - s.Length) / 2)
+            : Math.Floor((decimal)(width - s.Length) / 2));
         int rightPadding = width - s.Length - leftPadding;
 
         return new string(fillChar, leftPadding) + s + new string(fillChar, rightPadding);

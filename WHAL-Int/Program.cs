@@ -319,7 +319,7 @@ internal class Program
         var table = new Table<Player>(); // create a new table for the players
         table.AddColumn(new string('#', playerRowDigits), _ => StringFormatter.RightAligned($"{++playerRow}", playerRowDigits, fillChar: '0'), playerRowDigits); // auto incrementing row number column
         table.AddColumn(" Player ", player => $"{StringFormatter.LeftAligned(player.UserName.Substring(0, Math.Min(8, player.UserName.Length)), 8)}");
-        table.AddColumn("  CS  ", player => StringFormatter.Centered($"{Math.Round(player.ContractScore)}", 6));
+        table.AddColumn("  CS  ", player => StringFormatter.Centered($"{Math.Round(player.ContractScore)}", 6, favouredAlignment: Formatter.StringAlignment.Right));
         table.AddColumn(" Rate ", player => StringFormatter.Centered($"{StringFormatter.BigNumberToString(player.ContributionRate * Duration.SECONDS_IN_AN_HOUR, strLen: 6)}", 6));
 
         if (debug) // if debug flag is set, add additional columns to the player table
