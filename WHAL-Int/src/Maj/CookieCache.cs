@@ -2,12 +2,14 @@
 using Database;
 using EggIncApi;
 using Ei;
+using Formatter;
 using JsonCompilers;
 using Newtonsoft.Json;
 
 /**
  * TODO:
  *   - Integrate CLI interactions
+ *   - Output generation
  */
 
 namespace Maj;
@@ -308,7 +310,55 @@ public class CookieCache : Majeggstics
         Tables.CookieCache.Insert(ccEntries.ToArray());
     }
 
+    public List<string> GenerateDiscordOutput()
+    {
+        string query;
+        Microsoft.Data.Sqlite.SqliteCommand cmd;
 
+        // Fetch Cookie Cache
+        List<Tables.TheJar.Entry> theJar = new();
+        query = $@"
+            SELECT name, cookies FROM TheJar
+                WHERE season_id=$season_id";
+        cmd = dbConnection.CreateCommand(query);
+        cmd.Parameters.AddWithValue("$season_id", season.Scope);
+
+        using var reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            string name = reader.GetString(0);
+            int cookies = reader.GetInt32(1);
+            theJar.Add(new Tables.TheJar.Entry { Name = name, Cookies = cookies });
+        }
+
+        // Generate output strings
+        var discordTimestampNow = new DiscordTimestamp(DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+
+        string title = $"# Fastlane 🍪 Cache | {season.Name}";
+
+        string header = $"""
+            *[Jump here](<https://discord.com/channels/455380663013736479/1151593648539054100/1355345560718278726>) to find out how to gain :cookie:s*
+            -# ||*Apologies for those with small screens*||
+
+            _      _ *Last Updated* :brown_square::brown_square::brown_square: *{discordTimestampNow.Format(DiscordTimestampDisplay.Relative)}*
+            :brown_square::brown_square::brown_square::brown_square::brown_square::brown_square::brown_square::brown_square::brown_square::brown_square::brown_square::brown_square::brown_square::brown_square::brown_square:
+                  :glasspane:`       Player | 🍪s          `:glasspane:
+            """;
+
+        string body = string.Join("\n",
+            theJar.Select(entry => $"_      _:glasspane:` {entry.Name.Substring(0, Math.Min(entry.Name.Length, 12)),12} | {entry.Cookies,-12} `:glasspane:"));
+
+        string footer = "_           _" + string.Concat(Enumerable.Repeat(":glasspane:", 11));
+
+        string fullBodyOut = header + "\n" + body + "\n" + footer;
+
+        // Split output into Discord message segments
+        List<string> discordSegments = StringFormatter.SplitToCharLimitByLines(fullBodyOut, 1500);
+
+        discordSegments.Insert(0, title);
+
+        return discordSegments;
+    }
 
     public void CliStart()
     {
@@ -316,6 +366,14 @@ public class CookieCache : Majeggstics
         string? input = "y";
         while (input == "y")
         {
+
+            Console.Write($"Would you like to add {(ActiveContracts.Count > 0 ? "another" : 'a')} contract? (Y/[N]): ");
+            input = Console.ReadLine()?.ToLower() ?? "n";
+            Console.WriteLine(input);
+
+            if (input != "y" && input != "yes")
+                break;
+
             try
             {
                 Contract selectedContract = ActiveContractBuilder.CliSelectContract();
@@ -328,10 +386,7 @@ public class CookieCache : Majeggstics
                 Console.WriteLine($"{ex.Message}");
                 Console.ResetColor();
             }
-
-            Console.Write("\nWould you like to add another contract? (Y/[N]): ");
-            input = Console.ReadLine()?.ToLower() ?? "n";
-            Console.WriteLine(input);
+            Console.WriteLine();
         }
 
         Formatter.StringFormatter.ConsoleSpiner consoleSpiner = new();
@@ -389,12 +444,45 @@ public class CookieCache : Majeggstics
         }
         consoleSpiner.Stop();
         Console.WriteLine("Done.");
+
+        // Generate Discord output
+        List<string> outputSegments = GenerateDiscordOutput();
+
+        Console.WriteLine($"""
+            {"\x1b[92m"}========================= Output Start ========================={"\x1b[39m"}
+
+            {string.Join("\n", outputSegments)}
+
+            {"\x1b[92m"}=========================  Output End  ========================={"\x1b[39m"}
+
+            """); // "\x1b[92m" is green and "\x1b[39m" is reset color
+
+
+        foreach (var (segment, index) in outputSegments.Select((v, i) => (v, i))) // print each segment of the !!fuc table
+        {
+            Console.Write($"Press ENTER to copy segment {index + 1}/{outputSegments.Count()} ");
+            Console.WriteLine(index == 0 ? "(HEADER)" : index == outputSegments.Count() - 1 ? "(FOOTER)" : "");
+            Console.ReadLine();
+            ClipboardHelper.CopyToClipboard(segment);
+        }
     }
 }
 
 internal static class Tables
 {
     private static SQLiteConnection dbConnection = SQLiteConnection.Instance();
+
+    public static class TheJar
+    {
+        public struct Entry
+        {
+            public string Name;
+            public int Cookies;
+        }
+
+        public static string Name = "TheJar";
+        public static bool Exists() => TableExists(Name);
+    }
 
     public static class CookieCache
     {

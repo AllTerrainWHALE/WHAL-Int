@@ -42,7 +42,7 @@ public class ActiveContractBuilder
     public static JsonCompilers.Contract CliSelectContract()
     {
         var contracts = ContractsArchive;
-        var displayedContracts = contracts.TakeLast(5).Reverse().ToArray();
+        var displayedContracts = contracts.TakeLast(6).Reverse().ToArray();
 
         // Ask user to select a contract
         Console.WriteLine("Select contract ID:");

@@ -32,6 +32,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <Folder Include="data\leaderboards\" />
     <Folder Include="src\Ei\" />
   </ItemGroup>
 

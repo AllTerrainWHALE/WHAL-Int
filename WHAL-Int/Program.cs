@@ -38,6 +38,11 @@ internal class Program
             targetFlags.FastRun  = true;
         }
 
+        CookieCache cc = new CookieCache();
+        cc.SetTargetFlags(targetFlags);
+        cc.CliStart();
+
+        return;
 
         /* =====================
            =  Get contract id  =
@@ -76,40 +81,6 @@ internal class Program
 
 
 
-
-        string seasonId = (await Request.GetLBInfo()).SeasonsList!.Last().Scope!;
-        CookieCache cc = new CookieCache(seasonId);
-        cc.SetTargetFlags(targetFlags);
-        cc.AddContract(contractId);
-        //cc.FetchMajCoops(contractId, force: true);
-
-        Console.WriteLine("Coop Codes:");
-        foreach (string flag in targetFlags.Flags)
-        {
-            string[] codes = Majeggstics.FetchCoopsForContract(contractId, flag)
-                .Select(c => c.Code!)
-                .ToArray();
-            Console.WriteLine($"\t{flag}: {string.Join(", ", codes)}");
-        }
-        Console.WriteLine();
-
-        cc.BuildCoops();
-
-        cc.ProcessContracts();
-
-        //Console.WriteLine("External Players:");
-        //foreach (var coop in Majeggstics.FetchMajCoops(contractId, cc.TargetFlags))
-        //{
-        //    var externalPlayers = coop.Users.Where(u => u.IsExternal == true);
-        //    if (externalPlayers.Count() > 0)
-        //    {
-        //        Console.WriteLine($"\t{coop.Code}: {string.Join(", ", externalPlayers.Select(p => p.IGN))}");
-        //    }
-        //}
-
-        return;
-
-
         /* ===================
            =  Get Maj coops  =
            =================== */
@@ -120,7 +91,7 @@ internal class Program
         Console.WriteLine("Coop Codes:");
         foreach (string flag in targetFlags.Flags)
         {
-            string[] codes = Majeggstics.FetchCoopsForContract(contractId, flag)
+            string[] codes = Majeggstics.FetchMajCoops(contractId, flag)
                 .Select(c => c.Code!)
                 .ToArray();
             Console.WriteLine($"\t{flag}: {string.Join(", ", codes)}");
