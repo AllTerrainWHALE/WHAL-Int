@@ -53,7 +53,7 @@ public class Coop : IComparable<Coop>
 
         this.coopStatus = coopStatus;
         this.contract = contract;
-        gradeSpec = contract.GradeSpecs.SingleOrDefault(g => g.Grade == coopStatus.Grade)!;
+        gradeSpec = contract.GradeSpecs.Single(g => g.Grade == coopStatus.Grade);
         ContractFarmMaximumTimeAllowed = gradeSpec.LengthSeconds;
         PredictedCompletionTimeUnix =
             new DiscordTimestamp(unixNow + PredictedSecondsRemaining - (long)coopStatus.SecondsSinceAllGoalsAchieved);

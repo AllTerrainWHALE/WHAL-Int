@@ -24,10 +24,11 @@ public class Request
             Rinfo = rInfo,
             ContractIdentifier = contractId,
             CoopIdentifier = coopId,
-            UserId = Config.EID
+            UserId = Config.USER_ID ?? Config.EID
         };
 
-        return await makeEggIncApiRequest("coop_status", coopStatusRequest, ContractCoopStatusResponse.Parser.ParseFrom);
+        string endpoint = Config.USER_ID == null ? "coop_status" : "coop_status_bot";
+        return await makeEggIncApiRequest(endpoint, coopStatusRequest, ContractCoopStatusResponse.Parser.ParseFrom);
     }
 
     public static async Task<PeriodicalsResponse> GetPeriodicals()
