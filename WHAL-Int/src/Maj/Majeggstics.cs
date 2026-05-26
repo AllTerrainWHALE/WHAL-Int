@@ -32,9 +32,9 @@ public class Majeggstics
     public void AddContract(Contract contract) =>
         ActiveContracts[contract.Identifier] = new ActiveContract(contract);
 
-    public static List<MajCoop> FetchMajCoops(string contractId, CoopFlags? flags = null, bool force = false)
+    public List<MajCoop> FetchMajCoops(string contractId, CoopFlags? flags = null, bool force = false)
     {
-        if (!ActiveContract.ContractIds.Contains(contractId))
+        if (!ActiveContractBuilder.ContractIdsArchive.Contains(contractId))
         {
             throw new InvalidDataException($"Contract ID invalid: {contractId}");
         }
@@ -45,7 +45,10 @@ public class Majeggstics
             majCoopsResponseTask.Wait();
             MajCoopResponse majCoopsResponse = majCoopsResponseTask.Result;
             List<MajCoop> majCoops = majCoopsResponse.Last().Coops;
-            majCoops = majCoops.Where(c => System.Text.RegularExpressions.Regex.IsMatch(c.Code!, @"^[a-z]{6}\d{3}$")).ToList();
+            majCoops = majCoops.Where(c =>
+                    System.Text.RegularExpressions.Regex.IsMatch(c.Code!, @"^[a-z]{6}\d{3}$") ||
+                    System.Text.RegularExpressions.Regex.IsMatch(c.Code!, @"^[a-z]{5}\d{3}$")
+                ).ToList();
 
             contractMajCoops[contractId] = majCoops;
         }
@@ -58,7 +61,7 @@ public class Majeggstics
 
         return filteredCoops;
     }
-    public static List<MajCoop> FetchMajCoops(string contractId, string? flag, bool force = false)
+    public List<MajCoop> FetchMajCoops(string contractId, string? flag, bool force = false)
     {
         List<MajCoop> contractMajCoops = FetchMajCoops(contractId: contractId, flags: null, force: force);
 

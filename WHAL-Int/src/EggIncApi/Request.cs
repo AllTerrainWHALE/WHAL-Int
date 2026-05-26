@@ -29,10 +29,21 @@ public class Request
             Rinfo = rInfo,
             ContractIdentifier = contractId,
             CoopIdentifier = coopId,
-            UserId = Config.EID
+            UserId = Config.USER_ID ?? Config.EID
         };
 
-        return await makeEggIncApiRequest("coop_status", coopStatusRequest, ContractCoopStatusResponse.Parser.ParseFrom);
+        string endpoint = Config.USER_ID == null ? "coop_status" : "coop_status_bot";
+        ContractCoopStatusResponse response;
+        try
+        {
+            response = await makeEggIncApiRequest(endpoint, coopStatusRequest, ContractCoopStatusResponse.Parser.ParseFrom);
+        }
+        catch
+        {
+            response = new() { ResponseStatus = ContractCoopStatusResponse.Types.ResponseStatus.NoHttpResponse };
+        }
+        return response;
+
     }
 
     public static async Task<EggIncFirstContactResponse> GetFirstContact()
@@ -64,7 +75,7 @@ public class Request
         if (majCoopsCache.ContainsKey(contractId) && !force)
             return majCoopsCache[contractId];
 
-        string url = $"https://eiapi-production.up.railway.app/majCoops?contract={contractId}";
+        string url = $"https://eiapi.up.railway.app/majCoops?contract={contractId}";
 
         string rawJson = await getRequest(url);
 
@@ -79,7 +90,7 @@ public class Request
         if (majPlayersCache != null && !force)
             return majPlayersCache;
 
-        string url = $"https://eiapi-production.up.railway.app/allMaj";
+        string url = $"https://eiapi.up.railway.app/allMaj";
         string rawJson = await getRequest(url);
 
         return parseJsonRsponse<MajUsersResponse>(rawJson, out majPlayersCache);

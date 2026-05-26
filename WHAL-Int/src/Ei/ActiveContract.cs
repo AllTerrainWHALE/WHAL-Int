@@ -31,17 +31,17 @@ public class ActiveContract
 
 
 
-    private Contract contract;
+    public Contract Contract;
     private List<Coop> coops = new List<Coop>();
 
-    public string ContractId => contract.Identifier;
+    public string ContractId => Contract.Identifier;
     public IEnumerable<Coop> Coops => coops.AsEnumerable();
 
-    public ActiveContract(Contract contract) => this.contract = contract;
+    public ActiveContract(Contract contract) => Contract = contract;
 
     public async Task<Coop?> AddCoop(string coopCode, CoopFlags? flags = null)
     {
-        CoopBuilder builder = new(contract, coopCode, flags);
+        CoopBuilder builder = new(Contract, coopCode, flags);
         Coop? coop = await builder.Build();
         if (coop != null) coops.Add(coop);
         return coop;

@@ -26,6 +26,7 @@ public class ActiveContractBuilder
             return contractArchive;
         }
     }
+    public static string[] ContractIdsArchive = [.. ContractsArchive.Select(c => c.Identifier)];
 
     private string contractId;
 

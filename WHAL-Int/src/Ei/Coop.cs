@@ -73,16 +73,16 @@ public class Coop : IComparable<Coop>
 
         try
         {
-        Contributors = coopStatus.Contributors
-            .Select(playerInfo => new Player(
-                playerInfo,
-                majCoop.Users.FirstOrDefault(u => u.IGN == playerInfo.UserName) ?? null,
-                this))
-            .ToList();
+            Contributors = coopStatus.Contributors
+                .Select(playerInfo => new Player(
+                    playerInfo,
+                    majCoop?.Users.FirstOrDefault(u => u.IGN == playerInfo.UserName) ?? null,
+                    this))
+                .ToList();
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error building Contributors for Coop {CoopId}. MajCoop = {majCoop}");
+            Console.WriteLine($"Error building Contributors for Coop {CoopId}.\n\n{e}");
             throw;
         }
     }

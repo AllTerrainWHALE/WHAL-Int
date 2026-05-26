@@ -190,6 +190,32 @@ public class StringFormatter
             Console.Write("  ");
         }
     }
+
+    public class ThreadRedirect
+    {
+        static public readonly ThreadLocal<StringWriter> ThreadOutput =
+            new ThreadLocal<StringWriter>(() => new StringWriter(), true);
+
+        static public void RunWithCapturedConsole(Action action)
+        {
+            var original = Console.Out;
+            var writer = ThreadOutput.Value;
+
+            try
+            {
+                Console.SetOut(writer);
+                action();
+            }
+            finally
+            {
+                Console.SetOut(original);
+            }
+        }
+
+        static public void ClearThreadOutput() => ThreadOutput.Values.Clear();
+
+
+    }
 }
 
 public enum StringAlignment
