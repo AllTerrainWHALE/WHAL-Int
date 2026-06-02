@@ -1,32 +1,69 @@
+using EggIncApi;
+using JsonCompilers;
+
 namespace Ei;
 
 public class ActiveContractBuilder
 {
-    private static JsonCompilers.Contract[] contractArchive = null!;
-    public static JsonCompilers.Contract[] ContractsArchive
+    public static class Periodicals
     {
-        get
+        private static PeriodicalsResponse periodicalsResponse = null!; // Initialize as null-forgiving to satisfy the compiler
+        public static PeriodicalsResponse PeriodicalsResponse
         {
-            if (contractArchive == null)
+            get
             {
-                Task<JsonCompilers.EggIncFirstContactResponse> firstContractTask = EggIncApi.Request.GetFirstContact();
-                firstContractTask.Wait();
-                JsonCompilers.EggIncFirstContactResponse firstContractResponse = firstContractTask.Result;
-
-                List<JsonCompilers.Contract> contractArchive = firstContractResponse
-                    .Backup.Contracts.Archive
-                    .Select(a => a.Contract)
-                    .ToList();
-
-                contractArchive.AddRange(
-                    firstContractResponse.Backup.Contracts.Contracts
-                    .Select(c => c.Contract));
-                ActiveContractBuilder.contractArchive = [.. contractArchive.OrderBy(c => c.StartTime)];
+                if (periodicalsResponse == null)
+                {
+                    Task<PeriodicalsResponse> periodicalsResponseTask = Request.GetPeriodicals();
+                    periodicalsResponseTask.Wait();
+                    periodicalsResponse = periodicalsResponseTask.Result;
+                }
+                return periodicalsResponse;
             }
-            return contractArchive;
         }
+        public static IEnumerable<Contract> Contracts =>
+            PeriodicalsResponse.Contracts.Contracts
+                .OrderBy(c => c.StartTime)
+                .Where(c => c.Identifier != "first-contract");
+        public static Contract GetContractById(string id) =>
+            Contracts.FirstOrDefault(c => c.Identifier == id)
+            ?? throw new InvalidDataException($"Contract ID invalid: {id}");
+        public static List<string> ContractIds =>
+            Contracts.Select(c => c.Identifier).ToList();
     }
-    public static string[] ContractIdsArchive = [.. ContractsArchive.Select(c => c.Identifier)];
+
+    public static class Archive
+    {
+        private static JsonCompilers.Contract[] contractArchive = null!;
+        public static JsonCompilers.Contract[] Contracts
+        {
+            get
+            {
+                if (contractArchive == null)
+                {
+                    Task<JsonCompilers.EggIncFirstContactResponse> firstContractTask = EggIncApi.Request.GetFirstContact();
+                    firstContractTask.Wait();
+                    JsonCompilers.EggIncFirstContactResponse firstContractResponse = firstContractTask.Result;
+
+                    List<JsonCompilers.Contract> contractArchive = firstContractResponse
+                        .Backup.Contracts.Archive
+                        .Select(a => a.Contract)
+                        .ToList();
+
+                    contractArchive.AddRange(
+                        firstContractResponse.Backup.Contracts.Contracts
+                        .Select(c => c.Contract));
+                    Archive.contractArchive = [.. contractArchive.OrderBy(c => c.StartTime)];
+                }
+                return contractArchive;
+            }
+        }
+
+        public static string[] ContractIds = [.. Contracts.Select(c => c.Identifier)];
+    }
+
+    public static Contract[] Contracts = [.. Archive.Contracts.Concat(Periodicals.Contracts).DistinctBy(c => c.Identifier)];
+    public static string[] ContractIds = [.. Contracts.Select(c => c.Identifier)];
 
     private string contractId;
 
@@ -35,14 +72,14 @@ public class ActiveContractBuilder
     public ActiveContract Build()
     {
         JsonCompilers.Contract contract =
-            ContractsArchive.LastOrDefault(c => c.Identifier == contractId)
+            Contracts.LastOrDefault(c => c.Identifier == contractId)
             ?? throw new InvalidDataException($"Contract ID invalid: {contractId}");
         return new ActiveContract(contract);
     }
 
     public static JsonCompilers.Contract CliSelectContract()
     {
-        var contracts = ContractsArchive;
+        var contracts = Contracts;
         var displayedContracts = contracts.TakeLast(6).Reverse().ToArray();
 
         // Ask user to select a contract

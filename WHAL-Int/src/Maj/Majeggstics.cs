@@ -34,7 +34,7 @@ public class Majeggstics
 
     public List<MajCoop> FetchMajCoops(string contractId, CoopFlags? flags = null, bool force = false)
     {
-        if (!ActiveContractBuilder.ContractIdsArchive.Contains(contractId))
+        if (!ActiveContractBuilder.ContractIds.Contains(contractId))
         {
             throw new InvalidDataException($"Contract ID invalid: {contractId}");
         }
